@@ -1,0 +1,7 @@
+/*
+!.gitignore
+!/wp-content/
+/node_modules
+/.idea
+/.vscode
+.DS_Store
