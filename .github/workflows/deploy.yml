@@ -1,0 +1,24 @@
+name: Deploy to Server
+
+on:
+  workflow_dispatch:  # This allows you to manually trigger the action
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Sync files to server
+        run: |
+          rsync -avz -e "ssh -p22 -o StrictHostKeyChecking=no" ./wp-content/ cudend7@cp2.uk.netnerd.com:/home/cudend7/carehome.cuden.co.uk
