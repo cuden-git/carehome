@@ -16,6 +16,7 @@ jobs:
 
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.5.3
+        using: 'node16'
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
