@@ -37,7 +37,7 @@ function theme_enqueue_styles() {
 	// Grab asset urls.
 	$theme_styles  = "/css/child-theme{$suffix}.css";
 	$theme_scripts = "/js/child-theme{$suffix}.js";
-	#$frontend_scripts = "/frontend/public/js/{$suffix}.js";
+	$frontend_scripts = "/frontend-2/build/index.js";
 
 	$css_version = $theme_version . '.' . filemtime( get_stylesheet_directory() . $theme_styles );
 
@@ -48,7 +48,15 @@ function theme_enqueue_styles() {
 	
 	wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $js_version, true );
 
-	wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . $frontend_scripts, array(), $js_version, true );
+
+// Enqueue WP React
+	wp_enqueue_script(
+		'frontend',
+		get_stylesheet_directory_uri() . $frontend_scripts,
+		['wp-element'],
+		null,
+		true
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -96,3 +104,8 @@ function understrap_child_customize_controls_js() {
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+/** 
+ * Add theme support for menus
+ */
+add_theme_support( 'menus' );
