@@ -15338,4 +15338,16 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   border: 1px solid #e9ecef;
 }
 
+body {
+  background-color: black;
+}
+
+.container {
+  border: 10px solid red;
+}
+
+.dennywenny {
+  font-size: 20px;
+}
+
 /*# sourceMappingURL=child-theme.css.map */
