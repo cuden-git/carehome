@@ -22,3 +22,5 @@ jobs:
       - name: Sync files to server
         run: |
           rsync -avz -e "ssh -p22 -o StrictHostKeyChecking=no" ./wp-content/ cudend7@cp2.uk.netnerd.com:/home/cudend7/carehome.cuden.co.uk
+runs:
+  using: 'node16'
