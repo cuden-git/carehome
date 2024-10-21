@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Enable debugging
+        run: set -x
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -21,4 +24,4 @@ jobs:
 
       - name: Sync files to server
         run: |
-          rsync -avz -e "ssh -p22 -vvv -o StrictHostKeyChecking=no" ./wp-content/ cudend7@cp2.uk.netnerd.com:/home/cudend7/carehome.cuden.co.uk
+          rsync -avz -e "ssh -p22 -vvv -o StrictHostKeyChecking=no" ./wp-content/ cudend7@cp2.uk.netnerd.com:/home/cudend7/carehome.cuden.co.uk 2> ssh_debug.log
