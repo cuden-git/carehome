@@ -118,7 +118,7 @@ add_filter( 'theme_page_templates', function( $page_templates ) {
 		$page_templates['page.php'],
 		$page_templates['single.php'],
 		$page_templates['search.php'],
-	#	$page_templates['archive.php'] 
+		$page_templates['archive.php'] 
 	); // [Removes the both-sidebarspage.php template from selection](https://github.com/understrap/understrap/blob/master/page-templates/both-sidebarspage.php)
 
 	return $page_templates;
