@@ -53,11 +53,14 @@ function theme_enqueue_styles() {
 	wp_enqueue_script(
 		'frontend',
 		get_stylesheet_directory_uri() . $frontend_scripts,
-		['wp-element'],
+		['wp-element', 'wp-api-fetch'],
 		null,
 		true
 	);
-
+	wp_localize_script('frontend', 'themeData', array(
+		'nonce' => wp_create_nonce('wp_rest'), // Create a nonce for REST API requests
+		'restURL' => esc_url_raw(rest_url())  // Pass the REST API root URL
+	));
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
