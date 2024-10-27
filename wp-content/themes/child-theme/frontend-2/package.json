@@ -1,0 +1,23 @@
+{
+	"name": "frontend-2",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@wordpress/scripts": "^26.12.0"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "^7.10.0",
+		"react-router-dom": "^6.27.0"
+	}
+}

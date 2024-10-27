@@ -50,13 +50,13 @@ function theme_enqueue_styles() {
 
 
 // Enqueue WP React
-	wp_enqueue_script(
-		'frontend',
-		get_stylesheet_directory_uri() . $frontend_scripts,
-		['wp-element', 'wp-api-fetch'],
-		null,
-		true
-	);
+	// wp_enqueue_script(
+	// 	'frontend',
+	// 	get_stylesheet_directory_uri() . $frontend_scripts,
+	// 	['wp-element', 'wp-api-fetch'],
+	// 	null,
+	// 	true
+	// );
 	wp_localize_script('frontend', 'themeData', array(
 		'nonce' => wp_create_nonce('wp_rest'), // Create a nonce for REST API requests
 		'restURL' => esc_url_raw(rest_url())  // Pass the REST API root URL
@@ -116,7 +116,8 @@ add_theme_support( 'menus' );
 /**
  * Disable parent page templates 
  */
-add_filter( 'theme_page_templates', function( $page_templates ) {
+function disable_templates($page_templates) {
+//	print_r($page_templates);die();
 	unset( 
 		$page_templates['page.php'],
 		$page_templates['single.php'],
@@ -125,16 +126,28 @@ add_filter( 'theme_page_templates', function( $page_templates ) {
 	);
 
 	return $page_templates;
-} );
-
-function disable_wp_frontend() {
-	// If it's an API request or an admin page, allow it
-	if (is_admin() || strpos($_SERVER['REQUEST_URI'], '/wp-json/') === 0) {
-		return;
-	}
-
-	wp_redirect('https://carehome.cuden.co.uk/frontend/', 301);
-
-	exit;
 }
-add_action('template_redirect', 'disable_wp_frontend');
+add_filter( 'theme_page_templates', 'disable_templates' );
+add_filter( 'theme_post_templates', 'disable_templates' );
+// function disable_wp_frontend() {
+// 	// If it's an API request or an admin page, allow it
+// 	if (is_admin() || strpos($_SERVER['REQUEST_URI'], '/wp-json/') === 0) {
+// 		return;
+// 	}
+
+// 	wp_redirect('https://carehome.cuden.co.uk/frontend/', 301);
+
+// 	exit;
+// }
+// add_action('template_redirect', 'disable_wp_frontend');
+function remove_parent_theme_templates( $page_templates ) {
+	// Unset parent theme templates
+	foreach ( $page_templates as $template_name => $template_filename ) {
+			if ( strpos( $template_filename, 'understrap-child' ) === false ) {
+					unset( $page_templates[$template_name] );
+			}
+	}
+	return $page_templates;
+}
+add_filter( 'theme_page_templates', 'remove_parent_theme_templates', 20 );
+
