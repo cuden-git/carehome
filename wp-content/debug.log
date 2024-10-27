@@ -100,3 +100,27 @@ Stack trace:
 [26-Oct-2024 19:51:47 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
 [26-Oct-2024 19:51:47 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
 [26-Oct-2024 19:51:49 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 12:55:42 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 12:55:42 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 12:56:36 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 12:56:38 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 12:56:38 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 12:56:40 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 13:02:15 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 13:02:15 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 13:02:24 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 13:02:24 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/child-theme/js/child-theme.min.js in /var/www/html/wp-content/themes/child-theme/functions.php on line 47
+[27-Oct-2024 13:02:53 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "GOOGLE_API_KEY" in /var/www/html/wp-content/themes/understrap-child-main/index.php:25
+Stack trace:
+#0 /var/www/html/wp-includes/template-loader.php(106): include()
+#1 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#2 /var/www/html/index.php(17): require('/var/www/html/w...')
+#3 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/index.php on line 25
+[27-Oct-2024 13:04:29 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "GOOGLE_API_KEY" in /var/www/html/wp-content/themes/understrap-child-main/index.php:25
+Stack trace:
+#0 /var/www/html/wp-includes/template-loader.php(106): include()
+#1 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#2 /var/www/html/index.php(17): require('/var/www/html/w...')
+#3 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/index.php on line 25
