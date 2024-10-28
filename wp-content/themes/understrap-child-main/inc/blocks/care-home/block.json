@@ -1,0 +1,15 @@
+{
+  "name": "quantum-care/care-home",
+  "title": "Care Home",
+  "description": "Template for the care-homes post type",
+  "category": "quantum-care",
+  "icon": "admin-comments",
+  "keywords": ["care", "home"],
+  "acf": {
+      "mode": "preview",
+      "renderTemplate": "care-home.php"
+  },
+  "supports": {
+      "anchor": true
+  }
+}

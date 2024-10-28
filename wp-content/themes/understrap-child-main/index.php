@@ -16,7 +16,8 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>
-<h1>INDEX>PHP</h1>
+<h1>INDEX>PHP<i class="icon-dumbell"></i></h1>
+
 <!-- <main id="root"></main> -->
 <div id="map" style="height: 400px; border: solid black 5px" class="container"></div>
 

@@ -8,7 +8,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-
+require_once __DIR__ . '/inc/vars.php';
+require_once __DIR__ . '/inc/acf-blocks.php';
 
 /**
  * Removes the parent themes stylesheet and scripts from inc/enqueue.php
@@ -112,42 +113,4 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
  * Add theme support for menus
  */
 add_theme_support( 'menus' );
-
-/**
- * Disable parent page templates 
- */
-function disable_templates($page_templates) {
-//	print_r($page_templates);die();
-	unset( 
-		$page_templates['page.php'],
-		$page_templates['single.php'],
-		$page_templates['search.php'],
-		$page_templates['archive.php'] 
-	);
-
-	return $page_templates;
-}
-add_filter( 'theme_page_templates', 'disable_templates' );
-add_filter( 'theme_post_templates', 'disable_templates' );
-// function disable_wp_frontend() {
-// 	// If it's an API request or an admin page, allow it
-// 	if (is_admin() || strpos($_SERVER['REQUEST_URI'], '/wp-json/') === 0) {
-// 		return;
-// 	}
-
-// 	wp_redirect('https://carehome.cuden.co.uk/frontend/', 301);
-
-// 	exit;
-// }
-// add_action('template_redirect', 'disable_wp_frontend');
-function remove_parent_theme_templates( $page_templates ) {
-	// Unset parent theme templates
-	foreach ( $page_templates as $template_name => $template_filename ) {
-			if ( strpos( $template_filename, 'understrap-child' ) === false ) {
-					unset( $page_templates[$template_name] );
-			}
-	}
-	return $page_templates;
-}
-add_filter( 'theme_page_templates', 'remove_parent_theme_templates', 20 );
 
