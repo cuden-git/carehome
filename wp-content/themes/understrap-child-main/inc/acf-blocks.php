@@ -1,9 +1,14 @@
 <?php
-add_filter( 'allowed_block_types_all', function( $allowed_blocks, $editor_context ): array {
-  $allowed_blocks = [
+add_filter( 'allowed_block_types_all', function( $allowed_blocks, $editor_context ) {
+  global $post;
+
+  if($post->post_type === 'care-home') {
+    $allowed_blocks = [
       'quantum-care/care-home'
-  ];
-  return $allowed_blocks;
+    ];
+
+    return $allowed_blocks;
+  }
 }, 100, 2 );
 
 /**
@@ -27,7 +32,7 @@ function gwg_block_categories( $categories ) {
       )
   );
 }
-add_filter( 'block_categories', 'gwg_block_categories' );
+add_filter( 'block_categories_all', 'gwg_block_categories' );
 
 /**
  * We use WordPress's init hook to make sure

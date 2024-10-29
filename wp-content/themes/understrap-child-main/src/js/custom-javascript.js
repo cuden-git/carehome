@@ -1,5 +1,5 @@
 // Add your custom JS here.
-import tester from './tester';
-import './gm';
+//import './gm';
+import TypeSearch from './type-search';
 
-tester();
+let typeSearch = new TypeSearch();

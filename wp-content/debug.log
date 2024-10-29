@@ -190,3 +190,463 @@ Stack trace:
 [28-Oct-2024 08:18:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-includes/functions.php:6078) in /var/www/html/wp-admin/admin-header.php on line 9
 [28-Oct-2024 08:18:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-includes/functions.php:6078) in /var/www/html/wp-includes/option.php on line 1486
 [28-Oct-2024 08:18:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-includes/functions.php:6078) in /var/www/html/wp-includes/option.php on line 1487
+[28-Oct-2024 08:25:01 UTC] PHP Deprecated:  Hook block_categories is deprecated since version 5.8.0! Use block_categories_all instead. in /var/www/html/wp-includes/functions.php on line 6078
+[28-Oct-2024 08:28:05 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "post_type" in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:5
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 5
+[28-Oct-2024 09:33:42 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:12
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 48, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 48, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 48, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 48, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(569): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->get_item(Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#16 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#18 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#20 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#21 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#22 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 12
+[28-Oct-2024 09:34:24 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:10
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 48, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 48, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 48, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 48, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(569): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->get_item(Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#16 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#18 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#20 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#21 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#22 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 10
+[28-Oct-2024 09:34:25 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:10
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 48, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 48, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 48, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 48, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(569): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->get_item(Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#16 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#18 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#20 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#21 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#22 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 10
+[28-Oct-2024 09:34:26 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:10
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 48, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 48, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 48, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 48, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(569): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->get_item(Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#16 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#18 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#20 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#21 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#22 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 10
+[28-Oct-2024 09:34:26 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:10
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 48, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 48, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 48, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 48, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(569): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->get_item(Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#16 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#18 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#20 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#21 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#22 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 10
+[28-Oct-2024 09:34:26 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:10
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 48, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 48, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 48, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 48, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(569): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->get_item(Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#16 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#18 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#20 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#21 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#22 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 10
+[28-Oct-2024 09:34:27 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:10
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 48, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 48, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 48, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 48, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(569): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->get_item(Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#16 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#18 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#20 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#21 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#22 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 10
+[28-Oct-2024 09:34:27 UTC] PHP Fatal error:  Uncaught Error: Object of class WP_Error could not be converted to string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:10
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 48, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 48, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 48, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 48, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(569): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->get_item(Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#16 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#18 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#20 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#21 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#22 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 10
+[28-Oct-2024 09:34:38 UTC] PHP Warning:  Undefined variable $ch_intro in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 28
+[28-Oct-2024 09:52:31 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, bool returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:11
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 11
+[28-Oct-2024 09:53:18 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:20 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:46 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:47 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:48 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:49 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:50 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:50 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:51 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:51 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:51 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 09:53:51 UTC] PHP Fatal error:  Uncaught TypeError: {closure}(): Return value must be of type array, none returned in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:12
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): {closure}(true, Object(WP_Block_Editor_Context))
+#1 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters(true, Array)
+#2 /var/www/html/wp-includes/block-editor.php(127): apply_filters('allowed_block_t...', true, Object(WP_Block_Editor_Context))
+#3 /var/www/html/wp-includes/block-editor.php(491): get_allowed_block_types(Object(WP_Block_Editor_Context))
+#4 /var/www/html/wp-admin/edit-form-blocks.php(284): get_block_editor_settings(Array, Object(WP_Block_Editor_Context))
+#5 /var/www/html/wp-admin/post-new.php(72): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 12
+[28-Oct-2024 11:03:13 UTC] PHP Warning:  Undefined variable $tester in /var/www/html/wp-content/themes/understrap-child-main/partials/archive-content-care-home.php on line 2
+[28-Oct-2024 11:04:14 UTC] PHP Warning:  Undefined variable $tester in /var/www/html/wp-content/themes/understrap-child-main/partials/archive-content-care-home.php on line 2
+[28-Oct-2024 11:04:14 UTC] PHP Warning:  Undefined variable $tester in /var/www/html/wp-content/themes/understrap-child-main/partials/archive-content-care-home.php on line 3
+[28-Oct-2024 11:04:48 UTC] PHP Warning:  Undefined variable $tester in /var/www/html/wp-content/themes/understrap-child-main/partials/archive-content-care-home.php on line 2
+[28-Oct-2024 11:22:59 UTC] PHP Warning:  Attempt to read property "post_type" on null in /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php on line 5
+[28-Oct-2024 11:22:59 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/inc/acf-blocks.php:5) in /var/www/html/wp-admin/customize.php on line 126
+[28-Oct-2024 17:11:46 UTC] PHP Warning:  Undefined array key "acf" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 129
+[28-Oct-2024 17:11:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api/class-wp-rest-server.php on line 1831
+[28-Oct-2024 17:11:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api/class-wp-rest-server.php on line 1855
+[28-Oct-2024 17:11:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 753
+[28-Oct-2024 17:11:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 754
+[28-Oct-2024 17:11:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 755
+[28-Oct-2024 17:11:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 756
+[28-Oct-2024 17:11:51 UTC] PHP Warning:  Undefined array key "acf" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 129
+[28-Oct-2024 17:11:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api/class-wp-rest-server.php on line 1831
+[28-Oct-2024 17:11:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api/class-wp-rest-server.php on line 1855
+[28-Oct-2024 17:11:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 753
+[28-Oct-2024 17:11:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 754
+[28-Oct-2024 17:11:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 755
+[28-Oct-2024 17:11:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 756
+[28-Oct-2024 17:11:54 UTC] PHP Warning:  Undefined array key "acf" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 129
+[28-Oct-2024 17:11:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api/class-wp-rest-server.php on line 1831
+[28-Oct-2024 17:11:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api/class-wp-rest-server.php on line 1855
+[28-Oct-2024 17:11:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 753
+[28-Oct-2024 17:11:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 754
+[28-Oct-2024 17:11:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 755
+[28-Oct-2024 17:11:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:130) in /var/www/html/wp-includes/rest-api.php on line 756
+[28-Oct-2024 19:08:04 UTC] PHP Warning:  Undefined array key "field_671f45e9f5b80" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:08:04 UTC] PHP Warning:  Undefined array key "field_671f45e9f5b80" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:08:06 UTC] PHP Warning:  Undefined array key "field_671f45e9f5b80" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:08:06 UTC] PHP Warning:  Undefined array key "field_671f45e9f5b80" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:10:05 UTC] PHP Warning:  Undefined array key "field_671f45e9f5b80" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 171
+[28-Oct-2024 19:10:05 UTC] PHP Warning:  Undefined array key "field_671f45e9f5b80" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 171
+[28-Oct-2024 19:10:05 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:168) in /var/www/html/wp-includes/pluggable.php on line 1435
+[28-Oct-2024 19:10:05 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:168) in /var/www/html/wp-includes/pluggable.php on line 1438
+[28-Oct-2024 19:10:57 UTC] PHP Warning:  Undefined array key "field_671f45e9f5b80" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 171
+[28-Oct-2024 19:10:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:168) in /var/www/html/wp-includes/http.php on line 505
+[28-Oct-2024 19:10:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:168) in /var/www/html/wp-includes/http.php on line 506
+[28-Oct-2024 19:10:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:168) in /var/www/html/wp-admin/admin-ajax.php on line 27
+[28-Oct-2024 19:10:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:168) in /var/www/html/wp-admin/admin-ajax.php on line 28
+[28-Oct-2024 19:10:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:168) in /var/www/html/wp-includes/functions.php on line 6983
+[28-Oct-2024 19:10:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:168) in /var/www/html/wp-admin/includes/misc.php on line 1439
+[28-Oct-2024 19:10:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:168) in /var/www/html/wp-includes/functions.php on line 7096
+[28-Oct-2024 19:33:22 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=SG18 8Ef&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 143
+[28-Oct-2024 19:33:22 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 145
+[28-Oct-2024 19:33:22 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 146
+[28-Oct-2024 19:33:22 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=SG18 8Ef&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 143
+[28-Oct-2024 19:33:22 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 145
+[28-Oct-2024 19:33:22 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 146
+[28-Oct-2024 19:36:10 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:36:10 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:36:10 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:36:10 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:36:10 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:36:10 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:36:18 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:36:18 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:36:18 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:38:04 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:38:04 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:38:04 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:38:04 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:38:04 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:38:04 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:38:05 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:38:05 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:38:05 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:38:05 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:38:05 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:38:05 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:38:07 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:38:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:38:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:38:07 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:38:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:38:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[28-Oct-2024 19:38:19 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=n22 6ra&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 152
+[28-Oct-2024 19:38:19 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[28-Oct-2024 19:38:19 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 155
+[29-Oct-2024 09:27:41 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 151
+[29-Oct-2024 09:27:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 153
+[29-Oct-2024 09:27:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[29-Oct-2024 09:27:41 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 151
+[29-Oct-2024 09:27:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 153
+[29-Oct-2024 09:27:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[29-Oct-2024 09:27:44 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 151
+[29-Oct-2024 09:27:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 153
+[29-Oct-2024 09:27:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[29-Oct-2024 09:27:44 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 151
+[29-Oct-2024 09:27:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 153
+[29-Oct-2024 09:27:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 154
+[29-Oct-2024 09:59:25 UTC] PHP Warning:  filemtime(): stat failed for /var/www/html/wp-content/themes/understrap-child-main/css/child.theme.min.css in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 84
+[29-Oct-2024 09:59:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:84) in /var/www/html/wp-admin/admin-header.php on line 9
+[29-Oct-2024 10:02:26 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/wp-admin/includes/translation-install.php on line 62

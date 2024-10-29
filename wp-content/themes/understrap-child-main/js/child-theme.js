@@ -40,7 +40,7 @@
 	}
 
 	var alertExports = {};
-	var alert$2 = {
+	var alert$1 = {
 	  get exports(){ return alertExports; },
 	  set exports(v){ alertExports = v; },
 	};
@@ -1168,9 +1168,9 @@
 		  index_js.defineJQueryPlugin(Alert);
 		  return Alert;
 		});
-	} (alert$2));
+	} (alert$1));
 
-	var alert$1 = alertExports;
+	var alert = alertExports;
 
 	var buttonExports = {};
 	var button$1 = {
@@ -6844,47 +6844,37 @@
 	  }
 	})();
 
-	const tester = () => {
-	  alert('tester');
-	};
-
-	// Initialize and add the map
-	let map;
-	async function initMap() {
-	  // The location of Uluru
-	  const position = {
-	    lat: -25.344,
-	    lng: 131.031
-	  };
-	  // Request needed libraries.
-	  //@ts-ignore
-	  const {
-	    Map
-	  } = await google.maps.importLibrary("maps");
-	  const {
-	    AdvancedMarkerElement
-	  } = await google.maps.importLibrary("marker");
-
-	  // The map, centered at Uluru
-	  map = new Map(document.getElementById("map"), {
-	    zoom: 4,
-	    center: position,
-	    mapId: "DEMO_MAP_ID"
-	  });
-
-	  // The marker, positioned at Uluru
-	  new AdvancedMarkerElement({
-	    map: map,
-	    position: position,
-	    title: "Uluru"
-	  });
+	class TypeSearch {
+	  constructor() {
+	    this.namespace = 'type-search';
+	    this.resultActive = false;
+	    this.searchInputs = [...document.querySelectorAll('.' + this.namespace)];
+	    this.attachEvents();
+	  }
+	  output(field, val) {
+	    if (val.length > 2) {
+	      field.innerHTML = val;
+	      field.classList.add(this.namespace + '__results--active');
+	    }
+	  }
+	  attachEvents() {
+	    this.searchInputs.forEach(item => {
+	      let inputField = item.querySelector('.' + this.namespace + '__input');
+	      let resultsField = item.querySelector('.' + this.namespace + '__results');
+	      if (inputField) {
+	        inputField.addEventListener('keyup', e => {
+	          this.output(resultsField, inputField.value);
+	        });
+	      }
+	    });
+	  }
 	}
-	initMap();
 
 	// Add your custom JS here.
-	tester();
+	//import './gm';
+	new TypeSearch();
 
-	exports.Alert = alert$1;
+	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;
 	exports.Collapse = collapse;
