@@ -40,7 +40,7 @@
 	}
 
 	var alertExports = {};
-	var alert$2 = {
+	var alert$1 = {
 	  get exports(){ return alertExports; },
 	  set exports(v){ alertExports = v; },
 	};
@@ -1168,9 +1168,9 @@
 		  index_js.defineJQueryPlugin(Alert);
 		  return Alert;
 		});
-	} (alert$2));
+	} (alert$1));
 
-	var alert$1 = alertExports;
+	var alert = alertExports;
 
 	var buttonExports = {};
 	var button$1 = {
@@ -6851,7 +6851,7 @@
 	    this.searchInputs = [...document.querySelectorAll('.' + this.namespace)];
 	    this.attachEvents();
 	    this.inputVal;
-	    this.gmapURL = `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=${themeData.gmKey}&components=country:uk&input=`;
+	    this.gmapURL = `${themeData.gmURL}place/autocomplete/json?key=${themeData.gmKey}&components=country:uk&input=`;
 	  }
 	  debounce(cbFnc, timeout = 2000) {
 	    let timer;
@@ -6864,9 +6864,10 @@
 	  }
 	  output(field, val) {
 	    if (val.length > 2) {
-	      alert(this.gmapURL + val);
+	      //alert(this.gmapURL + val);
 	      field.innerHTML = val;
 	      field.classList.add(this.namespace + '__results--active');
+	      this.fetchSuggestions(val);
 	    } else {
 	      field.innerHTML = '';
 	      field.classList.remove(this.namespace + '__results--active');
@@ -6885,17 +6886,25 @@
 	      }
 	    });
 	  }
-
-	  // async fetchData() {
-	  //   let 
-	  // }
+	  async fetchSuggestions(val) {
+	    try {
+	      let response = await fetch(this.gmapURL + val);
+	      if (!response.ok) {
+	        throw new Error(`Response status: ${response.status}`);
+	      }
+	      let json = await response.json();
+	      console.log(json);
+	    } catch (error) {
+	      console.error(error.message);
+	    }
+	  }
 	}
 
 	// Add your custom JS here.
 	//import './gm';
 	new TypeSearch();
 
-	exports.Alert = alert$1;
+	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;
 	exports.Collapse = collapse;

@@ -10,7 +10,7 @@
 defined('ABSPATH') || exit;
 
 require_once __DIR__ . '/inc/vars.php';
-//require_once __DIR__ . '/inc/endpoints.php';
+require_once __DIR__ . '/inc/endpoints.php';
 require_once __DIR__ . '/inc/acf-blocks.php';
 
 /**
@@ -50,22 +50,23 @@ function theme_enqueue_styles()
 
 	$js_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_scripts);
 
-	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array('googlemaps-api'), $js_version, true);
+	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $js_version, true);
 
-	wp_enqueue_script('googlemaps-api', 
-		GOOGLE_MAPS_API_URL . 'js?libraries=places,geometry&loading=async&key=' . GOOGLE_API_KEY, 
-		[], 
-		$js_version, 
-		array(
-			'in_footer' => true,
-			'strategy'  => 'async',
-		)
-	);
+	// wp_enqueue_script('googlemaps-api', 
+	// 	GOOGLE_MAPS_API_URL . 'js?libraries=places,geometry&loading=async&key=' . GOOGLE_API_KEY, 
+	// 	[], 
+	// 	$js_version, 
+	// 	array(
+	// 		'in_footer' => true,
+	// 		'strategy'  => 'async',
+	// 	)
+	// );
 
 	wp_localize_script('child-understrap-scripts', 'themeData', array(
 		'nonce' => wp_create_nonce('wp_rest'), // Create a nonce for REST API requests
 		'restURL' => esc_url_raw(rest_url()),  // Pass the REST API root URL
 		'postID' => get_the_ID(),
+		'gmURL' => GOOGLE_MAPS_API_URL,
 		'gmKey' => GOOGLE_API_KEY
 	));
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -78,10 +79,9 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
  * Load styles into editor for similar formatting to front-end
  */
 function my_block_editor_styles() {
-	$the_theme     = wp_get_theme();
+	$the_theme = wp_get_theme();
 	$theme_version = $the_theme->get('Version');
 	$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-	//$editor_theme_styles  = "/css/custom-editor-style{$suffix}.css";
 	$editor_theme_styles  = "/css/child-theme{$suffix}.css";
 	$css_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $editor_theme_styles);
 
@@ -140,7 +140,7 @@ add_theme_support('menus');
 /**
  * Add meta data when post is saved.
  */
-function my_acf_block_save_action($post_id, $post, $update)
+function ch_save_post_meta($post_id, $post, $update)
 {
 
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
@@ -171,7 +171,7 @@ function my_acf_block_save_action($post_id, $post, $update)
 
 	update_post_meta($post_id, $meta_key_long_lat, $long . '/' . $lat);
 }
-add_action('save_post_care-home', 'my_acf_block_save_action', 20, 3);
+add_action('save_post_care-home', 'ch_save_post_meta', 20, 3);
 
 /**
  * Function to measure distance between 2 sets of long/lat coords as the crow flies based on the Haversine formula
