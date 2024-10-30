@@ -1,0 +1,17 @@
+$selector: ".type-search";
+
+#{$selector} {
+  position: relative;
+
+  &__results {
+    position: absolute;
+    height: 0;
+    width: 100%;
+    background-color: $white;
+    padding: rsf-value(10px);
+
+    &--active {
+      height: auto;
+    }
+  }
+}

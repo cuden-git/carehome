@@ -15415,6 +15415,20 @@ i {
   content: "\e90c";
 }
 
+.type-search {
+  position: relative;
+}
+.type-search__results {
+  position: absolute;
+  height: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: rsf-value(10px);
+}
+.type-search__results--active {
+  height: auto;
+}
+
 body {
   background-color: green;
 }

@@ -10,6 +10,7 @@
 defined('ABSPATH') || exit;
 
 require_once __DIR__ . '/inc/vars.php';
+//require_once __DIR__ . '/inc/endpoints.php';
 require_once __DIR__ . '/inc/acf-blocks.php';
 
 /**
@@ -41,7 +42,6 @@ function theme_enqueue_styles()
 	// Grab asset urls.
 	$theme_styles  = "/css/child-theme{$suffix}.css";
 	$theme_scripts = "/js/child-theme{$suffix}.js";
-	$frontend_scripts = "/frontend-2/build/index.js";
 
 	$css_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_styles);
 
@@ -50,21 +50,23 @@ function theme_enqueue_styles()
 
 	$js_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_scripts);
 
-	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $js_version, true);
+	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array('googlemaps-api'), $js_version, true);
 
+	wp_enqueue_script('googlemaps-api', 
+		GOOGLE_MAPS_API_URL . 'js?libraries=places,geometry&loading=async&key=' . GOOGLE_API_KEY, 
+		[], 
+		$js_version, 
+		array(
+			'in_footer' => true,
+			'strategy'  => 'async',
+		)
+	);
 
-	// Enqueue WP React
-	// wp_enqueue_script(
-	// 	'frontend',
-	// 	get_stylesheet_directory_uri() . $frontend_scripts,
-	// 	['wp-element', 'wp-api-fetch'],
-	// 	null,
-	// 	true
-	// );
 	wp_localize_script('child-understrap-scripts', 'themeData', array(
 		'nonce' => wp_create_nonce('wp_rest'), // Create a nonce for REST API requests
 		'restURL' => esc_url_raw(rest_url()),  // Pass the REST API root URL
-		'postID' => get_the_ID()
+		'postID' => get_the_ID(),
+		'gmKey' => GOOGLE_API_KEY
 	));
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -194,3 +196,43 @@ function qs_coords_distance($lat_from, $long_from, $lat_to, $long_to, $earth_rad
 	// Calculate the distance
 	return $earth_radius * $c;
 }
+
+/**
+ * Set starter default block for care-home post type
+ */
+add_filter( 'register_care-home_post_type_args', function ( $args, $post_type )
+{
+    $args['template'] = [
+			['quantum-care/care-home', 
+				[
+					'lock' => ['remove' => false]
+				]
+			]
+		];
+		$arg['template_lock'] = "all";
+
+    return $args;
+}, 10, 2 );
+
+/**
+ * Validate ACF postcode field
+ */
+function qc_validate_carehome_postcode( $valid, $value, $field, $input_name ) {
+	// $postcode_pattern = '/^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z])))) [0-9][A-Za-z]{2})$/';
+	$postcode_pattern = '/^(GIR 0AA)|((([A-Z-[QVX]][0-9][0-9]?)|(([A-Z-[QVX]][A-Z-[IJZ]][0-9][0-9]?)|(([A-Z-[QVX]][0-9][A-HJKPSTUW])|([A-Z-[QVX]][A-Z-[IJZ]][0-9][ABEHMNPRVWXY])))) [0-9][A-Z-[CIKMOV]]{2})$/';
+	if (preg_match($postcode_pattern, $value)) {
+		return __('Postcode is not valid', THEME_NAMESPACE);
+	}
+
+	return $valid;
+}
+add_filter('acf/validate_value/name=post_code', 'qc_validate_carehome_postcode', 10, 4);
+
+/**
+ * Set ACF Google Maps API key
+ */
+function my_acf_init() {
+    
+	acf_update_setting('google_api_key', GOOGLE_API_KEY);
+}
+add_action('acf/init', 'my_acf_init');

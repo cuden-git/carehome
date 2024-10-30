@@ -4,15 +4,25 @@
  * Used fore care-home post type.
  *
  */
-// echo get_the_ID();
-//  print_r(acf_get_field_groups(['post_id' => $post_id]));;
-//  print_r(acf_get_fields(41));die();
-//echo get_the_terms(get_the_ID(), 'care-home-categories');die();
+
 $intro = get_field('ch_intro');
 $address = get_field('ch_address');
 $contact_info = get_field('ch_contact_details');
-?>
+$terms = get_the_terms( get_the_ID(), 'care-home-category' );
+$premium_class = '';
+$map_location = get_field('ch_map_location');
+print_r($map_location);
 
+foreach($terms as $term) {
+  if($term->slug === 'quantum-select') {
+    $premium_class = ' carehome--premium';
+  }
+}
+?>
+<?php if( is_admin() ) { ?>
+<div class="wp-admin-wrap<?= $premium_class ?>">
+<?php } ?>
+<!-- -->
 <section class="post-section">
   <div class="container">
     <div class="row">
@@ -35,3 +45,18 @@ $contact_info = get_field('ch_contact_details');
     </div>
   </div>
 </section>
+<!-- -->
+<section class="post-section">
+  <div class="container">
+  <?php if( $map_location ) { ?>
+    <div class="acf-map" data-zoom="16" style="height: 400px">
+        <div class="marker" data-lat="<?= esc_attr($map_location['lat']); ?>" data-lng="<?= esc_attr($map_location['lng']); ?>"></div>
+    </div>
+  <?php } ?>
+
+  </div>
+</section>
+<!-- -->
+<?php if( is_admin() ) { ?>
+</div>
+<?php } ?>

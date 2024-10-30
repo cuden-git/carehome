@@ -1,4 +1,6 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
   "name": "quantum-care/care-home",
   "title": "Care Home",
   "description": "Template for the care-homes post type",
@@ -10,6 +12,10 @@
       "renderTemplate": "care-home.php"
   },
   "supports": {
-      "anchor": true
+      "anchor": true,
+      "multiple": false,
+      "align": false,
+      "lock": false,
+      "inserter": false
   }
 }
