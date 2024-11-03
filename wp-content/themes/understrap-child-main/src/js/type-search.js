@@ -1,14 +1,17 @@
 class TypeSearch {
-  constructor() {
+  constructor(evTarget) {
     this.namespace = 'type-search';
     this.resultActive = false;
-    this.searchInputs = [...document.querySelectorAll('.' + this.namespace)];
+    this.searchForm = [...document.querySelectorAll('.' + this.namespace)];
     this.attachEvents();
     this.inputVal;
     this.gmapURL = `${themeData.gmURL}place/autocomplete/json?key=${themeData.gmKey}&components=country:uk&input=`;
+    this.locationRes;
+    this.evTarget = evTarget;
+   // this.gmPlaces();//https://carehome.test/wp-json/
   }
 
-  debounce(cbFnc, timeout = 2000) {
+  debounce(cbFnc, timeout = 300) {
     let timer;
 
     return (...args) => {
@@ -17,13 +20,11 @@ class TypeSearch {
     };
   }
 
-  output(field, val) {
+  async output(field, val) {
 
-    if(val.length > 2) {
-      //alert(this.gmapURL + val);
-      field.innerHTML = val;
+    if(val.length >= 2) {      
       field.classList.add(this.namespace + '__results--active');
-      this.fetchSuggestions(val);
+      field.innerHTML = await this.fetchSuggestions(val);//
     }else {
       field.innerHTML = '';
       field.classList.remove(this.namespace + '__results--active');
@@ -33,31 +34,86 @@ class TypeSearch {
   }
 
   attachEvents() {
-    this.searchInputs.forEach((item) => {
+    this.searchForm.forEach((item) => {
       let inputField = item.querySelector('.' + this.namespace + '__input');
       let resultsField = item.querySelector('.' + this.namespace + '__results');
+      let btn = item.querySelector('.' + this.namespace + '__btn');
       let handler = this.debounce(() => this.output(resultsField,inputField.value));
+
+      item.addEventListener('submit', (e) => {
+        e.preventDefault();
+        this.setFormParams(item, inputField.value);
+      });
 
       if(inputField) {
         inputField.addEventListener('keyup', (e) => {
           handler();
         })
+
+        if(resultsField) {
+          resultsField.addEventListener('click', () => {
+            this.locationRes = resultsField.innerHTML;
+            this.createEvent();
+            inputField.value = resultsField.innerHTML;
+            resultsField.innerHTML = '';
+            resultsField.classList.remove(this.namespace + '__results--active');
+            btn.disabled = false;
+          })
+        }
       }
     });
   }
 
   async fetchSuggestions(val) {
+    let json;
     try {
-      let response = await fetch(this.gmapURL + val);
+      let response = await fetch(themeData.restURL + 'quantum-care/v1/location-suggestion/' + val);
+
       if(!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-      let json = await response.json();
-      console.log(json);
+
+      json = await response.json();
+
+      this.locationRes = json;
     } catch (error) {
       console.error(error.message);
     }
+
+    return json;
   }
+
+  createEvent() {
+    this.formEvent = new CustomEvent('searchSubmitted', { detail:{
+        location: this.locationRes
+      }
+    })
+    this.evTarget.dispatchEvent(this.formEvent);
+  }
+
+  getLocationVar() {
+    return this.locationRes;
+  }
+
+  setFormParams(form, val) {
+    const paramKey = 'location';
+    const paramVal = val;
+    let formURL = new URL(form.action)
+
+    formURL.searchParams.set(paramKey, paramVal);
+    form.action = formURL.toString();
+    window.location.href = form.action;
+  }
+  // async gmPlaces() {
+  //   await google.maps.importLibrary("places");
+
+  //   // Create the input HTML element, and append it.
+  //   //@ts-ignore
+  //   const placeAutocomplete = new google.maps.places.PlaceAutocompleteElement();
+
+  //   //@ts-ignore
+  //   document.body.appendChild(placeAutocomplete);
+  // }
 }
 
 export default TypeSearch;

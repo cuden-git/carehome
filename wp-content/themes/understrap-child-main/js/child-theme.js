@@ -40,7 +40,7 @@
 	}
 
 	var alertExports = {};
-	var alert$1 = {
+	var alert$2 = {
 	  get exports(){ return alertExports; },
 	  set exports(v){ alertExports = v; },
 	};
@@ -1168,9 +1168,9 @@
 		  index_js.defineJQueryPlugin(Alert);
 		  return Alert;
 		});
-	} (alert$1));
+	} (alert$2));
 
-	var alert = alertExports;
+	var alert$1 = alertExports;
 
 	var buttonExports = {};
 	var button$1 = {
@@ -6845,15 +6845,18 @@
 	})();
 
 	class TypeSearch {
-	  constructor() {
+	  constructor(evTarget) {
 	    this.namespace = 'type-search';
 	    this.resultActive = false;
-	    this.searchInputs = [...document.querySelectorAll('.' + this.namespace)];
+	    this.searchForm = [...document.querySelectorAll('.' + this.namespace)];
 	    this.attachEvents();
 	    this.inputVal;
 	    this.gmapURL = `${themeData.gmURL}place/autocomplete/json?key=${themeData.gmKey}&components=country:uk&input=`;
+	    this.locationRes;
+	    this.evTarget = evTarget;
+	    // this.gmPlaces();//https://carehome.test/wp-json/
 	  }
-	  debounce(cbFnc, timeout = 2000) {
+	  debounce(cbFnc, timeout = 300) {
 	    let timer;
 	    return (...args) => {
 	      clearTimeout(timer);
@@ -6862,12 +6865,10 @@
 	      }, timeout);
 	    };
 	  }
-	  output(field, val) {
-	    if (val.length > 2) {
-	      //alert(this.gmapURL + val);
-	      field.innerHTML = val;
+	  async output(field, val) {
+	    if (val.length >= 2) {
 	      field.classList.add(this.namespace + '__results--active');
-	      this.fetchSuggestions(val);
+	      field.innerHTML = await this.fetchSuggestions(val); //
 	    } else {
 	      field.innerHTML = '';
 	      field.classList.remove(this.namespace + '__results--active');
@@ -6875,36 +6876,180 @@
 	    this.inputVal = val;
 	  }
 	  attachEvents() {
-	    this.searchInputs.forEach(item => {
+	    this.searchForm.forEach(item => {
 	      let inputField = item.querySelector('.' + this.namespace + '__input');
 	      let resultsField = item.querySelector('.' + this.namespace + '__results');
+	      let btn = item.querySelector('.' + this.namespace + '__btn');
 	      let handler = this.debounce(() => this.output(resultsField, inputField.value));
+	      item.addEventListener('submit', e => {
+	        e.preventDefault();
+	        this.setFormParams(item, inputField.value);
+	      });
 	      if (inputField) {
 	        inputField.addEventListener('keyup', e => {
 	          handler();
 	        });
+	        if (resultsField) {
+	          resultsField.addEventListener('click', () => {
+	            this.locationRes = resultsField.innerHTML;
+	            this.createEvent();
+	            inputField.value = resultsField.innerHTML;
+	            resultsField.innerHTML = '';
+	            resultsField.classList.remove(this.namespace + '__results--active');
+	            btn.disabled = false;
+	          });
+	        }
 	      }
 	    });
 	  }
 	  async fetchSuggestions(val) {
+	    let json;
 	    try {
-	      let response = await fetch(this.gmapURL + val);
+	      let response = await fetch(themeData.restURL + 'quantum-care/v1/location-suggestion/' + val);
 	      if (!response.ok) {
 	        throw new Error(`Response status: ${response.status}`);
 	      }
-	      let json = await response.json();
-	      console.log(json);
+	      json = await response.json();
+	      this.locationRes = json;
 	    } catch (error) {
 	      console.error(error.message);
 	    }
+	    return json;
+	  }
+	  createEvent() {
+	    this.formEvent = new CustomEvent('searchSubmitted', {
+	      detail: {
+	        location: this.locationRes
+	      }
+	    });
+	    this.evTarget.dispatchEvent(this.formEvent);
+	  }
+	  getLocationVar() {
+	    return this.locationRes;
+	  }
+	  setFormParams(form, val) {
+	    const paramKey = 'location';
+	    const paramVal = val;
+	    let formURL = new URL(form.action);
+	    formURL.searchParams.set(paramKey, paramVal);
+	    form.action = formURL.toString();
+	    window.location.href = form.action;
+	  }
+	  // async gmPlaces() {
+	  //   await google.maps.importLibrary("places");
+
+	  //   // Create the input HTML element, and append it.
+	  //   //@ts-ignore
+	  //   const placeAutocomplete = new google.maps.places.PlaceAutocompleteElement();
+
+	  //   //@ts-ignore
+	  //   document.body.appendChild(placeAutocomplete);
+	  // }
+	}
+
+	class CareHomeResults {
+	  constructor() {
+	    this.stage = document.getElementById('care-homes-list');
+	    if (!this.stage) {
+	      return;
+	    }
+	    this.attachEvents();
+	  }
+	  attachEvents() {
+	    this.stage.addEventListener('searchSubmitted', e => {
+	      alert(e.detail.location);
+	    });
+	  }
+	}
+
+	const getPosts = async () => {
+	  let response = await fetch(themeData.restURL + 'quantum-care/v1/location-posts');
+	  if (!response.ok) {
+	    throw new Error(`Response status: ${response.status}`);
+	  }
+	  let json = await response.json();
+	  console.log(json);
+	  return json;
+	};
+
+	class MapCareHomes {
+	  constructor() {
+	    this.mapStage = document.getElementById('care-homes-maps');
+	    this.map;
+	    if (!this.mapStage) {
+	      return;
+	    }
+	    this.locations;
+	    this.coords = [...document.querySelectorAll('data-map-coords')];
+	    getPosts().then(posts => {
+	      console.log('Posts = ', posts);
+	      //  this.locations = posts;
+	      this.initMap(posts);
+	    });
+	  }
+	  async initMap(posts) {
+	    // Request needed libraries.
+	    //@ts-ignore
+	    const {
+	      Map
+	    } = await google.maps.importLibrary("maps");
+	    const {
+	      AdvancedMarkerElement
+	    } = await google.maps.importLibrary("marker");
+	    this.map = new Map(this.mapStage, {
+	      zoom: 14,
+	      center: {
+	        lat: posts[0].lat,
+	        lng: posts[0].lng
+	      },
+	      mapId: "DEMO_MAP_ID"
+	    });
+	    posts.forEach((item, index) => {
+	      let pin = new google.maps.marker.PinElement({
+	        background: "#002147",
+	        borderColor: "#B99475",
+	        glyphColor: "#B99475"
+	      });
+	      let marker = new AdvancedMarkerElement({
+	        map: this.map,
+	        position: {
+	          lat: item.lat,
+	          lng: item.lng
+	        },
+	        title: posts.title,
+	        content: pin.element
+	      });
+	      let infowindow = new google.maps.InfoWindow({
+	        content: `<h6>${item.title}</h6>
+        <a href="${item.link}">View<a/>`,
+	        ariaLabel: item.title
+	      });
+	      // infowindow.open({
+	      //   anchor: marker,
+	      //   map: this.map,
+	      // });
+	      marker.addListener("gmp-click", () => {
+	        infowindow.open({
+	          anchor: marker,
+	          map: this.map
+	        });
+	      });
+	    });
+	    // const marker = new AdvancedMarkerElement({
+	    //   map: this.map,
+	    //   position: position,
+	    //   title: "Uluru",
+	    // });
 	  }
 	}
 
 	// Add your custom JS here.
 	//import './gm';
-	new TypeSearch();
+	const careHomeResults = new CareHomeResults();
+	new TypeSearch(careHomeResults.stage);
+	new MapCareHomes();
 
-	exports.Alert = alert;
+	exports.Alert = alert$1;
 	exports.Button = button;
 	exports.Carousel = carousel;
 	exports.Collapse = collapse;

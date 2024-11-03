@@ -2,8 +2,7 @@
 
 /**
  * Care Home Block template.
- * Used fore care-home post type.
- *
+ * Used fore care-home post type. *
  */
 
 $intro = get_field('ch_intro');
@@ -12,7 +11,6 @@ $contact_info = get_field('ch_contact_details');
 $terms = get_the_terms(get_the_ID(), 'care-home-category');
 $premium_class = '';
 $map_location = get_field('ch_map_location');
-print_r($map_location);
 
 foreach ($terms as $term) {
   if ($term->slug === 'quantum-select') {

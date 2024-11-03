@@ -15429,6 +15429,10 @@ i {
   height: auto;
 }
 
+.care-homes-map {
+  height: 500;
+}
+
 body {
   background-color: green;
 }

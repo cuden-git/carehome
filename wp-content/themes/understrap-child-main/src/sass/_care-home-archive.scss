@@ -1,0 +1,12 @@
+$selector: ".care-homes";
+
+#{$selector} {
+
+  &-list {
+
+  }
+
+  &-map {
+    height: rfs-value(500);
+  }
+}

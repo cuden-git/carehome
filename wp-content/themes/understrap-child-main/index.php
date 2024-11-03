@@ -23,16 +23,49 @@ $posts = get_posts(array(
 
 ?>
 <h1>INDEX>PHP<i class="icon-dumbell"></i></h1>
+<div class="container">
 
-<!-- <main id="root"></main> -->
-<div id="map" style="height: 400px; border: solid black 5px" class="container"></div>
-<script>
-  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: "YOUR_API_KEY",
-    v: "weekly",
-    // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-    // Add other bootstrap parameters as needed, using camel case.
-  });
-</script>
+  <?php
+  $posts = get_posts(  [
+    'posts_per_page' => -1,
+    'post_type' => 'care-home',
+    'post_status' => 'publish'
+  ] );
+
+  foreach($posts as $post) {
+    $post->distance = rand(1, 100);
+    update_post_meta($post->ID, 'ch_distance', $post->distance);
+  }
+// Custom query. 
+$query = new WP_Query(
+  [
+    'posts_per_page' => 3,
+    'post_type' => 'care-home',
+    'post_status' => 'publish',
+    'meta_key'=> 'ch_distance',
+    'orderby' => 'meta_value_num',
+    'order' => 'ASC',
+  ] 
+);
+// Check that we have query results. 
+if ( $query->have_posts() ) {
+    // Start looping over the query results. 
+    while ( $query->have_posts() ) {
+      global $post;
+        $query->the_post();
+        //print_r($query->the_post());
+        the_title();
+        echo ' / ' . get_post_meta(get_the_ID(), 'ch_distance', true) . '<br>';
+       // get_template_part( 'partials/care-home-card');
+    }
+    echo the_posts_pagination( array(
+      'mid_size'  => 2,
+      'prev_text' => __( 'Back', 'textdomain' ),
+      'next_text' => __( 'Onward', 'textdomain' ),
+    ) );
+}
+wp_reset_postdata();
+?>
+
 <?php
 get_footer();

@@ -10,6 +10,7 @@
 defined('ABSPATH') || exit;
 
 require_once __DIR__ . '/inc/vars.php';
+require_once __DIR__ . '/inc/helpers.php';
 require_once __DIR__ . '/inc/endpoints.php';
 require_once __DIR__ . '/inc/acf-blocks.php';
 
@@ -50,17 +51,17 @@ function theme_enqueue_styles()
 
 	$js_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_scripts);
 
-	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $js_version, true);
+	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array('googlemaps-api'), $js_version, true);
 
-	// wp_enqueue_script('googlemaps-api', 
-	// 	GOOGLE_MAPS_API_URL . 'js?libraries=places,geometry&loading=async&key=' . GOOGLE_API_KEY, 
-	// 	[], 
-	// 	$js_version, 
-	// 	array(
-	// 		'in_footer' => true,
-	// 		'strategy'  => 'async',
-	// 	)
-	// );
+	wp_enqueue_script('googlemaps-api', 
+		GOOGLE_MAPS_API_URL . 'js?libraries=places,geometry&v=beta&loading=async&key=' . GOOGLE_API_KEY, 
+		[], 
+		$js_version, 
+		array(
+			'in_footer' => true,
+			'strategy'  => 'async',
+		)
+	);
 
 	wp_localize_script('child-understrap-scripts', 'themeData', array(
 		'nonce' => wp_create_nonce('wp_rest'), // Create a nonce for REST API requests
@@ -146,6 +147,9 @@ function ch_save_post_meta($post_id, $post, $update)
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
 		return;
 	}
+	if ( wp_is_post_revision($post_id) || wp_is_post_autosave($post_id) ) {
+		return;
+	}
 
 	$meta_key_long_lat = 'ch_long_lat';
 
@@ -173,29 +177,6 @@ function ch_save_post_meta($post_id, $post, $update)
 }
 add_action('save_post_care-home', 'ch_save_post_meta', 20, 3);
 
-/**
- * Function to measure distance between 2 sets of long/lat coords as the crow flies based on the Haversine formula
- */
-function qs_coords_distance($lat_from, $long_from, $lat_to, $long_to, $earth_radius = 6371)
-{
-	// Convert from degrees to radians
-	$lat_from = deg2rad($lat_from);
-	$long_from = deg2rad($long_from);
-	$lat_to = deg2rad($lat_to);
-	$long_to = deg2rad($long_to);
-
-	// Haversine formula
-	$lat_delta = $lat_to - $lat_from;
-	$long_delta = $long_to - $long_from;
-
-	$a = sin($lat_delta / 2) * sin($lat_delta / 2) +
-		cos($lat_from) * cos($lat_to) *
-		sin($long_delta / 2) * sin($long_delta / 2);
-	$c = 2 * atan2(sqrt($a), sqrt(1 - $a));
-
-	// Calculate the distance
-	return $earth_radius * $c;
-}
 
 /**
  * Set starter default block for care-home post type
@@ -231,8 +212,230 @@ add_filter('acf/validate_value/name=post_code', 'qc_validate_carehome_postcode',
 /**
  * Set ACF Google Maps API key
  */
-function my_acf_init() {
+function qc_acf_init() {
     
 	acf_update_setting('google_api_key', GOOGLE_API_KEY);
 }
-add_action('acf/init', 'my_acf_init');
+add_action('acf/init', 'qc_acf_init');
+
+/**
+ * Get ACF fields from block from within the archive loop. Returns an array of the fields for the block. 
+ * If a field is a child of type ACF group then concatenate the group name 
+ * with child filed name joined by an underscore
+ */
+function qc_get_acf_block_attrs($post_content, $block_name) {
+	$blocks = parse_blocks($post_content);
+ // print_r(get_field('ch_address_address'), get_the_ID());die();
+	foreach ($blocks as $block) {
+		if ($block['blockName'] === $block_name) {
+			$fields = $block['attrs']['data'];
+
+			return $fields;
+		}
+	}
+	return false;
+}
+
+/**
+ * Re-order care home posts based on submitted location search
+ */
+function qc_location_ordered_posts() {
+	$gm_url = GOOGLE_MAPS_API_URL . "geocode/json?address=" . urlencode($start_location) . "&key=" . GOOGLE_API_KEY;
+	
+	$response = wp_remote_get($gm_url);
+
+	$results = json_decode($response['body']);
+	$start_lng = $results->results[0]->geometry->location->lng;
+	$start_lat = $results->results[0]->geometry->location->lat;
+
+	//print_r($results->results[0]->geometry->location); die();
+	$all_ch_posts = get_posts([
+		'post_type' => 'care-home',
+		'post_status' => 'publish',
+		'numberposts' => -1
+	]);
+
+	$new_arr = [];
+
+	for($i = 0; $i < count($all_ch_posts); $i++) {
+		$temp_arr = [];
+	//	$temp_arr['title'] = 
+	}
+	foreach($all_ch_posts as $ch_post) {
+		$ch_post_lng_lat = get_post_meta($ch_post->ID, 'ch_long_lat', true);
+
+		if($ch_post_lng_lat) {
+
+			$ch_post_lng_lat = explode('/', $ch_post_lng_lat);
+			echo qc_coords_distance($ch_post_lng_lat[1], $ch_post_lng_lat[0], $start_lat, $start_lng) . '<br>';
+		}
+	}
+}
+
+
+
+/**
+ * Change number of posts displayed on for Care Home post type archive page
+ */
+// add_action( 'init', function() {echo 'init';die();
+// 	$posts = get_posts([
+// 		'post_type' => 'care-home',
+// 		'numberposts' => -1
+// 	]);
+// 	//print_r($posts);
+// //echo 'init';
+// 	foreach($posts as $post) {
+// 		$post->distance = rand(1, 100);
+// 		update_post_meta($post->ID, 'ch_distance', $post->distance);
+// 	}
+// }, 12);
+
+function qc_ch_queries( $query ) {//echo 'pre_get_posts';die();
+  if (!is_admin() && $query->is_main_query() && $query->query['post_type'] === 'care-home'){ 
+		// $posts = get_posts([
+		// 	'post_type' => 'care-home',
+		// 	'numberposts' => -1
+		// ]);
+
+		// foreach($posts as $post) {
+		// 	$post->distance = rand(1, 100);
+		// 	update_post_meta($post->ID, 'ch_distance', $post->distance);
+		// }
+		//print_r($posts);
+		$query->set('posts_per_page', 3);
+		$query->set('meta_key', 'ch_distance');
+		$query->set('orderby', 'meta_value_num');
+		$query->set('order', 'ASC');
+//$query->set('posts_per_archive_page', 3);
+	//	echo '<br>pre_get_posts';
+	}
+}
+//add_action( 'pre_get_posts', 'qc_ch_queries', 12);
+// add_filter('the_posts', function($posts) {
+// 	global $wp_query;
+// 	$target_post_type = false;
+		
+// 		if(!is_admin()) {
+	
+// 			foreach($posts as $post) {
+// 				if($post->post_type === 'care-home') {
+// 					$target_post_type = true;
+// 					$post_meta = get_post_meta($post->ID, 'ch_long_lat', true);
+	
+// 					if($post_meta) {
+// 						//$post->lng = (metadata_exists('post', $post->ID, 'ch_long_lat'))?  :  ;
+// 						$post_meta = explode('/', $post_meta);
+// 						$post->lng = $post_meta[0];
+// 						$post->lat = $post_meta[1];
+
+// 						//gd1
+// 						$start_lat =  55.8585849;
+// 						$start_lng = -4.245604999999999;
+// 						//n8
+// 			//	$start_lat =  51.59665769999999;
+//        // $start_lng = -0.0990215; 
+// 						update_post_meta($post->ID, 'ch_distance', $post->distance = qc_coords_distance($post->lat, $post->lng, $start_lat, $start_lng ));
+// 					}
+					
+// 					;//45;//rand(1, 100);
+// 				}
+// 			}
+// 	$wp_query->set('meta_key', 'ch_distance');
+// 	$wp_query->set('orderby', 'meta_value_num');
+// 	$wp_query->set('posts_per_page', 3);
+// 			if($target_post_type && isset($_GET['location'])) {//die();
+// 				//echo 'true dat';
+// 				 /*$gm_url = GOOGLE_MAPS_API_URL . "geocode/json?address=" . urlencode($_GET['location']) . "&key=" . GOOGLE_API_KEY;
+		
+// 				 $response = wp_remote_get($gm_url);
+			
+// 				$results = json_decode($response['body']);
+// 				$start_lng = $results->results[0]->geometry->location->lng;
+// 				$start_lat = $results->results[0]->geometry->location->lat;*/
+//  				//n8
+// 				$start_lat =  51.59665769999999;
+//         $start_lng = -0.0990215; 
+
+// 				//gd1
+// 				$start_lat =  55.8585849;
+// 				$start_lng = -4.245604999999999;
+	
+// 				usort($posts, function($a, $b) use ($start_lat, $start_lng) {
+// 					//if($post_meta) {
+// 						$a->distance = qc_coords_distance($a->lat, $a->lng, $start_lat, $start_lng );
+// 						$b->distance = qc_coords_distance($b->lat, $b->lng, $start_lat, $start_lng );
+// 			//		}
+	
+// 					returnparse_query $a->distance - $b->distance;
+// 				});	
+// 			}
+// 		}
+// 		// $query->set('posts_per_page', 3);
+// 	//	set_query_var( 'posts_per_archive_page',3 );
+// 		return $posts;
+// 	}, 1, 1);
+	//
+/********* ********/
+
+// add_filter( 'request', 'alter_the_query' );
+
+// function alter_the_query( $request ) {echo 'request';die();
+//     $dummy_query = new WP_Query();  // the query isn't run if we don't pass any query vars
+//     $dummy_query->parse_query( $request );
+
+// 		//echo '<br>request';
+//     return $request;
+// }
+
+
+// add_action('wp', function($wp) {
+// 	echo 'wp hook'; die();
+// });
+
+// function wpdocs_set_custom_isvars( $query ) {
+// 	echo 'parse_query'; die();
+// }
+// add_action( 'parse_query', 'wpdocs_set_custom_isvars' );
+
+// add_filter('posts_results', function($wp) {
+// 	echo 'posts_results hook'; die();
+// });
+
+// add_filter('the_posts', function($posts) {
+// 	echo 'the_postsß hook'; die();
+// });
+
+// add_action('wp_loaded', function($posts) {
+// 	echo 'wp_loaded hook'; die();
+// });
+
+// add_action('muplugins_loaded', function($posts) {
+// 	echo 'wp_loaded hook'; die();
+// });
+/**
+ *  Set distance meta field for each care home based on $_GET['Location']
+ * 
+ */
+//function qc_set_distances
+function pagination( $paged = '', $max_page = '' ) {
+	$big = 999999999; // need an unlikely integer
+	if( ! $paged ) {
+			$paged = get_query_var('paged');
+	}
+
+	if( ! $max_page ) {
+			global $wp_query;
+			$max_page = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1;
+	}
+
+	echo paginate_links( array(
+			'base'       => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format'     => '?paged=%#%',
+			'current'    => max( 1, $paged ),
+			'total'      => $max_page,
+			'mid_size'   => 1,
+			'prev_text'  => __( '«' ),
+			'next_text'  => __( '»' ),
+			'type'       => 'list'
+	) );
+}
