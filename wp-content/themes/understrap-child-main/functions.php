@@ -377,43 +377,50 @@ add_action( 'pre_get_posts', 'qc_ch_queries', 12);
 	//
 /********* ********/
 
-// add_filter( 'request', 'alter_the_query' );
-
-// function alter_the_query( $request ) {echo 'request';die();
-//     $dummy_query = new WP_Query();  // the query isn't run if we don't pass any query vars
-//     $dummy_query->parse_query( $request );
-
-// 		//echo '<br>request';
-//     return $request;
-// }
-
-
-// add_action('wp', function($wp) {
-// 	echo 'wp hook'; die();
-// });
-
-// function wpdocs_set_custom_isvars( $query ) {
-// 	echo 'parse_query'; die();
-// }
-// add_action( 'parse_query', 'wpdocs_set_custom_isvars' );
-
-// add_filter('posts_results', function($wp) {
-// 	echo 'posts_results hook'; die();
-// });
-
-// add_filter('the_posts', function($posts) {
-// 	echo 'the_postsß hook'; die();
-// });
-
-// add_action('wp_loaded', function($posts) {
-// 	echo 'wp_loaded hook'; die();
-// });
-
-// add_action('muplugins_loaded', function($posts) {
-// 	echo 'wp_loaded hook'; die();
-// });
 /**
- *  Set distance meta field for each care home based on $_GET['Location']
- * 
+ *  Get distance to each care home
  */
-//function qc_set_distances
+function qc_get_care_home_distance($post) {
+	$paged =  get_query_var( 'paged' ); //die();
+
+	if(!isset($_GET['location'])) return;
+	if($paged > 0) return;
+
+	//TODO: guard against multiple calls with pagination use. eg, if(page_param > 0) Still fires on 0 though Maybe set cookies?
+	$gm_url = GOOGLE_MAPS_API_URL . "geocode/json?address=" . urlencode($_GET['location']) . "&key=" . GOOGLE_API_KEY;
+			
+	$response = wp_remote_get($gm_url);
+
+	$results = json_decode($response['body']);
+
+	if($results->status === 'OK') {
+		$start_lng = $results->results[0]->geometry->location->lng;
+		$start_lat = $results->results[0]->geometry->location->lat;
+		$post_meta = get_post_meta($post->ID, 'ch_long_lat', true);
+		$post_meta = explode('/', $post_meta);
+		$post_lng = $post_meta[0];
+		$post_lat = $post_meta[1];
+
+		return qc_coords_distance($post_lat, $post_lng, $start_lat, $start_lng );
+	}
+
+	return null;
+}
+/**
+ * Set distance meta field for all care home posts
+ */
+function qc_set_distance_meta() {
+  $posts = get_posts(  [
+    'posts_per_page' => -1,
+    'post_type' => 'care-home',
+    'post_status' => 'publish'
+  ] );
+
+  foreach($posts as $post) {
+   $post_distance = qc_get_care_home_distance($post);
+
+	 if($post_distance) {
+		update_post_meta($post->ID, 'ch_distance', $post_distance);
+	 }
+  }
+}

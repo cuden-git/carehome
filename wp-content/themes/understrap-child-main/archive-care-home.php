@@ -11,10 +11,10 @@ if(isset($_GET['location'])) {
 // ] );
 
  }
- global $wp_query;
- $wp_query->set('posts_per_page', 3);
- $wp_query->set('meta_key', 'ch_distance');
-$wp_query->set('orderby', 'meta_value_num');
+//  global $wp_query;
+//  $wp_query->set('posts_per_page', 3);
+//  $wp_query->set('meta_key', 'ch_distance');
+// $wp_query->set('orderby', 'meta_value_num');
 //  $args = array_merge( $wp_query->query_vars, array( 'posts_per_archive_page' => 3 ) );
 //  query_posts( $args );
 //  set_query_var( 'posts_per_archive_page',1 );//set_query_var('posts_per_archive_page', $limit);
@@ -31,17 +31,31 @@ $wp_query->set('orderby', 'meta_value_num');
   <div id="care-homes-list" class="container care-homes-list">
     <div class="row">
   <?php
-  $posts = get_posts(  [
-    'posts_per_page' => -1,
-    'post_type' => 'care-home',
-    'post_status' => 'publish'
-  ] );
+//   $posts = get_posts(  [
+//     'posts_per_page' => -1,
+//     'post_type' => 'care-home',
+//     'post_status' => 'publish'
+//   ] );
 
-  foreach($posts as $post) {
-   // $post->distance = rand(1, 100);
- //   update_post_meta($post->ID, 'ch_distance', $post->distance);
-  }
+//   foreach($posts as $post) {
+//    // $post->distance = rand(1, 100);
+//  //   update_post_meta($post->ID, 'ch_distance', $post->distance);
+//   }
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$query_args = [
+  'posts_per_page' => 3,
+  'post_type' => 'care-home',
+  'post_status' => 'publish',
+  'paged' => $paged
+];
+
+if(isset($_GET['location'])) {
+  qc_set_distance_meta();
+  $query_args['meta_key'] = 'ch_distance';
+  $query_args['orderby'] = 'meta_value_num';
+  $query_args['order'] = 'ASC';   
+}
+print_r($query_args);
 // Custom query. 
 $query = new WP_Query(
   [
