@@ -15436,7 +15436,15 @@ i {
   height: 500;
 }
 
+@font-face {
+  font-family: "poppins-light";
+  src: url("../fonts/poppins-light.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 body {
+  font-family: poppins-light, san-serif;
   background-color: green;
 }
 
