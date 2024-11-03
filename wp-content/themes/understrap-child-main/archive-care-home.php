@@ -27,8 +27,9 @@ $wp_query->set('orderby', 'meta_value_num');
       </div>
     </div>
   </div>
-  <div class="container">
-
+  <!-- -->
+  <div id="care-homes-list" class="container care-homes-list">
+    <div class="row">
   <?php
   $posts = get_posts(  [
     'posts_per_page' => -1,
@@ -40,8 +41,7 @@ $wp_query->set('orderby', 'meta_value_num');
    // $post->distance = rand(1, 100);
  //   update_post_meta($post->ID, 'ch_distance', $post->distance);
   }
-  $paged = max(1, get_query_var('paged', 1));
-//$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 // Custom query. 
 $query = new WP_Query(
   [
@@ -58,14 +58,10 @@ $query = new WP_Query(
 if ( $query->have_posts() ) {
     // Start looping over the query results. 
     while ( $query->have_posts() ) {
-      global $post;
-        $query->the_post();
-        //print_r($query->the_post());
-        the_title();
-        echo ' / ' . get_post_meta(get_the_ID(), 'ch_distance', true) . '<br>';
-        echo '$query->max_num_pages = ' . $query->max_num_pages . '<br>';
-       // get_template_part( 'partials/care-home-card');
-    }
+      $query->the_post();
+      $block_fields = qc_get_acf_block_attrs(get_the_content(), THEME_NAMESPACE . '/care-home');
+      get_template_part( 'partials/care-home-card');
+  }
     $pagination_args = array(
       'total'        => $query->max_num_pages,
       'current'      => $paged,
@@ -76,38 +72,18 @@ if ( $query->have_posts() ) {
       'next_text'    => __('Next »'),
   );
   
-  echo paginate_links($pagination_args);
-  
-    pagination( $paged, $query->max_num_pages);
+    //echo paginate_links($pagination_args);
     echo the_posts_pagination( array(
       'mid_size'  => 2,
-      'prev_text' => __( 'Back', 'textdomain' ),
-      'next_text' => __( 'Onward', 'textdomain' ),
+      'prev_text' => __( 'Prev', 'textdomain' ),
+      'next_text' => __( 'Next', 'textdomain' ),
     ) );
 }
 
 wp_reset_postdata();
 wp_reset_query();
 ?>
-<?php
-  if ( have_posts() ) {
-?>
-    <div id="care-homes-list" class="container">
-      <div class="row">
-<?php
-    while ( have_posts() ) {
-      the_post();
-      $block_fields = qc_get_acf_block_attrs(get_the_content(), THEME_NAMESPACE . '/care-home');
-      get_template_part( 'partials/care-home-card');
-    }
-    
-    echo the_posts_pagination( array(
-      'mid_size'  => 2,
-      'prev_text' => __( 'Back', 'textdomain' ),
-      'next_text' => __( 'Onward', 'textdomain' ),
-    ) );
-  }
-?>
+    </div>
       </div>
     </div>
     <div id="care-homes-maps" class="care-homes-map container">map view</div>

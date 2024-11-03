@@ -15429,6 +15429,9 @@ i {
   height: auto;
 }
 
+.care-homes-list__card--premium {
+  border: 10px solid gold;
+}
 .care-homes-map {
   height: 500;
 }

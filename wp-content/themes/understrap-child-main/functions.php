@@ -303,14 +303,14 @@ function qc_ch_queries( $query ) {//echo 'pre_get_posts';die();
 		// }
 		//print_r($posts);
 		$query->set('posts_per_page', 3);
-		$query->set('meta_key', 'ch_distance');
-		$query->set('orderby', 'meta_value_num');
-		$query->set('order', 'ASC');
+		// $query->set('meta_key', 'ch_distance');
+		// $query->set('orderby', 'meta_value_num');
+		// $query->set('order', 'ASC');
 //$query->set('posts_per_archive_page', 3);
 	//	echo '<br>pre_get_posts';
 	}
 }
-//add_action( 'pre_get_posts', 'qc_ch_queries', 12);
+add_action( 'pre_get_posts', 'qc_ch_queries', 12);
 // add_filter('the_posts', function($posts) {
 // 	global $wp_query;
 // 	$target_post_type = false;
@@ -417,25 +417,3 @@ function qc_ch_queries( $query ) {//echo 'pre_get_posts';die();
  * 
  */
 //function qc_set_distances
-function pagination( $paged = '', $max_page = '' ) {
-	$big = 999999999; // need an unlikely integer
-	if( ! $paged ) {
-			$paged = get_query_var('paged');
-	}
-
-	if( ! $max_page ) {
-			global $wp_query;
-			$max_page = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1;
-	}
-
-	echo paginate_links( array(
-			'base'       => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format'     => '?paged=%#%',
-			'current'    => max( 1, $paged ),
-			'total'      => $max_page,
-			'mid_size'   => 1,
-			'prev_text'  => __( '«' ),
-			'next_text'  => __( '»' ),
-			'type'       => 'list'
-	) );
-}

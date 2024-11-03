@@ -3,7 +3,11 @@ $selector: ".care-homes";
 #{$selector} {
 
   &-list {
-
+    &__card {
+      &--premium {
+        border: 10px solid gold;
+      }
+    }
   }
 
   &-map {
