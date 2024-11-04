@@ -1,0 +1,19 @@
+@import "./bs-overrides";
+@import "./qs-font-icons";
+@import "./type-search";
+@import "./care-home-archive";
+
+@font-face {
+  font-family: 'poppins-light';
+  src: url('../fonts/poppins-light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+body {
+  font-family: poppins-light, san-serif;
+  background-color: $white;
+}
+.container {
+  border: 10px solid red;
+}

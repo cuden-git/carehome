@@ -12,24 +12,5 @@
 @import "assets/understrap/theme/colors";           // <-------- This creates the necessary bootstrap color classes.
 @import "assets/understrap/theme/blocks";           // <-------- This adds Bootstrap styles to blocks.
 @import "assets/understrap/theme/contact-form7";    // <-------- Contact Form 7 - Bootstrap 4 support
-@import "./qs-font-icons";
-@import "./type-search";
-@import "./care-home-archive";
 
-@font-face {
-  font-family: 'poppins-light';
-  src: url('../fonts/poppins-light.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-body {
-  font-family: poppins-light, san-serif;
-  background-color: green;
-}
-.container {
-  border: 10px solid red;
-}
-.dennywenny {
-  font-size: 20px;
-}
+@import "./custom-main";

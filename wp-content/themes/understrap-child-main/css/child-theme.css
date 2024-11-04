@@ -15445,15 +15445,11 @@ i {
 }
 body {
   font-family: poppins-light, san-serif;
-  background-color: green;
+  background-color: #fff;
 }
 
 .container {
   border: 10px solid red;
-}
-
-.dennywenny {
-  font-size: 20px;
 }
 
 /*# sourceMappingURL=child-theme.css.map */

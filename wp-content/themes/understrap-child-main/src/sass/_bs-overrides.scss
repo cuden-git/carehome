@@ -1,0 +1,6 @@
+$primary: #002147;
+// merge with existing $theme-colors map
+$theme-colors: map-merge($theme-colors, (
+  "primary": $primary
+));
+  

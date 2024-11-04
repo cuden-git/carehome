@@ -25,3 +25,26 @@ function qc_coords_distance($lat_from, $long_from, $lat_to, $long_to, $earth_rad
 	// Calculate the distance
 	return round($earth_radius * $c);
 }
+
+/**
+ * Extract repeater tabbed content fields
+ */
+function qc_tabbed_content_arrays($rows) {
+	$arr = [];
+	$arr['tabs'] = [];
+	$arr['content'] = [];
+
+	if($rows) {
+		foreach( $rows as $row ) {
+			array_push($arr['tabs'], $row['job_title']);
+			array_push($arr['content'], [
+				'img' => wp_get_attachment_image($row['image']['ID'], 'large'),
+				'name' => $row['name'],
+				'role' => $row['role'],
+				'description' => $row['description']
+			]);
+		}
+	}
+
+	return $arr;
+}
