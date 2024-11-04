@@ -1,6 +1,6 @@
 <?php
 defined( 'ABSPATH' ) || exit;
-echo 'denis';
+
 get_header();
 if(isset($_GET['location'])) {
 //qc_location_ordered_posts($_GET['location']);
@@ -43,7 +43,7 @@ if(isset($_GET['location'])) {
 //   }
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $query_args = [
-  'posts_per_page' => 3,
+  'posts_per_page' => 4,
   'post_type' => 'care-home',
   'post_status' => 'publish',
   'paged' => $paged
@@ -55,19 +55,9 @@ if(isset($_GET['location'])) {
   $query_args['orderby'] = 'meta_value_num';
   $query_args['order'] = 'ASC';   
 }
-print_r($query_args);
+
 // Custom query. 
-$query = new WP_Query(
-  [
-    'posts_per_page' => 3,
-    'post_type' => 'care-home',
-    'post_status' => 'publish',
-    'meta_key'=> 'ch_distance',
-    'orderby' => 'meta_value_num',
-    'order' => 'ASC',
-    'paged' => $paged
-  ] 
-);
+$query = new WP_Query($query_args);
 // Check that we have query results. 
 if ( $query->have_posts() ) {
     // Start looping over the query results. 

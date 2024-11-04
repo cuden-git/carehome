@@ -291,7 +291,7 @@ function qc_location_ordered_posts() {
 // }, 12);
 
 function qc_ch_queries( $query ) {//echo 'pre_get_posts';die();
-  if (!is_admin() && $query->is_main_query() && $query->query['post_type'] === 'care-home'){ 
+  if (!is_admin() && $query->is_main_query() && isset($query->query['post_type']) && $query->query['post_type'] === 'care-home'){ 
 		// $posts = get_posts([
 		// 	'post_type' => 'care-home',
 		// 	'numberposts' => -1
@@ -302,7 +302,7 @@ function qc_ch_queries( $query ) {//echo 'pre_get_posts';die();
 		// 	update_post_meta($post->ID, 'ch_distance', $post->distance);
 		// }
 		//print_r($posts);
-		$query->set('posts_per_page', 3);
+		$query->set('posts_per_page', 4);
 		// $query->set('meta_key', 'ch_distance');
 		// $query->set('orderby', 'meta_value_num');
 		// $query->set('order', 'ASC');

@@ -48,3 +48,30 @@ function qc_tabbed_content_arrays($rows) {
 
 	return $arr;
 }
+
+/**
+ * Get the Careers taxonomies
+ */
+
+function qc_get_careers_cats() {
+	$cats_list = [];
+	$top_level_cats = get_terms([
+    'taxonomy'   => 'careers-category',
+    'parent'     => 0, // Only fetch top-level terms
+    'hide_empty' => false, // Set to true if you only want terms assigned to posts
+	]);
+
+	if (!empty($top_level_cats) && !is_wp_error($top_level_cats)) {
+		foreach($top_level_cats as $top_cat) {
+			$child_cats = get_terms([
+				'taxonomy'   => 'careers-category',
+				'parent'     => $top_cat->term_id,
+				'hide_empty' => false,
+			]);
+
+			foreach($child_cats as $child_cat) {
+				
+			}
+		}
+	}
+}
