@@ -424,3 +424,37 @@ function qc_set_distance_meta() {
 	 }
   }
 }
+
+// $top_level_categories = get_terms([
+// 	'taxonomy'   => 'careers-category',
+// 	'parent'     => 0,
+// 	'hide_empty' => false,
+// ]);
+
+// // Check for WP_Error and display error message
+// if (is_wp_error($top_level_categories)) {
+// 	echo 'Error: ' . $top_level_categories->get_error_message();
+// 	return;
+// }
+
+// // Proceed with displaying terms if no error
+// if (!empty($top_level_categories)) {
+// 	foreach ($top_level_categories as $top_level_category) {
+// 			echo '<h2>' . esc_html($top_level_category->name) . '</h2>';
+// 			// Fetch and display child terms as before
+// 	}
+// }
+
+//(get_taxonomies());
+////////print_r(
+	//get_terms('test-cat', [
+	//	'taxonomy'   => 'test-cat',
+	//	'parent'     => 0, // Only fetch top-level terms
+//		'hide_empty' => false, // Set to true if you only want terms assigned to posts
+	//])
+//);die();
+
+// print_r($terms = get_terms( array(
+// 	'taxonomy' => 'care-home-category',
+// 	'hide_empty' => false,
+// ) ));
