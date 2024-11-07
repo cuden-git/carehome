@@ -248,7 +248,6 @@ function qc_location_ordered_posts() {
 	$start_lng = $results->results[0]->geometry->location->lng;
 	$start_lat = $results->results[0]->geometry->location->lat;
 
-	//print_r($results->results[0]->geometry->location); die();
 	$all_ch_posts = get_posts([
 		'post_type' => 'care-home',
 		'post_status' => 'publish',
@@ -272,158 +271,15 @@ function qc_location_ordered_posts() {
 	}
 }
 
-
-
 /**
  * Change number of posts displayed on for Care Home post type archive page
  */
-// add_action( 'init', function() {echo 'init';die();
-// 	$posts = get_posts([
-// 		'post_type' => 'care-home',
-// 		'numberposts' => -1
-// 	]);
-// 	//print_r($posts);
-// //echo 'init';
-// 	foreach($posts as $post) {
-// 		$post->distance = rand(1, 100);
-// 		update_post_meta($post->ID, 'ch_distance', $post->distance);
-// 	}
-// }, 12);
-
-function qc_ch_queries( $query ) {//echo 'pre_get_posts';die();
+function qc_ch_queries( $query ) {
   if (!is_admin() && $query->is_main_query() && isset($query->query['post_type']) && $query->query['post_type'] === 'care-home'){ 
-		// $posts = get_posts([
-		// 	'post_type' => 'care-home',
-		// 	'numberposts' => -1
-		// ]);
-
-		// foreach($posts as $post) {
-		// 	$post->distance = rand(1, 100);
-		// 	update_post_meta($post->ID, 'ch_distance', $post->distance);
-		// }
-		//print_r($posts);
 		$query->set('posts_per_page', 4);
-		// $query->set('meta_key', 'ch_distance');
-		// $query->set('orderby', 'meta_value_num');
-		// $query->set('order', 'ASC');
-//$query->set('posts_per_archive_page', 3);
-	//	echo '<br>pre_get_posts';
 	}
 }
 add_action( 'pre_get_posts', 'qc_ch_queries', 12);
-// add_filter('the_posts', function($posts) {
-// 	global $wp_query;
-// 	$target_post_type = false;
-		
-// 		if(!is_admin()) {
-	
-// 			foreach($posts as $post) {
-// 				if($post->post_type === 'care-home') {
-// 					$target_post_type = true;
-// 					$post_meta = get_post_meta($post->ID, 'ch_long_lat', true);
-	
-// 					if($post_meta) {
-// 						//$post->lng = (metadata_exists('post', $post->ID, 'ch_long_lat'))?  :  ;
-// 						$post_meta = explode('/', $post_meta);
-// 						$post->lng = $post_meta[0];
-// 						$post->lat = $post_meta[1];
-
-// 						//gd1
-// 						$start_lat =  55.8585849;
-// 						$start_lng = -4.245604999999999;
-// 						//n8
-// 			//	$start_lat =  51.59665769999999;
-//        // $start_lng = -0.0990215; 
-// 						update_post_meta($post->ID, 'ch_distance', $post->distance = qc_coords_distance($post->lat, $post->lng, $start_lat, $start_lng ));
-// 					}
-					
-// 					;//45;//rand(1, 100);
-// 				}
-// 			}
-// 	$wp_query->set('meta_key', 'ch_distance');
-// 	$wp_query->set('orderby', 'meta_value_num');
-// 	$wp_query->set('posts_per_page', 3);
-// 			if($target_post_type && isset($_GET['location'])) {//die();
-// 				//echo 'true dat';
-// 				 /*$gm_url = GOOGLE_MAPS_API_URL . "geocode/json?address=" . urlencode($_GET['location']) . "&key=" . GOOGLE_API_KEY;
-		
-// 				 $response = wp_remote_get($gm_url);
-			
-// 				$results = json_decode($response['body']);
-// 				$start_lng = $results->results[0]->geometry->location->lng;
-// 				$start_lat = $results->results[0]->geometry->location->lat;*/
-//  				//n8
-// 				$start_lat =  51.59665769999999;
-//         $start_lng = -0.0990215; 
-
-// 				//gd1
-// 				$start_lat =  55.8585849;
-// 				$start_lng = -4.245604999999999;
-	
-// 				usort($posts, function($a, $b) use ($start_lat, $start_lng) {
-// 					//if($post_meta) {
-// 						$a->distance = qc_coords_distance($a->lat, $a->lng, $start_lat, $start_lng );
-// 						$b->distance = qc_coords_distance($b->lat, $b->lng, $start_lat, $start_lng );
-// 			//		}
-	
-// 					returnparse_query $a->distance - $b->distance;
-// 				});	
-// 			}
-// 		}
-// 		// $query->set('posts_per_page', 3);
-// 	//	set_query_var( 'posts_per_archive_page',3 );
-// 		return $posts;
-// 	}, 1, 1);
-	//
-/********* ********/
-
-/**
- *  Get distance to each care home
- */
-function qc_get_care_home_distance($post) {
-	$paged =  get_query_var( 'paged' ); //die();
-
-	if(!isset($_GET['location'])) return;
-	if($paged > 0) return;
-
-	//TODO: guard against multiple calls with pagination use. eg, if(page_param > 0) Still fires on 0 though Maybe set cookies?
-	$gm_url = GOOGLE_MAPS_API_URL . "geocode/json?address=" . urlencode($_GET['location']) . "&key=" . GOOGLE_API_KEY;
-			
-	$response = wp_remote_get($gm_url);
-
-	$results = json_decode($response['body']);
-
-	if($results->status === 'OK') {
-		$start_lng = $results->results[0]->geometry->location->lng;
-		$start_lat = $results->results[0]->geometry->location->lat;
-		$post_meta = get_post_meta($post->ID, 'ch_long_lat', true);
-		$post_meta = explode('/', $post_meta);
-		$post_lng = $post_meta[0];
-		$post_lat = $post_meta[1];
-
-		return qc_coords_distance($post_lat, $post_lng, $start_lat, $start_lng );
-	}
-
-	return null;
-}
-/**
- * Set distance meta field for all care home posts
- */
-function qc_set_distance_meta() {
-  $posts = get_posts(  [
-    'posts_per_page' => -1,
-    'post_type' => 'care-home',
-    'post_status' => 'publish'
-  ] );
-
-  foreach($posts as $post) {
-   $post_distance = qc_get_care_home_distance($post);
-
-	 if($post_distance) {
-		update_post_meta($post->ID, 'ch_distance', $post_distance);
-	 }
-  }
-}
 
 // $top_level_categories = get_terms([
 // 	'taxonomy'   => 'careers-category',
@@ -445,16 +301,57 @@ function qc_set_distance_meta() {
 // 	}
 // }
 
-//(get_taxonomies());
-////////print_r(
-	//get_terms('test-cat', [
-	//	'taxonomy'   => 'test-cat',
-	//	'parent'     => 0, // Only fetch top-level terms
-//		'hide_empty' => false, // Set to true if you only want terms assigned to posts
-	//])
-//);die();
+/**
+ * Disable block editor for post types
+ */
+function qc_disable_block_editor($use_block_editor, $post_type)
+{
+		$post_types = ['career'];
+		if (in_array($post_type, $post_types)) {
+				$use_block_editor = false;
+		}
+		return $use_block_editor;
+}
+//add_filter('use_block_editor_for_post_type', 'qc_disable_block_editor', 999, 2);
 
-// print_r($terms = get_terms( array(
-// 	'taxonomy' => 'care-home-category',
-// 	'hide_empty' => false,
-// ) ));
+/**
+ * Transfer options from careers settings job role field to careers edit page select menu
+ */
+function qc_populate_acf_select_field( $field ) {
+	$options = get_field('careers_job_roles', 'option');
+	
+	if( $options ) {
+			$field['choices'] = [];
+
+			foreach( $options as $option ) {
+					$field['choices'][ $option['job_role'] ] = $option['job_role'];
+			}
+	}
+	
+	return $field;
+}
+add_filter('acf/load_field/name=careers_job_role', 'qc_populate_acf_select_field');
+
+/**
+ *  Set lng/lat of care home liked to and set meta field. 
+ *  Priority less than 10 means this fires before save.
+ */
+add_action('acf/save_post', 'my_acf_save_post', 11);
+function my_acf_save_post( $post_id ) {
+	$care_home_id = get_field('career_care_home', $post_id);
+
+	if($care_home_id) {
+		//get care home post lng lat
+		$ch_lng_lat = get_post_meta($care_home_id, 'ch_long_lat', true);
+		//set the care home lng/lat for career post meta
+		update_post_meta($post_id, 'ch_long_lat', $ch_lng_lat );
+	}
+}
+
+add_filter( 'get_the_archive_title', function( $title ) {
+	if ( is_post_type_archive('careers') ) {
+			$title = 'careers';
+	}
+
+	return $title;
+}, 50 );

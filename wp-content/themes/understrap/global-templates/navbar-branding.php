@@ -15,7 +15,7 @@ if ( ! has_custom_logo() ) { ?>
 
 		<h1 class="navbar-brand mb-0">
 			<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
-				<?php bloginfo( 'name' ); ?>
+				<?php bloginfo( 'name' ); ?>jjj
 			</a>
 		</h1>
 

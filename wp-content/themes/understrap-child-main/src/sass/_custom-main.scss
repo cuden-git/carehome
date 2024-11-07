@@ -1,7 +1,9 @@
 @import "./bs-overrides";
 @import "./qs-font-icons";
+@import "./site";
 @import "./type-search";
 @import "./care-home-archive";
+@import "./careers-archive";
 
 @font-face {
   font-family: 'poppins-light';
@@ -13,7 +15,4 @@
 body {
   font-family: poppins-light, san-serif;
   background-color: $white;
-}
-.container {
-  border: 10px solid red;
 }

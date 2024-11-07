@@ -50,7 +50,7 @@ $query_args = [
 ];
 
 if(isset($_GET['location'])) {
-  qc_set_distance_meta();
+  qc_set_distance_meta($_GET['location'], get_post_type());
   $query_args['meta_key'] = 'ch_distance';
   $query_args['orderby'] = 'meta_value_num';
   $query_args['order'] = 'ASC';   
@@ -58,9 +58,8 @@ if(isset($_GET['location'])) {
 
 // Custom query. 
 $query = new WP_Query($query_args);
-// Check that we have query results. 
+
 if ( $query->have_posts() ) {
-    // Start looping over the query results. 
     while ( $query->have_posts() ) {
       $query->the_post();
       $block_fields = qc_get_acf_block_attrs(get_the_content(), THEME_NAMESPACE . '/care-home');

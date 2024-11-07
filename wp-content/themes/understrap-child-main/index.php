@@ -20,7 +20,6 @@ $posts = get_posts(array(
     'post_type'     => 'care-home',
     'meta_key'      => 'tober',
 ));
-
 ?>
 <h1>INDEX>PHP<i class="icon-dumbell"></i></h1>
 <div class="container">

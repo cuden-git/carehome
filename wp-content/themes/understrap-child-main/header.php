@@ -24,15 +24,15 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
-<div class="site" id="page" style="border: 20px solid black">
-
+<div class="site" id="page">
 	<!-- ******************* The Navbar Area ******************* -->
-	<header id="wrapper-navbar">
-
-		<a class="skip-link <?php echo understrap_get_screen_reader_class( true ); ?>" href="#content">
-			<?php esc_html_e( 'Skip to content', 'understrap' ); ?>
-		</a>
-
+	<header id="wrapper-navbar" class="site__header">
 		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
-
 	</header><!-- #wrapper-navbar -->
+<?php 
+	if(is_archive()) {
+?>
+		<h2><?= get_the_archive_title() ?></h2>
+<?php
+	}
+?>

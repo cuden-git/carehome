@@ -6849,6 +6849,9 @@
 	    this.namespace = 'type-search';
 	    this.resultActive = false;
 	    this.searchForm = [...document.querySelectorAll('.' + this.namespace)];
+	    if (this.searchForm.length === 0) {
+	      return;
+	    }
 	    this.attachEvents();
 	    this.inputVal;
 	    this.gmapURL = `${themeData.gmURL}place/autocomplete/json?key=${themeData.gmKey}&components=country:uk&input=`;
@@ -6881,10 +6884,12 @@
 	      let resultsField = item.querySelector('.' + this.namespace + '__results');
 	      let btn = item.querySelector('.' + this.namespace + '__btn');
 	      let handler = this.debounce(() => this.output(resultsField, inputField.value));
-	      item.addEventListener('submit', e => {
-	        e.preventDefault();
-	        this.setFormParams(item, inputField.value);
-	      });
+	      if (item.tagName === "FORM") {
+	        item.addEventListener('submit', e => {
+	          e.preventDefault();
+	          this.setFormParams(item, inputField.value);
+	        });
+	      }
 	      if (inputField) {
 	        inputField.addEventListener('keyup', e => {
 	          handler();
@@ -6896,7 +6901,9 @@
 	            inputField.value = resultsField.innerHTML;
 	            resultsField.innerHTML = '';
 	            resultsField.classList.remove(this.namespace + '__results--active');
-	            btn.disabled = false;
+	            if (btn) {
+	              btn.disabled = false;
+	            }
 	          });
 	        }
 	      }
@@ -6917,12 +6924,14 @@
 	    return json;
 	  }
 	  createEvent() {
-	    this.formEvent = new CustomEvent('searchSubmitted', {
-	      detail: {
-	        location: this.locationRes
-	      }
-	    });
-	    this.evTarget.dispatchEvent(this.formEvent);
+	    if (this.evTarget) {
+	      this.formEvent = new CustomEvent('searchSubmitted', {
+	        detail: {
+	          location: this.locationRes
+	        }
+	      });
+	      this.evTarget.dispatchEvent(this.formEvent);
+	    }
 	  }
 	  getLocationVar() {
 	    return this.locationRes;
