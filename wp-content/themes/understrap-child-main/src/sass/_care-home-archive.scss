@@ -1,16 +1,34 @@
-$selector: ".care-homes";
+$selector: ".ch";
 
 #{$selector} {
+  &__search {
+    @extend %q-bg-img;
 
-  &-list {
-    &__card {
+    background-position: 100% 0;
+    background-size: 100%;
+    padding: rfs-value(45px);
+    color: $qc-white;
+
+    &-form {
+      &:first-child {
+        margin-bottom: rfs-value(18px);
+      }
+
+      select {
+        height: 100%;
+      }
+    }
+  }
+
+  &__list {
+    &-card {
       &--premium {
         border: 10px solid gold;
       }
     }
   }
 
-  &-map {
+  &__map {
     height: rfs-value(500);
   }
 }

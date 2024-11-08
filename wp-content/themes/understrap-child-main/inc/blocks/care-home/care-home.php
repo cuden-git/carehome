@@ -165,6 +165,9 @@ if($terms) {
     </div>
   </section>
   <!-- Brochures & Guides -->
+  <?php
+if($brochures) {
+  ?>
   <section class="post-section">
     <div class="container">
       <h2 class="post-section__title"></h2>
@@ -184,6 +187,12 @@ if($terms) {
       </div>
     </div>
   </section>
+<?php
+}
+?>
+<?php
+if($gallery) {
+?>
   <!-- Carousel -->
   <section class="post-section">
     <div class="container">
@@ -192,6 +201,9 @@ if($terms) {
       ?>
     </div>
   </section>
+<?php
+}
+?>
   <?php if (is_admin()) { ?>
   </div>
 <?php } ?>

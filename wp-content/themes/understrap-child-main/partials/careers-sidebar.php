@@ -22,7 +22,7 @@ $care_homes = get_posts($ch_args);
       </select>
     </label>
     <label class="flex-grow-1">
-      <select name="care_homes d-block">
+      <select name="care_homes">
         <option value=""><?= __('Care Homes', THEME_NAMESPACE) ?></option>
         <?php
         foreach($care_homes as $care_home) {

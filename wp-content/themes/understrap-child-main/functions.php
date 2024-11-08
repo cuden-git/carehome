@@ -177,7 +177,6 @@ function ch_save_post_meta($post_id, $post, $update)
 }
 add_action('save_post_care-home', 'ch_save_post_meta', 20, 3);
 
-
 /**
  * Set starter default block for care-home post type
  */
@@ -336,17 +335,18 @@ add_filter('acf/load_field/name=careers_post_job_role', 'qc_populate_acf_select_
  *  Set lng/lat of care home liked to and set meta field. 
  *  Priority less than 10 means this fires before save.
  */
-add_action('acf/save_post', 'my_acf_save_post', 11);
-function my_acf_save_post( $post_id ) {
-	$care_home_id = get_field('career_care_home', $post_id);
+function qc_set_career_lng_lat( $post_id ) {
+	$care_home = get_field('career_care_home', $post_id);
 
-	if($care_home_id) {
+	if($care_home) {
 		//get care home post lng lat
-		$ch_lng_lat = get_post_meta($care_home_id, 'ch_long_lat', true);
+		$ch_lng_lat = get_post_meta($care_home->ID, 'ch_long_lat', true);
 		//set the care home lng/lat for career post meta
 		update_post_meta($post_id, 'ch_long_lat', $ch_lng_lat );
 	}
 }
+add_action('acf/save_post', 'qc_set_career_lng_lat', 11);
+
 
 /**
  * Filter to set archive page titles

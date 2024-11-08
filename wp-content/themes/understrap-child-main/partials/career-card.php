@@ -26,6 +26,6 @@ $job_location = get_field('career_care_home');
     <p class="temp-distance">Distance from location: <?= get_post_meta(get_the_ID(), 'ch_distance', true) ?></p>
   </div>
   <div class="col-md-3 d-flex align-items-center">
-    <a href="<?php the_permalink() ?>" class="btn btn-primary" title="<?php the_field('careers_archive_btn_label', 'option'); ?>"><?php the_field('careers_archive_btn_label', 'option'); ?></a>
+    <a href="<?php the_permalink() ?>" class="btn btn-primary text-white" title="<?php the_field('careers_archive_btn_label', 'option'); ?>"><?php the_field('careers_archive_btn_label', 'option'); ?></a>
   </div>
 </div>

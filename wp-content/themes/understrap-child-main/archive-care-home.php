@@ -1,7 +1,10 @@
 <?php
 defined( 'ABSPATH' ) || exit;
+//redirect to selected care home option
+if(isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
+  wp_redirect($_GET['care_homes']);
+}
 
-get_header();
 if(isset($_GET['location'])) {
 //qc_location_ordered_posts($_GET['location']);
 // The Query
@@ -18,17 +21,20 @@ if(isset($_GET['location'])) {
 //  $args = array_merge( $wp_query->query_vars, array( 'posts_per_archive_page' => 3 ) );
 //  query_posts( $args );
 //  set_query_var( 'posts_per_archive_page',1 );//set_query_var('posts_per_archive_page', $limit);
-// ?>
-<main id="care-home-results" class="care-home-archive">
+get_header();
+?>
+<main id="care-home-results" class="ch__archive">
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-6">
+      </div>
+      <div class="col-12 col-md-6 ch__search d-flex  bg-primary">
       <?php get_template_part( 'partials/care-home-search' ); ?>
       </div>
     </div>
   </div>
   <!-- -->
-  <div id="care-homes-list" class="container care-homes-list">
+  <div id="care-homes-list" class="container ch__list">
     <div class="row">
   <?php
 //   $posts = get_posts(  [
@@ -89,7 +95,7 @@ wp_reset_query();
     </div>
       </div>
     </div>
-    <div id="care-homes-maps" class="care-homes-map container">map view</div>
+    <div id="care-homes-maps" class="ch__map container">map view</div>
 </main>
 <?
 

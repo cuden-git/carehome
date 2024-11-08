@@ -21,7 +21,7 @@ function qc_get_care_home_distance($post, $location_val) {
 		$start_lng = $results->results[0]->geometry->location->lng;
 		$start_lat = $results->results[0]->geometry->location->lat;
 		$post_meta = get_post_meta($post->ID, 'ch_long_lat', true);
-		$post_meta = explode('/', $post_meta);
+		$post_meta = explode('/', $post_meta);print_r($post_meta);//die();
 		$post_lng = $post_meta[0];
 		$post_lat = $post_meta[1];
 
@@ -41,8 +41,8 @@ function qc_set_distance_meta($location_val, $post_type) {
     'post_type' => $post_type,
     'post_status' => 'publish'
   ] );
-
-  foreach($posts as $post) {
+	
+  foreach($posts as $post) {echo $post->post_title;
    $post_distance = qc_get_care_home_distance($post, $location_val);
 
 	 if($post_distance) {

@@ -8,7 +8,7 @@ if(isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
 
 $query_args = [
   'post_type' => 'career',
-  'posts_per_page' => 4,
+  'posts_per_page' => 10,
 ];
 
 // Handle forms data

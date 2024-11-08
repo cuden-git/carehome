@@ -12322,6 +12322,7 @@ select {
 }
 @media (min-width: 768px) {
   .site__header-title {
+    font-size: 3.75rem;
     background-size: 50rem;
   }
 }
@@ -12390,10 +12391,22 @@ select {
   height: auto;
 }
 
-.care-homes-list__card--premium {
+.ch__search {
+  background-position: 100% 0;
+  background-size: 100%;
+  padding: 2.8125rem;
+  color: #EFECE9;
+}
+.ch__search-form:first-child {
+  margin-bottom: 1.125rem;
+}
+.ch__search-form select {
+  height: 100%;
+}
+.ch__list-card--premium {
   border: 10px solid gold;
 }
-.care-homes-map {
+.ch__map {
   height: 500;
 }
 
@@ -12470,7 +12483,7 @@ body {
 }
 
 /* Placeholders */
-.site__header, .site__footer, .careers-list__filters {
+.site__header, .site__footer, .ch__search, .careers-list__filters {
   background-image: url(../images/bg-q.svg);
   background-repeat: no-repeat;
 }
