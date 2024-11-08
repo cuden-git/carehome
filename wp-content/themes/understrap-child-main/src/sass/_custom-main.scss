@@ -1,5 +1,6 @@
 @import "./bs-overrides";
 @import "./qs-font-icons";
+@import "./forms";
 @import "./site";
 @import "./type-search";
 @import "./care-home-archive";
@@ -12,7 +13,19 @@
   font-style: normal;
   font-display: block;
 }
+
 body {
   font-family: poppins-light, san-serif;
   background-color: $white;
+}
+
+/* Placeholders */
+%q-bg-img {
+  background-image: url(../images/bg-q.svg);
+  background-repeat: no-repeat;
+}
+
+%q-bg-img-dark {
+  background-image: url(../images/bg-q-dark.svg);
+  background-repeat: no-repeat;
 }

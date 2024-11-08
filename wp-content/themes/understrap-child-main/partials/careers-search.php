@@ -1,9 +1,9 @@
 <?php
 $roles_rows = get_field('careers_job_roles', 'option');
 ?>
-<form>
-  <fieldset class="type-search">
-    <label>
+<form class="careers-list__search">
+  <fieldset class="type-search d-flex justify-content-between">
+    <label class="flex-grow-1">
       <select name="careers_role">
         <option value=""><?= __('Role', THEME_NAMESPACE) ?></option>
         <?php
@@ -15,11 +15,11 @@ $roles_rows = get_field('careers_job_roles', 'option');
         ?>
       </select>
     </label>
-    <label class="type-search__wrap">
+    <label class="type-search__wrap flex-grow-1">
       <input type="text"  class="type-search__input" name="careers_location" autocomplete="off" placeholder="<?= __('Town or Postcode', THEME_NAMESPACE) ?>" value="<?php if (isset($_GET['careers_location'])) echo $_GET['careers_location'] ?>">
       <div class="type-search__results"></div>
     </label>
-    <label>
+    <label class="flex-grow-1">
       <input type="text" name="careers_keyword" placeholder="<?= __('Keyword', THEME_NAMESPACE) ?>" value="<?php if (isset($_GET['careers_keyword'])) echo $_GET['careers_keyword'] ?>">
     </label>
     <!-- Hidden fields for secondary form data -->
@@ -41,6 +41,6 @@ $roles_rows = get_field('careers_job_roles', 'option');
       }
     ?>
     <!-- end hidden fields -->
-    <input type="submit" value="<?= __('Submit', THEME_NAMESPACE) ?>">
+    <input type="submit" class="btn btn-primary flex-grow-1" value="<?= __('Submit', THEME_NAMESPACE) ?>">
   </fieldset>
 </form>

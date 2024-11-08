@@ -1,0 +1,31 @@
+$select: ".input";
+
+#{$select} {
+  &[type="text"] {
+    border: 5px solid red;
+  }
+}
+
+input {
+  
+  &[type=submit],
+  &[type=text] {
+    padding: rfs-value(24px);
+  }
+
+  &[type=checkbox] {
+    width: rfs-value(28px);
+    height: rfs-value(28px);
+  }
+
+}
+
+select {
+  appearance: none;
+  background-image: url(../images/chevron-down.svg);
+  background-repeat: no-repeat;
+  background-position: right rfs-value(20px) center;
+  background-size: rfs-value(25px) rfs-value(12px);
+  padding: rfs-value(20px);
+  width: 100%;
+}

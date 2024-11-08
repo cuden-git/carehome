@@ -1,6 +1,5 @@
 <?php
 defined( 'ABSPATH' ) || exit;
-print_r($_GET);
 
 //redirect to selected care home option
 if(isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
@@ -11,6 +10,7 @@ $query_args = [
   'post_type' => 'career',
   'posts_per_page' => 4,
 ];
+
 // Handle forms data
 $primary_form_data = [];
 $secondary_form_data = [];
@@ -65,30 +65,16 @@ if(isset($_GET['careers_distance']) && $_GET['careers_distance'] !== "") {
   ];
 }
 
-// $query_args = [
-//   'post_type' => 'career',
-//   'posts_per_page' => 4,
-//   'meta_query' => [
-//     [
-//       'key'     => 'ch_distance',
-//       'value'   => 13,
-//       'type'    => 'numeric',
-//       'compare' => '<=',
-//     ],
-//   ],
-//   'meta_key' => 'ch_distance',
-//   'orderby' => 'meta_value_num',
-//   'order' => 'ASC'
-// ];
-print_r($query_args);
 $query = new WP_Query($query_args);
 
 get_header();
 ?>
 
 <main id="career-results" class="careers-list">
-  <div class="container">
-  <?php require_once __DIR__ . '/partials/careers-search.php' ?>
+  <div class="bg-secondary">
+    <div class="container">
+    <?php require_once __DIR__ . '/partials/careers-search.php' ?>
+    </div>
   </div>
   <div class="container">
     <div class="row">

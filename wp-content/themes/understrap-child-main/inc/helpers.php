@@ -132,3 +132,41 @@ function qc_get_careers_cats() {
 
 	return $cats_list;
 }
+
+/**
+ * Get page title. Both for archive and normal page types
+ */
+function qc_page_title() {
+	if(is_archive()) {
+		$title = get_the_archive_title();
+	}else {
+		$title = get_the_title();
+	}
+
+	return $title;
+}
+
+/**
+ * Get the Job Type cat for post
+ */
+function qc_get_job_type($post_id) {
+	$parent_term = get_term_by('slug', 'shift-type', 'careers-category');
+	$post_terms = get_the_terms($post_id, 'careers-category');
+
+	foreach($post_terms as $term) {
+		if($term->parent === $parent_term->term_id) {
+			return $term->name;
+		}
+	}
+	
+	return null;
+}
+
+/**
+ * Get social media links
+ */
+function qc_social_media() {
+	$sm_links = get_field('social_media', 'option');
+
+	return $sm_links;
+}

@@ -22,17 +22,20 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
+<body <?php body_class(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 	<!-- ******************* The Navbar Area ******************* -->
-	<header id="wrapper-navbar" class="site__header">
+	<header class="site__header bg-primary"">
 		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
+		<div class="container">
+			<h2 class="site__header-title text-light mb-0"><?= qc_page_title() ?></h2>
+		</div>
 	</header><!-- #wrapper-navbar -->
 <?php 
 	if(is_archive()) {
 ?>
-		<h2><?= get_the_archive_title() ?></h2>
+
 <?php
 	}
 ?>

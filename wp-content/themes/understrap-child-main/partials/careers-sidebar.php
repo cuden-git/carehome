@@ -7,7 +7,7 @@ $ch_args = [
 ];
 $care_homes = get_posts($ch_args);
 ?>
-<form>
+<form class="careers-list__filters bg-primary">
   <fieldset class="d-flex flex-column">
     <label>
       <select name="careers_distance"<?php if(!isset($_GET['careers_location']) || $_GET['careers_location'] === "") echo ' disabled'?>>
@@ -21,8 +21,8 @@ $care_homes = get_posts($ch_args);
         ?>
       </select>
     </label>
-    <label>
-      <select name="care_homes">
+    <label class="flex-grow-1">
+      <select name="care_homes d-block">
         <option value=""><?= __('Care Homes', THEME_NAMESPACE) ?></option>
         <?php
         foreach($care_homes as $care_home) {
@@ -38,11 +38,11 @@ $care_homes = get_posts($ch_args);
   foreach($careers_cats as $key=>$cat) {
 ?>
   <fieldset class="d-flex flex-column">
-  <h6><?= $key ?></h6>
+  <legend><?= $key ?></legend>
 <?php
     foreach($careers_cats[$key] as $child_cat) {
 ?>
-  <label>
+  <label class="d-flex">
     <input type="checkbox" name="term_ids[]" value="<?= $child_cat['term_id'] ?>"<?php if (isset($_GET['term_ids']) && in_array($child_cat['term_id'], $_GET['term_ids'])) echo " checked"; ?>>
     <?= $child_cat['name'] ?>
   </label>
@@ -64,5 +64,5 @@ $care_homes = get_posts($ch_args);
 <?php
   }
 ?>
-  <input type="submit" value="Submit">
+  <input type="submit" class="btn btn-secondary d-block" value="<?= __('Search', THEME_NAMESPACE) ?>">
 </form>

@@ -330,7 +330,7 @@ function qc_populate_acf_select_field( $field ) {
 	
 	return $field;
 }
-add_filter('acf/load_field/name=careers_job_role', 'qc_populate_acf_select_field');
+add_filter('acf/load_field/name=careers_post_job_role', 'qc_populate_acf_select_field');
 
 /**
  *  Set lng/lat of care home liked to and set meta field. 
@@ -348,10 +348,28 @@ function my_acf_save_post( $post_id ) {
 	}
 }
 
+/**
+ * Filter to set archive page titles
+ */
 add_filter( 'get_the_archive_title', function( $title ) {
-	if ( is_post_type_archive('careers') ) {
-			$title = 'careers';
+
+	if ( is_post_type_archive('career') ) {
+		$title = get_field('careers_archive_page_title', 'option');
+	}
+
+	if ( is_post_type_archive('care-home') ) {
+		$title = get_field('ch_archive_page_title', 'option');
 	}
 
 	return $title;
+
 }, 50 );
+
+/**
+ * Set Footer nav location
+ */
+function qc_register_footer_menu() {
+	register_nav_menu( 'footer', __( 'Footer Menu', THEME_NAMESPACE ) );
+	register_nav_menu( 'footer-secondary', __( 'Footer Secondary Menu', THEME_NAMESPACE ) );
+}
+add_action( 'after_setup_theme', 'qc_register_footer_menu' );
