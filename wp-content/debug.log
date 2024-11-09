@@ -7480,3 +7480,8 @@ Stack trace:
 [09-Nov-2024 16:35:12 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 156
 [09-Nov-2024 16:35:43 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 156
 [09-Nov-2024 16:37:48 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 156
+[09-Nov-2024 20:04:48 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 129
+[09-Nov-2024 20:04:48 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 134
+[09-Nov-2024 20:04:48 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 134
+[09-Nov-2024 20:04:48 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 145
+[09-Nov-2024 20:04:48 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 145

@@ -144,7 +144,11 @@ if($terms) {
         <?php
           foreach($ch_services['facilities'] as $facility) { 
         ?>
-            <li><?= $facility ?></li>
+            <li>
+              <span>
+                <?= $facility['label'] ?></li>
+              </span>
+              <i class="icon-<?= $facility['value'] ?>"></i>
         <?php
           }
         ?>
