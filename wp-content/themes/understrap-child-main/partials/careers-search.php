@@ -23,6 +23,7 @@ $roles_rows = get_field('careers_job_roles', 'option');
       <input type="text" name="careers_keyword" placeholder="<?= __('Keyword', THEME_NAMESPACE) ?>" value="<?php if (isset($_GET['careers_keyword'])) echo $_GET['careers_keyword'] ?>">
     </label>
     <!-- Hidden fields for secondary form data -->
+    <input type="hidden" name="form_level" value="primary">
     <?php
       if(!empty($secondary_form_data)) {
         foreach($secondary_form_data as $key=>$form_val) {

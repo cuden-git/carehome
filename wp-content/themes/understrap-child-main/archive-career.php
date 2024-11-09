@@ -11,21 +11,12 @@ $query_args = [
   'posts_per_page' => 10,
 ];
 
+$meta_query = [];
+
 // Handle forms data
 $primary_form_data = [];
 $secondary_form_data = [];
-
-if(isset($_GET['term_ids'])) {
-  $query_args['tax_query'] = [
-    [
-      'taxonomy' => 'careers-category',
-      'field' => 'term_id',
-      'terms' => $_GET['term_ids'],
-    ],
-  ];   
-
-  $secondary_form_data['term_ids'] = $_GET['term_ids'];
-}
+$form_level = (isset($_GET['form_level']))? $_GET['form_level'] : null ;
 
 if(isset($_GET['careers_keyword']) && $_GET['careers_keyword'] !== "") {
   $query_args['s'] = $_GET['careers_keyword'];
@@ -33,38 +24,63 @@ if(isset($_GET['careers_keyword']) && $_GET['careers_keyword'] !== "") {
 }
 
 if(isset($_GET['careers_role']) && $_GET['careers_role'] !== "") {
-  $query_args['meta_key'] = 'careers_job_role';
-  $query_args['meta_value'] = $_GET['careers_role'];
+  array_push($meta_query, 
+    [
+      'key' => 'careers_post_job_role',
+      'value' => $_GET['careers_role']
+    ]
+  );
+  //-------
+
   $primary_form_data['careers_role'] = $_GET['careers_role'];
 }
 
-//unset($_GET['careers_distance']);
 if(isset($_GET['careers_location']) && $_GET['careers_location'] !== "") {
   $primary_form_data['careers_location'] = $_GET['careers_location'];
   qc_set_distance_meta($_GET['careers_location'], get_post_type());
-  $query_args['meta_key'] = 'ch_distance';
-  $query_args['orderby'] = 'meta_value_num';
-  $query_args['order'] = 'ASC';  
+  array_push($meta_query, [
+      'key' => 'ch_distance',
+      'orderby' => 'meta_value_num',
+      'order' => 'ASC'
+    ]
+  );
+  //-------
 
-  // if($_GET['careers_distance'] > 0) {
-  //   echo $_GET['careers_distance']; die();
-  // }
 }else {
   unset($_GET['careers_distance']);
 }
 
+ // 2nd level form data
 if(isset($_GET['careers_distance']) && $_GET['careers_distance'] !== "") {
   $secondary_form_data['careers_distance'] = $_GET['careers_distance'];
-  $query_args['meta_query'] = [
-    [
-      'key'     => 'ch_distance',
-      'value'   => $_GET['careers_distance'],
-      'type'    => 'numeric',
-      'compare' => '<',
-    ],
-  ];
+    array_push($meta_query, [
+      'key' => 'ch_distance',
+      'value' => $_GET['careers_distance'],
+      'type' => 'numeric',
+      'compare' => '<'
+    ]
+  );
 }
 
+if(isset($_GET['term_ids'])) {
+  $query_args['tax_query'] = [
+    [
+      'taxonomy' => 'careers-category',
+      'field' => 'term_id',
+      'terms' => $_GET['term_ids'],
+      'operator' => 'OR',
+      //'operator' => 'AND'
+    ],
+  ];   
+
+  $secondary_form_data['term_ids'] = $_GET['term_ids'];
+}
+
+if(count($meta_query) > 0) {
+  $meta_query['relation'] = 'AND';
+  $query_args['meta_query'] = $meta_query; 
+}
+print_r($query_args);
 $query = new WP_Query($query_args);
 
 get_header();

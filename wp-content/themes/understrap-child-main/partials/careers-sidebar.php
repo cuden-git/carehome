@@ -51,6 +51,7 @@ $care_homes = get_posts($ch_args);
 ?>
   </fieldset>
 <!-- Hidden fields for primary form data -->
+ <input type="hidden" name="form_level" value="secondary">
 <?php
   if(!empty($primary_form_data)) {
     foreach($primary_form_data as $key=>$form_val) {
