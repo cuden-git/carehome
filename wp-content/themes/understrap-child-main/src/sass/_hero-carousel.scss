@@ -1,0 +1,27 @@
+$selector: ".hero-carousel";
+
+#{$selector} {
+  background-color: $qc-blue-dark;
+  height: rfs-value(800px);
+
+  .home & {
+    z-index: 1;
+  }
+
+  &__slide {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    &-text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $qc-white;
+      font-size: rfs-value(40px);
+      width: rfs-value(50%);
+    }
+  }
+}

@@ -2,15 +2,25 @@ $selector: ".site";
 
 #{$selector} {
   &__header {
-    @extend %q-bg-img;
 
-    background-repeat: no-repeat;
-    background-position: 21% top;
-    background-size: 202%;
+    .home & {
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+    }
 
-    @include media-breakpoint-up(md) {
-      background-position: 157% 62%;
-      background-size: 79%;
+    &:not(.home &) {
+      @extend %q-bg-img;
+
+      background-color: $qc-blue-light;
+      background-repeat: no-repeat;
+      background-position: 21% top;
+      background-size: 202%;
+  
+      @include media-breakpoint-up(md) {
+        background-position: 157% 62%;
+        background-size: 79%;
+      }
     }
 
     .navbar {

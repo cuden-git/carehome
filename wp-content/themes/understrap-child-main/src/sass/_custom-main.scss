@@ -4,7 +4,11 @@
 @import "./site";
 @import "./type-search";
 @import "./care-home-archive";
+@import "./care-home-single";
 @import "./careers-archive";
+@import "../../node_modules/swiper/swiper.scss";
+@import "./flexible-content";
+@import "./hero-carousel";
 
 @font-face {
   font-family: 'poppins-light';
@@ -28,4 +32,45 @@ body {
 %q-bg-img-dark {
   background-image: url(../images/bg-q-dark.svg);
   background-repeat: no-repeat;
+}
+
+%qc-gold-bullet {
+  li {
+    &::marker {
+      color: $qc-gold;
+    }
+  }
+}
+
+//classes
+.gold-bullets {
+  @extend %qc-gold-bullet;
+}
+
+.btn {
+  padding: rfs-value(13px) rfs-value(32px) rfs-value(23px);
+}
+
+.btn,
+.btn-primary {
+  --bs-btn-color: $qc-white;
+}
+
+.btn-gold {
+  background-color: $qc-gold;
+
+  &--inverse {
+    background-color: unset;
+    border-color: $qc-gold;
+    color: $qc-gold;
+  }
+}
+
+.btn-white {
+  background-color: $white;
+  color: $qc-blue-light;
+}
+
+.bg-gold-light {
+  background-color: $qc-white;
 }

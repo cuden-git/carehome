@@ -89,7 +89,7 @@ function qc_tabbed_content_arrays($rows) {
 		foreach( $rows as $row ) {
 			array_push($arr['tabs'], $row['job_title']);
 			array_push($arr['content'], [
-				'img' => wp_get_attachment_image($row['image']['ID'], 'large'),
+				'img' => '<img src="' . $row['image']['url'] . '" alt="' . $row['image']['alt'] . '">',//wp_get_attachment_image($row['image']['ID'], 'large'),
 				'name' => $row['name'],
 				'role' => $row['role'],
 				'description' => $row['description']

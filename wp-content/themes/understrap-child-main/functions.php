@@ -332,6 +332,29 @@ function qc_populate_acf_select_field( $field ) {
 add_filter('acf/load_field/name=careers_post_job_role', 'qc_populate_acf_select_field');
 
 /**
+ * Load Care Homes into select menu for news item
+ */
+function qc_load_ch_selection($field) {
+	$posts = get_posts(
+		[
+			'post_type' => 'care-home',
+			'numberposts' => -1
+		]
+	);
+
+	if($posts) {
+		$field['choices'] = [];
+
+		foreach($posts as $post) {
+			$field['choices'][$post->ID] = $post->post_title;
+		}
+	}
+
+	return $field;
+}
+add_filter('acf/load_field/name=news_care_homes', 'qc_load_ch_selection');
+
+/**
  *  Set lng/lat of care home liked to and set meta field. 
  *  Priority less than 10 means this fires before save.
  */
@@ -369,6 +392,7 @@ add_filter( 'get_the_archive_title', function( $title ) {
  * Set Footer nav location
  */
 function qc_register_footer_menu() {
+	register_nav_menu( 'secondary', __( 'Secondary Menu', THEME_NAMESPACE ) );
 	register_nav_menu( 'footer', __( 'Footer Menu', THEME_NAMESPACE ) );
 	register_nav_menu( 'footer-secondary', __( 'Footer Secondary Menu', THEME_NAMESPACE ) );
 }

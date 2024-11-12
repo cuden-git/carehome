@@ -21,9 +21,40 @@ $selector: ".ch";
   }
 
   &__list {
-    &-card {
-      &--premium {
-        border: 10px solid gold;
+
+  }
+
+  &__card {
+    color: $qc-white;
+    background-color: $qc-blue-light;
+    
+    &.row {
+      >* {
+    //   $gutter-x: rfs-value(55px);
+        --bs-gutter-x: 100px// rfs-value(55px);//rfs-value(55px);//rfs-value(55px);
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    &--premium {
+      background-color: $qc-blue-dark;
+    }
+
+    &-title {
+      font-size: rfs-value(40px);
+    }
+
+    &-logo {
+      width: rfs-value(250px);
+    }
+
+    &-icons {
+      border-top: rfs-value(1px) solid $qc-gold;
+      padding-top: rfs-value(80px);
+
+      i {
+        color:$qc-gold;
       }
     }
   }

@@ -9,7 +9,7 @@ if(isset($_GET['location'])) {
 $form_text = get_field('ch_archive_form_text', 'option');
 ?>
 
-<div class="col-12 col-md-12">
+<div class="col-12">
   <h3 class="ch_search-title"><?= $form_text['title'] ?></h3>
   <?= $form_text['text'] ?>
   <form class="ch__search-form type-search d-flex" action="<?= add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) ) ?>">

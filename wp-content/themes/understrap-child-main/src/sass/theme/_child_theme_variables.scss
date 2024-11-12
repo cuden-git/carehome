@@ -8,12 +8,19 @@ $qc-blue-dark: #002147;
 $qc-blue-light: #7AA3CD;
 $qc-blue-lighter: #E4EDF5;
 $qc-white: #EFECE9;
+$qc-gold: #B99475;
+$qc-black: #002147;
 
 $primary: $qc-blue-light;  // Once we've changed the value, we'll also make it the primary brand color.
 $secondary: $qc-blue-dark;
 $tertiary: $qc-blue-lighter;
 $light: $qc-white;
+
 $btn-border-radius: 0;
 $btn-padding-x: 0;
 $btn-padding-y: 0;
 $btn-primary-color: $qc-white;
+
+:root {
+  --bs-btn-color: $qc-white;
+}

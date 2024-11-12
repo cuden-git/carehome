@@ -26,16 +26,15 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 	<!-- ******************* The Navbar Area ******************* -->
-	<header class="site__header bg-primary"">
+	<header class="site__header"">
 		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
+		<?php
+		if(!is_front_page()) {
+		?>
 		<div class="container">
 			<h2 class="site__header-title text-light mb-0"><?= qc_page_title() ?></h2>
 		</div>
+		<?php
+		}
+		?>
 	</header><!-- #wrapper-navbar -->
-<?php 
-	if(is_archive()) {
-?>
-
-<?php
-	}
-?>

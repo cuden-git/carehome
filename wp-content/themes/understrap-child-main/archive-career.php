@@ -80,7 +80,7 @@ if(count($meta_query) > 0) {
   $meta_query['relation'] = 'AND';
   $query_args['meta_query'] = $meta_query; 
 }
-print_r($query_args);
+//print_r($query_args);
 $query = new WP_Query($query_args);
 
 get_header();

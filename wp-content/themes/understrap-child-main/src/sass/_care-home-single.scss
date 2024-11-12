@@ -1,0 +1,82 @@
+$selector: ".care-home";
+
+#{$selector} {
+  .post-section {
+    padding-top: rfs-value(100px);
+    padding-bottom: rfs-value(100px);
+  }
+
+  &--premium {
+    #{$selector} {
+      &__header {
+        background-color: $secondary;
+        color: $qc-white;
+      }
+    }
+  }
+
+  &__header {
+    &-img {
+      img {
+        width: rfs-value(416px);
+        height: rfs-value(416px);
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+    &-logo {
+      width: rfs-value(340px);
+    }
+  }
+
+  &__overview {
+    :not(.btn) {
+      color: $qc-black;
+    }    
+
+    &-text {
+      column-count: 2;
+      column-rule: rfs-value(1px) solid $qc-gold;
+      column-gap: rfs-value(100px);
+    }
+  }
+
+  &__carousel {
+    border: 20px solid red;
+    &-slide {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__team {
+    figure {
+      width: rfs-value(240px);
+      height: rfs-value(240px);
+      border: rfs-value(20px) solid $qc-blue-dark;
+      padding: rfs-value(10px);
+      border-radius: 50%;
+    }
+
+    img {
+      width: rfs-value(180px);
+      height: rfs-value(180px);
+      object-fit: contain;
+      border-radius: 50%;
+    }
+  }
+
+  &__brochures {
+    background-color: $qc-blue-dark;
+    color: $qc-white;
+
+    li {
+      border-bottom: rfs-value(1px) solid $qc-blue-light;
+
+      #{$selector}--premium & {
+        border-color: $qc-gold;
+      }
+    }
+  }
+}

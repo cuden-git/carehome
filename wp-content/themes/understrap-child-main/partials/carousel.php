@@ -1,36 +1,34 @@
 <?php
   $loop_index = 0;
 ?>
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <?php
-      $loop_index = 0;
-      foreach($args as $slide) {
-    ?>
-    <div class="carousel-item<?= ($loop_index === 0)? ' active' : null ?>">
-      <?= wp_get_attachment_image($slide['ID'], 'large') ?>
-    </div>
-    <?php
-      ++$loop_index;
-      }
-    ?>
-  </div>
-  <div class="carousel-indicators">
-    <?php
-    foreach($args as $slide) {
-    ?>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $loop_index ?>" class="<?= ($loop_index === 0)? ' active' : null ?>" aria-current="true" aria-label="Slide 1"></button>
-    <?php
+<div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+  <?php
+  foreach($args as $slide) {
+  ?>
+      <li class="glide__slide care-home__carousel-slide"><?= wp_get_attachment_image($slide['ID'], 'large') ?></li>
+  <?php
     ++$loop_index;
-    }
-    ?>
+  }
+  ?>
+    </ul>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  <div class="glide__arrows care-home__carousel-controls" data-glide-el="controls">
+    <span class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="icon icon-arrow-left"></i></span>
+    <span class="glide__arrow glide__arrow--right" data-glide-dir="&gt;"><i class="icon icon-arrow-right"></i></span>
+  </div>
+  <div class="glide__bullets care-home__carousel-bullets" data-glide-el="controls[nav]">
+  <?php
+  $loop_index = 0;
+  ?>
+  <?php
+  foreach($args as $slide) {
+  ?>
+    <button class="glide__bullet care-home__carousel-bullet" data-glide-dir="=<?= $loop_index ?>"></button>
+  <?php
+    ++$loop_index;
+  }
+  ?>
+  </div>
 </div>

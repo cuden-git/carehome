@@ -1,0 +1,61 @@
+$selector: ".fc";
+
+#{$selector} {
+  &__img-text {
+    &--overlap {
+      #{$selector}__img-text {
+        &-img {
+          figure {
+            margin-top: rfs-value(-200px);
+          }
+        }
+      }
+    }
+
+    &--left {
+      #{$selector}__img-text {
+        &-img {
+          order: 0;
+        }
+
+        &-text {
+          order: 1;
+        }
+      }
+    }
+
+    &--bg {
+      background-color: $qc-blue-lighter;
+    }
+
+    &-text {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+
+  &__news {
+    
+  }
+
+  &__testimonials {
+    background-color: $qc-blue-lighter;
+  }
+
+  &__featured {
+    &-card {
+      background-color: $primary;
+    }
+  }
+
+  &__jobs {
+    p {
+      border-bottom: rfs-value(1px) solid $qc-blue-light;
+
+      &:last-of-type {
+        border: none;
+      }
+    }
+  }
+}

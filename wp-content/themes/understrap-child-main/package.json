@@ -41,9 +41,6 @@
     "url": "https://github.com/understrap/understrap-child/issues"
   },
   "homepage": "https://understrap.com",
-  "dependencies": {
-    "@glidejs/glide": "^3.6.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
@@ -69,5 +66,8 @@
     "sass": "^1.56.0",
     "terser": "^5.15.1",
     "understrap": "github:understrap/understrap#develop"
+  },
+  "dependencies": {
+    "swiper": "^11.1.14"
   }
 }

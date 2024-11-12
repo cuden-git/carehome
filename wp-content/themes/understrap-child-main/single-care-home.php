@@ -12,28 +12,16 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper" id="single-wrapper">
+<main class="site-main" id="main">
 
-	<div class="<?= esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<?php
+	while ( have_posts() ) {
+		the_post();
+		the_content();
+	}
+	?>
 
-		<div class="row">
-
-			<main class="site-main" id="main">
-
-				<?php
-				while ( have_posts() ) {
-					the_post();
-					the_content();
-				}
-				?>
-
-			</main>
-
-		</div><!-- .row -->
-
-	</div><!-- #content -->
-
-</div><!-- #single-wrapper -->
+</main>
 
 <?php
 get_footer();
