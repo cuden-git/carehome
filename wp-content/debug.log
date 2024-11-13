@@ -8923,3 +8923,14 @@ Stack trace:
 [12-Nov-2024 19:01:55 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 203
 [12-Nov-2024 19:02:50 UTC] PHP Warning:  foreach() argument must be of type array|object, string given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
 [12-Nov-2024 19:02:50 UTC] PHP Warning:  foreach() argument must be of type array|object, string given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[12-Nov-2024 19:28:40 UTC] PHP Warning:  Undefined variable $post_code_value in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 170
+[12-Nov-2024 19:28:40 UTC] PHP Deprecated:  urlencode(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 170
+[12-Nov-2024 19:28:40 UTC] PHP Warning:  file_get_contents(https://maps.googleapis.com/maps/api/geocode/json?address=&key=AIzaSyC0pySCR_UZhmT3nZutkV9aOB3jC_H9GPg): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 171
+[12-Nov-2024 19:28:40 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 173
+[12-Nov-2024 19:28:40 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 174
+[12-Nov-2024 19:28:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/functions.php:170) in /var/www/html/wp-admin/admin-header.php on line 9
+[12-Nov-2024 19:28:41 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 63
+[12-Nov-2024 19:28:41 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/gm-js-init.php on line 8
+[12-Nov-2024 19:28:41 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/gm-js-init.php on line 9
+[12-Nov-2024 19:28:41 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/gm-js-init.php on line 22

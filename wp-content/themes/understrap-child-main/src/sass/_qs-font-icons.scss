@@ -24,6 +24,15 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-minus:before {
+  content: "\e914";
+}
+.icon-plus:before {
+  content: "\e915";
+}
+.icon-arrow-down:before {
+  content: "\e916";
+}
 .icon-arrow-left:before {
   content: "\e912";
 }
