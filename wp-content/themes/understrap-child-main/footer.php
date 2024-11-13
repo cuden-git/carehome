@@ -71,7 +71,6 @@ $form_shortcode = get_field('contact_form_short-code', 'option');
     </div>
   </footer>
 <?php wp_footer(); ?>
-
   </body>
 
 </html>

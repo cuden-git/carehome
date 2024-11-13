@@ -2,56 +2,48 @@
   $loop_index = 0;
 ?>
 <section class="post-section hero-carousel">
-  <div class="container">
-    <div class="glide">
-      <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides">
-      <?php
-      foreach($args as $slide) {
-      ?>
-          <li class="glide__slide hero-carousel__slide">
-            <figure class="hero-carousel__slide-img">
+  <div class="splide h-100">
+    <div class="splide__track h-100">
+      <ul class="splide__list h-100">
+    <?php
+    foreach($args as $slide) {
+    ?>
+        <li class="splide__slide hero-carousel__slide h-100">
+          
+            <figure class="hero-carousel__slide-img h-100">
               <?= wp_get_attachment_image($slide['img']['ID'], 'large') ?>
             </figure>
-            <div class="hero-carousel__slide-text">
-              <?= $slide['text'] ?>
-            <?php
-            if($slide['cta_btns']) {
-            ?>
-              <div class="">
-                <?php
-                  foreach($slide['cta_btns'] as $button) {
-                ?>
-                  <a href="<?= $button['btn']['url'] ?>" class="btn btn-primary" title="<?= $button['btn']['title'] ?>"><?= $button['btn']['title'] ?></a>
-                <?php
-                  }
-                ?>
+            <div class="container h-100 position-relative">
+              <div class="hero-carousel__slide-text">
+                <?= $slide['text'] ?>
+              <?php
+              if($slide['cta_btns']) {
+              ?>
+                <div class="">
+                  <?php
+                    foreach($slide['cta_btns'] as $button) {
+                  ?>
+                    <a href="<?= $button['btn']['url'] ?>" class="btn <?= ($loop_index > 0)? 'btn-white btn-white--inverse' : 'btn-primary' ?>" title="<?= $button['btn']['title'] ?>"><?= $button['btn']['title'] ?></a>
+                  <?php
+                      ++$loop_index;
+                    }
+                    $loop_index = 0;
+                  ?>
+                </div>
               </div>
             </div>
             <?php
             }
             ?>
-          </li>
-      <?php
-        ++$loop_index;
-      }
-      ?>
-        </ul>
-      </div>
-      <!-- TODO: Move buttons to inside text area -->
-      <div class="glide__bullets hero-carousel__bullets" data-glide-el="controls[nav]">
-      <?php
-      $loop_index = 0;
-      ?>
-      <?php
-      foreach($args as $slide) {
-      ?>
-        <button class="glide__bullet hero-carousel__bullet" data-glide-dir="=<?= $loop_index ?>"></button>
-      <?php
-        ++$loop_index;
-      }
-      ?>
-      </div>
+        </li>
+    <?php
+    }
+    ?>
+      </ul>
+    </div>
+    <!-- TODO: Move buttons to inside text area -->
+    <div class="container hero-carousel__pagination">
+      <ul class="splide__pagination justify-content-start"></ul>
     </div>
   </div>
 </section>

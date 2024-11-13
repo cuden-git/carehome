@@ -6,7 +6,7 @@
 @import "./care-home-archive";
 @import "./care-home-single";
 @import "./careers-archive";
-@import "../../node_modules/swiper/swiper.scss";
+@import "../../node_modules/@splidejs/splide/src/css/core/index.scss";
 @import "./flexible-content";
 @import "./hero-carousel";
 
@@ -21,6 +21,8 @@
 body {
   font-family: poppins-light, san-serif;
   background-color: $white;
+  color: $qc-black;
+  font-size: rfs-value(18px);
 }
 
 /* Placeholders */
@@ -69,8 +71,44 @@ body {
 .btn-white {
   background-color: $white;
   color: $qc-blue-light;
+
+  &--inverse {
+    background-color: unset;
+    border-color: $qc-white;
+    color: $qc-white;
+  }
 }
 
 .bg-gold-light {
   background-color: $qc-white;
+}
+
+/* Carousel code */
+.splide {
+  &__pagination__page {
+    border-radius: 50%;
+    border: none;
+    width: rfs-value(16px);
+    height: rfs-value(16px);
+    margin: 0 rfs-value(4px);
+
+    &.is-active {
+      background-color: $qc-blue-light;
+    }
+  }
+
+  &__arrow {
+    color: $qc-white;
+    font-size: rfs-value(60px);
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+.page-intro {
+  &__title {
+    font-size: rfs-value(60px);
+  }
 }

@@ -11,8 +11,41 @@ $selector: ".hero-carousel";
   &__slide {
     position: relative;
 
+    &-img {
+      position: absolute;
+      width: 100%;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      &::before {        
+        background: linear-gradient(90deg, rgba(0,33,71,1) 25%, rgba(0,33,71,0) 100%);
+        z-index: 2;
+      }
+
+      &::after {
+        background-image: url(../images/bg-q.svg);//
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: 500% center;
+        z-index: 3;
+      }
+    }
+
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
     }
 
     &-text {
@@ -22,6 +55,14 @@ $selector: ".hero-carousel";
       color: $qc-white;
       font-size: rfs-value(40px);
       width: rfs-value(50%);
+      z-index: 4;
     }
+  }
+
+  &__pagination {
+    position: absolute;
+    left: 50%;
+    bottom: rfs-value(25px);
+    transform: translateX(-50%);
   }
 }

@@ -68,6 +68,6 @@
     "understrap": "github:understrap/understrap#develop"
   },
   "dependencies": {
-    "swiper": "^11.1.14"
+    "@splidejs/splide": "^4.1.4"
   }
 }

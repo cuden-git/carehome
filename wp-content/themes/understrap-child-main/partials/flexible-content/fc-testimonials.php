@@ -11,13 +11,13 @@ $carousel = get_sub_field('carousel');
   <?php
     $loop_index = 0;
   ?>
-    <div class="glide">
-      <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides">
+    <div class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
       <?php
       foreach($carousel as $slide) {
       ?>
-          <li class="glide__slide fc_testimonials__slide">
+          <li class="splide__slide fc_testimonials__slide">
             <blockquote>
               <?= $slide['quote'] ?>
               <footer>
@@ -31,19 +31,7 @@ $carousel = get_sub_field('carousel');
       ?>
         </ul>
       </div>
-      <div class="glide__bullets hero-carousel__bullets" data-glide-el="controls[nav]">
-      <?php
-      $loop_index = 0;
-      ?>
-      <?php
-      foreach($carousel as $slide) {
-      ?>
-        <button class="glide__bullet hero-carousel__bullet" data-glide-dir="=<?= $loop_index ?>"></button>
-      <?php
-        ++$loop_index;
-      }
-      ?>
-      </div>
+      <ul class="splide__pagination hero-carousel__bullets"></ul>
     </div>
   </div>
 </section>
