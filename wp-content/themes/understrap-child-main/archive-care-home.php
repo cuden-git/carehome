@@ -11,7 +11,7 @@ get_header();
     <div class="row">
       <div class="col-12 col-md-6">
       </div>
-      <div class="col-12 col-md-6 ch__search d-flex  bg-primary">
+      <div class="col-12 col-md-6">
         <?php get_template_part('partials/care-home-search'); ?>
       </div>
     </div>

@@ -31,7 +31,7 @@ $carousel = get_sub_field('carousel');
       ?>
         </ul>
       </div>
-      <ul class="splide__pagination hero-carousel__bullets"></ul>
+      <ul class="splide__pagination splide__pagination--inverse fc_testimonials__bullets"></ul>
     </div>
   </div>
 </section>

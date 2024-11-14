@@ -1,7 +1,7 @@
 <?php
   $loop_index = 0;
 ?>
-<section class="post-section hero-carousel">
+<section class="hero-carousel">
   <div class="splide h-100">
     <div class="splide__track h-100">
       <ul class="splide__list h-100">

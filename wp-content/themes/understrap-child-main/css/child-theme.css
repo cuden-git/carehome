@@ -12367,6 +12367,12 @@ select {
 .site__logo img {
   width: 100%;
 }
+.site__main {
+  padding-top: 4.125rem;
+}
+.home .site__main {
+  padding-top: 6.875rem;
+}
 .site__footer {
   background-size: 163%;
   background-position: 48% 63%;
@@ -12737,8 +12743,14 @@ select {
 }
 .fc__img-text--left .fc__img-text-text {
   order: 1;
+  padding-left: 9.375rem;
+}
+.fc__img-text--right .fc__img-text-text {
+  padding-right: 9.375rem;
 }
 .fc__img-text--bg {
+  background-size: auto 115%;
+  background-position: -35% 22%;
   background-color: #E4EDF5;
 }
 .fc__img-text-text {
@@ -12746,17 +12758,100 @@ select {
   justify-content: center;
   align-items: flex-start;
 }
-.fc__testimonials {
+.fc__news-card {
   background-color: #E4EDF5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.fc__news-card-img {
+  width: calc(100% + 50px);
+  margin-bottom: 1.875rem;
+}
+.fc__news-card-img img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.fc__news-card-text {
+  padding: 0 1.5625rem 2.8125rem 1.5625rem;
+}
+.fc__news-card-title {
+  font-size: 1.5625rem;
+  margin-bottom: 2.1875rem;
+}
+.fc__news-card .btn, .fc__news-card .wpcf7 input[type=submit], .wpcf7 .fc__news-card input[type=submit] {
+  align-self: flex-start;
+  margin-top: auto;
+}
+.fc__news-cta {
+  margin-top: 4.6875rem;
+}
+.fc__testimonials {
+  background-size: auto 115%;
+  background-position: -35% 22%;
+  background-color: #7AA3CD;
+  color: #EFECE9;
+  text-align: center;
+}
+.fc__testimonials blockquote > p {
+  font-size: 2.1875rem;
 }
 .fc__featured-card {
+  background-color: #7AA3CD;
+  background-size: 167%;
+  background-position: -12% 279%;
+  padding: 3.4375rem 2.8125rem 5.625rem 2.8125rem;
+  height: 100%;
+  color: #EFECE9;
+  display: flex;
+  flex-direction: column;
+}
+.fc__featured-card--premium {
   background-color: #002147;
+  background-position: -25% 41px;
+}
+.fc__featured-card-title {
+  margin-bottom: 2.8125rem;
+}
+.fc__featured-card-img {
+  margin-bottom: 2.5rem;
+  height: 20.3125rem;
+}
+.fc__featured-card-img img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.fc__featured-card .btn, .fc__featured-card .wpcf7 input[type=submit], .wpcf7 .fc__featured-card input[type=submit] {
+  margin-top: auto;
+  align-self: flex-start;
 }
 .fc__jobs p {
   border-bottom: 0.0625rem solid #7AA3CD;
 }
 .fc__jobs p:last-of-type {
   border: none;
+}
+.fc__ctas-card {
+  background-color: #7AA3CD;
+  background-size: auto 203%;
+  background-position: -35% 22%;
+  color: #EFECE9;
+  padding: 2.8125rem 2.1875rem 3.4375rem;
+  height: 100%;
+  flex-direction: column;
+}
+.fc__ctas-card--dark {
+  background-color: #002147;
+}
+.fc__ctas-card-title {
+  margin-bottom: 2.1875rem;
+  font-size: 2.5rem;
+}
+.fc__ctas-card .btn, .fc__ctas-card .wpcf7 input[type=submit], .wpcf7 .fc__ctas-card input[type=submit] {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .hero-carousel {
@@ -12832,12 +12927,12 @@ body {
 }
 
 /* Placeholders */
-.site__header:not(.home .site__header), .site__footer, .ch__search, .careers-list__filters {
+.site__header:not(.home .site__header), .site__footer, .ch__search, .careers-list__filters, .fc__testimonials, .fc__featured-card, .fc__ctas-card {
   background-image: url(../images/bg-q.svg);
   background-repeat: no-repeat;
 }
 
-.careers-list__card {
+.careers-list__card, .fc__img-text--bg {
   background-image: url(../images/bg-q-dark.svg);
   background-repeat: no-repeat;
 }
@@ -12852,7 +12947,7 @@ body {
 
 .btn, .wpcf7 input[type=submit],
 .btn-primary {
-  --bs-btn-color: $qc-white;
+  color: #EFECE9;
 }
 
 .btn-gold {
@@ -12889,17 +12984,45 @@ body {
 .splide__pagination__page.is-active {
   background-color: #7AA3CD;
 }
+.splide__pagination--inverse .splide__pagination__page {
+  border: 0.0625rem solid #EFECE9;
+  background-color: unset;
+}
+.splide__pagination--inverse .splide__pagination__page.is-active {
+  background-color: #EFECE9;
+}
 .splide__arrow {
   color: #EFECE9;
   font-size: 3.75rem;
+}
+.splide__bullets--inverse {
+  border: 1px solid #EFECE9;
 }
 
 figure {
   margin: 0;
 }
 
+.page-intro {
+  padding-right: 11.25rem;
+}
 .page-intro__title {
   font-size: 3.75rem;
+  margin-bottom: 3.4375rem;
+}
+.page-intro .btn, .page-intro .wpcf7 input[type=submit], .wpcf7 .page-intro input[type=submit] {
+  margin-top: 3.75rem;
+}
+
+.post-section {
+  padding: 9.0625rem;
+}
+.post-section__title {
+  font-size: 2.5rem;
+  margin-bottom: 3.75rem;
+}
+.post-section p:last-of-type {
+  margin-bottom: 3.75rem;
 }
 
 /*# sourceMappingURL=child-theme.css.map */

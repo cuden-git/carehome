@@ -12,7 +12,7 @@ $carousel = get_field('hero_carousel');
 
 get_header();
 ?>
-<main class="site-main" id="main">
+<main class="site__main" id="main">
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-6">

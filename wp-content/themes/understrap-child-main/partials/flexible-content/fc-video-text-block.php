@@ -11,7 +11,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-6 fc__img-text-text d-flex">
-        <h2 class="post-section__sub-title"><?= $title ?></h2>
+        <h2 class="post-section__title"><?= $title ?></h2>
         <?= $text ?>
         <button class="btn btn-primary"><?= $btn_label ?></button>
       </div>

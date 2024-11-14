@@ -50,6 +50,14 @@ $selector: ".site";
     }
   }
 
+  &__main {
+    padding-top: rfs-value(66px);
+
+    .home & {
+      padding-top: rfs-value(110px);
+    }
+  }
+
   &__footer {
     @extend %q-bg-img;
 

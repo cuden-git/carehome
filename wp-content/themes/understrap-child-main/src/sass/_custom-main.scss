@@ -55,7 +55,7 @@ body {
 
 .btn,
 .btn-primary {
-  --bs-btn-color: $qc-white;
+  color: $qc-white;
 }
 
 .btn-gold {
@@ -85,21 +85,39 @@ body {
 
 /* Carousel code */
 .splide {
-  &__pagination__page {
-    border-radius: 50%;
-    border: none;
-    width: rfs-value(16px);
-    height: rfs-value(16px);
-    margin: 0 rfs-value(4px);
+  &__pagination {
+    &__page {
+      border-radius: 50%;
+      border: none;
+      width: rfs-value(16px);
+      height: rfs-value(16px);
+      margin: 0 rfs-value(4px);
 
-    &.is-active {
-      background-color: $qc-blue-light;
+      &.is-active {
+        background-color: $qc-blue-light;
+      }
+
+      .splide__pagination--inverse & {
+        border: rfs-value(1px) solid $qc-white;
+        background-color: unset;
+
+        &.is-active {
+          background-color: $qc-white;
+        }
+      }
     }
   }
 
   &__arrow {
     color: $qc-white;
     font-size: rfs-value(60px);
+  }
+
+  &__bullets {
+    &--inverse {
+      border: 1px solid $qc-white;
+
+    }
   }
 }
 
@@ -108,7 +126,29 @@ figure {
 }
 
 .page-intro {
+  padding-right: rfs-value(180px);
+
   &__title {
     font-size: rfs-value(60px);
+    margin-bottom: rfs-value(55px);
+  }
+
+  .btn {
+    margin-top: rfs-value(60px);
+  }
+}
+
+.post-section {
+  padding: rfs-value(145px);
+
+  &__title {
+    font-size: rfs-value(40px);
+    margin-bottom: rfs-value(60px);
+  }
+
+  p {
+    &:last-of-type {
+      margin-bottom: rfs-value(60px);
+    }
   }
 }
