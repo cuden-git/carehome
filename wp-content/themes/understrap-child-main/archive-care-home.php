@@ -22,9 +22,9 @@ get_header();
     </div>
   </div>
   <!-- -->
-  <div class="container d-flex justify-content-between">
+  <div class="container ch__archive-switcher d-flex">
     <h3 class=""><?= $archive_list_title ?></h3>
-    <button id="" class="btn btn-primary" type="button" data-swap-label="<?= __('List View', THEME_NAMESPACE) ?>"><?= __('Map View', THEME_NAMESPACE) ?></button>
+    <button id="archive-switcher" class="btn btn-primary" type="button" data-swap-label="<?= __('List View', THEME_NAMESPACE) ?>"><?= __('Map View', THEME_NAMESPACE) ?></button>
   </div>
   <!-- -->
   <div id="care-homes-list" class="container ch__list">
@@ -55,31 +55,24 @@ get_header();
           //print_r($block_fields);
           get_template_part('partials/care-home-card', null, $block_fields);
         }
-        $pagination_args = array(
-          'total'        => $query->max_num_pages,
-          'current'      => $paged,
-          'show_all'     => false,
-          'end_size'     => 1,
-          'mid_size'     => 2,
-          'prev_text'    => __('« Prev'),
-          'next_text'    => __('Next »'),
-        );
-
-        //echo paginate_links($pagination_args);
-        echo the_posts_pagination(array(
-          'mid_size'  => 2,
-          'prev_text' => __('Prev', 'textdomain'),
-          'next_text' => __('Next', 'textdomain'),
-        ));
       }
 
       wp_reset_postdata();
       wp_reset_query();
       ?>
+      <div class="col-12 d-flex ch__pagination">
+        <?php
+        the_posts_pagination(array(
+          'mid_size'  => 2,
+          'prev_text' =>  '<i class="icon-arrow-left"></i>' . __('Previous', THEME_NAMESPACE),
+          'next_text' => __('Next', THEME_NAMESPACE) . '<i class="icon-arrow-right"></i>'
+        ));
+        ?>
+      </div>
     </div>
   </div>
   <!-- Maps -->
-  <div id="care-homes-maps" class="ch__map container">map view</div>
+  <div id="care-homes-maps" class="ch__map container d-none">map view</div>
 </main>
 <?
 

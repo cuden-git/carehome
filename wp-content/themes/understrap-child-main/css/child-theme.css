@@ -12344,6 +12344,17 @@ select {
 }
 .site__header .navbar {
   padding-bottom: 6.25rem;
+  font-size: 1.25rem;
+}
+.site__header .navbar li {
+  margin-left: 2.1875rem;
+}
+.site__header .navbar li:first-child {
+  margin-left: 0;
+}
+.site__header .navbar a {
+  --bs-nav-link-padding-y: 0;
+  --bs-navbar-nav-link-padding-x: 0;
 }
 .site__header-title {
   font-size: 1.875rem;
@@ -12438,33 +12449,128 @@ select {
 .ch__search-form select {
   height: 100%;
 }
+.ch__archive {
+  padding-bottom: 6.25rem;
+}
+.ch__archive-switcher {
+  justify-content: space-between;
+  padding-top: 12.5rem;
+  padding-bottom: 5rem;
+}
+.ch__list > .row > [class*=col-md] {
+  padding-bottom: 6.875rem;
+}
+.ch__list > .row > [class*=col-md]:nth-child(odd) {
+  padding-right: calc(6.875rem / 2);
+}
+.ch__list > .row > [class*=col-md]:nth-child(even) {
+  padding-left: calc(6.875rem / 2);
+}
 .ch__card {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: 88%;
+  display: flex;
+  flex-direction: column;
   color: #EFECE9;
   background-color: #7AA3CD;
-}
-.ch__card.row > * {
-  --bs-gutter-x: 100px// rfs-value(55px);
-  padding-right: 0;
-  padding-left: 0;
+  height: 100%;
+  padding: 3.4375rem;
+  /* Remove. debug only */
 }
 .ch__card--premium {
   background-color: #002147;
 }
+.ch__card-img {
+  margin-bottom: 1.875rem;
+}
 .ch__card-title {
   font-size: 2.5rem;
+  margin-bottom: 3.4375rem;
 }
 .ch__card-logo {
-  width: 15.625rem;
+  width: 15.3125rem;
+}
+.ch__card div:has(.ch__card-contact) {
+  padding-bottom: 3.75rem;
+}
+.ch__card-contact {
+  flex: 1;
+  padding-right: 1.875rem;
+}
+.ch__card-contact a {
+  color: #EFECE9;
+  text-decoration: none;
+}
+.ch__card-types {
+  flex: 1;
+  border-left: 1px solid #EFECE9;
+  padding-left: 4.0625rem;
+}
+.ch__card--premium .ch__card-types {
+  border-color: #B99475;
 }
 .ch__card-icons {
-  border-top: 0.0625rem solid #B99475;
+  border-top: 0.0625rem solid #EFECE9;
   padding-top: 5rem;
+  -moz-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 3.75rem;
+  column-gap: 3.75rem;
+  margin-bottom: 2.5rem;
+}
+.ch__card--premium .ch__card-icons {
+  border-color: #B99475;
+}
+.ch__card-icons li {
+  margin-bottom: 2.1875rem;
 }
 .ch__card-icons i {
+  font-size: 2.1875rem;
+  text-align: center;
+  width: 4.375rem;
+  margin-right: 0.625rem;
+}
+.ch__card--premium .ch__card-icons i {
   color: #B99475;
 }
+.ch__card .btn, .ch__card .wpcf7 input[type=submit], .wpcf7 .ch__card input[type=submit] {
+  margin-top: auto;
+  align-self: flex-start;
+}
+.ch__card .distance {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 15px;
+  padding: 5px;
+  background-color: rgba(239, 236, 233, 0.5);
+  color: #002147;
+}
+.ch__pagination {
+  justify-content: center;
+}
+.ch__pagination .nav-links .page-numbers {
+  color: #002147;
+}
+.ch__pagination .nav-links .page-numbers.next, .ch__pagination .nav-links .page-numbers.prev {
+  text-decoration: none;
+}
+.ch__pagination .nav-links .page-numbers.next {
+  margin-left: 5.9375rem;
+}
+.ch__pagination .nav-links .page-numbers.next i {
+  margin-left: 1.25rem;
+}
+.ch__pagination .nav-links .page-numbers.prev {
+  margin-right: 5.9375rem;
+}
+.ch__pagination .nav-links .page-numbers.prev i {
+  margin-right: 1.25rem;
+}
 .ch__map {
-  height: 500;
+  height: 61.875rem;
 }
 
 .care-home .post-section {
@@ -12913,7 +13019,14 @@ select {
 
 @font-face {
   font-family: "poppins-light";
-  src: url("../fonts/poppins-light.woff2") format("woff2");
+  src: url("../fonts/Poppins-Light.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "poppins-semi-bold";
+  src: url("../fonts/poppins-SemiBold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12926,7 +13039,7 @@ body {
 }
 
 /* Placeholders */
-.site__header:not(.home .site__header), .site__footer, .ch__search, .careers-list__filters, .fc__testimonials, .fc__featured-card, .fc__ctas-card {
+.site__header:not(.home .site__header), .site__footer, .ch__search, .ch__card, .careers-list__filters, .fc__testimonials, .fc__featured-card, .fc__ctas-card {
   background-image: url(../images/bg-q.svg);
   background-repeat: no-repeat;
 }
@@ -13002,10 +13115,6 @@ body {
   border: 1px solid #EFECE9;
 }
 
-figure {
-  margin: 0;
-}
-
 .page-intro {
   padding-right: 11.25rem;
 }
@@ -13026,6 +13135,11 @@ figure {
 }
 .post-section p:last-of-type {
   margin-bottom: 3.75rem;
+}
+
+ul,
+figure {
+  margin: 0;
 }
 
 /*# sourceMappingURL=child-theme.css.map */
