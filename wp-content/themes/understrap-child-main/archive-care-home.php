@@ -4,17 +4,27 @@ defined('ABSPATH') || exit;
 if (isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
   wp_redirect($_GET['care_homes']);
 }
+$archive_intro = get_field('ch_results_intro', 'option');
+$archive_list_title = get_field('ch_archive_page_title', 'option');
+
 get_header();
 ?>
-<main id="care-home-results" class="ch__archive">
+<main id="care-home-results" class="site__main ch__archive">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-7 page-intro">
+      <h2 class="page-intro__title"><?= $archive_intro['title'] ?></h2>
+      <?= $archive_intro['text'] ?>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-5">
         <?php get_template_part('partials/care-home-search'); ?>
       </div>
     </div>
+  </div>
+  <!-- -->
+  <div class="container d-flex justify-content-between">
+    <h3 class=""><?= $archive_list_title ?></h3>
+    <button id="" class="btn btn-primary" type="button" data-swap-label="<?= __('List View', THEME_NAMESPACE) ?>"><?= __('Map View', THEME_NAMESPACE) ?></button>
   </div>
   <!-- -->
   <div id="care-homes-list" class="container ch__list">

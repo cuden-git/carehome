@@ -1,8 +1,4 @@
 @charset "UTF-8";
-:root {
-  --bs-btn-color: $qc-white;
-}
-
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -12326,6 +12322,9 @@ select {
   width: 100%;
 }
 
+.site__header {
+  padding-top: 3.125rem;
+}
 .home .site__header {
   position: absolute;
   width: 100%;
@@ -12939,6 +12938,10 @@ body {
 
 .gold-bullets li::marker {
   color: #B99475;
+}
+
+.navbar {
+  padding-top: 0;
 }
 
 .btn, .wpcf7 input[type=submit] {

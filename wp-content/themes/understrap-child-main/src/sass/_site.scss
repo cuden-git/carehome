@@ -2,6 +2,7 @@ $selector: ".site";
 
 #{$selector} {
   &__header {
+    padding-top: rfs-value(50px);
 
     .home & {
       position: absolute;
