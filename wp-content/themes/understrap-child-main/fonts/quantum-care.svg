@@ -30,4 +30,5 @@
 <glyph unicode="&#xe914;" glyph-name="minus" horiz-adv-x="7168" d="M7168 448h-7168zM0 960v-1024h7168v1024z" />
 <glyph unicode="&#xe915;" glyph-name="plus" horiz-adv-x="935" d="M400.696 960v-445.217h-400.696v-133.565h400.696v-445.217h133.565v445.217h400.696v133.565h-400.696v445.217h-133.565z" />
 <glyph unicode="&#xe916;" glyph-name="arrow-down" horiz-adv-x="854" d="M867.836 349.653l-45.422 45.422-395.249-395.249-395.249 395.249-45.422-45.422 440.671-440.671zM459.277 960.094h-64.244v-995.776h64.244z" />
+<glyph unicode="&#xe917;" glyph-name="chevron-right" horiz-adv-x="534" d="M23.828 961.781l-25.596-25.596 488.192-488.192-488.192-488.168 25.596-25.596 513.788 513.764z" />
 </font></defs></svg>

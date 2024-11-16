@@ -170,3 +170,45 @@ function qc_social_media() {
 
 	return $sm_links;
 }
+
+/**
+ * Get news posts linked to care home
+ */
+function qc_related_news($post_id, $num_posts) {
+	$related_news = get_posts([
+		'post_type' => 'post',
+		'meta_key' => 'news_care_homes',
+		'meta_value' => $post_id,
+		'post_status' => 'publish',
+		'numberposts' => $num_posts
+	]);
+
+	return $related_news;
+}
+
+/**
+ * Sets the ID CSS hook for the anchor links
+ */
+function qc_set_achor_index() {
+	static $count = 0;
+
+	echo 'section-' . $count;
+	
+	++$count;
+}
+
+/**
+ * Gets the section menu labels
+ */
+function qc_get_section_labels() {
+	$page_field_objs = get_field_objects();
+	$menu_items = [];
+
+	foreach($page_field_objs as $page_obj) {
+		if(is_array($page_obj['value']) && array_key_exists('section_menu_label', $page_obj['value'])) {
+			array_push($menu_items, $page_obj['value']['section_menu_label']);
+		}
+	}
+	
+	return $menu_items;
+}

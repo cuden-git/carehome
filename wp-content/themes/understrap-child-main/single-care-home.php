@@ -10,9 +10,10 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
+
 ?>
 
-<main class="site__main" id="main">
+<main class="site__main pt-0" id="main">
 
 	<?php
 	while ( have_posts() ) {

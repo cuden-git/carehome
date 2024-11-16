@@ -52,7 +52,6 @@ get_header();
         while ($query->have_posts()) {
           $query->the_post();
           $block_fields = qc_get_acf_block_attrs(get_the_content(), THEME_NAMESPACE . '/care-home');
-          //print_r($block_fields);
           get_template_part('partials/care-home-card', null, $block_fields);
         }
       }

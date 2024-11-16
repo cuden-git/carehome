@@ -9267,3 +9267,1135 @@ Stack trace:
 [14-Nov-2024 18:46:09 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 54
 [14-Nov-2024 18:46:23 UTC] PHP Warning:  Undefined array key "bg_colour" in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-cta-blocks.php on line 12
 [14-Nov-2024 18:46:44 UTC] PHP Warning:  Undefined array key "bg_colour" in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-cta-blocks.php on line 12
+[15-Nov-2024 08:09:07 UTC] PHP Warning:  Undefined array key "bg_colour" in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-cta-blocks.php on line 12
+[15-Nov-2024 08:09:09 UTC] PHP Warning:  Undefined array key "bg_colour" in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-cta-blocks.php on line 12
+[15-Nov-2024 08:46:06 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 183
+[15-Nov-2024 13:01:11 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:01:13 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:01:14 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Undefined variable $gallery in /var/www/html/wp-content/themes/understrap-child-main/header.php on line 41
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 23
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 24
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 25
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 26
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 27
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 28
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 35
+[15-Nov-2024 13:03:07 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:03:41 UTC] PHP Warning:  Undefined variable $gallery in /var/www/html/wp-content/themes/understrap-child-main/header.php on line 41
+[15-Nov-2024 13:03:41 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:03:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 23
+[15-Nov-2024 13:03:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 24
+[15-Nov-2024 13:03:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 25
+[15-Nov-2024 13:03:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 26
+[15-Nov-2024 13:03:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 27
+[15-Nov-2024 13:03:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 28
+[15-Nov-2024 13:03:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 35
+[15-Nov-2024 13:06:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_singuler() in /var/www/html/wp-content/themes/understrap-child-main/header.php:41
+Stack trace:
+#0 /var/www/html/wp-includes/template.php(810): require_once()
+#1 /var/www/html/wp-includes/template.php(745): load_template('/var/www/html/w...', true, Array)
+#2 /var/www/html/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php(10): get_header()
+#4 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#5 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#6 /var/www/html/index.php(17): require('/var/www/html/w...')
+#7 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/header.php on line 41
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Undefined variable $gallery in /var/www/html/wp-content/themes/understrap-child-main/header.php on line 42
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 23
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 24
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 25
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 26
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 27
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 28
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 35
+[15-Nov-2024 13:06:49 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:07:44 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:07:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 23
+[15-Nov-2024 13:07:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 24
+[15-Nov-2024 13:07:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 25
+[15-Nov-2024 13:07:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 26
+[15-Nov-2024 13:07:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 27
+[15-Nov-2024 13:07:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 28
+[15-Nov-2024 13:07:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 35
+[15-Nov-2024 13:07:44 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:11:08 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:11:37 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:12:33 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:19:16 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:19:44 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:16 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', false, 561, Object(WP_Block), Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', false, 561, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 561, Object(WP_Block), Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 561, Object(WP_Block))
+#8 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#9 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#10 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#11 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#12 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:quantum...')
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(253): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->create_item(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#18 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#19 /var/www/html/wp-includes/rest-api.php(428): WP_REST_Server->serve_request('/wp/v2/care-hom...')
+#20 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#21 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#22 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#23 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#24 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#25 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#26 /var/www/html/wp-blog-header.php(16): wp()
+#27 /var/www/html/index.php(17): require('/var/www/html/w...')
+#28 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:17 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:27 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:27 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:30 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:35 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:35 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:36 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:37 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:38 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:39 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:39 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:41 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:44 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:48 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:49 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:20:58 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#8 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#9 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#10 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#11 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:21:00 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', false, 299, Object(WP_Block), Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', false, 299, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 299, Object(WP_Block), Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 299, Object(WP_Block))
+#8 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#9 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#10 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#11 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#12 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(952): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->update_item(Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#17 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 /var/www/html/wp-includes/rest-api.php(428): WP_REST_Server->serve_request('/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#20 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#21 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#22 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#23 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#24 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#25 /var/www/html/wp-blog-header.php(16): wp()
+#26 /var/www/html/index.php(17): require('/var/www/html/w...')
+#27 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:21:02 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', false, 299, Object(WP_Block), Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', false, 299, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 299, Object(WP_Block), Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 299, Object(WP_Block))
+#8 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#9 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#10 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#11 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#12 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(952): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->update_item(Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#17 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 /var/www/html/wp-includes/rest-api.php(428): WP_REST_Server->serve_request('/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#20 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#21 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#22 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#23 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#24 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#25 /var/www/html/wp-blog-header.php(16): wp()
+#26 /var/www/html/index.php(17): require('/var/www/html/w...')
+#27 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:21:16 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', false, 561, Object(WP_Block), Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', false, 561, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 561, Object(WP_Block), Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 561, Object(WP_Block))
+#8 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#9 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#10 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#11 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#12 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:quantum...')
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(253): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->create_item(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#18 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#19 /var/www/html/wp-includes/rest-api.php(428): WP_REST_Server->serve_request('/wp/v2/care-hom...')
+#20 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#21 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#22 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#23 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#24 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#25 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#26 /var/www/html/wp-blog-header.php(16): wp()
+#27 /var/www/html/index.php(17): require('/var/www/html/w...')
+#28 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:21:17 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', false, 299, Object(WP_Block), Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', false, 299, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 299, Object(WP_Block), Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 299, Object(WP_Block))
+#8 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#9 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#10 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#11 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#12 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(952): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->update_item(Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#17 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 /var/www/html/wp-includes/rest-api.php(428): WP_REST_Server->serve_request('/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#20 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#21 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#22 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#23 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#24 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#25 /var/www/html/wp-blog-header.php(16): wp()
+#26 /var/www/html/index.php(17): require('/var/www/html/w...')
+#27 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:22:16 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', false, 561, Object(WP_Block), Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', false, 561, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 561, Object(WP_Block), Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 561, Object(WP_Block))
+#8 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#9 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#10 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#11 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#12 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:quantum...')
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(253): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->create_item(Object(WP_REST_Request))
+#17 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#18 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#19 /var/www/html/wp-includes/rest-api.php(428): WP_REST_Server->serve_request('/wp/v2/care-hom...')
+#20 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#21 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#22 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#23 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#24 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#25 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#26 /var/www/html/wp-blog-header.php(16): wp()
+#27 /var/www/html/index.php(17): require('/var/www/html/w...')
+#28 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:22:30 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:90
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(17): qc_tabbed_content_arrays(Array)
+#1 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, Object(WP_Block), Array)
+#3 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#4 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, Object(WP_Block), Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 299, Object(WP_Block))
+#8 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#9 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#10 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#11 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#12 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(1865): apply_filters('the_content', '<!-- wp:quantum...')
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php(569): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Posts_Controller->get_item(Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#17 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#19 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#20 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#21 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#22 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#23 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 90
+[15-Nov-2024 13:22:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-includes/class-wp-recovery-mode-email-service.php on line 367
+[15-Nov-2024 13:22:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-includes/class-wp-recovery-mode-email-service.php on line 368
+[15-Nov-2024 13:23:46 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 13:23:46 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:23:46 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 13:23:46 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:03 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:06 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 13:24:06 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:14 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 13:24:14 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:19 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:27 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:33 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:38 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:41 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 13:24:41 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:47 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 13:24:47 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:52 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 13:24:52 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:24:56 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:02 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:08 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:13 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:14 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 13:25:14 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 13:25:18 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:23 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:30 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:36 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:45 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:46 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:25:55 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:33:27 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:36:23 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:37:30 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:39:17 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:41:16 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:41:18 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:41:32 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:41:34 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:42:39 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:46:09 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:46:47 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:47:42 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:49:07 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:49:09 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:51:23 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:53:25 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:54:39 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 13:55:52 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:00:05 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:01:03 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:01:51 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:05:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:05:24 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:07:21 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:24:09 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:27:22 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:35:11 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:35:25 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:39:41 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:39:43 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 14:46:47 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:00:51 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:02:04 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:05:19 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:06:49 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:10:53 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:12:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:13:57 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:14:35 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:15:23 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:15:24 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:15:25 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:15:47 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:16:52 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:21:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:21:56 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:22:17 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:24:17 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 15:26:03 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 16:51:40 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:03:41 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:03:43 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:03:44 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:07:37 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:07:39 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:34:10 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:34:30 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:35:17 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:35:19 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:35:20 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 17:35:20 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:45:37 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:45:38 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:45:53 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:46:02 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:48:38 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:48:39 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:48:42 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:48:44 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:48:44 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:48:44 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:48:45 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:48:45 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:49:23 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:55:48 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 18:57:21 UTC] PHP Parse error:  syntax error, unexpected token "if" in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 26
+[15-Nov-2024 18:59:30 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:04:16 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:08:11 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:09:45 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:09:47 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:10:45 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:12:32 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:12:36 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:13:22 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:13:55 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:15:43 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:15:48 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:16:13 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:16:17 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:19:32 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:19:33 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:19:34 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:19:34 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 19:19:34 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:10:32 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:19:35 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:41:42 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:41:42 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 206
+[15-Nov-2024 20:43:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:43:01 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 206
+[15-Nov-2024 20:43:01 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 92
+[15-Nov-2024 20:43:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:44:59 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:44:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 194
+[15-Nov-2024 20:44:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 206
+[15-Nov-2024 20:45:25 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:45:33 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:45:37 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:49:07 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:50:52 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:54:30 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:55:42 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:56:11 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:56:23 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[15-Nov-2024 20:58:45 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 06:08:51 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 10:26:19 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 10:53:27 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 10:53:32 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 10:53:34 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 10:53:35 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 11:15:41 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 11:15:46 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 11:16:19 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 11:16:26 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 11:16:53 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function get_field_object(), 0 passed in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 204 and at least 1 expected in /var/www/html/wp-content/plugins/advanced-custom-fields-pro/includes/api/api-template.php:232
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php(204): get_field_object()
+#1 /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php(27): qc_get_section_labels()
+#2 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include('/var/www/html/w...')
+#3 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', false, 299, Object(WP_Block), Array)
+#4 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', false, 299, Object(WP_Block), Array)
+#7 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 299, Object(WP_Block), Array)
+#8 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 299, Object(WP_Block))
+#9 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#10 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#11 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#12 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#14 /var/www/html/wp-includes/post-template.php(256): apply_filters('the_content', '<!-- wp:quantum...')
+#15 /var/www/html/wp-content/themes/understrap-child-main/single-care-home.php(21): the_content()
+#16 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#17 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#18 /var/www/html/index.php(17): require('/var/www/html/w...')
+#19 {main}
+  thrown in /var/www/html/wp-content/plugins/advanced-custom-fields-pro/includes/api/api-template.php on line 232
+[16-Nov-2024 13:00:06 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 13:00:27 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:20:38 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:20:57 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:21:07 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:31:07 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting ";" in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 214
+[16-Nov-2024 15:31:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-includes/class-wp-recovery-mode-email-service.php on line 367
+[16-Nov-2024 15:31:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-includes/class-wp-recovery-mode-email-service.php on line 368
+[16-Nov-2024 15:44:34 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:44:42 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:45:18 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:46:31 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:47:18 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:48:11 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:49:07 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:57:58 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:58:31 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:59:17 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 15:59:43 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:00:48 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:01:16 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:01:43 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:01:45 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:01:45 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:01:46 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:01:59 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:02:00 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:02:00 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:02:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:02:10 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:02:11 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:02:17 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:02:18 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:06:11 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:06:56 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:06:56 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#7 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#8 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#9 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#10 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#11 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:06:57 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:06:57 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#7 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#8 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#9 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#10 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#11 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:06:58 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:06:58 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#7 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#8 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#9 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#10 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#11 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:06:58 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:06:58 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#7 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#8 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#9 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#10 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#11 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:07:00 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:07:00 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#7 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#8 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#9 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#10 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#11 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:07:00 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:07:00 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#7 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#8 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#9 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#10 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#11 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:07:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:07:01 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#7 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#8 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#9 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#10 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#11 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:07:02 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:07:02 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 299, NULL, Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 299, NULL, Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 299, NULL, Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(1019): acf_rendered_block(Array, '', true, 299, NULL, Array, true)
+#7 /var/www/html/wp-includes/class-wp-hook.php(324): acf_ajax_fetch_block('')
+#8 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#9 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#10 /var/www/html/wp-admin/admin-ajax.php(192): do_action('wp_ajax_acf/aja...')
+#11 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:07:12 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:07:12 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:07:12 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', false, 582, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', false, 582, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', false, 582, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', false, 582, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(253): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->create_item(Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#17 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 /var/www/html/wp-includes/rest-api.php(428): WP_REST_Server->serve_request('/wp/v2/care-hom...')
+#19 /var/www/html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#20 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#21 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#22 /var/www/html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#23 /var/www/html/wp-includes/class-wp.php(813): WP->parse_request('')
+#24 /var/www/html/wp-includes/functions.php(1336): WP->main('')
+#25 /var/www/html/wp-blog-header.php(16): wp()
+#26 /var/www/html/index.php(17): require('/var/www/html/w...')
+#27 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:07:12 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 582, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 582, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 582, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 582, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(314): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->get_items(Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#17 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#19 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#20 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#21 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#22 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#23 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:07:18 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:07:18 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 582, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 582, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 582, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 582, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(314): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->get_items(Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#17 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#19 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#20 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#21 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#22 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#23 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:07:21 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:07:21 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 582, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 582, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 582, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 582, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(314): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->get_items(Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#17 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#19 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#20 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#21 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#22 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#23 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:07:22 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:07:22 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php:245
+Stack trace:
+#0 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(738): include()
+#1 /var/www/html/wp-includes/class-wp-hook.php(324): acf_block_render_template(Array, '', true, 582, Object(WP_Block), Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#3 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(712): do_action('acf_block_rende...', Array, '', true, 582, Object(WP_Block), Array)
+#5 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(610): acf_render_block(Array, '', true, 582, Object(WP_Block), Array)
+#6 /var/www/html/wp-content/plugins/advanced-custom-fields-pro/pro/blocks.php(533): acf_rendered_block(Array, '', true, 582, Object(WP_Block))
+#7 /var/www/html/wp-includes/class-wp-block.php(463): acf_render_block_callback(Array, '', Object(WP_Block))
+#8 /var/www/html/wp-includes/blocks.php(1705): WP_Block->render()
+#9 /var/www/html/wp-includes/blocks.php(1743): render_block(Array)
+#10 /var/www/html/wp-includes/class-wp-hook.php(324): do_blocks('<!-- wp:quantum...')
+#11 /var/www/html/wp-includes/plugin.php(205): WP_Hook->apply_filters('<!-- wp:quantum...', Array)
+#12 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php(632): apply_filters('the_content', '<!-- wp:quantum...')
+#13 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(451): WP_REST_Revisions_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#14 /var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php(314): WP_REST_Autosaves_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#15 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1230): WP_REST_Autosaves_Controller->get_items(Object(WP_REST_Request))
+#16 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/care-hom...', Array, NULL)
+#17 /var/www/html/wp-includes/rest-api.php(555): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 /var/www/html/wp-includes/rest-api.php(2922): rest_do_request(Object(WP_REST_Request))
+#19 [internal function]: rest_preload_api_request(Array, '/wp/v2/care-hom...')
+#20 /var/www/html/wp-includes/block-editor.php(750): array_reduce(Array, 'rest_preload_ap...', Array)
+#21 /var/www/html/wp-admin/edit-form-blocks.php(77): block_editor_rest_api_preload(Array, Object(WP_Block_Editor_Context))
+#22 /var/www/html/wp-admin/post.php(187): require('/var/www/html/w...')
+#23 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 245
+[16-Nov-2024 16:08:07 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:07 UTC] PHP Warning:  Undefined array key "docs" in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 242
+[16-Nov-2024 16:08:07 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 242
+[16-Nov-2024 16:08:07 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:07 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 242
+[16-Nov-2024 16:08:20 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:20 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:08:24 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:24 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:08:26 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:26 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:08:28 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:28 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:08:37 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:39 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:39 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:08:42 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:42 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:08:43 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:08:46 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:46 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:08:50 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:57 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:08:58 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:08:58 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 246
+[16-Nov-2024 16:09:04 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:09:06 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:09:55 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:09:56 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:09:57 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:09:58 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:09:59 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:09:59 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:10:00 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:10:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:10:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:10:04 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:10:27 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:11:04 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:11:04 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/care-home/care-home.php on line 242
+[16-Nov-2024 16:11:40 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:12:06 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:12:22 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:12:24 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:12:26 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:12:34 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:12:41 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:12:44 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:13:06 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:16:07 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:17:08 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:17:11 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:18:38 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:19:59 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:24:26 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:24:41 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:25:06 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:25:24 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:25:28 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:28:01 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:28:22 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:29:57 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:32:04 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:36:53 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:37:18 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:37:48 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 16:38:29 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:47:56 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:49:14 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:49:15 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:49:37 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:49:41 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:50:23 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:50:53 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:53:36 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:53:56 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:57:35 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 18:57:53 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:00:13 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:00:57 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:01:00 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:03:17 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:08:38 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:11:36 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:11:47 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:12:16 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:12:45 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:15:29 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:15:33 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:22:33 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:25:39 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:25:41 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16
+[16-Nov-2024 19:26:10 UTC] PHP Warning:  Undefined variable $is_premium in /var/www/html/wp-content/themes/understrap-child-main/partials/header-care-home.php on line 16

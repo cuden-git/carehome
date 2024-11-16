@@ -31,6 +31,7 @@ body {
   background-color: $white;
   color: $qc-black;
   font-size: rfs-value(18px);
+  --bs-body-line-height: 1.4em;
 }
 
 /* Placeholders */
@@ -52,6 +53,14 @@ body {
   }
 }
 
+%qc-blue-bullet {
+  li {
+    &::marker {
+      color: $qc-blue-light;
+    }
+  }
+}
+
 //classes
 .navbar {
   padding-top: 0;
@@ -59,6 +68,10 @@ body {
 
 .gold-bullets {
   @extend %qc-gold-bullet;
+}
+
+.blue-bullets {
+  @extend %qc-blue-bullet;
 }
 
 .btn {
@@ -123,6 +136,7 @@ body {
   &__arrow {
     color: $qc-white;
     font-size: rfs-value(60px);
+    cursor: pointer;
   }
 
   &__bullets {
@@ -152,6 +166,15 @@ body {
   &__title {
     font-size: rfs-value(40px);
     margin-bottom: rfs-value(60px);
+
+    &--sml {
+      font-size: rfs-value(35px);
+      margin-bottom: rfs-value(35px);
+    }
+
+    &--lrg {
+      font-size: rfs-value(55px);
+    }
   }
 
   p {
@@ -162,7 +185,13 @@ body {
 }
 
 // elements
+address,
 ul,
 figure {
   margin: 0;
+}
+
+.nav-link {
+  --bs-nav-link-padding-y: 0;
+  --bs-nav-link-padding-x: 0;
 }

@@ -5,85 +5,58 @@
  * Used fore care-home post type. *
  */
 
-$intro = get_field('ch_intro');
-$address = get_field('ch_address');
-$contact_info = get_field('ch_contact_details');
-$header_img = get_field('ch_header_img');
+// $intro = get_field('ch_intro');
+// $address = get_field('ch_address');
+// $contact_info = get_field('ch_contact_details');
+// $header_img = get_field('ch_header_img');
 $overview = get_field('ch_overview');
 $terms = get_the_terms(get_the_ID(), 'care-home-category');
 $premium_class = '';
 $map_location = get_field('ch_map_location');
-$rows = get_field('ch_the_team');
-$tabbed_content = qc_tabbed_content_arrays($rows);
+$the_team = get_field('ch_the_team');
+$tabbed_content = qc_tabbed_content_arrays($the_team['members']);
 $ch_services = get_field('ch_services_facilities');
 $yt_embed_code = get_field('ch_yt_embed_code');
 $brochures = get_field('ch_brochures_guides');
 $gallery = get_field('ch_gallery_carousel');
 $is_premium = (has_term('quantum-select', 'care-home-category'))? true : false;
+$related_news = qc_related_news(get_the_ID(), 3);
+$related_settings = get_field('ch_latest_news');
+//print_r(get_field_objects());die();
 //set class hook for Quantum select 
-if($terms) {
-  
-  // foreach ($terms as $term) {
-  //   if ($term->slug === 'quantum-select') {
-  //     $premium_class = ' carehome--premium';
-  //   }
-  // }
-}
+$menu_items = qc_get_section_labels();
 
 ?>
 
 <div class="<?= (is_admin())? 'wp-admin-wrap ' : null ?>care-home<?= ($is_premium)? ' care-home--premium' : null ?>">
-
-  <!-- Care Home header -->
-  <section class="post-section care-home__header">
-    <header class="container">
-      <div class="row">
-        <h2 class="post-section__title"><?php the_title() ?></h2>      
-        <div class="col-md-6">
-          <?php
-          if($is_premium) {
-          ?>
-          <img src="<?= LOGO_SELECT_SRC ?>" class="care-home__header-logo" alt="Quantum Care" />
-          <?php
-          }
-          ?>
-        </div>
-        <div class="col-md-6">
-          <address>
-            <?= $address['address'] ?>,
-            <?= $address['town_city'] ?>,
-            <?= $address['county'] ?>,
-            <?= $address['post_code'] ?>
-            <p>
-              T: <a href="tel:<?= $contact_info['telephone_number'] ?>" title="<?= $contact_info['telephone_number'] ?>"><?= $contact_info['telephone_number'] ?></a>
-              E: <a href="mail:<?= $contact_info['email'] ?>" title="<?= $contact_info['email'] ?>"><?= $contact_info['email'] ?></a>
-            </p>
-          </address>
-          <?php
-          if($header_img['ID']) {
-          ?>
-          <figure class="care-home__header-img">
-            <?= wp_get_attachment_image($header_img['ID'], 'large') ?>
-          </figure>
-          <?php
-          }
-          ?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <?= $intro ?>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <a href="<?= get_permalink(get_the_ID()) ?>" class="btn btn-gold btn-gold--inverse titl="<?= __('Find Out More', THEME_NAMESPACE) ?>"><?= __('Find Out More', THEME_NAMESPACE) ?></a>
-        </div>
-      </div>
-    </header>
-  </section> 
+<?php
+  get_template_part( 'partials/header-care-home', null, $gallery);
+?>
+<?php
+if(!empty($menu_items)) {
+  $loop_index = 0;
+  ?>
+  <nav class="care-home__nav">
+    <div class="container">
+      <ul class="list-inline d-flex justify-content-center">
+  <?php
+    foreach ($menu_items as $item) {
+  ?>
+        <li>
+          <a href="#section-<?= $loop_index ?>" title="<?= __($item, THEME_NAMESPACE) ?>"><?= __($item, THEME_NAMESPACE) ?></a>
+        </li>
+  <?
+        ++$loop_index;
+      }
+  ?>
+      </ul>
+    </div>
+  </nav>
+<?php
+  }
+?>
   <!-- Overview content -->
-  <section class="post-section bg-gold-light care-home__overview">
+  <section id="<?php qc_set_achor_index() ?>" class="post-section bg-gold-light care-home__overview">
     <div class="container">
       <h2 class="post-section__title"><?= $overview['title'] ?></h2>
       <div class="care-home__overview-text">
@@ -102,7 +75,7 @@ if($terms) {
 if($gallery) {
 ?>
   <!-- Carousel -->
-  <section class="post-section ch__carousel">
+  <section class="post-section care-home__carousel">
     <div class="container">
       <?php
         get_template_part( 'partials/carousel', null, $gallery);
@@ -124,15 +97,15 @@ if($gallery) {
   </section>
  
   <!-- Tabbed content -->
-  <section class="post-section bg-gold-light care-home__team">
+  <section id="<?php qc_set_achor_index() ?>" class="post-section bg-gold-light care-home__team<?= ($is_premium)? ' care-home--premium' : null ?>">
     <div class="container">
-      <h2 class="post-section__title"></h2>
+      <h2 class="post-section__title"><?= $the_team['title'] ?></h2>
       <?php
         if(!empty($tabbed_content)) {
       ?>
-      <div class="row">
-        <div class="col-12 col-md-3">
-          <ul class="nav nav-links flex-column" role="tablist" aria-orientation="vertical">
+      <div class="d-flex">
+        <!-- <div class="col-12 col-md-3"> -->
+          <ul class="nav nav-links flex-column care-home__team-nav" role="tablist" aria-orientation="vertical">
         <?php
             $loop_index = 0;
             foreach($tabbed_content['tabs'] as $tab_label) {
@@ -145,24 +118,24 @@ if($gallery) {
             }
           ?>
           </ul>
-        </div>
-        <div class="col-12 col-md-9">
-            <div class="tab-content">
+        <!-- </div> -->
+        <!-- <div class="col-12 col-md-9"> -->
+            <div class="tab-content care-home__team-panes">
               <?php
               $loop_index = 0;
 
               foreach($tabbed_content['content'] as $tab_content) {
               ?>
-                <div id="ch-content-<?= $loop_index ?>" class="tab-pane fade<?= ($loop_index === 0)? ' show active' : null ?> row" aria-orientation="vertical">
-                  <div class="row">
-                    <div class="col-md-4">
+                <div id="ch-content-<?= $loop_index ?>" class="care-home__team-pane tab-pane fade<?= ($loop_index === 0)? ' show active' : null ?>">
+                  <div class="d-flex">
+                    <div class="flex-1 care-home__team-member">
                       <figure>
                         <?= $tab_content['img'] ?>
                       </figure>
                       <h5><?= $tab_content['name'] ?></h5>
                       <h6><?= $tab_content['role'] ?></h6>
                     </div>
-                    <div class="col-md-8">
+                    <div class="flex-2 care-home__team-info">
                       <?= $tab_content['description'] ?>
                     </div>
                   </div>
@@ -172,22 +145,23 @@ if($gallery) {
               }
             }
           ?>
+          <!-- </div> -->
           </div>
-        </div>
       </div>
       <!-- -->
     </div>
   </section>
   <!-- Facilities -->
-  <section class="post-section">
+  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__facilities<?= ($is_premium)? ' care-home--premium' : null ?>">
     <div class="container">
-      <h2 class="post-section__title"></h2>
       <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 care-home__facilities-intro">
+          <h2 class="post-section__title post-section__title--lrg"><?= $ch_services['title'] ?></h2>
           <?= $ch_services['text'] ?>
         </div>
-        <div class="col-12 col-md-6">
-          <ul>
+        <div class="col-12 col-md-6 care-home__facilities-types">
+          <h3 class="post-section__title post-section__title--sml"><?= __('Types of care we support:', THEME_NAMESPACE) ?></h3>
+          <ul class="<?= ($is_premium)? ' gold-bullets' : 'blue-bullets' ?>">
           <?php
           foreach($ch_services['care_type'] as $care_type) { 
           ?>
@@ -198,11 +172,11 @@ if($gallery) {
           </ul>
         </div>
         <div class="col-12">
-          <ul class="list-inline d-flex">
+          <ul class="list-inline care-home__facilities-icons d-flex">
         <?php
           foreach($ch_services['facilities'] as $facility) { 
         ?>
-            <li class="d-flex flex-column align-items-center">
+            <li class="d-flex">
               <span>
                 <?= $facility['label'] ?>
               </span>
@@ -217,7 +191,7 @@ if($gallery) {
     </div>
   </section>
   <!-- YouTube embed code -->
-  <section class="post-section">
+  <section class="post-section<?= ($is_premium)? ' care-home--premium' : null ?>">
     <div class="container">
       <h2 class="post-section__title"></h2>
       <div class="row">
@@ -229,20 +203,48 @@ if($gallery) {
       </div>
     </div>
   </section>
-  <!-- Brochures & Guides -->
+  <!-- Related news -->
+  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__news<?= ($is_premium)? ' care-home--premium' : null ?>">
+    <div class="container">
+      <h2 class="post-section__title"><?= __( $related_settings['title'], THEME_NAMESPACE) ?></h2>
+      <div class="row care-home__news-wrap">
+      <?php
+      foreach($related_news as $news) {
+      ?>
+      <div class="col-12 col-md-4">
+        <div class="care-home__news-card d-flex">
+          <figure class="care-home__news-card-img">
+            <?= get_the_post_thumbnail($news->ID, "large") ?>
+          </figure>
+          <div class="care-home__news-card-text d-flex">
+            <h6 class="care-home__news-card-title"><?= $news->post_title ?></h6>
+            <p><?= $news->post_excerpt ?></p>
+            <a href="<?= get_permalink($news->ID) ?>" class="btn <?= ($is_premium)? 'btn-gold' : 'btn-primary' ?>"title="<?= __( $related_settings['post_cta_label'], THEME_NAMESPACE) ?>"><?= __( $related_settings['post_cta_label'], THEME_NAMESPACE) ?></a>
+          </div>
+        </div>
+      </div>
+      <?php
+      }
+      ?>
+      </div>
+      <!-- TODO: -->
+      <a href="<?= get_post_type_archive_link(get_post_type()) ?>?meta_key=" class="btn <?= ($is_premium)? 'btn-gold' : 'btn-primary' ?>" title="<?= __( $related_settings['achive_cta_label'], THEME_NAMESPACE) ?>"><?= __( $related_settings['achive_cta_label'], THEME_NAMESPACE) ?></a>
+    </div>
+  </section> 
+ <!-- Brochures & Guides -->
   <?php
 if($brochures) {
   ?>
-  <section class="post-section care-home__brochures">
+  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__brochures">
     <div class="container">
-      <h2 class="post-section__title"><?= __('Brochures & Guides', THEME_NAMESPACE) ?></h2>
+      <h2 class="post-section__title"><?= __($brochures['title'], THEME_NAMESPACE) ?></h2>
       <div class="row">
         <ul>
         <?php
-        foreach($brochures as $brochure) { 
+        foreach($brochures['docs'] as $brochure) { 
         ?>
           <li class="d-flex justify-content-between align-items-center">
-            <h6><?= $brochure['title'] ?></h6>
+            <h6 class="care-home__brochures-label"><?= $brochure['title'] ?></h6>
             <a href="<?= $brochure['file']['url'] ?>" class="btn<?= ($is_premium)? ' btn-gold' : ' btn-primary' ?>" target="_blank"><?= __('View', THEME_NAMESPACE) ?></a>
           </li>
         <?php

@@ -37,4 +37,9 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 		<?php
 		}
 		?>
+		<?php
+			if(is_singular('care-home')) {
+			//	get_template_part( 'partials/header-care-home');
+			}
+		?>
 	</header><!-- #wrapper-navbar -->

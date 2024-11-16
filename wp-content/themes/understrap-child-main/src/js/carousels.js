@@ -6,6 +6,6 @@ carousels.forEach((item) => {
   new Splide( item, {
     type: "fade",
     rewind: true,
-    arrows: false,
+    arrows: (item.hasAttribute('data-arrows'))? true : false,
   } ).mount();
 });
