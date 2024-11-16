@@ -1,6 +1,9 @@
 <?php
 global $post;
 $is_premium = (has_term('quantum-select', 'care-home-category'))? true : false;
+$contact_info = get_field('ch_contact_details');
+$address = get_field('ch_address');
+$ch_services = get_field('ch_services_facilities');
 ?>
 <div class="col-12 col-md-6" data-map-coords="<?= $post->lng . '/' . $post->lat?>">
   <div class="ch__card<?= ($is_premium)? ' ch__card--premium' : null?>">
@@ -28,20 +31,20 @@ $is_premium = (has_term('quantum-select', 'care-home-category'))? true : false;
   ?>
     <div class="d-flex">
       <div class="ch__card-contact">
-        <p>
-          <?= $args['ch_address_address'] ?><br>
-          <?= $args['ch_address_town_city'] ?><br>
-          <?= $args['ch_address_county'] ?><br>
-          <?= $args['ch_address_post_code'] ?>
-        </p>
-        <p>
-          <a href="mail:<?= $args['ch_contact_details_email'] ?>" title="<?= __('email' . $args['ch_contact_details_email'], THEME_NAMESPACE) ?>"><?= __('email ' . $args['ch_contact_details_email'], THEME_NAMESPACE) ?></a><br>
-          <a href="tel:<?= $args['ch_contact_details_telephone_number'] ?>" title="<?= __('telephone ' . $args['ch_contact_details_telephone_number'], THEME_NAMESPACE) ?>"><?= __($args['ch_contact_details_telephone_number'], THEME_NAMESPACE) ?></a>
-        </p>
+        <address>
+          <?= $address['address'] ?><br>
+          <?= $address['town_city'] ?><br>
+          <?= $address['county'] ?><br>
+          <?= $address['post_code'] ?>
+        </address>
+        <address>
+          <a href="mail:<?= $contact_info['email'] ?>" title="<?= __($contact_info['email'], THEME_NAMESPACE) ?>"><?= __( $contact_info['email'], THEME_NAMESPACE) ?></a><br>
+          <a href="tel:<?= $contact_info['telephone_number'] ?>" title="<?= __($contact_info['telephone_number'], THEME_NAMESPACE) ?>"><?= __($contact_info['telephone_number'], THEME_NAMESPACE) ?></a>
+        </address>
       </div>
       <ul class="ch__card-types<?= ($is_premium)? ' gold-bullets' : null ?>">
         <?php
-        foreach($args['ch_services_facilities_care_type'] as $care_type) {
+        foreach($ch_services['care_type'] as $care_type) {
         ?>  
           <li><?= $care_type ?></li>
         <?php
@@ -51,9 +54,9 @@ $is_premium = (has_term('quantum-select', 'care-home-category'))? true : false;
     </div>
     <ul class="ch__card-icons list-inline"]>
     <?php
-    foreach($args['ch_services_facilities_facilities'] as $facility) {
+    foreach($ch_services['facilities'] as $facility) {
     ?>  
-      <li class="d-flex"><i class="icon-<?= $facility ?>"></i> <span>Label label</span></li>
+      <li class="d-flex"><i class="icon-<?= $facility['value'] ?>"></i> <span><?= __($facility['label'], THEME_NAMESPACE) ?></span></li>
     <?php
     }
     ?>

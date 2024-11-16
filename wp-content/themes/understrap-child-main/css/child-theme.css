@@ -12503,6 +12503,9 @@ select {
   flex: 1;
   padding-right: 1.875rem;
 }
+.ch__card-contact address:first-of-type {
+  margin-bottom: 1.875rem;
+}
 .ch__card-contact a {
   color: #EFECE9;
   text-decoration: none;

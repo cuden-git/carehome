@@ -157,13 +157,14 @@ function ch_save_post_meta($post_id, $post, $update)
 	$blocks = parse_blocks($post->post_content);
 
 	// Loop through each block to find ACF block and retrieve its field value
-	foreach ($blocks as $block) {
-		if ($block['blockName'] === THEME_NAMESPACE . '/care-home') {
-			$post_code_value = $block['attrs']['data']['ch_address_post_code'];
+	// foreach ($blocks as $block) {
+	// 	if ($block['blockName'] === THEME_NAMESPACE . '/care-home') {
+	// 		$post_code_value = $block['attrs']['data']['ch_address_post_code'];
 
-			break;
-		}
-	}
+	// 		break;
+	// 	}
+	// }
+	$post_code_value = get_field('ch_address')['post_code'];
 	//Compare stored and current values
 	$stored_long_lat = get_post_meta($post_id, $meta_key_long_lat, true);
 	//Use post code to get longitude and latidue values with Google Maps API and store them in the post_meta table

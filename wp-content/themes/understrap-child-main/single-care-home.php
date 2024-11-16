@@ -21,7 +21,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		the_content();
 	}
 	?>
-
+<?php get_template_part('/partials/care-home') ?>
 </main>
 
 <?php

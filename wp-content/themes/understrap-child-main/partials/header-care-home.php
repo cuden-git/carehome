@@ -4,6 +4,7 @@ $intro = get_field('ch_intro');
 $address = get_field('ch_address');
 $contact_info = get_field('ch_contact_details');
 $header_img = get_field('ch_header_img');
+$is_premium = (has_term('quantum-select', 'care-home-category'))? true : false;
 ?>
 <!-- Care Home header -->
   <section class="post-section care-home__header">

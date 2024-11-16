@@ -86,6 +86,11 @@ $selector: ".ch";
       flex: 1;
       padding-right: rfs-value(30px);
 
+      address {
+        &:first-of-type {
+          margin-bottom: rfs-value(30px);
+        }
+      }
       a {
         color: $qc-white;
         text-decoration: none;;
