@@ -27,7 +27,7 @@ get_header();
     <button id="archive-switcher" class="btn btn-primary" type="button" data-swap-label="<?= __('List View', THEME_NAMESPACE) ?>"><?= __('Map View', THEME_NAMESPACE) ?></button>
   </div>
   <!-- -->
-  <div id="care-homes-list" class="container ch__list">
+  <div id="care-homes-list" class="container ch__list active" data-view-switch>
     <div class="row">
       <?php
       $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -71,7 +71,7 @@ get_header();
     </div>
   </div>
   <!-- Maps -->
-  <div id="care-homes-maps" class="ch__map container d-none">map view</div>
+  <div id="care-homes-maps" class="ch__map container d-none" data-view-switch>map view</div>
 </main>
 <?
 

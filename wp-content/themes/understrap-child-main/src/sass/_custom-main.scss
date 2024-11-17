@@ -195,3 +195,23 @@ figure {
   --bs-nav-link-padding-y: 0;
   --bs-nav-link-padding-x: 0;
 }
+
+
+//animations
+@keyframes fade-in {
+  from  { opacity: 0; }
+   to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from  { opacity: 1; }
+   to { opacity: 0; }
+}
+
+.fade-in {
+  animation: fade-in 1s;
+}
+
+.fade-out {
+  animation: fade-out 1s;
+}
