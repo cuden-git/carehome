@@ -15,12 +15,13 @@ get_header();
 <main class="site__main" id="main">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-6">
-        <h2><?php the_title() ?></h2>
+      <div class="col-12 col-md-6 page-intro">
+        <h2 class="page-intro__title"><?php the_title() ?></h2>
         <?php the_content() ?>
+        <a href="#" class="btn btn-primary" title="<?= __('Contact Us',THEME_NAMESPACE) ?>"><?= __('Contact Us',THEME_NAMESPACE) ?></a>
       </div>
       <div class="col-12 col-md-6">
-        //TODO:Form goes here
+        <?php get_template_part('/partials/careers-search-short') ?>
       </div>
     </div>
   </div>

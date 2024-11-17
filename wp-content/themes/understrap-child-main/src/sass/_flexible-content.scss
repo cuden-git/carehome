@@ -141,13 +141,59 @@ $selector: ".fc";
   }
 
   &__jobs {
-    p {
-      border-bottom: rfs-value(1px) solid $qc-blue-light;
+    @extend %q-bg-img;
 
-      &:last-of-type {
-        border: none;
+    background-color: $qc-blue-dark;
+    background-position: left 98% center;
+    background-size: auto 129%;
+
+    &-card {
+      background-color: $white;
+      padding: rfs-value(30px) rfs-value(45px) rfs-value(35px) rfs-value(25px);
+      height: 100%;
+      flex-direction: column;
+
+      &-title {
+        font-size: rfs-value(25px);
+        margin-bottom: rfs-value(40px);
+      }
+
+      &-tr {
+        border-bottom: rfs-value(1px) solid $qc-blue-light;
+        justify-content: space-between;
+        padding-bottom: rfs-value(20px);
+
+        & + div {
+          padding-top: rfs-value(20px);
+        }
+
+        &:last-of-type {
+          border: none;
+          margin-bottom: rfs-value(15px);
+        }
+
+        &-label {
+          flex: 0 1 30%;
+
+          & + p {
+            flex: 1;
+          }
+        }
+      }
+
+      .btn {
+        margin-top: auto;
+        align-self: flex-start;
       }
     }
+
+    // p {
+    //   ight;
+
+    //   &:last-of-type {
+    //     border: none;
+    //   }
+    // }
   }
 
   &__ctas {

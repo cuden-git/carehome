@@ -5,7 +5,7 @@
 ?>
 <section class="post-section fc__jobs">
   <div class="container">
-    <h2 class="post-section__title"><?= $title ?></h2>
+    <h2 class="post-section__title post-section__title--white"><?= $title ?></h2>
     <div class="row">
     <?php
     foreach($posts as $post) {
@@ -15,11 +15,22 @@
       $shift_time = qc_get_job_type($post->ID);
     ?>
       <div class="col-12 col-md-4">
-        <div class="fc__jobs-card">
-          <h3 class="fc__jobs-card"><?= $job_role ?></h3>
-          <p><?= $job_location->post_title ?></p>
-          <p><?= $pay_rate ?>
-          <p><?= $shift_time ?></p>
+        <div class="fc__jobs-card d-flex">
+          <h3 class="fc__jobs-card-title"><?= $job_role ?></h3>
+          <div class="fc__jobs-card-tr d-flex">
+            <h6 class="fc__jobs-card-tr-label"><?= __('Location', THEME_NAMESPACE) ?></h6>
+            <p class="mb-0"><?= $job_location->post_title ?></p>
+          </div>
+          <div class="fc__jobs-card-tr d-flex">
+            <h6 class="fc__jobs-card-tr-label"><?= __('Pay', THEME_NAMESPACE) ?></h6>
+            <p class="mb-0"><?= $pay_rate ?></p>
+          </div>
+          <div class="fc__jobs-card-tr d-flex">
+            <h6 class="fc__jobs-card-tr-label"><?= __('Shift Time', THEME_NAMESPACE) ?></h6>
+            <p class="mb-0"><?= $shift_time ?></p>
+          </div>
+          
+          
           <a href="<?= get_permalink($post->ID)?>" class="btn btn-primary" title="<?= $btn_label ?>"><?= $btn_label ?></a>
         </div>
       </div>

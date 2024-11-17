@@ -80,7 +80,7 @@ if(count($meta_query) > 0) {
   $meta_query['relation'] = 'AND';
   $query_args['meta_query'] = $meta_query; 
 }
-//print_r($query_args);
+
 $query = new WP_Query($query_args);
 
 get_header();
@@ -89,7 +89,8 @@ get_header();
 <main id="career-results" class="careers-list">
   <div class="bg-secondary">
     <div class="container">
-    <?php require_once __DIR__ . '/partials/careers-search.php' ?>
+    <?php //require_once __DIR__ . '/partials/careers-search.php' ?>
+    <?php get_template_part('/partials/careers-search', null, ['show_all' => true]) ?>
     </div>
   </div>
   <div class="container">

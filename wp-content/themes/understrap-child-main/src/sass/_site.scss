@@ -72,6 +72,28 @@ $selector: ".site";
     }
   }
 
+  &__sub-nav {
+    background-color: $qc-blue-dark;
+    justify-content: center;
+    padding-top: rfs-value(25px);
+    padding-bottom: rfs-value(35px);
+
+    li {
+      padding: 0 rfs-value(15px);
+      
+      &.current {
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    a {
+      color: $qc-white;
+      text-decoration: none;
+    }
+  }
+
   &__footer {
     @extend %q-bg-img;
 

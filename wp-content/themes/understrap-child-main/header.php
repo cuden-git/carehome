@@ -43,3 +43,4 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 			}
 		?>
 	</header><!-- #wrapper-navbar -->
+<?php get_template_part('partials/sub-nav') ?>
