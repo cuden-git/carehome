@@ -94,6 +94,12 @@ $selector: ".site";
     }
   }
 
+  $__content {
+    ul {
+      @extend %qc-blue-bullet ;
+    }
+  }
+
   &__footer {
     @extend %q-bg-img;
 
