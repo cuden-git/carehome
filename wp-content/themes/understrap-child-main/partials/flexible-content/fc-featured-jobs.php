@@ -27,10 +27,8 @@
           </div>
           <div class="fc__jobs-card-tr d-flex">
             <h6 class="fc__jobs-card-tr-label"><?= __('Shift Time', THEME_NAMESPACE) ?></h6>
-            <p class="mb-0"><?= $shift_time ?></p>
-          </div>
-          
-          
+            <p class="mb-0"><?= $shift_time['shift'] ?></p>
+          </div>         
           <a href="<?= get_permalink($post->ID)?>" class="btn btn-primary" title="<?= $btn_label ?>"><?= $btn_label ?></a>
         </div>
       </div>

@@ -6,9 +6,11 @@
 @import "./care-home-archive";
 @import "./care-home-single";
 @import "./careers-archive";
+@import "./careers-single";
 @import "../../node_modules/@splidejs/splide/src/css/core/index.scss";
 @import "./flexible-content";
 @import "./hero-carousel";
+@import "./news";
 
 @font-face {
   font-family: 'poppins-light';
@@ -74,6 +76,7 @@ body {
   @extend %qc-blue-bullet;
 }
 
+[type=submit],
 .btn {
   padding: rfs-value(13px) rfs-value(32px) rfs-value(23px);
 }

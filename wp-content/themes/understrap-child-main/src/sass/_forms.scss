@@ -9,6 +9,7 @@ $select: ".input";
 input {
   
   &[type=submit],
+  &[type=email],
   &[type=text] {
     padding: rfs-value(24px);
   }
@@ -18,6 +19,18 @@ input {
     height: rfs-value(28px);
   }
 
+  &[type=radio] {
+    appearance: none;
+    background-color: none;
+    border: rfs-value(1px) solid $white;
+    border-radius: 50%;
+    width: rfs-value(20px);
+    height: rfs-value(20px);
+
+    &:checked {
+      background-color: $white;
+    }
+  }
 }
 
 select {
@@ -28,4 +41,8 @@ select {
   background-size: rfs-value(25px) rfs-value(12px);
   padding: rfs-value(20px);
   width: 100%;
+}
+
+textarea {
+  padding: rfs-value(24px);
 }

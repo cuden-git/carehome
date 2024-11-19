@@ -86,7 +86,7 @@ $query = new WP_Query($query_args);
 get_header();
 ?>
 
-<main id="career-results" class="careers-list">
+<main id="career-results site__main"" class="careers-list">
   <div class="bg-secondary">
     <div class="container">
     <?php //require_once __DIR__ . '/partials/careers-search.php' ?>
@@ -106,6 +106,7 @@ get_header();
             get_template_part('/partials/career-card');
           }
         }
+        wp_reset_postdata()
       ?>
       </div>
     </div>

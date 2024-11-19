@@ -12416,3 +12416,172 @@ Stack trace:
 [18-Nov-2024 06:34:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-includes/update.php:724) in /var/www/html/wp-includes/functions.php on line 7096
 [18-Nov-2024 06:34:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-includes/update.php:724) in /var/www/html/wp-admin/admin-header.php on line 9
 [18-Nov-2024 07:17:28 UTC] PHP Warning:  Undefined array key "text" in /var/www/html/wp-content/themes/understrap-child-main/single-career.php on line 38
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 35
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 36
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 38
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 41
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 42
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 35
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 36
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 38
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 41
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 42
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 35
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 36
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 38
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 41
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 42
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 08:45:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 08:48:47 UTC] PHP Fatal error:  Uncaught TypeError: setup(): Argument #1 ($phpmailer) must be of type PHPMailer, PHPMailer\PHPMailer\PHPMailer given, called in /var/www/html/wp-includes/class-wp-hook.php on line 324 and defined in /var/www/html/wp-content/themes/understrap-child-main/functions.php:403
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): setup(Object(PHPMailer\PHPMailer\PHPMailer))
+#1 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-includes/pluggable.php(540): do_action_ref_array('phpmailer_init', Array)
+#4 /var/www/html/wp-content/themes/understrap-child-main/header.php(46): wp_mail(Array, 'test subject', 'Email message')
+#5 /var/www/html/wp-includes/template.php(810): require_once('/var/www/html/w...')
+#6 /var/www/html/wp-includes/template.php(745): load_template('/var/www/html/w...', true, Array)
+#7 /var/www/html/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#8 /var/www/html/wp-content/themes/understrap-child-main/single-career.php(11): get_header()
+#9 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#10 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#11 /var/www/html/index.php(17): require('/var/www/html/w...')
+#12 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 403
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 35
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 36
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 38
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 41
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 42
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 35
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 36
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 38
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 41
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 42
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 35
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 36
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 38
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 41
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 42
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 10:44:08 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[18-Nov-2024 10:44:14 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-featured-jobs.php on line 30
+[18-Nov-2024 10:44:32 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-featured-jobs.php on line 30
+[18-Nov-2024 10:49:18 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-featured-jobs.php on line 30
+[18-Nov-2024 10:52:15 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-featured-jobs.php on line 30
+[18-Nov-2024 11:31:24 UTC] PHP Parse error:  syntax error, unexpected token "=", expecting variable or "{" or "$" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 407
+[18-Nov-2024 11:31:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-includes/class-wp-recovery-mode-email-service.php on line 367
+[18-Nov-2024 11:31:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-includes/class-wp-recovery-mode-email-service.php on line 368
+[18-Nov-2024 11:32:05 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "`" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 423
+[18-Nov-2024 12:32:09 UTC] PHP Parse error:  syntax error, unexpected variable "$properties" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 420
+[18-Nov-2024 12:32:17 UTC] PHP Parse error:  syntax error, unexpected variable "$properties" in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 420
+[18-Nov-2024 13:05:31 UTC] PHP Warning:  Attempt to read property "ID" on null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 420
+[18-Nov-2024 13:06:35 UTC] PHP Warning:  Attempt to read property "ID" on null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 420
+[18-Nov-2024 13:07:09 UTC] PHP Warning:  Attempt to read property "ID" on null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 420
+[18-Nov-2024 13:08:56 UTC] PHP Warning:  Attempt to read property "ID" on null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 420
+[18-Nov-2024 13:09:08 UTC] PHP Warning:  Attempt to read property "ID" on null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 420
+[18-Nov-2024 13:09:19 UTC] PHP Warning:  Attempt to read property "ID" on null in /var/www/html/wp-content/themes/understrap-child-main/functions.php on line 420
+[18-Nov-2024 13:09:39 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/wp-includes/update.php on line 443
+[18-Nov-2024 13:09:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-includes/update.php:443) in /var/www/html/wp-admin/admin-header.php on line 9
+[18-Nov-2024 19:04:03 UTC] PHP Warning:  Undefined array key "job" in /var/www/html/wp-content/themes/understrap-child-main/single-career.php on line 41
+[18-Nov-2024 19:05:18 UTC] PHP Warning:  Undefined array key "job" in /var/www/html/wp-content/themes/understrap-child-main/single-career.php on line 41
+[19-Nov-2024 08:55:17 UTC] WordPress database error Duplicate entry '624-2' for key 'PRIMARY' for query INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`) VALUES (624, 2) made by wp_nav_menu_update_menu_items, wp_update_nav_menu_item, wp_set_object_terms
+[19-Nov-2024 08:55:17 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-includes/class-wpdb.php:1850) in /var/www/html/wp-admin/admin-header.php on line 9
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 35
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 36
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 38
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 41
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 42
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 35
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 36
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 38
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 41
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 42
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 35
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 36
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 37
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 38
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 41
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 42
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 47
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[19-Nov-2024 09:16:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-card.php on line 57
+[19-Nov-2024 09:29:34 UTC] PHP Warning:  Undefined variable $query_args in /var/www/html/wp-content/themes/understrap-child-main/index.php on line 14
+[19-Nov-2024 09:29:34 UTC] PHP Parse error:  syntax error, unexpected token ";" in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php on line 12
+[19-Nov-2024 09:38:30 UTC] PHP Warning:  Undefined variable $query_args in /var/www/html/wp-content/themes/understrap-child-main/index.php on line 14
+[19-Nov-2024 09:38:30 UTC] PHP Parse error:  syntax error, unexpected token ";" in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php on line 36
+[19-Nov-2024 09:38:32 UTC] PHP Warning:  Undefined variable $query_args in /var/www/html/wp-content/themes/understrap-child-main/index.php on line 14
+[19-Nov-2024 09:38:32 UTC] PHP Parse error:  syntax error, unexpected token ";" in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php on line 36
+[19-Nov-2024 09:39:00 UTC] PHP Parse error:  syntax error, unexpected token ";" in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php on line 36
+[19-Nov-2024 09:39:33 UTC] PHP Parse error:  syntax error, unexpected token ";" in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php on line 36
+[19-Nov-2024 09:39:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_catogories() in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php:7
+Stack trace:
+#0 /var/www/html/wp-includes/template.php(812): require()
+#1 /var/www/html/wp-includes/template.php(745): load_template('/var/www/html/w...', false, Array)
+#2 /var/www/html/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#3 /var/www/html/wp-content/themes/understrap-child-main/index.php(20): get_template_part('/partials/news-...')
+#4 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#5 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#6 /var/www/html/index.php(17): require('/var/www/html/w...')
+#7 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php on line 7
+[19-Nov-2024 09:40:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_catogories() in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php:7
+Stack trace:
+#0 /var/www/html/wp-includes/template.php(812): require()
+#1 /var/www/html/wp-includes/template.php(745): load_template('/var/www/html/w...', false, Array)
+#2 /var/www/html/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#3 /var/www/html/wp-content/themes/understrap-child-main/index.php(20): get_template_part('/partials/news-...')
+#4 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#5 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#6 /var/www/html/index.php(17): require('/var/www/html/w...')
+#7 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php on line 7
+[19-Nov-2024 09:40:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_catogories() in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php:7
+Stack trace:
+#0 /var/www/html/wp-includes/template.php(812): require()
+#1 /var/www/html/wp-includes/template.php(745): load_template('/var/www/html/w...', false, Array)
+#2 /var/www/html/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#3 /var/www/html/wp-content/themes/understrap-child-main/index.php(20): get_template_part('/partials/news-...')
+#4 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#5 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#6 /var/www/html/index.php(17): require('/var/www/html/w...')
+#7 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php on line 7

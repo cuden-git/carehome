@@ -2,7 +2,7 @@
 $job_role = get_field('careers_post_job_role');
 $close_date = get_field('career_closing_date');
 $pay_rate = get_field('career_pay_rate');
-$shift_time = qc_get_job_type(get_the_ID());//get_the_terms(get_the_ID(), 'careers-category');
+$shift_job_type = qc_get_job_type(get_the_ID());//get_the_terms(get_the_ID(), 'careers-category');
 $job_location = get_field('career_care_home');
 ?>
 <div class="col-12 careers-list__card row">
@@ -17,9 +17,9 @@ $job_location = get_field('career_care_home');
     <p><strong><?= __('Pay', THEME_NAMESPACE) ?>:</strong> <?= $pay_rate ?></p>
     <p><strong>Location:</strong> <?= $job_location->post_title ?></p>
     <?php
-    if($shift_time) {
+    if($shift_job_type['shift']) {
     ?>
-    <p><strong><?= __('Shift Time', THEME_NAMESPACE) ?>:</strong> <?= $shift_time ?></p>
+    <p><strong><?= __('Shift Time', THEME_NAMESPACE) ?>:</strong> <?= $shift_job_type['shift'] ?></p>
     <?php
     }
     ?>

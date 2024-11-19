@@ -21,6 +21,7 @@ function understrap_remove_scripts()
 {
 	wp_dequeue_style('understrap-styles');
 	wp_deregister_style('understrap-styles');
+	wp_dequeue_style('contact-form-7');
 
 	wp_dequeue_script('understrap-scripts');
 	wp_deregister_script('understrap-scripts');
@@ -398,3 +399,47 @@ function qc_register_footer_menu() {
 	register_nav_menu( 'footer-secondary', __( 'Footer Secondary Menu', THEME_NAMESPACE ) );
 }
 add_action( 'after_setup_theme', 'qc_register_footer_menu' );
+
+/**
+ * Add dynamic CF7 email recipient.
+ * See: https://wordpress.stackexchange.com/questions/336886/how-to-set-contact-form-7-fields-default-value-using-shortcode-attribute
+ */
+// add_filter( 'shortcode_atts_wpcf7', 'qc_cf7_email_recipient_attr', 10, 3 );
+// function qc_cf7_email_recipient_attr ( $out, $pairs, $atts ) {
+//     $email_attr = 'destination-email';
+
+//     if ( isset( $atts[$email_attr] ) ) {
+//         $out[$email_attr] = $atts[$email_attr];
+//     }
+
+//     return $out;
+// }
+function qc_set_cf7_email_recipient( $contact_form, $abort, $submission ) {
+	global $post;
+
+	$job_form_id = get_field('job_form_id', 'option');
+  $dynamic_email = 'deniscummins@tiscali.co.uk';//get_field('career_recipient_email', $post->ID);//'email@email.com'; // get your email address...
+
+  $properties = $contact_form->get_properties();
+  $properties['mail']['recipient'] = $dynamic_email;
+  $contact_form->set_properties($properties);
+
+  return $contact_form;
+
+}
+add_filter( 'wpcf7_before_send_mail', 'qc_set_cf7_email_recipient', 10, 3 );
+
+/**
+ * Remove p tags
+ */
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+/**
+ * MailHog setup
+ */
+add_action( 'phpmailer_init', 'qc_mailhog_setup' );
+function qc_mailhog_setup( $phpmailer ) {
+    $phpmailer->Host = 'mailhog';
+    $phpmailer->Port = 1025;
+    $phpmailer->IsSMTP();
+}

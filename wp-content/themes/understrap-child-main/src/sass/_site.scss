@@ -94,19 +94,112 @@ $selector: ".site";
     }
   }
 
-  $__content {
+  &__content {
     ul {
       @extend %qc-blue-bullet ;
+
+      margin-bottom: rfs-value(30px);
+
+      li {
+        margin-bottom: rfs-value(20px);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__form {
+    border-bottom: rfs-value(1px) solid $qc-blue-light;
+    padding-bottom: rfs-value(90px);
+
+    &-text {
+      font-size: rfs-value(22px);
+      max-width: rfs-value(500px);
+
+      address {
+        flex-direction: column;
+
+        * {
+          margin-bottom: rfs-value(40px);
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &-title {
+      font-size: rfs-value(55px);
+      margin-bottom: rfs-value(50px);
+    }
+
+    &-sub-title {
+      font-size: rfs-value(35px);
+      margin-top: rfs-value(50px);
+      margin-bottom: rfs-value(50px);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    fieldset {
+      flex-direction: column;
+
+      label {
+        flex-grow: 1;
+        margin-bottom: rfs-value(40px);
+
+        >span {
+          display: block;
+
+          * {
+            width: 100%;
+            background-color: transparent;
+            border: rfs-value(1px) solid $white;
+            color: $white;
+
+            &::placeholder {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .btn {
+      align-self: flex-end;
     }
   }
 
   &__footer {
-    @extend %q-bg-img;
-
-    background-size: 163%;
-    background-position: 48% 63%;
+    position: relative;
     padding: rfs-value(80px) 0;
     color: $qc-white;
+
+    &--short {
+      padding-top: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+      @extend %q-bg-img;
+
+      background-size: 163%;
+      background-position: 48% 63%;
+      pointer-events: none;
+      z-index: 0;
+    }
 
     a {
       text-decoration: none;
