@@ -12,10 +12,10 @@ $query_args = [
 ];
 
 $query = new WP_Query($query_args);
-print_r($query);
+
 get_header();
 ?>
-<main class="">
+<main class="site__main">
   <div id="news-list" class="container news">
     <div class="news__filter">
       <?php  get_template_part('/partials/news-filter') ?>

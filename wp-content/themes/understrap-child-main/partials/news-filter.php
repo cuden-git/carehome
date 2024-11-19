@@ -12,7 +12,7 @@ $news_cats = get_categories(
   ]
 );
 ?>
-<form>
+<form class="d-flex">
   <fieldset class="d-flex">
     <label>
       <select>
@@ -28,7 +28,7 @@ $news_cats = get_categories(
     </label>
     <label>
       <select>
-        <option value=""><?= __('Ctegories', THEME_NAMESPACE) ?></option>
+        <option value=""><?= __('Categories', THEME_NAMESPACE) ?></option>
       <?php
           foreach($news_cats as $key=>$option) {
       ?>
@@ -38,6 +38,6 @@ $news_cats = get_categories(
       ?>
       </select>
     </label>
-    <input type="submit" class="btn btn-primary" value="<?= __('Apply', THEME_NAMESPACE) ?>">
   </fieldset>
+  <input type="submit" class="btn btn-primary" value="<?= __('Apply', THEME_NAMESPACE) ?>">
 </form>

@@ -7,8 +7,6 @@ $select: ".input";
 }
 
 input {
-  
-  &[type=submit],
   &[type=email],
   &[type=text] {
     padding: rfs-value(24px);

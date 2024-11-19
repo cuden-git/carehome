@@ -430,9 +430,16 @@ function qc_set_cf7_email_recipient( $contact_form, $abort, $submission ) {
 add_filter( 'wpcf7_before_send_mail', 'qc_set_cf7_email_recipient', 10, 3 );
 
 /**
- * Remove p tags
+ * Remove p tags from Contact Form 7
  */
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+/**
+ *  Set excerpt length
+ */
+add_filter('excerpt_length', function($length) {
+	return 10;
+}, 999);
 
 /**
  * MailHog setup

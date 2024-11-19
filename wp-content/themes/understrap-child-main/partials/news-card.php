@@ -1,5 +1,5 @@
 <div class="col-12 col-md-4">
-  <div class="news__card">
+  <div class="news__card<?= (isset($args['no-archive']))? ' news__card--no-archive' : null ?>">
     <figure class="news__card-img">
       <?= get_the_post_thumbnail( $post->ID, "large" ) ?>
     </figure>

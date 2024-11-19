@@ -12585,3 +12585,4 @@ Stack trace:
 #6 /var/www/html/index.php(17): require('/var/www/html/w...')
 #7 {main}
   thrown in /var/www/html/wp-content/themes/understrap-child-main/partials/news-filter.php on line 7
+[19-Nov-2024 10:51:58 UTC] PHP Parse error:  Unclosed '{' on line 7 in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-latest-news.php on line 32

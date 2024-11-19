@@ -49,37 +49,6 @@ $selector: ".fc";
   }
 
   &__news {
-    &-card {
-      background-color: $qc-blue-lighter;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-
-      &-img {
-        width: calc(100% + 50px);
-        margin-bottom: rfs-value(30px);
-
-        img {
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      &-text {
-        padding: 0 rfs-value(25px) rfs-value(45px) rfs-value(25px);
-      }
-  
-      &-title {
-        font-size: rfs-value(25px);
-        margin-bottom: rfs-value(35px);
-      }
-
-      .btn {
-        align-self: flex-start;
-        margin-top: auto;
-      }
-    }
-
     &-cta {
       margin-top: rfs-value(75px);
     }
