@@ -77,7 +77,7 @@ if(isset($_GET['term_ids'])) {
 }
 
 if(count($meta_query) > 0) {
- // $meta_query['relation'] = 'AND';
+  $meta_query['relation'] = 'AND';
   $query_args['meta_query'] = $meta_query; 
 }
 //print_r($query_args);
