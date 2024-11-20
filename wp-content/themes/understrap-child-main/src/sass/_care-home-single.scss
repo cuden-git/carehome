@@ -18,16 +18,18 @@ $selector: ".care-home";
   // }
 
   &__header {
-    #{$premium-hook} & {
+    color: $qc-white;
+  
+    &--premium {
       background-color: $secondary;
-      color: $qc-white;
     } 
 
     &-img {
       position: relative;
-      width: 500px;//rfs-value(416px);  0.78 ratio
-      height: 390px;//rfs-value(416px);
-       &::after {
+      aspect-ratio: 746 / 589;
+      width: 500px;
+
+      &::after {
         content: "";
         position: absolute;
         top: 0;
@@ -49,13 +51,38 @@ $selector: ".care-home";
         -o-object-fit: cover;
         object-fit: cover;
         border-radius: 50%;
-        top: 11%;
+        top: 15%;
         position: relative;
-        left: 11%;
+        left: 12%;
       }
     }
+
+    div {
+      &:has(>address) {
+        margin-bottom: rfs-value(50px);
+      }
+    }
+
     &-logo {
-      width: rfs-value(340px);
+      flex-basis: 100%;
+
+      @include media-breakpoint-up(md) {
+        padding-right: rfs-value(90px);
+      }
+
+      & + address {
+        flex-basis: 100%;
+      }
+    }
+
+    address {
+      a {
+        color: $white;
+      }
+    }
+
+    &-text {
+      margin-bottom: rfs-value(100px);
     }
 
     .btn {
@@ -80,6 +107,16 @@ $selector: ".care-home";
   }
 
   &__overview {
+    @extend %q-bg-img-dark;
+
+    #{$premium-hook} & {
+      background-color: $qc-white;
+    }
+
+    background-color: #efece9;
+    background-size: auto 131%;
+    background-position: left 39% top -70%;
+
     :not(.btn) {
       color: $qc-black;
     }    
@@ -105,7 +142,17 @@ $selector: ".care-home";
     }
   }
 
+  &__location {
+    &-map {
+      height: rfs-value(400px);
+    }
+  }
+
   &__team {
+    #{$premium-hook} {
+      background-color: $qc-white;
+    }
+
     &-nav {
       flex: 1;
       padding-right: rfs-value(80px);
@@ -115,12 +162,15 @@ $selector: ".care-home";
         margin-bottom: rfs-value(30px);
 
         &:has(.active) {
-          background-color: $qc-blue-lighter;
+          background-color: $qc-blue-light;
+
+          #{$premium-hook} & {
+            background-color: $qc-blue-lighter;
+          }
         }
 
         a {
           padding: rfs-value(15px) rfs-value(35px) rfs-value(25px);
-
 
           &:not(&.active) {
             text-decoration: underline;
@@ -131,7 +181,7 @@ $selector: ".care-home";
           }
 
           &.active {
-            color: $qc-white;
+            color: $white;
 
             #{$premium-hook} & {
               color: $qc-black;
@@ -176,6 +226,11 @@ $selector: ".care-home";
   }
 
   &__facilities {
+    @extend %q-bg-img-dark;
+
+    background-size: 100% auto;
+    background-position: left -50% bottom -60%;
+
     &-types {
       border-left: rfs-value(1px) solid $qc-blue-light;
       padding-left: rfs-value(140px);

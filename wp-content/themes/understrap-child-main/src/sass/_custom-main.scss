@@ -11,6 +11,7 @@
 @import "./flexible-content";
 @import "./hero-carousel";
 @import "./news";
+@import "./faqs";
 
 @font-face {
   font-family: 'poppins-light';
@@ -163,8 +164,20 @@ body {
   }
 }
 
+.row {
+  &:has(.page-intro) {
+    margin-bottom: rfs-value(100px);
+  }
+}
+
 .post-section {
   padding: rfs-value(145px);
+
+  &--flat {
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
   &__title {
     font-size: rfs-value(40px);

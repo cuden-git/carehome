@@ -5,7 +5,7 @@ $brochure = get_field('career_brochure', get_the_ID());
   <!-- -->
   <form class="d-flex career-single__info-form">
     <label>
-      <input type="email" name="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="<?= __('Email address', THEME_NAMESPACE) ?>" value="">
+      <input type="email" class="w-100" name="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="<?= __('Email address', THEME_NAMESPACE) ?>" value="">
     </label>
     <input type="submit" class="btn btn-secondary" value="<?= __('Email address', THEME_NAMESPACE) ?>">
   </form>

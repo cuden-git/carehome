@@ -7,8 +7,8 @@ $selector: ".ch";
   &__search {
     @extend %q-bg-img;
 
-    background-position: 100% 0;
-    background-size: 100%;
+    background-position: left -50% top 60%;
+    background-size: 150% 150%;
     padding: rfs-value(45px);
     color: $qc-white;
 
@@ -28,7 +28,6 @@ $selector: ".ch";
 
     &-switcher {
       justify-content: space-between;
-      padding-top: rfs-value(200px);
       padding-bottom: rfs-value(80px);
     }
   }
@@ -120,6 +119,10 @@ $selector: ".ch";
 
       li {
         margin-bottom: rfs-value(35px);
+
+        >span {
+          flex: 2;
+        }
       }
 
       i {
@@ -127,6 +130,7 @@ $selector: ".ch";
         text-align: center;
         width: rfs-value(70px);
         margin-right: rfs-value(10px);
+        flex: 1;
 
         #{$premium-hook} & {
           color: $qc-gold;

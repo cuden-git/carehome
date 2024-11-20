@@ -1,0 +1,27 @@
+$selector: ".faqs";
+
+#{$selector} {
+  &__header {
+    cursor: pointer;
+    position: relative;
+    border-bottom: rfs-value(1px) solid $qc-blue-light;
+    padding: rfs-value(30px) rfs-value(50px);
+
+    &::after {
+      content: "\e915";
+      position: absolute;
+      font-family: 'quantum-care';
+      top: rfs-value(15px);
+      right: rfs-value(45px);      
+      font-size: 0.5em;
+      color: $qc-blue-light;
+    }
+
+    &:not(&.collapsed) {
+      &::after {
+        content: "\e914";
+        font-size: rfs-value(2px);
+      }
+    }
+  }
+}

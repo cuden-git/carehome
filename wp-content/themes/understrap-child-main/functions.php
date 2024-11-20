@@ -172,10 +172,13 @@ function ch_save_post_meta($post_id, $post, $update)
 	$gm_url = GOOGLE_MAPS_API_URL . "geocode/json?address=" . urlencode($post_code_value) . "&key=" . GOOGLE_API_KEY;
 	$response = file_get_contents($gm_url);
 	$json = json_decode($response, true);
-	$lat = $json['results'][0]['geometry']['location']['lat'];
-	$long = $json['results'][0]['geometry']['location']['lng'];
 
-	update_post_meta($post_id, $meta_key_long_lat, $long . '/' . $lat);
+	if($json['status'] === 'OK') {
+		$lat = $json['results'][0]['geometry']['location']['lat'];
+		$long = $json['results'][0]['geometry']['location']['lng'];
+
+		update_post_meta($post_id, $meta_key_long_lat, $long . '/' . $lat);	
+	}
 }
 add_action('save_post_care-home', 'ch_save_post_meta', 20, 3);
 
@@ -346,9 +349,10 @@ function qc_load_ch_selection($field) {
 
 	if($posts) {
 		$field['choices'] = [];
-
 		foreach($posts as $post) {
-			$field['choices'][$post->ID] = $post->post_title;
+			$care_home_name = get_field('ch_name', $post->ID);
+			$name = ($care_home_name)? $care_home_name : $post->post_title;
+			$field['choices'][$post->ID] = $name;
 		}
 	}
 

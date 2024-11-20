@@ -3,25 +3,52 @@ $selector: ".site";
 #{$selector} {
   &__header {
     padding-top: rfs-value(50px);
+    position: relative;
+
+    &::before {
+    //  &:not(.home &) {
+        @extend %q-bg-img;
+
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: left 24% top 42%;
+        background-size: 200% 200%;
+
+        .home & {
+          background-position: left -100% top 33%;
+          background-size: 121%;
+        }
+        @include media-breakpoint-up(md) {
+          
+        }
+    //  }
+    }
+
+    &--premium {
+      background-color: $qc-blue-dark;
+    }
 
     .home & {
       position: absolute;
       width: 100%;
       z-index: 2;
+
+      &::before {
+        background-image: none;;
+      }
     }
 
-    &:not(.home &) {
-      @extend %q-bg-img;
+    &:not(.home &):not(&--premium) {
+     // @extend %q-bg-img;
 
       background-color: $qc-blue-light;
-      background-repeat: no-repeat;
-      background-position: 21% top;
-      background-size: 202%;
-  
-      @include media-breakpoint-up(md) {
-        background-position: 157% 62%;
-        background-size: 79%;
-      }
+      // background-repeat: no-repeat;
+      // background-position: 21% top;
+      // background-size: 202%;
     }
 
     .navbar {
@@ -48,6 +75,14 @@ $selector: ".site";
       @include media-breakpoint-up(md) {
         font-size: rfs-value(60px);
         background-size: rfs-value(800px);
+      }
+    }
+  }
+
+  &__nav {
+    .current-menu-item {
+      a {
+        color: $qc-blue-dark;
       }
     }
   }
@@ -111,9 +146,24 @@ $selector: ".site";
   }
 
   &__form {
-    border-bottom: rfs-value(1px) solid $qc-blue-light;
+    position: relative;
     padding-bottom: rfs-value(90px);
+    color: $qc-white;
+    z-index: 1;
 
+    &:not(&--section) {
+      border-bottom: rfs-value(1px) solid $qc-blue-light;
+    }
+
+    &--section {
+      padding-top: rfs-value(100px);
+      @extend %q-bg-img;
+
+      background-color: $qc-blue-dark;
+      background-size: 200% 200%;
+      background-position: -15% 20%;
+    }
+  
     &-text {
       font-size: rfs-value(22px);
       max-width: rfs-value(500px);
@@ -204,6 +254,10 @@ $selector: ".site";
     a {
       text-decoration: none;
       color: $qc-white;
+    }
+
+    &-wrap {
+      padding-top: rfs-value(200px);
     }
 
     &-logos {

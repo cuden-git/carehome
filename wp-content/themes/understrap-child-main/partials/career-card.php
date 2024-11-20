@@ -20,10 +20,11 @@ $job_location = get_field('career_care_home');
     if($shift_job_type['shift']) {
     ?>
     <p><strong><?= __('Shift Time', THEME_NAMESPACE) ?>:</strong> <?= $shift_job_type['shift'] ?></p>
+    <p><strong><?= __('Type', THEME_NAMESPACE) ?>:</strong> <?= $shift_job_type['job'] ?></p>
     <?php
     }
     ?>
-    <p class="temp-distance">Distance from location: <?= get_post_meta(get_the_ID(), 'ch_distance', true) ?></p>
+    <p class="temp-distance">ID = <?= get_the_ID() ?>; Distance from location: <?= get_post_meta(get_the_ID(), 'ch_distance', true) ?></p>
   </div>
   <div class="col-md-3 d-flex align-items-center">
     <a href="<?php the_permalink() ?>" class="btn btn-primary text-white" title="<?php the_field('careers_archive_btn_label', 'option'); ?>"><?php the_field('careers_archive_btn_label', 'option'); ?></a>

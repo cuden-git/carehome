@@ -19,7 +19,7 @@
               <?php
               if($slide['cta_btns']) {
               ?>
-                <div class="">
+                <div class="hero-carousel__slide-btns">
                   <?php
                     foreach($slide['cta_btns'] as $button) {
                   ?>
@@ -41,9 +41,9 @@
     ?>
       </ul>
     </div>
-    <!-- TODO: Move buttons to inside text area -->
     <div class="container hero-carousel__pagination">
       <ul class="splide__pagination justify-content-start"></ul>
+      <i class="icon-arrow-down"></i>
     </div>
   </div>
 </section>

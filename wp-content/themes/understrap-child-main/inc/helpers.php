@@ -42,7 +42,7 @@ function qc_set_distance_meta($location_val, $post_type) {
     'post_status' => 'publish'
   ] );
 	
-  foreach($posts as $post) {echo $post->post_title;
+  foreach($posts as $post) {
    $post_distance = qc_get_care_home_distance($post, $location_val);
 
 	 if($post_distance) {
@@ -162,7 +162,7 @@ function qc_get_job_type($post_id) {
 			$arr['job'] = $term->name;
 		}
 	}
-	
+
 	if(empty($arr)) {
 		return null;
 	}
@@ -242,4 +242,18 @@ function qc_page_secondary_nav() {
 	}
 
 	return $child_posts;
+}
+
+/**
+ * Determine if current care home is Quantum Select
+ */
+function qc_is_premium() {
+	global $post;
+
+	if(is_singular('care-home') && has_term('quantum-select', 'care-home-category', $post->ID)) {
+		return true;
+	}else {
+		return false;
+	}
+	
 }

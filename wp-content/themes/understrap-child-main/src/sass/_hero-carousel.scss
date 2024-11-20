@@ -57,6 +57,10 @@ $selector: ".hero-carousel";
       width: rfs-value(50%);
       z-index: 4;
     }
+
+    &-btns {
+      padding-top: rfs-value(60px);
+    }
   }
 
   &__pagination {
@@ -64,5 +68,15 @@ $selector: ".hero-carousel";
     left: 50%;
     bottom: rfs-value(25px);
     transform: translateX(-50%);
+
+    > i {
+      font-size: rfs-value(57px);
+      color: $white;
+      position: absolute;
+      bottom: 0;;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+    }
   }
 }

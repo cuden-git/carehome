@@ -12,6 +12,7 @@ defined( 'ABSPATH' ) || exit;
 
 $bootstrap_version = get_theme_mod( 'understrap_bootstrap_version', 'bootstrap4' );
 $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
+$is_premium = qc_is_premium();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -26,23 +27,26 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 	<!-- ******************* The Navbar Area ******************* -->
-	<header class="site__header"">
+	<header class="site__header<?= ($is_premium)? ' site__header--premium' : null ?>">
 		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
 		<?php
-		if(!is_front_page()) {
-		?>
-		<div class="container">
-			<h2 class="site__header-title text-light mb-0"><?= qc_page_title() ?></h2>
-		</div>
+		if(!is_singular('care-home')) {
+			if(!is_front_page()) {
+			?>
+			<div class="container">
+				<h2 class="site__header-title text-light mb-0"><?= qc_page_title() ?></h2>
+			</div>
+			<?php
+			}
+			?>
 		<?php
 		}
-		?>
-		<?php
-			if(is_singular('care-home')) {
-			//	get_template_part( 'partials/header-care-home');
-			}
+
+		if(is_singular('care-home')) {
+			get_template_part( 'partials/care-home-header');
+		}
 		?>
 	</header><!-- #wrapper-navbar -->
 	<?php // wp_mail( 'deniscummmins@tiscali.co.uk', 'test subject', 'Email message' ); ?>
-	<?php mail('caffeinated@example.com', 'My Subject', 'Message'); ?>
+	<?php //mail('caffeinated@example.com', 'My Subject', 'Message'); ?>
 <?php get_template_part('partials/sub-nav') ?>

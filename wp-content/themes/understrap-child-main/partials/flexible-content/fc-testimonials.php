@@ -1,13 +1,26 @@
 <?php
-//$intro = get_sub_field('intro');
-//echo 'testimonials';
-$intro = get_sub_field('intro');
-$carousel = get_sub_field('carousel');
+$testimonials = get_sub_field('testimonial_fields');
+$title = $testimonials['title'];//get_sub_field('title');
+$intro = $testimonials['intro'];//get_sub_field('intro');
+$carousel = $testimonials['carousel']; //get_sub_field('carousel');
+
 ?>
 <section class="post-section fc__testimonials">
   <div class="container">
-    <h2 class="post-section__title"><?= __('Testimonials', THEME_NAMESPACE) ?></h2>
+  <?php
+    if($intro) {
+  ?>
+    <h2 class="post-section__title"><?= __($title, THEME_NAMESPACE) ?></h2>
+  <?php
+    }
+  ?>
+  <?php
+    if($intro) {
+  ?>
     <?= $intro ?>
+  <?php
+    }
+  ?>
   <?php
     $loop_index = 0;
   ?>

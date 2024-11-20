@@ -11,7 +11,7 @@ class CareHomeResults {
 
   attachEvents() {
     this.stage.addEventListener('searchSubmitted', (e) => {
-      alert(e.detail.location);
+   //   alert(e.detail.location);
     });
   }
 }

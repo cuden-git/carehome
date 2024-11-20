@@ -10,6 +10,9 @@ if (have_rows('chub_layouts')):
       get_template_part('/partials/flexible-content/fc-img-text-block');
     elseif (get_row_layout() == 'vid_text'):
       get_template_part('/partials/flexible-content/fc-video-text-block');
+    elseif (get_row_layout() == 'feedback'):
+      print_r(get_sub_field('feedback'));
+      get_template_part('/partials/flexible-content/fc-testimonials');
     endif;
   endwhile;
 else :

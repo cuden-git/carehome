@@ -40,7 +40,7 @@
 	}
 
 	var alertExports = {};
-	var alert$2 = {
+	var alert$1 = {
 	  get exports(){ return alertExports; },
 	  set exports(v){ alertExports = v; },
 	};
@@ -1168,9 +1168,9 @@
 		  index_js.defineJQueryPlugin(Alert);
 		  return Alert;
 		});
-	} (alert$2));
+	} (alert$1));
 
-	var alert$1 = alertExports;
+	var alert = alertExports;
 
 	var buttonExports = {};
 	var button$1 = {
@@ -6966,7 +6966,7 @@
 	  }
 	  attachEvents() {
 	    this.stage.addEventListener('searchSubmitted', e => {
-	      alert(e.detail.location);
+	      //   alert(e.detail.location);
 	    });
 	  }
 	}
@@ -9785,7 +9785,7 @@
 	new ViewSwitch();
 	//new Glide('.glide').mount()
 
-	exports.Alert = alert$1;
+	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;
 	exports.Collapse = collapse;

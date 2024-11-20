@@ -17,9 +17,8 @@ $the_team = get_field('ch_the_team');
 $tabbed_content = qc_tabbed_content_arrays($the_team['members']);
 $ch_services = get_field('ch_services_facilities');
 $yt_embed_code = get_field('ch_yt_embed_code');
-$brochures = get_field('ch_brochures_guides');
 $gallery = get_field('ch_gallery_carousel');
-$is_premium = (has_term('quantum-select', 'care-home-category'))? true : false;
+$is_premium = qc_is_premium();
 $related_news = qc_related_news(get_the_ID(), 3);
 $related_settings = get_field('ch_latest_news');
 //print_r(get_field_objects());die();
@@ -56,7 +55,7 @@ if(!empty($menu_items)) {
   }
 ?>
   <!-- Overview content -->
-  <section id="<?php qc_set_achor_index() ?>" class="post-section bg-gold-light care-home__overview">
+  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__overview">
     <div class="container">
       <h2 class="post-section__title"><?= $overview['title'] ?></h2>
       <div class="care-home__overview-text">
@@ -64,7 +63,7 @@ if(!empty($menu_items)) {
         <?php
         if($overview['button']) {
         ?>
-          <a href="<?=__($overview['button']['url'], THEME_NAMESPACE) ?>" class="btn btn-gold" title="<?=__($overview['button']['title'], THEME_NAMESPACE) ?>"><?=__($overview['button']['title'], THEME_NAMESPACE) ?></a>
+          <a href="<?=__($overview['button']['url'], THEME_NAMESPACE) ?>" class="btn <?= ($is_premium)? 'btn-gold' : 'btn-primary' ?>" title="<?=__($overview['button']['title'], THEME_NAMESPACE) ?>"><?=__($overview['button']['title'], THEME_NAMESPACE) ?></a>
         <?php
         }
         ?>
@@ -75,7 +74,7 @@ if(!empty($menu_items)) {
 if($gallery) {
 ?>
   <!-- Carousel -->
-  <section class="post-section care-home__carousel">
+  <section class="post-section care-home__carousel pb-0">
     <div class="container">
       <?php
         get_template_part( 'partials/carousel', null, $gallery);
@@ -86,18 +85,68 @@ if($gallery) {
 }
 ?>
   <!-- Map -->
-  <section class="post-section">
-      <div class="container">
-        <h2 class="post-section__title"></h2>
-        <?php if ($map_location) { ?>
-          <div id="map" class="acf-map" data-zoom="16" style="height: 400px; border: solid black 5px"></div>
-        <?php } ?>
-
+  <section class="post-section py-0 care-home__location">
+    <div class="container">
+      <h2 class="post-section__title"></h2>
+      <?php if ($map_location) { ?>
+        <div id="map" class="acf-map care-home__location-map" data-zoom="16"></div>
+      <?php } ?>
+    </div>
+  </section> 
+  <!-- Facilities -->
+  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__facilities<?= ($is_premium)? ' care-home--premium' : null ?>">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 care-home__facilities-intro">
+          <h2 class="post-section__title post-section__title--lrg"><?= $ch_services['title'] ?></h2>
+          <?= $ch_services['text'] ?>
+        </div>
+        <div class="col-12 col-md-6 care-home__facilities-types">
+          <h3 class="post-section__title post-section__title--sml"><?= __('Types of care we support:', THEME_NAMESPACE) ?></h3>
+          <ul class="<?= ($is_premium)? ' gold-bullets' : 'blue-bullets' ?>">
+          <?php
+          foreach($ch_services['care_type'] as $care_type) { 
+          ?>
+            <li><?= $care_type ?></li>
+          <?php
+          }
+          ?>
+          </ul>
+        </div>
+        <div class="col-12">
+          <ul class="list-inline care-home__facilities-icons d-flex">
+        <?php
+          foreach($ch_services['facilities'] as $facility) { 
+        ?>
+            <li class="d-flex">
+              <span>
+                <?= $facility['label'] ?>
+              </span>
+              <i class="icon-<?= $facility['value'] ?>"></i>
+            </li>
+        <?php
+          }
+        ?>
+          </ul>
+        </div>
       </div>
+    </div>
   </section>
- 
-  <!-- Tabbed content -->
-  <section id="<?php qc_set_achor_index() ?>" class="post-section bg-gold-light care-home__team<?= ($is_premium)? ' care-home--premium' : null ?>">
+  <!-- YouTube embed code -->
+  <section class="post-section<?= ($is_premium)? ' care-home--premium' : null ?>">
+    <div class="container">
+      <h2 class="post-section__title"></h2>
+      <div class="row">
+        <div class="col-12">
+          <div class="ratio ratio-16x9">
+            <?= $yt_embed_code ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Tabbed content -->
+<section id="<?php qc_set_achor_index() ?>" class="post-section care-home__team<?= ($is_premium)? ' care-home--premium' : null ?>">
     <div class="container">
       <h2 class="post-section__title"><?= $the_team['title'] ?></h2>
       <?php
@@ -151,58 +200,6 @@ if($gallery) {
       <!-- -->
     </div>
   </section>
-  <!-- Facilities -->
-  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__facilities<?= ($is_premium)? ' care-home--premium' : null ?>">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6 care-home__facilities-intro">
-          <h2 class="post-section__title post-section__title--lrg"><?= $ch_services['title'] ?></h2>
-          <?= $ch_services['text'] ?>
-        </div>
-        <div class="col-12 col-md-6 care-home__facilities-types">
-          <h3 class="post-section__title post-section__title--sml"><?= __('Types of care we support:', THEME_NAMESPACE) ?></h3>
-          <ul class="<?= ($is_premium)? ' gold-bullets' : 'blue-bullets' ?>">
-          <?php
-          foreach($ch_services['care_type'] as $care_type) { 
-          ?>
-            <li><?= $care_type ?></li>
-          <?php
-          }
-          ?>
-          </ul>
-        </div>
-        <div class="col-12">
-          <ul class="list-inline care-home__facilities-icons d-flex">
-        <?php
-          foreach($ch_services['facilities'] as $facility) { 
-        ?>
-            <li class="d-flex">
-              <span>
-                <?= $facility['label'] ?>
-              </span>
-              <i class="icon-<?= $facility['value'] ?>"></i>
-            </li>
-        <?php
-          }
-        ?>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- YouTube embed code -->
-  <section class="post-section<?= ($is_premium)? ' care-home--premium' : null ?>">
-    <div class="container">
-      <h2 class="post-section__title"></h2>
-      <div class="row">
-        <div class="col-12">
-          <div class="ratio ratio-16x9">
-            <?= $yt_embed_code ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- Related news -->
   <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__news<?= ($is_premium)? ' care-home--premium' : null ?>">
     <div class="container">
@@ -228,35 +225,11 @@ if($gallery) {
       ?>
       </div>
       <!-- TODO: -->
-      <a href="<?= get_post_type_archive_link(get_post_type()) ?>?meta_key=" class="btn <?= ($is_premium)? 'btn-gold' : 'btn-primary' ?>" title="<?= __( $related_settings['achive_cta_label'], THEME_NAMESPACE) ?>"><?= __( $related_settings['achive_cta_label'], THEME_NAMESPACE) ?></a>
+      <a href="<?= get_post_type_archive_link('post') ?>?meta_key=" class="btn <?= ($is_premium)? 'btn-gold' : 'btn-primary' ?>" title="<?= __( $related_settings['achive_cta_label'], THEME_NAMESPACE) ?>"><?= __( $related_settings['achive_cta_label'], THEME_NAMESPACE) ?></a>
     </div>
   </section> 
- <!-- Brochures & Guides -->
-  <?php
-if($brochures) {
-  ?>
-  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__brochures">
-    <div class="container">
-      <h2 class="post-section__title"><?= __($brochures['title'], THEME_NAMESPACE) ?></h2>
-      <div class="row">
-        <ul>
-        <?php
-        foreach($brochures['docs'] as $brochure) { 
-        ?>
-          <li class="d-flex justify-content-between align-items-center">
-            <h6 class="care-home__brochures-label"><?= $brochure['title'] ?></h6>
-            <a href="<?= $brochure['file']['url'] ?>" class="btn<?= ($is_premium)? ' btn-gold' : ' btn-primary' ?>" target="_blank"><?= __('View', THEME_NAMESPACE) ?></a>
-          </li>
-        <?php
-        }
-        ?>
-        </ul>
-      </div>
-    </div>
-  </section>
-<?php
-}
-?>
+<!-- -->
+  <?php get_template_part('/partials/contact-form', null, ['is_section' => true]) ?>
 </div>
 <?php
   //Load Google Maps API

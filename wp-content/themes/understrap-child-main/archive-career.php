@@ -68,8 +68,8 @@ if(isset($_GET['term_ids'])) {
       'taxonomy' => 'careers-category',
       'field' => 'term_id',
       'terms' => $_GET['term_ids'],
-      'operator' => 'OR',
-      //'operator' => 'AND'
+     // 'operator' => 'OR',
+        'operator' => 'AND'
     ],
   ];   
 
@@ -77,10 +77,10 @@ if(isset($_GET['term_ids'])) {
 }
 
 if(count($meta_query) > 0) {
-  $meta_query['relation'] = 'AND';
+ // $meta_query['relation'] = 'AND';
   $query_args['meta_query'] = $meta_query; 
 }
-
+//print_r($query_args);
 $query = new WP_Query($query_args);
 
 get_header();
@@ -105,6 +105,8 @@ get_header();
             $query->the_post();
             get_template_part('/partials/career-card');
           }
+        }else {
+          echo __('No results found based on your search criteria', THEME_NAMESPACE);
         }
         wp_reset_postdata()
       ?>

@@ -36,8 +36,8 @@ $selector: ".fc";
     &--bg {
       @extend %q-bg-img-dark;
 
-      background-size: auto 115%;
-      background-position: -35% 22%;  
+      background-size: auto 137%;
+      background-position: left 19% top 41%;
       background-color: $qc-blue-lighter;
     }
 
@@ -58,7 +58,7 @@ $selector: ".fc";
     @extend %q-bg-img;
 
     background-size: auto 115%;
-    background-position: -35% 22%;  
+    background-position: left 12% top 22%;
     background-color: $qc-blue-light;
     color: $qc-white;
     text-align: center;
