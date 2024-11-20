@@ -11,7 +11,7 @@ $care_homes = get_posts($ch_args);
   <fieldset class="d-flex flex-column">
     <label>
       <select name="careers_distance"<?php if(!isset($_GET['careers_location']) || $_GET['careers_location'] === "") echo ' disabled'?>>
-        <option<?php if(!isset($_GET['careers_location']) || $_GET['careers_location'] === "") echo " selected" ?>><?= __('Distance', THEME_NAMESPACE) ?></option>
+        <option<?php if(!isset($_GET['careers_location']) || $_GET['careers_location'] === "") echo " selected" ?> value=""><?= __('Distance', THEME_NAMESPACE) ?></option>
         <?php
         foreach($careers_distances as $distance) {
         ?>

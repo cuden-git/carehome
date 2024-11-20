@@ -361,7 +361,7 @@ function qc_load_ch_selection($field) {
 add_filter('acf/load_field/name=news_care_homes', 'qc_load_ch_selection');
 
 /**
- *  Set lng/lat of care home liked to and set meta field. 
+ *  Set lng/lat of care home linked to and set meta field. 
  *  Priority less than 10 means this fires before save.
  */
 function qc_set_career_lng_lat( $post_id ) {

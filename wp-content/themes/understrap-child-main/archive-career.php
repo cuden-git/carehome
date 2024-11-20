@@ -8,7 +8,7 @@ if(isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
 
 $query_args = [
   'post_type' => 'career',
-  'posts_per_page' => 10,
+  'posts_per_page' => 100,
 ];
 
 $meta_query = [];
@@ -40,10 +40,10 @@ if(isset($_GET['careers_location']) && $_GET['careers_location'] !== "") {
   qc_set_distance_meta($_GET['careers_location'], get_post_type());
   array_push($meta_query, [
       'key' => 'ch_distance',
-      'orderby' => 'meta_value_num',
-      'order' => 'ASC'
     ]
   );
+  $query_args['orderby'] = 'meta_value_num';
+  $query_args['order'] = 'ASC';
   //-------
 
 }else {
@@ -80,9 +80,22 @@ if(count($meta_query) > 0) {
   $meta_query['relation'] = 'AND';
   $query_args['meta_query'] = $meta_query; 
 }
+
+// $query_args = [
+//     'post_type' => 'career',
+//     'posts_per_page' => 10,
+//     'meta_query' => [
+//           [
+//             'key' => 'ch_distance',
+
+//           ]
+//           ],
+//     'orderby' => 'meta_value_num',
+//     'order' => 'DSC'
+//   ];
 //print_r($query_args);
 $query = new WP_Query($query_args);
-
+//print_r($query); die();
 get_header();
 ?>
 

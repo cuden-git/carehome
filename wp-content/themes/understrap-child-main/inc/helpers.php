@@ -45,7 +45,7 @@ function qc_set_distance_meta($location_val, $post_type) {
   foreach($posts as $post) {
    $post_distance = qc_get_care_home_distance($post, $location_val);
 
-	 if($post_distance) {
+	 if(!is_null($post_distance)) {
 		update_post_meta($post->ID, 'ch_distance', $post_distance);
 	 }
   }
