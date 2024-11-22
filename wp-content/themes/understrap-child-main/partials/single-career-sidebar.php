@@ -3,11 +3,11 @@ $brochure = get_field('career_brochure', get_the_ID());
 ?>
 <div class="career-single__sidebar">
   <!-- -->
-  <form class="d-flex career-single__info-form">
+  <form id=career-email class="d-flex career-single__info-form" method="POST">
     <label>
-      <input type="email" class="w-100" name="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="<?= __('Email address', THEME_NAMESPACE) ?>" value="">
+      <input type="email" class="w-100" name="career_emaol_info" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="<?= __('Email me about this job', THEME_NAMESPACE) ?>" value="">
     </label>
-    <input type="submit" class="btn btn-secondary" value="<?= __('Email address', THEME_NAMESPACE) ?>">
+    <input type="submit" class="btn btn-secondary" value="<?= __('Email address', THEME_NAMESPACE) ?>" disabled>
   </form>
   <!-- -->
   <?php

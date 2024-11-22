@@ -93,9 +93,9 @@ if(count($meta_query) > 0) {
 //     'orderby' => 'meta_value_num',
 //     'order' => 'DSC'
 //   ];
-//print_r($query_args);
+
 $query = new WP_Query($query_args);
-//print_r($query); die();
+
 get_header();
 ?>
 
@@ -128,5 +128,5 @@ get_header();
   </div>
 </main>
 
-<?
+<?php
 get_footer();

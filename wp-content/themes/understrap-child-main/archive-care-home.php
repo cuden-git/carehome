@@ -72,7 +72,7 @@ get_header();
   <!-- Maps -->
   <div id="care-homes-maps" class="ch__map container d-none" data-view-switch>map view</div>
 </main>
-<?
+<?php
 
 // require_once __DIR__ . '/inc/gm-js-load.php';
 

@@ -47,6 +47,4 @@ $is_premium = qc_is_premium();
 		}
 		?>
 	</header><!-- #wrapper-navbar -->
-	<?php // wp_mail( 'deniscummmins@tiscali.co.uk', 'test subject', 'Email message' ); ?>
-	<?php //mail('caffeinated@example.com', 'My Subject', 'Message'); ?>
 <?php get_template_part('partials/sub-nav') ?>

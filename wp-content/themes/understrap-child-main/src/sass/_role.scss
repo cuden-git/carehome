@@ -1,0 +1,22 @@
+$selector: ".role";
+
+#{$selector} {
+  &__img {
+    aspect-ratio: 950 / 629;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__jobs {
+    @extend %q-bg-img;
+
+    background-color: $qc-blue-dark;
+    background-size: auto 168%;
+    background-position: left -40% center;
+  }
+}

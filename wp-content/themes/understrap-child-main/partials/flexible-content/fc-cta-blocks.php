@@ -1,5 +1,5 @@
 <?php
-$ctas = get_sub_field('cta_blocks');
+$ctas = (isset($args['cta_blocks']))? $args['cta_blocks']['cta_blocks'] : get_sub_field('cta_blocks');
 ?>
 
 <section class="post-section fc__ctas">

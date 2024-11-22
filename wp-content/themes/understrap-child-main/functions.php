@@ -335,7 +335,7 @@ function qc_populate_acf_select_field( $field ) {
 	return $field;
 }
 add_filter('acf/load_field/name=careers_post_job_role', 'qc_populate_acf_select_field');
-
+add_filter('acf/load_field/name=career_job_roles', 'qc_populate_acf_select_field');
 /**
  * Load Care Homes into select menu for news item
  */
@@ -418,20 +418,48 @@ add_action( 'after_setup_theme', 'qc_register_footer_menu' );
 
 //     return $out;
 // }
-function qc_set_cf7_email_recipient( $contact_form, $abort, $submission ) {
-	global $post;
-
+function qc_set_cf7_email_recipient( $contact_form, &$abort, $submission ) {
+	
 	$job_form_id = get_field('job_form_id', 'option');
-  $dynamic_email = 'deniscummins@tiscali.co.uk';//get_field('career_recipient_email', $post->ID);//'email@email.com'; // get your email address...
-
+	$site_contact_form_id = get_field('contact_form_id', 'option');
+	$contact_form_recipient = get_field('contact_form_email', 'option');
+	$form_data = $submission->get_posted_data();
+  $job_recipient_email = get_field('career_recipient_email', $form_data['post_id']);
   $properties = $contact_form->get_properties();
-  $properties['mail']['recipient'] = $dynamic_email;
-  $contact_form->set_properties($properties);
 
+	if($job_recipient_email && $contact_form->id() === intval($job_form_id)) {
+		$properties['mail']['recipient'] = $job_recipient_email;
+		$properties['mail']['body'] .= __("Job application for " . get_permalink($form_data['post_id']), THEME_NAMESPACE);
+		$contact_form->set_properties($properties);
+	}
+
+	if($contact_form_recipient && $contact_form->id() === intval($site_contact_form_id)) {
+		$properties['mail']['recipient'] = $contact_form_recipient;
+		$contact_form->set_properties($properties);
+	}
+	//
   return $contact_form;
-
 }
 add_filter( 'wpcf7_before_send_mail', 'qc_set_cf7_email_recipient', 10, 3 );
+
+/**
+ * Add the ID of the post that the form is embedded into.
+ * Adds it to the hidden field, name = post_id, that is set in the backend UI.
+ */
+function qc_add_post_id($tag, $unused) {
+		$post_type = get_post_type(get_the_ID());
+
+    if ($tag['name'] === 'post_id') {
+        $tag['values'] = [get_the_ID()];
+    }
+
+		if($tag['name'] === 'type_post') {
+			$tag['values'] = [$post_type];
+		}
+
+    return $tag;
+}
+add_filter('wpcf7_form_tag', 'qc_add_post_id', 10, 2);
 
 /**
  * Remove p tags from Contact Form 7

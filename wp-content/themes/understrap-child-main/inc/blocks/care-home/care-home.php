@@ -45,7 +45,7 @@ if(!empty($menu_items)) {
         <li>
           <a href="#section-<?= $loop_index ?>" title="<?= __($item, THEME_NAMESPACE) ?>"><?= __($item, THEME_NAMESPACE) ?></a>
         </li>
-  <?
+  <?php
         ++$loop_index;
       }
   ?>

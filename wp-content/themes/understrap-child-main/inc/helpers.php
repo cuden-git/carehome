@@ -254,6 +254,18 @@ function qc_is_premium() {
 		return true;
 	}else {
 		return false;
-	}
-	
+	}	
+}
+
+/**
+ * Get careers for job role page
+ */
+function qc_job_role_posts($job_role) {
+	$career_posts = get_posts([
+		'post_type' => 'career',
+		'meta_key' => 'careers_post_job_role',
+		'meta_value' => $job_role
+	]);
+
+	return $career_posts;
 }
