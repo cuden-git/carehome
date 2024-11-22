@@ -1,11 +1,12 @@
 <?php
-$ctas = (isset($args['cta_blocks']))? $args['cta_blocks']['cta_blocks'] : get_sub_field('cta_blocks');
+$ctas = get_sub_field('cta_blocks');
 ?>
 
 <section class="post-section fc__ctas">
   <div class="container">
     <div class="row">
   <?php
+
     foreach($ctas as $cta) {
   ?>
       <div class="col-12 col-md-6">

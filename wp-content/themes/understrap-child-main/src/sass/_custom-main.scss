@@ -12,19 +12,18 @@
 @import "./hero-carousel";
 @import "./news";
 @import "./faqs";
-@import "./role";
 
 @font-face {
-  font-family: 'poppins-light';
-  src: url('../fonts/Poppins-Light.woff2') format('woff2');
+  font-family: "poppins-light";
+  src: url("../fonts/Poppins-Light.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
 @font-face {
-  font-family: 'poppins-semi-bold';
-  src: url('../fonts/poppins-SemiBold.woff2') format('woff2');
+  font-family: "poppins-semi-bold";
+  src: url("../fonts/poppins-SemiBold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -34,8 +33,22 @@ body {
   font-family: poppins-light, san-serif;
   background-color: $white;
   color: $qc-black;
-  font-size: rfs-value(18px);
- // --bs-body-line-height: 1.4em;
+  font-size: rfs-value(15px);
+  line-height: rfs-value(27px);
+  // --bs-body-line-height: 1.4em;
+}
+h1 {
+}
+h2 {
+  font-size: 2.2rem;
+  line-height: rfs-value(55px);
+}
+h3 {
+}
+h4 {
+}
+h5 {
+  font-size: 1.1rem;
 }
 
 /* Placeholders */
@@ -78,9 +91,9 @@ body {
   @extend %qc-blue-bullet;
 }
 
-[type=submit],
+[type="submit"],
 .btn {
-  padding: rfs-value(13px) rfs-value(32px) rfs-value(23px);
+  padding: rfs-value(13px) rfs-value(32px);
 }
 
 .btn,
@@ -90,8 +103,7 @@ body {
 
 .btn-gold {
   background-color: $qc-gold;
-
-  &--inverse {
+  npm &--inverse {
     background-color: unset;
     border-color: $qc-gold;
     color: $qc-gold;
@@ -147,22 +159,12 @@ body {
   &__bullets {
     &--inverse {
       border: 1px solid $qc-white;
-
     }
   }
 }
 
 .page-intro {
-  padding-right: rfs-value(180px);
-
-  &__title {
-    font-size: rfs-value(60px);
-    margin-bottom: rfs-value(55px);
-  }
-
-  .btn {
-    margin-top: rfs-value(60px);
-  }
+  padding-right: rfs-value(60px);
 }
 
 .row {
@@ -172,7 +174,7 @@ body {
 }
 
 .post-section {
-  padding: rfs-value(145px);
+  //padding: rfs-value(145px);
 
   &--flat {
     height: 0;
@@ -181,8 +183,7 @@ body {
   }
 
   &__title {
-    font-size: rfs-value(40px);
-    margin-bottom: rfs-value(60px);
+    font-size: 2rem;
 
     &--sml {
       font-size: rfs-value(35px);
@@ -195,12 +196,6 @@ body {
 
     &--white {
       color: $white;
-    }
-  }
-
-  p {
-    &:last-of-type {
-      margin-bottom: rfs-value(60px);
     }
   }
 }
@@ -217,16 +212,23 @@ figure {
   --bs-nav-link-padding-x: 0;
 }
 
-
 //animations
 @keyframes fade-in {
-  from  { opacity: 0; }
-   to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade-out {
-  from  { opacity: 1; }
-   to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .fade-in {
@@ -235,4 +237,8 @@ figure {
 
 .fade-out {
   animation: fade-out 1s;
+}
+
+.border-none {
+  border-color: transparent;
 }

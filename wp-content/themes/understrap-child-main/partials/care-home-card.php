@@ -6,12 +6,12 @@ $address = get_field('ch_address');
 $ch_services = get_field('ch_services_facilities');
 ?>
 <div class="col-12 col-md-6" data-map-coords="<?= $post->lng . '/' . $post->lat?>">
-  <div class="ch__card<?= ($is_premium)? ' ch__card--premium' : null?>">
+  <div class="p-5 ch__card<?= ($is_premium)? ' ch__card--premium' : null?>">
     <figure class="ch__card-img">
       <?= get_the_post_thumbnail( get_the_ID(), 'large' ) ?>
     </figure>
     <div class="d-flex justify-content-between">
-      <h4 class="ch__card-title"><?php the_title() ?> <?= get_the_id() ?></h4>
+      <h4 class="ch__card-title mb-5"><?php the_title() ?> <?= get_the_id() ?></h4>
       <?php
       if($is_premium) {
       ?>
@@ -29,7 +29,7 @@ $ch_services = get_field('ch_services_facilities');
   <?php
     }
   ?>
-    <div class="d-flex">
+    <div class="d-flex mb-5">
       <div class="ch__card-contact">
         <address>
           <?= $address['address'] ?><br>
@@ -43,6 +43,7 @@ $ch_services = get_field('ch_services_facilities');
         </address>
       </div>
       <ul class="ch__card-types<?= ($is_premium)? ' gold-bullets' : null ?>">
+
         <?php
         foreach($ch_services['care_type'] as $care_type) {
         ?>  
@@ -52,11 +53,11 @@ $ch_services = get_field('ch_services_facilities');
         ?>
       </ul>
     </div>
-    <ul class="ch__card-icons list-inline"]>
+    <ul class="ch__card-icons list-inline pt-5 pb-4">
     <?php
     foreach($ch_services['facilities'] as $facility) {
     ?>  
-      <li class="d-flex"><i class="icon-<?= $facility['value'] ?>"></i> <span><?= __($facility['label'], THEME_NAMESPACE) ?></span></li>
+      <li class="d-flex mb-4"><i class="icon-<?= $facility['value'] ?>"></i> <span><?= __($facility['label'], THEME_NAMESPACE) ?></span></li>
     <?php
     }
     ?>

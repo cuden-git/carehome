@@ -12,11 +12,11 @@ get_header();
 <main id="care-home-results" class="site__main ch__archive">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-7 page-intro">
-      <h2 class="page-intro__title"><?= $archive_intro['title'] ?></h2>
+      <div class="col-12 col-md-7 col-xl-7 col-lg-6 col-md-12 page-intro">
+      <div class="page-intro__title"><?= $archive_intro['title'] ?></div>
       <?= $archive_intro['text'] ?>
       </div>
-      <div class="col-12 col-md-5">
+      <div class="col-12 col-xl-5 col-lg-6">
         <?php get_template_part('partials/care-home-search'); ?>
       </div>
     </div>

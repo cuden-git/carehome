@@ -14639,3 +14639,8 @@ Stack trace:
 [22-Nov-2024 19:54:16 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/img-text-block.php on line 29
 [22-Nov-2024 19:54:16 UTC] PHP Warning:  Undefined array key "img" in /var/www/html/wp-content/themes/understrap-child-main/partials/img-text-block.php on line 29
 [22-Nov-2024 19:54:16 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/img-text-block.php on line 29
+[22-Nov-2024 20:22:34 UTC] PHP Warning:  Constant GOOGLE_API_KEY already defined in /var/www/html/wp-content/themes/understrap-child-main/inc/vars.php on line 5
+[22-Nov-2024 20:22:35 UTC] PHP Warning:  Constant GOOGLE_API_KEY already defined in /var/www/html/wp-content/themes/understrap-child-main/inc/vars.php on line 5
+[22-Nov-2024 20:22:36 UTC] PHP Warning:  Constant GOOGLE_API_KEY already defined in /var/www/html/wp-content/themes/understrap-child-main/inc/vars.php on line 5
+[22-Nov-2024 20:22:36 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/inc/vars.php:5) in /var/www/html/wp-includes/pluggable.php on line 1435
+[22-Nov-2024 20:22:36 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/themes/understrap-child-main/inc/vars.php:5) in /var/www/html/wp-includes/pluggable.php on line 1438

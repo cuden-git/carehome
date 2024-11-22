@@ -15,9 +15,9 @@ $contact_text = get_field('contact_us_text', 'option');
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="site__form-text">
-          <h2 class="site__form-title"><?= $contact_text['title'] ?></h2>
-          <?= $contact_text['text'] ?>
-          <h4 class="site__form-sub-title"><?= $contact_text['sub-title'] ?></h4>
+          <h2 class="site__form-title mb-4"><?= $contact_text['title'] ?></h2>
+          <div class="mb-5"><?= $contact_text['text'] ?></div>
+          <h4 class="site__form-sub-title my-4"><?= $contact_text['sub-title'] ?></h4>
           <address class="d-flex">
             <a href="tel:<?= __($contact_info['phone_number'], THEME_NAMESPACE) ?>"><?= __($contact_info['phone_number'], THEME_NAMESPACE) ?></a>
             <a href="mailto:<?= __($contact_info['email_address'], THEME_NAMESPACE) ?>"><?= __($contact_info['email_address'], THEME_NAMESPACE) ?></a>

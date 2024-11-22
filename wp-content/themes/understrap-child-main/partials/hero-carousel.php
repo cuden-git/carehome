@@ -15,11 +15,11 @@
             </figure>
             <div class="container h-100 position-relative">
               <div class="hero-carousel__slide-text">
-                <?= $slide['text'] ?>
+                <h1><?= $slide['text'] ?></h1>
               <?php
               if($slide['cta_btns']) {
               ?>
-                <div class="hero-carousel__slide-btns">
+                <div class="hero-carousel__slide-btns mt-4">
                   <?php
                     foreach($slide['cta_btns'] as $button) {
                   ?>

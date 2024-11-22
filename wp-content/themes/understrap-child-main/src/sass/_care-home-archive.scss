@@ -33,7 +33,7 @@ $selector: ".ch";
   }
 
   &__list {
-    >.row>[class*="col-md"] {
+    > .row > [class*="col-md"] {
       padding-bottom: $archive-gutter;
 
       &:nth-child(odd) {
@@ -58,7 +58,6 @@ $selector: ".ch";
     color: $qc-white;
     background-color: $qc-blue-light;
     height: 100%;
-    padding: rfs-value(55px);
 
     &--premium {
       background-color: $qc-blue-dark;
@@ -69,8 +68,7 @@ $selector: ".ch";
     }
 
     &-title {
-      font-size: rfs-value(40px);
-      margin-bottom: rfs-value(55px);
+      font-size: 25px;
     }
 
     &-logo {
@@ -78,7 +76,7 @@ $selector: ".ch";
     }
 
     div:has(#{$selector}__card-contact) {
-      padding-bottom: rfs-value(60px);
+      //padding-bottom: rfs-value(60px);
     }
 
     &-contact {
@@ -92,7 +90,7 @@ $selector: ".ch";
       }
       a {
         color: $qc-white;
-        text-decoration: none;;
+        text-decoration: none;
       }
     }
 
@@ -108,25 +106,24 @@ $selector: ".ch";
 
     &-icons {
       border-top: rfs-value(1px) solid $qc-white;
-      padding-top: rfs-value(80px);
+
       column-count: 2;
-      column-gap: rfs-value(60px);
-      margin-bottom: rfs-value(40px);
+      column-gap: rfs-value(10px);
 
       #{$premium-hook} & {
         border-color: $qc-gold;
       }
 
       li {
-        margin-bottom: rfs-value(35px);
+        //margin-bottom: rfs-value(35px);
 
-        >span {
+        > span {
           flex: 2;
         }
       }
 
       i {
-        font-size: rfs-value(35px);
+        font-size: 30px;
         text-align: center;
         width: rfs-value(70px);
         margin-right: rfs-value(10px);

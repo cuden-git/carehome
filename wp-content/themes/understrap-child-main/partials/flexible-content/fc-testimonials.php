@@ -5,12 +5,14 @@ $intro = $testimonials['intro'];//get_sub_field('intro');
 $carousel = $testimonials['carousel']; //get_sub_field('carousel');
 
 ?>
-<section class="post-section fc__testimonials">
+<section class="post-section fc__testimonials py-5">
   <div class="container">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
   <?php
     if($intro) {
   ?>
-    <h2 class="post-section__title"><?= __($title, THEME_NAMESPACE) ?></h2>
+    <h2 class="post-section__title mb-4"><?= __($title, THEME_NAMESPACE) ?></h2>
   <?php
     }
   ?>
@@ -24,7 +26,8 @@ $carousel = $testimonials['carousel']; //get_sub_field('carousel');
   <?php
     $loop_index = 0;
   ?>
-    <div class="splide">
+   
+      <div class="splide mt-5">
       <div class="splide__track">
         <ul class="splide__list">
       <?php
@@ -33,7 +36,7 @@ $carousel = $testimonials['carousel']; //get_sub_field('carousel');
           <li class="splide__slide fc_testimonials__slide">
             <blockquote>
               <?= $slide['quote'] ?>
-              <footer>
+              <footer class="my-3">
                 <cite class="author"><?= $slide['name'] ?></cite>
               </footer>
             </blockquote>
@@ -45,6 +48,8 @@ $carousel = $testimonials['carousel']; //get_sub_field('carousel');
         </ul>
       </div>
       <ul class="splide__pagination splide__pagination--inverse fc_testimonials__bullets"></ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>

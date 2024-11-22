@@ -12,7 +12,7 @@ if($show) {
     ]
   );
 ?>
-<section class="post-section fc__news">
+<section class="post-section fc__news my-5">
   <div class="container">
     <h2 class="post-section__title"><?= $title ?></h2>
     <div class="row">
@@ -21,7 +21,7 @@ if($show) {
       get_template_part('partials/news-card', null, ['no-archive' => true]);
     }
     ?>
-      <div class="col-12 d-flex justify-content-center fc__news-cta">
+      <div class="col-12 d-flex justify-content-center fc__news-cta mt-5">
         <a href="<?= $cta_btn['url'] ?>" title="<?= __($cta_btn['title'], THEME_NAMESPACE) ?>" class="btn btn-primary"><?= __($cta_btn['title'], THEME_NAMESPACE) ?></a>
       </div>
     </div>

@@ -20,7 +20,7 @@ $selector: ".fc";
 
         &-text {
           order: 1;
-          padding-left: rfs-value(150px);
+          padding-left: rfs-value(50px);
         }
       }
     }
@@ -28,7 +28,7 @@ $selector: ".fc";
     &--right {
       #{$selector}__img-text {
         &-text {
-          padding-right: rfs-value(150px);
+          padding-right: rfs-value(50px);
         }
       }
     }
@@ -39,6 +39,14 @@ $selector: ".fc";
       background-size: auto 137%;
       background-position: left 19% top 41%;
       background-color: $qc-blue-lighter;
+      padding-top: 180px;
+      padding-bottom: 180px;
+      margin-top: -140px;
+      margin-bottom: -140px;
+    }
+    &--none {
+      padding-top: 160px;
+      padding-bottom: 160px;
     }
 
     &-text {
@@ -48,24 +56,19 @@ $selector: ".fc";
     }
   }
 
-  &__news {
-    &-cta {
-      margin-top: rfs-value(75px);
-    }
-  }
-
   &__testimonials {
     @extend %q-bg-img;
 
-    background-size: auto 115%;
-    background-position: left 12% top 22%;
+    background-size: auto 139%;
+    background-position: left -6% top 22%;
     background-color: $qc-blue-light;
     color: $qc-white;
     text-align: center;
 
     blockquote {
       > p {
-        font-size: rfs-value(35px);
+        font-size: 1.4rem;
+        line-height: 2.2rem;
       }
     }
   }
@@ -77,9 +80,9 @@ $selector: ".fc";
       background-color: $qc-blue-light;
       background-size: 167%;
       background-position: -12% 279%;
-      padding: rfs-value(55px) rfs-value(45px) rfs-value(90px) rfs-value(45px);
+      //padding: rfs-value(55px) rfs-value(45px) rfs-value(90px) rfs-value(45px);
       height: 100%;
-      color:$qc-white;
+      color: $qc-white;
       display: flex;
       flex-direction: column;
 
@@ -89,16 +92,17 @@ $selector: ".fc";
       }
 
       &-title {
-        margin-bottom: rfs-value(45px);
+        /*margin-bottom: rfs-value(45px);*/
       }
 
       &-img {
         margin-bottom: rfs-value(40px);
-        height: rfs-value(325px);
+        height: 40%;
 
         img {
           height: 100%;
           object-fit: cover;
+          object-position: center;
         }
       }
 

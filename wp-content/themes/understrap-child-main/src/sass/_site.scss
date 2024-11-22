@@ -6,26 +6,25 @@ $selector: ".site";
     position: relative;
 
     &::before {
-    //  &:not(.home &) {
-        @extend %q-bg-img;
+      //  &:not(.home &) {
+      @extend %q-bg-img;
 
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-position: left 24% top 42%;
-        background-size: 200% 200%;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: left 24% top 42%;
+      background-size: 200% 200%;
 
-        .home & {
-          background-position: left -100% top 33%;
-          background-size: 121%;
-        }
-        @include media-breakpoint-up(md) {
-          
-        }
-    //  }
+      .home & {
+        background-position: left -100% top 33%;
+        background-size: 121%;
+      }
+      @include media-breakpoint-up(md) {
+      }
+      //  }
     }
 
     &--premium {
@@ -38,12 +37,12 @@ $selector: ".site";
       z-index: 2;
 
       &::before {
-        background-image: none;;
+        background-image: none;
       }
     }
 
     &:not(.home &):not(&--premium) {
-     // @extend %q-bg-img;
+      // @extend %q-bg-img;
 
       background-color: $qc-blue-light;
       // background-repeat: no-repeat;
@@ -115,7 +114,7 @@ $selector: ".site";
 
     li {
       padding: 0 rfs-value(15px);
-      
+
       &.current {
         a {
           text-decoration: underline;
@@ -131,7 +130,7 @@ $selector: ".site";
 
   &__content {
     ul {
-      @extend %qc-blue-bullet ;
+      @extend %qc-blue-bullet;
 
       margin-bottom: rfs-value(30px);
 
@@ -152,7 +151,10 @@ $selector: ".site";
     z-index: 1;
 
     &:not(&--section) {
-      border-bottom: rfs-value(1px) solid $qc-blue-light;
+      .container {
+        padding-bottom: 50px;
+        border-bottom: 2px solid $qc-blue-light;
+      }
     }
 
     &--section {
@@ -163,16 +165,16 @@ $selector: ".site";
       background-size: 200% 200%;
       background-position: -15% 20%;
     }
-  
+
     &-text {
-      font-size: rfs-value(22px);
+      //font-size: rfs-value(22px);
       max-width: rfs-value(500px);
 
       address {
         flex-direction: column;
 
         * {
-          margin-bottom: rfs-value(40px);
+          margin-bottom: rfs-value(20px);
         }
 
         a {
@@ -182,14 +184,14 @@ $selector: ".site";
     }
 
     &-title {
-      font-size: rfs-value(55px);
-      margin-bottom: rfs-value(50px);
+      //font-size: rfs-value(55px);
+      //margin-bottom: rfs-value(50px);
     }
 
     &-sub-title {
-      font-size: rfs-value(35px);
-      margin-top: rfs-value(50px);
-      margin-bottom: rfs-value(50px);
+      //font-size: rfs-value(35px);
+      //margin-top: rfs-value(50px);
+      //margin-bottom: rfs-value(50px);
     }
 
     form {
@@ -204,7 +206,7 @@ $selector: ".site";
         flex-grow: 1;
         margin-bottom: rfs-value(40px);
 
-        >span {
+        > span {
           display: block;
 
           * {
@@ -228,7 +230,7 @@ $selector: ".site";
 
   &__footer {
     position: relative;
-    padding: rfs-value(80px) 0;
+    padding: rfs-value(80px) 0 2rem;
     color: $qc-white;
 
     &--short {
@@ -242,11 +244,15 @@ $selector: ".site";
       left: 0;
       width: 100%;
       height: 100%;
-      
+
       @extend %q-bg-img;
 
       background-size: 163%;
       background-position: 48% 63%;
+      @include media-breakpoint-down(md) {
+        background-size: 300%;
+        background-position: 87% 63%;
+      }
       pointer-events: none;
       z-index: 0;
     }
@@ -257,36 +263,52 @@ $selector: ".site";
     }
 
     &-wrap {
-      padding-top: rfs-value(200px);
+      padding-top: rfs-value(20px);
     }
 
     &-logos {
       img {
-        margin-bottom: rfs-value(50px)
+        margin-bottom: rfs-value(50px);
+        &.qc-logo {
+          width: 80%;
+          @include media-breakpoint-down(md) {
+            margin: 0 auto;
+            display: block;
+          }
+        }
+        &.ncf-logo {
+          @include media-breakpoint-down(md) {
+            margin: 40px auto;
+            display: block;
+          }
+        }
       }
     }
 
     &-links {
       font-size: rfs-value(14px);
 
+      ul#policies {
+        column-count: 1;
+      }
       ul {
         column-count: 2;
         column-gap: rfs-value(40px);
       }
 
       li {
-        margin-bottom: rfs-value(10px);
+        margin-bottom: 0.3rem;
       }
     }
 
     &-title {
-      font-size: rfs-value(22px);
-      margin-bottom: rfs-value(26px);
+      //font-size: rfs-value(22px);
+      //margin-bottom: rfs-value(26px);
     }
 
     &-socials {
-      margin-bottom: rfs-value(25px);
- 
+      //margin-bottom: rfs-value(25px);
+
       a {
         font-size: rfs-value(25px);
         margin-right: rfs-value(15px);

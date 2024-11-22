@@ -18,17 +18,17 @@ $sm_links = get_field('social_media', 'option');
     <div class="container site__footer-wrap">
       <div class="row">
     <!-- -->
-      <div class="site__footer-logos col-12 col-md-3">
+      <div class="site__footer-logos col-12 col-md-6 col-lg-3 mb-lg-0 mb-5">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
-          <img src="<?= esc_url(  get_stylesheet_directory_uri() . '/images/logo-light.svg' ) ?>" alt="<?= __('Quantum Care', THEME_NAMESPACE) ?>">
+          <img class="qc-logo" src="<?= esc_url(  get_stylesheet_directory_uri() . '/images/logo-light.svg' ) ?>" alt="<?= __('Quantum Care', THEME_NAMESPACE) ?>">
         </a>
         <a href="<?= esc_url( 'https://www.nationalcareforum.org.uk/' ); ?>" itemprop="url">
-          <img src="<?= esc_url(  get_stylesheet_directory_uri() . '/images/logo-ncf.svg' ) ?>" alt="<?= __('Quantum Care', THEME_NAMESPACE) ?>">
+          <img class="ncf-logo" src="<?= esc_url(  get_stylesheet_directory_uri() . '/images/logo-ncf.svg' ) ?>" alt="<?= __('Quantum Care', THEME_NAMESPACE) ?>">
         </a>
       </div>
     <!-- -->
-        <div class="col-12 col-md-3">
-          <h3 class="site__footer-title"><?= __('Useful Links', THEME_NAMESPACE) ?></h3>
+        <div class="col-12 col-md-6 col-lg-3 mb-lg-0 mb-5">
+          <h5 class="site__footer-title mb-3"><?= __('Useful Links', THEME_NAMESPACE) ?></h5>
         <?php
           wp_nav_menu(
             array(
@@ -42,8 +42,8 @@ $sm_links = get_field('social_media', 'option');
           );
         ?>
         </div>
-        <div class="col-12 col-md-3">
-          <h3 class="site__footer-title"><?= __('Policies', THEME_NAMESPACE) ?></h3>
+        <div class="col-6 col-md-6 offset-xl-1 col-lg-3 col-xl-2 mb-lg-0 mb-5">
+          <h5 class="site__footer-title mb-3"><?= __('Policies', THEME_NAMESPACE) ?></h5>
         <?php
           wp_nav_menu(
             array(
@@ -57,9 +57,9 @@ $sm_links = get_field('social_media', 'option');
           );
         ?>
         </div>
-        <div class="col-12 col-md-3">
-          <h3 class="site__footer-title"><?= __('Follow Us', THEME_NAMESPACE) ?></h3>
-          <div class="site__footer-socials">
+        <div class="col-6 col-xl-2 offset-xl-1 col-lg-3 col-6 mb-lg-0 mb-5">
+          <h5 class="site__footer-title mb-3"><?= __('Follow Us', THEME_NAMESPACE) ?></h5>
+          <div class="site__footer-socials mb-3">
           <?php
           foreach($sm_links as $key=>$sm_link) {
           ?>
@@ -70,7 +70,7 @@ $sm_links = get_field('social_media', 'option');
           }
           ?>
           </div>
-          <p class="mb-0">@<?php echo date("Y") ?> <?= __('Quantum Care', THEME_NAMESPACE) ?></p>
+          <p class="mb-0"><small>©<?php echo date("Y") ?> <?= __('Quantum Care', THEME_NAMESPACE) ?></small></p>
         </div>
       </div>
     </div>

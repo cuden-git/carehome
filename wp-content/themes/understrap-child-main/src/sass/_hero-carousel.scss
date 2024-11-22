@@ -27,13 +27,17 @@ $selector: ".hero-carousel";
         pointer-events: none;
       }
 
-      &::before {        
-        background: linear-gradient(90deg, rgba(0,33,71,1) 25%, rgba(0,33,71,0) 100%);
+      &::before {
+        background: linear-gradient(
+          90deg,
+          rgba(0, 33, 71, 1) 25%,
+          rgba(0, 33, 71, 0) 100%
+        );
         z-index: 2;
       }
 
       &::after {
-        background-image: url(../images/bg-q.svg);//
+        background-image: url(../images/bg-q.svg); //
         background-size: 90%;
         background-repeat: no-repeat;
         background-position: 500% center;
@@ -59,7 +63,7 @@ $selector: ".hero-carousel";
     }
 
     &-btns {
-      padding-top: rfs-value(60px);
+      /*padding-top: rfs-value(60px);*/
     }
   }
 
@@ -70,10 +74,10 @@ $selector: ".hero-carousel";
     transform: translateX(-50%);
 
     > i {
-      font-size: rfs-value(57px);
+      font-size: rfs-value(40px);
       color: $white;
       position: absolute;
-      bottom: 0;;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       cursor: pointer;

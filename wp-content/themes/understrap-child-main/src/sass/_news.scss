@@ -1,4 +1,4 @@
-$selector : ".news";
+$selector: ".news";
 
 #{$selector} {
   &__card {
@@ -8,7 +8,7 @@ $selector : ".news";
     flex-direction: column;
 
     &:not(&--no-archive) {
-      height: calc(100% - rfs-value(30px));
+      height: 100%;
     }
 
     &-img {
@@ -26,12 +26,12 @@ $selector : ".news";
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-      padding: 0 rfs-value(25px) rfs-value(45px) rfs-value(25px);
+      padding: 0 rfs-value(25px) rfs-value(25px) rfs-value(25px);
     }
 
     &-title {
-      font-size: rfs-value(25px);
-      margin-bottom: rfs-value(35px);
+      font-size: rfs-value(20px);
+      /*margin-bottom: rfs-value(35px);*/
     }
 
     .btn {
