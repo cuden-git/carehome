@@ -11,6 +11,15 @@ $query_args = [
   'numberposts' => -1
 ];
 
+if(isset($_GET['news_care_home'])) {
+  $query_args['meta_key'] = 'news_care_homes';
+  $query_args['meta_value'] = $_GET['news_care_home'];
+}
+
+if(isset($_GET['category_name']) && $_GET['category_name'] != '') {
+  $query_args['category_name'] = $_GET['category_name'];
+}
+
 $query = new WP_Query($query_args);
 
 get_header();

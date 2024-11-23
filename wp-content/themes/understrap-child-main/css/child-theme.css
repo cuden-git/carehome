@@ -12535,6 +12535,11 @@ textarea {
   justify-content: center;
   align-items: flex-start;
 }
+.fc__img-text-mid {
+  background-size: 150%;
+  background-position: left top;
+  background-color: #E4EDF5;
+}
 .fc__testimonials {
   background-size: auto 139%;
   background-position: left -6% top 22%;
@@ -12803,7 +12808,7 @@ h5, .h5 {
   background-repeat: no-repeat;
 }
 
-.care-home__overview, .care-home__facilities, .careers-list__card, .career-single__spec, .fc__img-text--bg {
+.care-home__overview, .care-home__facilities, .careers-list__card, .career-single__spec, .fc__img-text--bg, .fc__img-text-mid {
   background-image: url(../images/bg-q-dark.svg);
   background-repeat: no-repeat;
 }

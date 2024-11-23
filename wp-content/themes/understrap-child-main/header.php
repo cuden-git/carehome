@@ -47,4 +47,4 @@ $is_premium = qc_is_premium();
 		}
 		?>
 	</header><!-- #wrapper-navbar -->
-<?php get_template_part('partials/sub-nav') ?>
+<?php //get_template_part('partials/sub-nav') ?>

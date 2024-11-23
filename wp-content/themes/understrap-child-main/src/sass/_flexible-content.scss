@@ -54,6 +54,14 @@ $selector: ".fc";
       justify-content: center;
       align-items: flex-start;
     }
+
+    &-mid {
+      @extend %q-bg-img-dark;
+
+      background-size: 150%;
+      background-position: left top;
+      background-color:  $qc-blue-lighter;
+    }
   }
 
   &__testimonials {

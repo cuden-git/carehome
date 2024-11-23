@@ -12,6 +12,8 @@ if (have_rows('home_flexible_fields')):
       get_template_part('/partials/flexible-content/fc-cta-blocks');
     elseif (get_row_layout() == 'featured_news'):
       get_template_part('/partials/flexible-content/fc-featured-news');
+    elseif (get_row_layout() == 'multi_image_and_text_blocks'):
+      get_template_part('/partials/flexible-content/fc-multi-img-text');   
     endif;
   endwhile;
 else :
