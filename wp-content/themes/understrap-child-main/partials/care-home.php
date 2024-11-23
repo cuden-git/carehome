@@ -114,20 +114,28 @@ if($gallery) {
           </ul>
         </div>
         <div class="col-12">
-          <ul class="list-inline care-home__facilities-icons d-flex">
-        <?php
-          foreach($ch_services['facilities'] as $facility) { 
-        ?>
-            <li class="d-flex">
-              <span>
-                <?= $facility['label'] ?>
-              </span>
-              <i class="icon-<?= $facility['value'] ?>"></i>
-            </li>
-        <?php
-          }
-        ?>
-          </ul>
+        <div class="splide" data-splide-bp="768" data-splide='{"type":"loop","perPage":2, "pagination": false}' data-arrows>
+          <div class="splide__track">
+              <ul class="splide__list list-inline care-home__facilities-icons d-md-flex">
+            <?php
+              foreach($ch_services['facilities'] as $facility) { 
+            ?>
+                <li class="splide__slide d-flex">
+                  <span>
+                    <?= $facility['label'] ?>
+                  </span>
+                  <i class="icon-<?= $facility['value'] ?>"></i>
+                </li>
+            <?php
+              }
+            ?>
+              </ul>
+            </div>
+            <div class="splide__arrows d-flex justify-content-between d-md-none">
+              <i class="splide__arrow splide__arrow--prev icon-arrow-left care-home__carousel-arrow"></i>
+              <i class="splide__arrow splide__arrow--next icon-arrow-right care-home__carousel-arrow"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>

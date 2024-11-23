@@ -246,22 +246,27 @@ $selector: ".care-home";
     }
 
     &-icons {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: rfs-value(10px);
-      padding-top: rfs-value(90px);
-
       #{$premium-hook} & {
         color: $qc-gold;
       }
-      
+
+      @include media-breakpoint-up(md) {
+        padding-top: rfs-value(90px);
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: rfs-value(10px);
+      }
+
       li {
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
-        font-size: rfs-value(24px);
-        flex: 0 1 calc(20% - rfs-value(10px));
-        margin-bottom: rfs-value(100px);
+
+        @include media-breakpoint-up(md) {          
+          justify-content: space-between;
+          font-size: rfs-value(24px);
+          flex: 0 1 calc(20% - rfs-value(10px));
+          margin-bottom: rfs-value(100px);
+        }
         
         >span {
           text-align: center;

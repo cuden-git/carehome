@@ -12103,22 +12103,28 @@ textarea {
 .care-home__facilities-intro {
   padding-right: 8.75rem;
 }
-.care-home__facilities-icons {
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.625rem;
-  padding-top: 5.625rem;
-}
 .care-home--premium .care-home__facilities-icons {
   color: #B99475;
 }
+@media (min-width: 768px) {
+  .care-home__facilities-icons {
+    padding-top: 5.625rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.625rem;
+  }
+}
 .care-home__facilities-icons li {
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  font-size: 1.5rem;
-  flex: 0 1 calc(20% - 0.625rem);
-  margin-bottom: 6.25rem;
+}
+@media (min-width: 768px) {
+  .care-home__facilities-icons li {
+    justify-content: space-between;
+    font-size: 1.5rem;
+    flex: 0 1 calc(20% - 0.625rem);
+    margin-bottom: 6.25rem;
+  }
 }
 .care-home__facilities-icons li > span {
   text-align: center;
