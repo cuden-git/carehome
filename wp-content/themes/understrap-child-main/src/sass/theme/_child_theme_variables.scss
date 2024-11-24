@@ -2,16 +2,17 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
 
-
 $purple: #5533ff;
 $qc-blue-dark: #002147;
-$qc-blue-light: #7AA3CD;
-$qc-blue-lighter: #E4EDF5;
-$qc-white: #EFECE9;
-$qc-gold: #B99475;
+$qc-blue-light: #7aa3cd;
+$qc-blue-lighter: #e4edf5;
+$qc-white: #efece9;
+$qc-gold: #b99475;
 $qc-black: #002147;
+$qc-pale-gold: #efece9;
+$qc-dark-grey: #c8d2da;
 
-$primary: $qc-blue-light;  // Once we've changed the value, we'll also make it the primary brand color.
+$primary: $qc-blue-light; // Once we've changed the value, we'll also make it the primary brand color.
 $secondary: $qc-blue-dark;
 $tertiary: $qc-blue-lighter;
 $light: $qc-white;

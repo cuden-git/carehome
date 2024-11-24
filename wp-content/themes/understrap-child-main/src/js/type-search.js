@@ -47,7 +47,7 @@ class TypeSearch {
   
       if(item.tagName === "FORM") {
         item.addEventListener('submit', (e) => {
-        //  e.preventDefault();
+         // e.preventDefault();
          // this.setFormParams(item, inputField.value);
         });
       }

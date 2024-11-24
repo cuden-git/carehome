@@ -34,7 +34,7 @@ $is_premium = qc_is_premium();
 			if(!is_front_page()) {
 			?>
 			<div class="container">
-				<h2 class="site__header-title text-light mb-0"><?= qc_page_title() ?></h2>
+				<h1 class="site__header-title text-light mb-0"><?= qc_page_title() ?></h1>
 			</div>
 			<?php
 			}
@@ -47,4 +47,4 @@ $is_premium = qc_is_premium();
 		}
 		?>
 	</header><!-- #wrapper-navbar -->
-<?php //get_template_part('partials/sub-nav') ?>
+<?php get_template_part('partials/sub-nav') ?>

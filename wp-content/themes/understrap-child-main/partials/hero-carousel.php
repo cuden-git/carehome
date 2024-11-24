@@ -14,16 +14,16 @@
               <?= wp_get_attachment_image($slide['img']['ID'], 'large') ?>
             </figure>
             <div class="container h-100 position-relative">
-              <div class="hero-carousel__slide-text">
+              <div class="hero-carousel__slide-text mb-5">
                 <h1><?= $slide['text'] ?></h1>
               <?php
               if($slide['cta_btns']) {
               ?>
-                <div class="hero-carousel__slide-btns mt-4">
+                <div class="hero-carousel__slide-btns mt-5">
                   <?php
                     foreach($slide['cta_btns'] as $button) {
                   ?>
-                    <a href="<?= $button['btn']['url'] ?>" class="btn <?= ($loop_index > 0)? 'btn-white btn-white--inverse' : 'btn-primary' ?>" title="<?= $button['btn']['title'] ?>"><?= $button['btn']['title'] ?></a>
+                    <a href="<?= $button['btn']['url'] ?>" class="btn mb-4 <?= ($loop_index > 0)? 'btn-white btn-white--inverse' : 'btn-primary' ?>" title="<?= $button['btn']['title'] ?>"><?= $button['btn']['title'] ?></a>
                   <?php
                       ++$loop_index;
                     }
@@ -43,7 +43,8 @@
     </div>
     <div class="container hero-carousel__pagination">
       <ul class="splide__pagination justify-content-start"></ul>
-      <i class="icon-arrow-down"></i>
+      <a href="#find-out-more" class="d-block"><i class="icon-arrow-down"></i></a>
     </div>
   </div>
 </section>
+<div id="find-out-more"></div>

@@ -9,12 +9,14 @@ $archive_list_title = get_field('ch_archive_page_title', 'option');
 
 get_header();
 ?>
-<main id="care-home-results" class="site__main ch__archive">
+<main id="care-home-results" class="site__main ch__archive pb-0">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-7 col-xl-7 col-lg-6 col-md-12 page-intro">
-      <div class="page-intro__title"><?= $archive_intro['title'] ?></div>
-      <?= $archive_intro['text'] ?>
+      <div class="col-12 col-md-7 col-xl-7 col-lg-6 col-md-12 page-intro d-flex align-items-center mb-lg-0 mb-4">
+        <div>
+          <div class="page-intro__title"><?= $archive_intro['title'] ?></div>
+          <?= $archive_intro['text'] ?>
+        </div>
       </div>
       <div class="col-12 col-xl-5 col-lg-6">
         <?php get_template_part('partials/care-home-search'); ?>
@@ -22,9 +24,16 @@ get_header();
     </div>
   </div>
   <!-- -->
-  <div class="container ch__archive-switcher d-flex">
-    <h3 class=""><?= $archive_list_title ?></h3>
-    <button id="archive-switcher" class="btn btn-primary" type="button" data-swap-label="<?= __('List View', THEME_NAMESPACE) ?>"><?= __('Map View', THEME_NAMESPACE) ?></button>
+  <section class="bg-light-blue py-5">
+    <div class="container ch__archive-switcher mb-5">
+      <div class="row">
+        <div class="col-md-8">
+          <h3 class=""><?= $archive_list_title ?></h3>
+        </div>
+        <div class="col-md-4 map-button-controls">
+          <button id="archive-switcher" class="btn btn-primary" type="button" data-swap-label="<?= __('List View', THEME_NAMESPACE) ?>"><?= __('Map View', THEME_NAMESPACE) ?></button>
+        </div>
+      </div>
   </div>
   <!-- -->
   <div id="care-homes-list" class="container ch__list active" data-view-switch>
@@ -63,6 +72,7 @@ get_header();
         $meta_query['relation'] = 'AND';
       }
       $query_args['meta_query'] = $meta_query;
+
       // Custom query. 
       $query = new WP_Query($query_args);
 
@@ -89,6 +99,7 @@ get_header();
   </div>
   <!-- Maps -->
   <div id="care-homes-maps" class="ch__map container d-none" data-view-switch>map view</div>
+  </section>
 </main>
 <?php
 
