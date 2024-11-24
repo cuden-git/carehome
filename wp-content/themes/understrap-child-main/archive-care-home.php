@@ -41,9 +41,6 @@ get_header();
 
       if (isset($_GET['location'])) {
         qc_set_distance_meta($_GET['location'], get_post_type());
-        // $query_args['meta_key'] = 'ch_distance';
-        // $query_args['orderby'] = 'meta_value_num';
-        // $query_args['order'] = 'ASC';
         array_push($meta_query, [
             'key' => 'ch_distance',
           ]
@@ -57,7 +54,7 @@ get_header();
             'key' => 'ch_distance',
             'value' => $_GET['ch_distance'],
             'type' => 'numeric',
-            'compare' => '<'
+            'compare' => '<='
           ]
         );
       }

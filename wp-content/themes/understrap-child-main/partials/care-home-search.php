@@ -27,7 +27,7 @@ $form_text = get_field('ch_archive_form_text', 'option');
         <?php
         foreach($distances as $distance) {
         ?>
-          <option value="<?= $distance['distance'] ?>"<?php if (isset($_GET['careers_distance']) && $_GET['careers_distance'] === $distance['distance']) echo " selected"; ?>><?= $distance['distance'] ?></option>
+          <option value="<?= $distance['distance'] ?>"<?php if (isset($_GET['ch_distance']) && $_GET['ch_distance'] === $distance['distance']) echo " selected"; ?>><?= $distance['distance'] ?></option>
         <?php
         }
         ?>

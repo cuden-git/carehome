@@ -14857,3 +14857,6 @@ Stack trace:
 [24-Nov-2024 09:56:58 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 56
 [24-Nov-2024 09:56:58 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 59
 [24-Nov-2024 10:00:50 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 56
+[24-Nov-2024 10:22:28 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/gm-js-init.php on line 8
+[24-Nov-2024 10:22:28 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/gm-js-init.php on line 9
+[24-Nov-2024 10:22:28 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-content/themes/understrap-child-main/inc/blocks/gm-js-init.php on line 22
