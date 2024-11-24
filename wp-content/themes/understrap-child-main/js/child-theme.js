@@ -6886,8 +6886,8 @@
 	      let handler = this.debounce(() => this.output(resultsField, inputField.value));
 	      if (item.tagName === "FORM") {
 	        item.addEventListener('submit', e => {
-	          //  e.preventDefault();
-	          // this.setFormParams(item, inputField.value);
+	          e.preventDefault();
+	          this.setFormParams(item, inputField.value);
 	        });
 	      }
 	      if (inputField) {
@@ -9721,22 +9721,11 @@
 
 	const carousels = [...document.querySelectorAll('.splide')];
 	carousels.forEach(item => {
-	  let options = {
+	  new Splide(item, {
 	    type: "fade",
 	    rewind: true,
 	    arrows: item.hasAttribute('data-arrows') ? true : false
-	  };
-	  if (item.hasAttribute('data-splide-bp')) {
-	    let bp = parseInt(item.getAttribute('data-splide-bp'));
-	    options.mediaQuery = 'min';
-	    options.breakpoints = {
-	      [bp]: {
-	        destroy: true
-	      }
-	    };
-	  }
-	  console.log('options = ', options);
-	  new Splide(item, options).mount();
+	  }).mount();
 	});
 
 	class ViewSwitch {
