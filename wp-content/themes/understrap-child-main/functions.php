@@ -285,22 +285,6 @@ function qc_ch_queries( $query ) {
 }
 add_action( 'pre_get_posts', 'qc_ch_queries', 12);
 
-// /**
-//  * Add URL parameter to meta_query on news archive filter
-//  */
-// function qc_add_news_filter_parameter( $query ) {
-//   if (!is_admin() && $query->is_main_query() 
-// 		&& isset($_GET['news_care_home'])
-// 		){
-// 			$query->set('meta_query', [
-// 				[
-// 						'key' => 'news_care_homes',
-// 						'value' => $_GET['news_care_home']
-// 				],
-// 		]);
-// 	}
-// }
-// add_action( 'pre_get_posts', 'qc_add_news_filter_parameter', 12);
 // $top_level_categories = get_terms([
 // 	'taxonomy'   => 'careers-category',
 // 	'parent'     => 0,

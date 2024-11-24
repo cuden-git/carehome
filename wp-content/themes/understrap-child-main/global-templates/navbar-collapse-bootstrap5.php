@@ -41,9 +41,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 		wp_nav_menu(
 			array(
 				'theme_location'  => 'primary',
-				'container_class' => 'site__nav-wrap',
+				'container_class' => 'collapse navbar-collapse',
 				'container_id'    => 'navbarNavDropdown',
-				'menu_class'      => 'navbar-nav ms-md-auto site__nav',
+				'menu_class'      => 'navbar-nav ms-auto site__nav',
 				'fallback_cb'     => '',
 				'menu_id'         => 'main-menu',
 				'depth'           => 2,

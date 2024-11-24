@@ -12,27 +12,27 @@ $news_cats = get_categories(
   ]
 );
 ?>
-<form class="d-flex" metyhod="get">
+<form class="d-flex">
   <fieldset class="d-flex">
     <label>
-      <select name="news_care_home">
+      <select>
         <option value=""><?= __('Care Home', THEME_NAMESPACE) ?></option>
-      <?php
+      <?php //print_r($care_homes);
           foreach($care_homes as $option) {
       ?>
-          <option value="<?= $option->ID ?>"<?= (isset($_GET['news_care_home']) && $_GET['news_care_home'] == $option->ID)? ' selected' : null ?>><?= $option->post_title ?></option>
+          <option value="<?= $option->ID ?>"><?= $option->post_title ?></option>
       <?php
           }
       ?>
       </select>
     </label>
     <label>
-      <select name="category_name">
+      <select>
         <option value=""><?= __('Categories', THEME_NAMESPACE) ?></option>
       <?php
           foreach($news_cats as $key=>$option) {
       ?>
-        <option value="<?= $option->slug ?>"<?= (isset($_GET['category_name']) && $_GET['category_name'] == $option->slug)? ' selected' : null ?>><?= $option->name ?></option> 
+        <option value="<?= $option->term_id ?>"><?= $option->name ?></option> 
       <?php
           }
       ?>
