@@ -108,7 +108,7 @@ if($gallery) {
         <div class="col-xl-10 mx-auto">
           <div class="splide" data-splide-bp="768" data-splide='{"type":"loop","perPage":2, "pagination": false}' data-arrows>
             <div class="splide__track">
-              <ul class="list-inline care-home__facilities-icons d-flex">
+              <ul class="splide__list list-inline care-home__facilities-icons d-flex">
             <?php
               foreach($ch_services['facilities'] as $facility) { 
             ?>
