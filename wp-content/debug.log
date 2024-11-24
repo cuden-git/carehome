@@ -14840,3 +14840,20 @@ Stack trace:
 [23-Nov-2024 19:21:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-multi-img-text.php on line 37
 [23-Nov-2024 19:53:13 UTC] PHP Warning:  Undefined variable $cta_link in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-multi-img-text.php on line 36
 [23-Nov-2024 19:53:13 UTC] PHP Warning:  Trying to access array offset on value of type null in /var/www/html/wp-content/themes/understrap-child-main/partials/flexible-content/fc-multi-img-text.php on line 36
+[24-Nov-2024 09:40:40 UTC] PHP Parse error:  syntax error, unexpected token "<" in /var/www/html/wp-content/themes/understrap-child-main/partials/care-home-search.php on line 37
+[24-Nov-2024 09:42:54 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type WP_Error as array in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php:18
+Stack trace:
+#0 /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php(46): qc_get_care_home_distance(Object(WP_Post), 'Birmingham, UK')
+#1 /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php(43): qc_set_distance_meta('Birmingham, UK', 'care-home')
+#2 /var/www/html/wp-includes/template-loader.php(106): include('/var/www/html/w...')
+#3 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#4 /var/www/html/index.php(17): require('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/themes/understrap-child-main/inc/helpers.php on line 18
+[24-Nov-2024 09:56:49 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 56
+[24-Nov-2024 09:56:49 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 59
+[24-Nov-2024 09:56:56 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 56
+[24-Nov-2024 09:56:56 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 59
+[24-Nov-2024 09:56:58 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 56
+[24-Nov-2024 09:56:58 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 59
+[24-Nov-2024 10:00:50 UTC] PHP Warning:  Undefined array key "careers_distance" in /var/www/html/wp-content/themes/understrap-child-main/archive-care-home.php on line 56

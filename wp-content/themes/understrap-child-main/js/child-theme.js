@@ -6886,8 +6886,8 @@
 	      let handler = this.debounce(() => this.output(resultsField, inputField.value));
 	      if (item.tagName === "FORM") {
 	        item.addEventListener('submit', e => {
-	          e.preventDefault();
-	          this.setFormParams(item, inputField.value);
+	          //  e.preventDefault();
+	          // this.setFormParams(item, inputField.value);
 	        });
 	      }
 	      if (inputField) {

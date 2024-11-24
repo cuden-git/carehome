@@ -30,6 +30,7 @@ get_header();
   <div id="care-homes-list" class="container ch__list active" data-view-switch>
     <div class="row">
       <?php
+      $meta_query = [];
       $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
       $query_args = [
         'posts_per_page' => 4,
@@ -40,11 +41,31 @@ get_header();
 
       if (isset($_GET['location'])) {
         qc_set_distance_meta($_GET['location'], get_post_type());
-        $query_args['meta_key'] = 'ch_distance';
+        // $query_args['meta_key'] = 'ch_distance';
+        // $query_args['orderby'] = 'meta_value_num';
+        // $query_args['order'] = 'ASC';
+        array_push($meta_query, [
+            'key' => 'ch_distance',
+          ]
+        );
         $query_args['orderby'] = 'meta_value_num';
         $query_args['order'] = 'ASC';
       }
 
+      if(isset($_GET['ch_distance']) && $_GET['ch_distance'] !== "") {
+          array_push($meta_query, [
+            'key' => 'ch_distance',
+            'value' => $_GET['ch_distance'],
+            'type' => 'numeric',
+            'compare' => '<'
+          ]
+        );
+      }
+
+      if(count($meta_query) > 0) {
+        $meta_query['relation'] = 'AND';
+      }
+      $query_args['meta_query'] = $meta_query;
       // Custom query. 
       $query = new WP_Query($query_args);
 
