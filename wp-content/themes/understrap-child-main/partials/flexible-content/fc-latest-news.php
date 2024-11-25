@@ -8,7 +8,7 @@ if($show) {
   $title = get_sub_field('title');
   $posts = get_posts(
     [
-      'numberposts' => 3
+      'numberposts' => 3,
     ]
   );
 ?>
