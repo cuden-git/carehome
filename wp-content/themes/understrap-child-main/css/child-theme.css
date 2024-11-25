@@ -12073,6 +12073,9 @@ textarea {
   flex: 1;
   padding-right: 5rem;
 }
+.menu-collapse--open .care-home__team-nav {
+  background-color: #efece9;
+}
 .care-home__team-nav li {
   font-size: 1.5625rem;
   margin-bottom: 1.875rem;
@@ -12965,6 +12968,27 @@ figure {
 .nav-link {
   --bs-nav-link-padding-y: 0;
   --bs-nav-link-padding-x: 0;
+}
+
+.menu-collapse {
+  position: relative;
+}
+@media (max-width: 767.98px) {
+  .menu-collapse {
+    overflow: hidden;
+    height: 5rem;
+    flex: unset;
+    cursor: pointer;
+  }
+}
+.menu-collapse--open {
+  overflow: visible;
+}
+.menu-collapse--open > ul {
+  position: absolute;
+  top: auto;
+  left: 0;
+  width: 100%;
 }
 
 @keyframes fade-in {

@@ -32,8 +32,9 @@ if(!empty($menu_items)) {
   $loop_index = 0;
   ?>
   <nav class="care-home__nav">
-    <div class="container">
-      <ul class="list-inline d-flex justify-content-center">
+    <div class="container menu-collapse">
+      <div class="d-md-none h-100 menu-collapse__display"></div>
+      <ul class="list-inline d-flex flex-md-row flex-column justify-content-center">
   <?php
     foreach ($menu_items as $item) {
   ?>
@@ -143,9 +144,10 @@ if($gallery) {
       <?php
         if(!empty($tabbed_content)) {
       ?>
-      <div class="d-flex">
-        <!-- <div class="col-12 col-md-3"> -->
-          <ul class="nav nav-links flex-column care-home__team-nav" role="tablist" aria-orientation="vertical">
+      <div class="d-flex flex-md-row flex-column">
+        <div class="menu-collapse">
+          <div class="d-md-none h-100 menu-collapse__display">Item</div>
+          <ul class="nav nav-links flex-md-column care-home__team-nav" role="tablist" aria-orientation="vertical">
         <?php
             $loop_index = 0;
             foreach($tabbed_content['tabs'] as $tab_label) {
@@ -158,6 +160,7 @@ if($gallery) {
             }
           ?>
           </ul>
+        </div>
         <!-- </div> -->
         <!-- <div class="col-12 col-md-9"> -->
             <div class="tab-content care-home__team-panes">

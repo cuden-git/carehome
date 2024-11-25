@@ -157,6 +157,10 @@ $selector: ".care-home";
       flex: 1;
       padding-right: rfs-value(80px);
 
+      .menu-collapse--open & {
+        background-color: $qc-white;
+      }
+
       li {
         font-size: rfs-value(25px);
         margin-bottom: rfs-value(30px);

@@ -6956,21 +6956,6 @@
 	  // }
 	}
 
-	class CareHomeResults {
-	  constructor() {
-	    this.stage = document.getElementById('care-homes-list');
-	    if (!this.stage) {
-	      return;
-	    }
-	    this.attachEvents();
-	  }
-	  attachEvents() {
-	    this.stage.addEventListener('searchSubmitted', e => {
-	      //   alert(e.detail.location);
-	    });
-	  }
-	}
-
 	const getPosts = async postIDs => {
 	  let response = await fetch(themeData.restURL + 'quantum-care/v1/location-posts', {
 	    method: 'POST',
@@ -9877,13 +9862,41 @@
 	  }
 	}
 
+	class MenuCollapse {
+	  constructor() {
+	    this.bp = 767;
+	    this.vpWidth = window.innerWidth;
+	    this.menus = [...document.querySelectorAll('.menu-collapse')];
+	    this.addEvents();
+	  }
+	  addEvents() {
+	    this.menus.forEach(menu => {
+	      let items = [...menu.querySelectorAll('li')];
+	      let displayArea = menu.querySelector('.menu-collapse__display');
+	      menu.addEventListener('click', () => {
+	        menu.classList.toggle('menu-collapse--open');
+	      });
+	      items.forEach((item, index) => {
+	        if (index === 0) {
+	          displayArea.innerHTML = item.innerText;
+	        }
+	        item.addEventListener('click', () => {
+	          displayArea.innerHTML = item.innerText;
+	        });
+	      });
+	    });
+	  }
+	}
+
 	// Add your custom JS here.
 	//import './gm';
-	const careHomeResults = new CareHomeResults();
+
+	//const careHomeResults = new CareHomeResults();
 	new TypeSearch(careHomeResults.stage);
 	new MapCareHomes();
 	new ViewSwitch();
 	new EmailCareer();
+	new MenuCollapse();
 
 	exports.Alert = alert;
 	exports.Button = button;

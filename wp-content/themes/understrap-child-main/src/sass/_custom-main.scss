@@ -212,6 +212,30 @@ figure {
   --bs-nav-link-padding-x: 0;
 }
 
+
+// Collapsible menu
+.menu-collapse {
+  position: relative;
+
+  @include media-breakpoint-down(md) {
+    overflow: hidden;
+    height: rfs-value(80px);
+    flex: unset;
+    cursor: pointer;
+  }
+
+  &--open {
+    overflow: visible;
+
+    >ul {
+      position: absolute;
+      top: auto;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
 //animations
 @keyframes fade-in {
   from {
