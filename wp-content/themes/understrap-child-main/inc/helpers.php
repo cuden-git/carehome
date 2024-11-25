@@ -183,13 +183,29 @@ function qc_social_media() {
  * Get news posts linked to care home
  */
 function qc_related_news($post_id, $num_posts) {
-	$related_news = get_posts([
-		'post_type' => 'post',
-		'meta_key' => 'news_care_homes',
-		'meta_value' => $post_id,
-		'post_status' => 'publish',
-		'numberposts' => $num_posts
-	]);
+	$args = [
+    'post_type'      => 'post', // Change to your desired post type
+    'posts_per_page' => $num_posts,
+    'orderby'        => [
+        'meta_value_num' => 'DESC',
+        'date'           => 'DESC'
+    ],
+    'meta_query'     => [
+        'relation' => 'OR',
+        [
+            'key'     => 'news_care_homes',
+            'value'   => $post_id,
+            'compare' => '='
+        ],
+        [
+            'key'     => 'news_care_homes',
+						'value'   => $post_id,
+            'compare' => 'NOT EXISTS'
+        ]
+    ]
+	];
+
+	$related_news = get_posts($args);
 
 	return $related_news;
 }
