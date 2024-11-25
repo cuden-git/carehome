@@ -24,7 +24,7 @@ $related_settings = get_field('ch_latest_news');
 //print_r(get_field_objects());die();
 //set class hook for Quantum select 
 $menu_items = qc_get_section_labels();
-
+$reviews = get_field('ch_reviews');
 ?>
 
 <div class="<?= (is_admin())? 'wp-admin-wrap ' : null ?>care-home<?= ($is_premium)? ' care-home--premium' : null ?>">
@@ -226,6 +226,33 @@ if($gallery) {
 <!-- -->
   <?php get_template_part('/partials/contact-form', null, ['is_section' => true]) ?>
 </div>
+<!-- -->
+<section id="<?php qc_set_achor_index() ?>" class="post-section care-home__news<?= ($is_premium)? ' care-home--premium' : null ?>">
+    <div class="container">
+      <h2 class="post-section__title mb-5"></h2>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <script type="text/javascript" src="//www.cqc.org.uk/sites/all/modules/custom/cqc_widget/widget.js?data-id=1-118532750&amp;data-host=www.cqc.org.uk&amp;type=location"></script>
+          <!-- -->
+          <script id="tg-aggregate-rating" type="text/javascript" src="https://api.carehome.co.uk/assets/js/aggregate_rating.js?displayid=25893"></script><script class="tg-review-widget" type="text/javascript" src="https://api.carehome.co.uk/assets/js/review_widget.js?displaydiv=tgrw-ec20679e&amp;displayid=25893&amp;displaycontent=noreviews&amp;displaywidth=&amp;displaycount=2&amp;displayscore=true&amp;displaylink=false&amp;displayborder=true&amp;displaybackgroundcolor=faded&amp;displaypagination=false&amp;displaystrapline=true&amp;displayfontsize=default&amp;displayallratings=false&amp;displaylogo=true&amp;displaywrappers=true&amp;displaybutton=true&amp;displaysettingname=true"></script><div class="tg-review-widget-container" id="tgrw-ec20679e" style="background: linear-gradient(to right, rgb(254, 254, 254) 44%, rgb(247, 247, 247) 88%, rgb(247, 247, 247) 100%); border-style: solid; border-width: thin; border-color: rgb(192, 192, 192);"><div class="tg_header_wrap" id="tg_header_wrap_tgrw-ec20679e"><div class="tg_chlogo"><img border="none" alt="carehome" src="https://api.carehome.co.uk/assets/images/carehome/logo.svg" style="width: 225px;"><p><span class="tg_text_strap_line">the leading care home review website</span></p></div><hr class="tg_hr"><p class="tg_text_big" style="color: rgb(0, 0, 0); text-decoration: none;"><strong><a class="tg_header_links" target="_blank" href="https://www.carehome.co.uk/carehome.cfm/searchazref/10001040COUA?utm_source=widgets&amp;utm_medium=vertical_widget&amp;utm_campaign=Courtland%2520Lodge_25893&amp;utm_content=profile_name_link">Courtland Lodge</a></strong></p><div class="tg_score_wrapper"><span class="tg_score tg_score_main" style="border-color: rgb(38, 107, 176); background-color: rgb(38, 107, 176);">8.4</span></div><span class="tg_text_small tg_score_text">carehome.co.uk Review&nbsp;Score<br><i>for <a class="tg_header_links" target="_blank" href="https://www.carehome.co.uk/carehome.cfm/searchazref/10001040COUA?utm_source=widgets&amp;utm_medium=vertical_widget&amp;utm_campaign=Courtland%2520Lodge_25893&amp;utm_content=profile_name_link">Courtland Lodge</a> <a class="tg_header_links" target="_blank" href="https://www.carehome.co.uk/carehome.cfm/searchazref/10001040COUA?utm_source=widgets&amp;utm_medium=vertical_widget&amp;utm_campaign=Courtland%2520Lodge_25893&amp;utm_content=profile_name_link&amp;rcsid=1003#reviews">29 reviews</a></i></span></div><div id="tg_reviews_node_tgrw-ec20679e" class="tg_reviews_node"><hr class="tg_hr"><p class="tg_center"><button class="tgbtn" target="_blank" onclick="window.open('https://www.carehome.co.uk/carehome.cfm/searchazref/10001040COUA?utm_source=widgets&amp;utm_medium=vertical_widget&amp;utm_campaign=Courtland%2520Lodge_25893&amp;utm_content=write_review_button_link&amp;rcsid=1003#submit-review','_blank')" style="border-color: rgb(38, 107, 176); background-color: rgb(38, 107, 176);">Write a Review </button></p><div class="tg_footer_wrap"><p class="tg_text_small tg_copywrite">©&nbsp;2024&nbsp;carehome.co.uk</p></div></div></div>
+          <!-- -->
+        </div>
+        <div class="col-12 col-md-8">
+          <?php
+          if(isset($reviews['img'])) {
+          ?>
+          <figure>
+            <?= wp_get_attachment_image($reviews['img']['id'], 'large') ?>
+          </figure>
+          <?php
+          }
+          ?>
+          <!-- -->
+        </div>
+      </div>
+    </div>
+</section>
+
 <!-- Map -->
 <section class="post-section py-0 care-home__location">
     <div class="w-100">
