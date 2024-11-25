@@ -15,7 +15,7 @@ $form_text = get_field('ch_archive_form_text', 'option');
   <div class="mb-3">
     <?= $form_text['text'] ?>
   </div>
-  <form class="ch__search-form type-search d-md-flex d-block">
+  <form class="ch__search-form type-search d-md-flex d-block" action="<?= get_post_type_archive_link('care-home') ?>">
     <div class="type-search__wrap d-md-flex d-block flex-grow-1">
       <input id="address-search" name="location" type="text" value="<?= $location ?>" class="type-search__input flex-grow-1 me-3" autocomplete="off">
       <div class="type-search__results"></div>
@@ -32,7 +32,7 @@ $form_text = get_field('ch_archive_form_text', 'option');
         ?>
       </select>
     </label>
-    <input type="submit" class="btn btn-secondary type-search__btn mt-md-0 mt-4" value="Search" disabled>
+    <input type="submit" class="btn btn-secondary type-search__btn mt-md-0 mt-4" value="Search"<?= (empty($location))? " disabled" : null ?>>
   </form>
   <p class="text-center my-3"><?= __('Or', THEME_NAMESPACE) ?>
   <!-- -->
