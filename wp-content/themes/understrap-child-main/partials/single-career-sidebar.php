@@ -1,5 +1,6 @@
 <?php
 $brochure = get_field('career_brochure', get_the_ID());
+$care_home = get_field('career_care_home', get_the_ID());
 ?>
 <div class="career-single__sidebar">
   <!-- -->
@@ -23,11 +24,11 @@ $brochure = get_field('career_brochure', get_the_ID());
   <!-- -->
   <div class="career-single__sidebar-widget">
     <h6 class="career-single__sidebar-title"><?= __('View Home', THEME_NAMESPACE) ?></h6>
-    <a href="" class="btn btn-primary" title="<?= __('View Home', THEME_NAMESPACE) ?>"><?= __('View Home', THEME_NAMESPACE) ?></a>
+    <a href="<?=  get_permalink($care_home->ID) ?>" class="btn btn-primary" title="<?= __('View Home', THEME_NAMESPACE) ?>"><?= __('View Home', THEME_NAMESPACE) ?></a>
   </div>
   <!-- -->
   <div class="career-single__sidebar-widget">
-    <h6 class="career-single__sidebar-title"><?= __('View Home', THEME_NAMESPACE) ?></h6>
-    <a href="#" class="btn btn-primary" title=""><?= __('Apply Now', THEME_NAMESPACE) ?></a>
+    <h6 class="career-single__sidebar-title"><?= __('Apply Now', THEME_NAMESPACE) ?></h6>
+    <a href="#job-apply-form" class="btn btn-primary" title=""><?= __('Apply Now', THEME_NAMESPACE) ?></a>
   </div>
 </div>
