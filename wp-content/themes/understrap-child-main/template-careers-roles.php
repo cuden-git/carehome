@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 $job_role = get_field('jr_roles');
 $role_jobs = qc_job_role_posts($job_role);
-$cta_blocks = get_field('jr_cta_blocks');
+$cta_blocks = get_field('cta_blocks');
 $video = get_field('video_block');
 get_header();
 ?>
