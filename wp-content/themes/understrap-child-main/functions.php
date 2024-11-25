@@ -434,7 +434,6 @@ function qc_mailhog_setup( $phpmailer ) {
     $phpmailer->Port = 1025;
     $phpmailer->IsSMTP();
 }
-<?php
 
 /**
  * Understrap Child Theme functions and definitions
