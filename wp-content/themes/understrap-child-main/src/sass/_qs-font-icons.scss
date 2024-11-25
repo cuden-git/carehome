@@ -24,6 +24,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-close:before {
+  content: "\e918";
+}
 .icon-chevron-right:before {
   content: "\e917";
 }

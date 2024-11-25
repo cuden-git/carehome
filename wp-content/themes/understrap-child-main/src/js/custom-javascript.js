@@ -12,4 +12,3 @@ const typeSearch = new TypeSearch(careHomeResults.stage);
 const mapCareHomes = new MapCareHomes();
 const viewSwitch = new ViewSwitch();
 const emailCareer = new EmailCareer();
-

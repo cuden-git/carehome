@@ -84,7 +84,19 @@ $selector: ".site";
     }
 
     .navbar-toggler {
+      position: relative;
+      border: none;
       z-index: 5;
+
+      &:not(&.collapsed) {
+        background-image: none;
+
+        &::after {
+          content: "\e918";
+          font-size: rfs-value(20px);
+          color: $qc-white;
+        }
+      }
     }
   }
 
