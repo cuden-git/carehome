@@ -9,13 +9,43 @@ class MapCareHomes {
     }
 
     this.locations;
-    this.coords = [...document.querySelectorAll('data-map-coords')];
-    getPosts()
+    this.lngLats = [];
+   // this.coordsEles = [...document.querySelectorAll('[data-map-coords]')];
+    this.chEles = [...document.querySelectorAll('[data-post-id]')];
+    this.postIds = this.getPostIds();
+    console.log('postIds=', this.postIds);
+    console.log('longLats=', this.lngLats);
+
+    getPosts(this.postIds)
     .then((posts) => {
       console.log('Posts = ', posts)
-    //  this.locations = posts;
       this.initMap(posts);
     });
+
+    
+    const queryString = window.location.search;
+    console.log('queryString', queryString);
+    const urlParams = new URLSearchParams(queryString);
+    console.log('urlParams', urlParams.get('location'));
+  
+  }
+
+  extractLngLat(str) {
+    let lngLat = str.split('/');
+
+    return lngLat;
+  }
+
+  getPostIds() {
+    let ids = [];
+
+    this.chEles.forEach((item) => {
+     ids.push(parseInt(item.getAttribute('data-post-id')));
+     let lngLats = this.extractLngLat(item.getAttribute('data-map-coords'));
+     this.lngLats.push({lng:parseFloat(lngLats[0]), lat: parseFloat(lngLats[1])});
+    })
+
+    return ids;
   }
 
   async initMap(posts) {
@@ -26,7 +56,10 @@ class MapCareHomes {
 
     this.map = new Map(this.mapStage , {
       zoom: 14,
-      center: {lat: posts[0].lat, lng: posts[0].lng },
+      center: {
+        lat: this.lngLats[0].lat,
+        lng: this.lngLats[0].lng
+      },
       mapId: "DEMO_MAP_ID",
     });
 
@@ -39,8 +72,11 @@ class MapCareHomes {
 
       let marker = new AdvancedMarkerElement({
         map: this.map,
-        position: {lat: item.lat, lng: item.lng },
-        title: posts.title,
+        position: {
+          lat: this.lngLats[index].lat, 
+          lng: this.lngLats[index].lng,
+        }, 
+        title: item.title,
         content: pin.element,
       });
       let infowindow = new google.maps.InfoWindow({

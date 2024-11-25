@@ -6971,8 +6971,16 @@
 	  }
 	}
 
-	const getPosts = async () => {
-	  let response = await fetch(themeData.restURL + 'quantum-care/v1/location-posts');
+	const getPosts = async postIDs => {
+	  let response = await fetch(themeData.restURL + 'quantum-care/v1/location-posts', {
+	    method: 'POST',
+	    headers: {
+	      'Content-Type': 'application/json'
+	    },
+	    body: JSON.stringify({
+	      post_ids: postIDs
+	    })
+	  });
 	  if (!response.ok) {
 	    throw new Error(`Response status: ${response.status}`);
 	  }
@@ -6989,12 +6997,36 @@
 	      return;
 	    }
 	    this.locations;
-	    this.coords = [...document.querySelectorAll('data-map-coords')];
-	    getPosts().then(posts => {
+	    this.lngLats = [];
+	    // this.coordsEles = [...document.querySelectorAll('[data-map-coords]')];
+	    this.chEles = [...document.querySelectorAll('[data-post-id]')];
+	    this.postIds = this.getPostIds();
+	    console.log('postIds=', this.postIds);
+	    console.log('longLats=', this.lngLats);
+	    getPosts(this.postIds).then(posts => {
 	      console.log('Posts = ', posts);
-	      //  this.locations = posts;
 	      this.initMap(posts);
 	    });
+	    const queryString = window.location.search;
+	    console.log('queryString', queryString);
+	    const urlParams = new URLSearchParams(queryString);
+	    console.log('urlParams', urlParams.get('location'));
+	  }
+	  extractLngLat(str) {
+	    let lngLat = str.split('/');
+	    return lngLat;
+	  }
+	  getPostIds() {
+	    let ids = [];
+	    this.chEles.forEach(item => {
+	      ids.push(parseInt(item.getAttribute('data-post-id')));
+	      let lngLats = this.extractLngLat(item.getAttribute('data-map-coords'));
+	      this.lngLats.push({
+	        lng: parseFloat(lngLats[0]),
+	        lat: parseFloat(lngLats[1])
+	      });
+	    });
+	    return ids;
 	  }
 	  async initMap(posts) {
 	    // Request needed libraries.
@@ -7008,8 +7040,8 @@
 	    this.map = new Map(this.mapStage, {
 	      zoom: 14,
 	      center: {
-	        lat: posts[0].lat,
-	        lng: posts[0].lng
+	        lat: this.lngLats[0].lat,
+	        lng: this.lngLats[0].lng
 	      },
 	      mapId: "DEMO_MAP_ID"
 	    });
@@ -7022,10 +7054,10 @@
 	      let marker = new AdvancedMarkerElement({
 	        map: this.map,
 	        position: {
-	          lat: item.lat,
-	          lng: item.lng
+	          lat: this.lngLats[index].lat,
+	          lng: this.lngLats[index].lng
 	        },
-	        title: posts.title,
+	        title: item.title,
 	        content: pin.element
 	      });
 	      let infowindow = new google.maps.InfoWindow({
@@ -9762,7 +9794,6 @@
 	      this.currIndex = this.currIndex === this.views.length - 1 ? 0 : this.currIndex + 1;
 	      this.setAnim(this.views[this.currIndex], true);
 	      this.switchBtnLabel();
-	      // this.views[this.currIndex].classList.remove('d-none');
 	    });
 	  }
 	  switchBtnLabel() {

@@ -24,7 +24,6 @@ class ViewSwitch {
       this.currIndex = (this.currIndex === this.views.length - 1)? 0 : this.currIndex + 1;
       this.setAnim(this.views[this.currIndex], true);
       this.switchBtnLabel();
-     // this.views[this.currIndex].classList.remove('d-none');
     })
   }
 

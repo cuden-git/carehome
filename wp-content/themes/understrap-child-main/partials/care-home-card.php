@@ -4,11 +4,12 @@ $is_premium = (has_term('quantum-select', 'care-home-category'))? true : false;
 $contact_info = get_field('ch_contact_details');
 $address = get_field('ch_address');
 $ch_services = get_field('ch_services_facilities');
+$ch_lng_lat = get_post_meta(get_the_ID(), 'ch_long_lat', true);
 ?>
 
 
 
-<div class="col-12 col-md-6 margin-4rem" data-map-coords="<?= $post->lng . '/' . $post->lat?>">
+<div class="col-12 col-md-6 margin-4rem" data-map-coords="<?= $ch_lng_lat ?>" data-post-id="<?= get_the_ID() ?>">
   <div class="p-4 ch__card<?= ($is_premium)? ' ch__card--premium' : null?>">
       <div class="care-home-image w-100">
         <figure class="ch__card-img w-100">
