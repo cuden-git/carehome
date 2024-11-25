@@ -407,13 +407,19 @@ function qc_set_cf7_email_recipient( $contact_form, &$abort, $submission ) {
   $job_recipient_email = get_field('career_recipient_email', $form_data['post_id']);
   $properties = $contact_form->get_properties();
 
+	//Career apply form
 	if($job_recipient_email && $contact_form->id() === intval($job_form_id)) {
 		$properties['mail']['recipient'] = $job_recipient_email;
 		$properties['mail']['body'] .= __("Job application for " . get_permalink($form_data['post_id']), THEME_NAMESPACE);
 		$contact_form->set_properties($properties);
 	}
 
+	//Generic contact form
 	if($contact_form_recipient && $contact_form->id() === intval($site_contact_form_id)) {
+		// If on care home single page change recipient care home email address
+		if($form_data['type_post'] === 'care-home') {
+			$contact_form_recipient = get_field('ch_form_recipient', $form_data['post_id']);
+		}
 		$properties['mail']['recipient'] = $contact_form_recipient;
 		$contact_form->set_properties($properties);
 	}

@@ -285,3 +285,29 @@ function qc_job_role_posts($job_role) {
 
 	return $career_posts;
 }
+
+/**
+ * Get Contact info for contact form. Depending on whether 
+ * it's displayed on a care-home single page or elsewhere
+ */
+function qc_contact_data_form($post_id) {
+	
+	$post_type = get_post_type($post_id);//echo $post_type; die();
+	$contact_data = [];
+
+	if($post_type === 'care-home') {
+
+		$ch_address = get_field('ch_address', $post_id);
+		$ch_contact_info = get_field('ch_contact_details', $post_id);
+		$contact_data['telephone'] = $ch_contact_info['telephone_number'];
+		$contact_data['email'] = $ch_contact_info['email'];
+		$contact_data['address'] = $ch_address['address'] . $ch_address['town_city'] . ',' . $ch_address['county']  . ',' . $ch_address['post_code'];
+	}else {// Global contact info
+		$ch_contact_info = get_field('contact_info', 'option');
+		$contact_data['telephone'] = $ch_contact_info['phone_number'];
+		$contact_data['email'] = $ch_contact_info['email_address'];
+		$contact_data['address'] = $ch_contact_info['address'];
+	}
+
+	return $contact_data;
+}
