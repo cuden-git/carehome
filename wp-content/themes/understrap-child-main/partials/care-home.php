@@ -5,10 +5,6 @@
  * Used fore care-home post type. *
  */
 
-// $intro = get_field('ch_intro');
-// $address = get_field('ch_address');
-// $contact_info = get_field('ch_contact_details');
-// $header_img = get_field('ch_header_img');
 $overview = get_field('ch_overview');
 $terms = get_the_terms(get_the_ID(), 'care-home-category');
 $premium_class = '';
@@ -21,7 +17,7 @@ $gallery = get_field('ch_gallery_carousel');
 $is_premium = qc_is_premium();
 $related_news = qc_related_news(get_the_ID(), 3);
 $related_settings = get_field('ch_latest_news');
-//print_r(get_field_objects());die();
+
 //set class hook for Quantum select 
 $menu_items = qc_get_section_labels();
 $reviews = get_field('ch_reviews');
@@ -255,17 +251,9 @@ if($gallery) {
 
 <!-- Map -->
 <section class="post-section py-0 care-home__location">
-    <div class="w-100">
-      <?php if ($map_location) { ?>
-        <div id="map" class="acf-map care-home__location-map" data-zoom="16"></div>
-      <?php } ?>
-      </div>
+  <div class="w-100">
+    <div id="map" class="care-home__location-map"></div>
+    <?php require_once get_stylesheet_directory() . '/inc/gm-js-init.php' ?>
     </div>
-  </section> 
-<?php
-  //Load Google Maps API
-  require_once get_stylesheet_directory() . '/inc/gm-js-load.php';
-
-  //Initialise Google Maps for block
-  require_once get_stylesheet_directory() . '/inc/blocks/gm-js-init.php';
-?>
+  </div>
+</section>

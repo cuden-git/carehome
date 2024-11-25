@@ -32,7 +32,7 @@ function gwg_block_categories( $categories ) {
       )
   );
 }
-add_filter( 'block_categories_all', 'gwg_block_categories' );
+//add_filter( 'block_categories_all', 'gwg_block_categories' );
 
 /**
  * We use WordPress's init hook to make sure
@@ -51,4 +51,4 @@ function qc_register_acf_blocks() {
   register_block_type( __DIR__ . '/blocks/care-home' );
 }
 // Here we call our tt3child_register_acf_block() function on init.
-add_action( 'init', 'qc_register_acf_blocks' );
+//add_action( 'init', 'qc_register_acf_blocks' );

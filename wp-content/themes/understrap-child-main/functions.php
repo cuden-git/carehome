@@ -44,7 +44,7 @@ function theme_enqueue_styles()
 	// Grab asset urls.
 	$theme_styles  = "/css/child-theme{$suffix}.css";
 	$theme_scripts = "/js/child-theme{$suffix}.js";
-
+	$dependency = (!is_singular('care-home'))? ['googlemaps-api'] : null ;
 	$css_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_styles);
 
 	wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version);
@@ -52,17 +52,19 @@ function theme_enqueue_styles()
 
 	$js_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_scripts);
 
-	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array('googlemaps-api'), $js_version, true);
+	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, $dependency, $js_version, true);
 
-	wp_enqueue_script('googlemaps-api', 
-		GOOGLE_MAPS_API_URL . 'js?libraries=places,geometry&v=beta&loading=async&key=' . GOOGLE_API_KEY, 
-		[], 
-		$js_version, 
-		array(
-			'in_footer' => true,
-			'strategy'  => 'async',
-		)
-	);
+	if(!is_singular( 'care-home' )) {
+		wp_enqueue_script('googlemaps-api', 
+			GOOGLE_MAPS_API_URL . 'js?libraries=places,geometry&v=beta&loading=async&key=' . GOOGLE_API_KEY, 
+			[], 
+			$js_version, 
+			array(
+				'in_footer' => true,
+				'strategy'  => 'async',
+			)
+		);
+	}
 
 	wp_localize_script('child-understrap-scripts', 'themeData', array(
 		'nonce' => wp_create_nonce('wp_rest'), // Create a nonce for REST API requests
