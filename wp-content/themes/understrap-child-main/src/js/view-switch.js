@@ -23,8 +23,17 @@ class ViewSwitch {
       this.setAnim(this.views[this.currIndex]);
       this.currIndex = (this.currIndex === this.views.length - 1)? 0 : this.currIndex + 1;
       this.setAnim(this.views[this.currIndex], true);
+      this.switchBtnLabel();
      // this.views[this.currIndex].classList.remove('d-none');
     })
+  }
+
+  switchBtnLabel() {
+    let nextLabel = this.btn.getAttribute('data-swap-label');
+    let currentLabel = this.btn.innerHTML;
+
+    this.btn.innerHTML = nextLabel;
+    this.btn.setAttribute('data-swap-label', currentLabel);
   }
 
   setAnim(ele, fadeIn = false) {
