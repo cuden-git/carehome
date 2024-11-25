@@ -112,11 +112,12 @@ function qc_get_careers_cats() {
     'parent'     => 0, // Only fetch top-level terms
     'hide_empty' => false, // Set to true if you only want terms assigned to posts
 	]);
-
+//	print_r($top_level_cats);
 	if (!empty($top_level_cats) && !is_wp_error($top_level_cats)) {
 		foreach($top_level_cats as $top_cat) {
-
-			$cats_list[$top_cat->name] = [];
+			$cats_list[$top_cat->slug] = [];
+			$cats_list[$top_cat->slug]['title'] = $top_cat->name;
+			$cats_list[$top_cat->slug]['opts'] = [];
 
 			$child_cats = get_terms([
 				'taxonomy'   => $tax_name,
@@ -125,7 +126,7 @@ function qc_get_careers_cats() {
 			]);
 
 			foreach($child_cats as $child_cat) {
-				array_push($cats_list[$top_cat->name], ['term_id' => $child_cat->term_id, 'name' => $child_cat->name]);
+				array_push($cats_list[$top_cat->slug]['opts'], ['term_id' => $child_cat->term_id, 'name' => $child_cat->name]);
 			}
 		}
 	}

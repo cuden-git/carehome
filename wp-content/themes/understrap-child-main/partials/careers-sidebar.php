@@ -1,5 +1,5 @@
 <?php
-$careers_cats = qc_get_careers_cats();
+$careers_cats = qc_get_careers_cats();//print_r($careers_cats);die();
 $careers_distances = get_field('careers_distances', 'option');
 $ch_args = [
   'post_type' => 'care-home',
@@ -38,12 +38,12 @@ $care_homes = get_posts($ch_args);
   foreach($careers_cats as $key=>$cat) {
 ?>
   <fieldset class="d-flex flex-column">
-  <legend><?= $key ?></legend>
+  <legend><?= $cat['title'] ?></legend>
 <?php
-    foreach($careers_cats[$key] as $child_cat) {
+    foreach($careers_cats[$key]['opts'] as $child_cat) {
 ?>
   <label class="d-flex">
-    <input type="checkbox" name="term_ids[]" value="<?= $child_cat['term_id'] ?>"<?php if (isset($_GET['term_ids']) && in_array($child_cat['term_id'], $_GET['term_ids'])) echo " checked"; ?>>
+    <input type="radio" name="<?= $key ?>" value="<?= $child_cat['term_id'] ?>"<?php if (isset($_GET[$key]) && $_GET[$key] == $child_cat['term_id']) echo " checked"; ?>>
     <?= $child_cat['name'] ?>
   </label>
 <?php

@@ -62,18 +62,21 @@ if(isset($_GET['careers_distance']) && $_GET['careers_distance'] !== "") {
   );
 }
 
-if(isset($_GET['term_ids'])) {
+if(isset($_GET['job-type']) || isset($_GET['shift-type'])) {
+
+  $term_ids = array_filter([$_GET['shift-type'] ?? null, $_GET['job-type'] ?? null]);
+
   $query_args['tax_query'] = [
     [
       'taxonomy' => 'careers-category',
       'field' => 'term_id',
-      'terms' => $_GET['term_ids'],
+      'terms' => $term_ids,
      // 'operator' => 'OR',
         'operator' => 'AND'
     ],
   ];   
 
-  $secondary_form_data['term_ids'] = $_GET['term_ids'];
+  $secondary_form_data['term_ids'] = $term_ids;
 }
 
 if(count($meta_query) > 0) {
