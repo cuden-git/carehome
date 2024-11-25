@@ -6956,6 +6956,21 @@
 	  // }
 	}
 
+	class CareHomeResults {
+	  constructor() {
+	    this.stage = document.getElementById('care-homes-list');
+	    if (!this.stage) {
+	      return;
+	    }
+	    this.attachEvents();
+	  }
+	  attachEvents() {
+	    this.stage.addEventListener('searchSubmitted', e => {
+	      //   alert(e.detail.location);
+	    });
+	  }
+	}
+
 	const getPosts = async postIDs => {
 	  let response = await fetch(themeData.restURL + 'quantum-care/v1/location-posts', {
 	    method: 'POST',
@@ -9890,8 +9905,7 @@
 
 	// Add your custom JS here.
 	//import './gm';
-
-	//const careHomeResults = new CareHomeResults();
+	const careHomeResults = new CareHomeResults();
 	new TypeSearch(careHomeResults.stage);
 	new MapCareHomes();
 	new ViewSwitch();
