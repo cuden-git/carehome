@@ -72,20 +72,15 @@ $ch_lng_lat = get_post_meta(get_the_ID(), 'ch_long_lat', true);
               </address>
           </div>
         </div>
-        <div class="row icon-holder mt-md-4 mt-0">
-            <?php
-            foreach($ch_services['facilities'] as $facility) {
-            ?>  
-            <div class="col-lg-6 ch__card-icons list-inline py-3">
-              <div class="row">
-                <div class="col-3 d-flex align-items-center"><i class="icon-<?= $facility['value'] ?>"></i></div><div class="col-9"><span><?= __($facility['label'], THEME_NAMESPACE) ?></span></div></div>
-              </div>
-            <?php
-            }
-            ?>
-       
-         
-        </div>
+        <ul class="ch__card-icons list-inline"]>
+          <?php
+          foreach($ch_services['facilities'] as $facility) {
+          ?>  
+            <li class="d-flex"><i class="icon-<?= $facility['value'] ?>"></i> <span><?= __($facility['label'], THEME_NAMESPACE) ?></span></li>
+          <?php
+          }
+          ?>
+        </ul>
         <div class="row mt-4 mb-3">
           <div class="col-12">
           <!-- -->

@@ -106,24 +106,28 @@ $selector: ".ch";
 
     &-icons {
       border-top: rfs-value(1px) solid $qc-white;
+      padding-top: rfs-value(80px);
+      margin-bottom: rfs-value(40px);
 
-      column-count: 2;
-      column-gap: rfs-value(10px);
+      @include media-breakpoint-up(lg) {
+        column-count: 2;
+        column-gap: rfs-value(60px);
+      }
 
       #{$premium-hook} & {
         border-color: $qc-gold;
       }
 
       li {
-        //margin-bottom: rfs-value(35px);
+        margin-bottom: rfs-value(35px);
 
-        > span {
+        >span {
           flex: 2;
         }
       }
 
       i {
-        font-size: 30px;
+        font-size: rfs-value(35px);
         text-align: center;
         width: rfs-value(70px);
         margin-right: rfs-value(10px);

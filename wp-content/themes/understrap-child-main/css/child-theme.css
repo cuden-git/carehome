@@ -11909,19 +11909,28 @@ textarea {
 }
 .ch__card-icons {
   border-top: 0.0625rem solid #efece9;
-  -moz-column-count: 2;
-  column-count: 2;
-  -moz-column-gap: 0.625rem;
-  column-gap: 0.625rem;
+  padding-top: 5rem;
+  margin-bottom: 2.5rem;
+}
+@media (min-width: 992px) {
+  .ch__card-icons {
+    -moz-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 3.75rem;
+    column-gap: 3.75rem;
+  }
 }
 .ch__card--premium .ch__card-icons {
   border-color: #b99475;
+}
+.ch__card-icons li {
+  margin-bottom: 2.1875rem;
 }
 .ch__card-icons li > span {
   flex: 2;
 }
 .ch__card-icons i {
-  font-size: 30px;
+  font-size: 2.1875rem;
   text-align: center;
   width: 4.375rem;
   margin-right: 0.625rem;
