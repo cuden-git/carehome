@@ -234,10 +234,20 @@ figure {
     overflow: visible;
 
     >ul {
-      position: absolute;
-      top: auto;
-      left: 0;
-      width: 100%;
+      @include media-breakpoint-down(md) {
+        position: absolute;
+        top: auto;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  ul {
+    @include media-breakpoint-down(md) {
+      overflow: hidden;
+      height: 0;
+      transition: height .3s;
     }
   }
 }

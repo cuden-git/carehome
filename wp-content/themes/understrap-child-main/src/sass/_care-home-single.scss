@@ -18,11 +18,9 @@ $selector: ".care-home";
   // }
 
   &__header {
+    position: relative;
     color: $qc-white;
-  
-    &--premium {
-      background-color: $secondary;
-    } 
+    z-index: 1;
 
     &-img {
       position: relative;
@@ -157,8 +155,10 @@ $selector: ".care-home";
       flex: 1;
       padding-right: rfs-value(80px);
 
-      .menu-collapse--open & {
-        background-color: $qc-white;
+      .menu-collapse {
+        &--open & {
+          background-color: $qc-white;
+        }
       }
 
       li {

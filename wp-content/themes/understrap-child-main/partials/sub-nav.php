@@ -3,8 +3,9 @@
 
 	if(!empty($child_pages)) {
 ?>
-		<nav class="site__sub-nav">
-			<ul class="container list-inline d-flex">
+		<nav class="site__sub-nav menu-collapse">
+			<div class="d-md-none h-100 menu-collapse__display"><span></span></div>
+			<ul class="container list-inline d-flex flex-column flex-md-row">
 		<?php
 		foreach($child_pages as $child) {
 		?>

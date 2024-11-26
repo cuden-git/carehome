@@ -23,13 +23,18 @@ get_header();
       } // end if
     ?>
         </div>
-        <div class="d-flex">
-          <?php
-          foreach($related_news as $news) {
-            get_template_part('/partials/news-card');
-          }
-          ?>
-        </div>
+    </div>
+    <div class="row">
+      <?php
+      foreach($related_news as $news) {
+        get_template_part('/partials/news-card');
+      }
+      ?>
+    </div>
+    <div class="text-center">
+    <div class="col-12">
+      <a href="<?= get_post_type_archive_link('post') ?>" class="btn btn-primary" title="<?= __( 'See All News', THEME_NAMESPACE) ?>"><?= __( 'See All News', THEME_NAMESPACE) ?></a>
+    </div>
     </div>
   </div>
 </main>

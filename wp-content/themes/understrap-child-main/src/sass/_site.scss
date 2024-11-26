@@ -17,6 +17,7 @@ $selector: ".site";
       height: 100%;
       background-position: left 24% top 42%;
       background-size: 200% 200%;
+      z-index: 0;
 
       .home & {
         background-position: left -100% top 33%;
@@ -168,6 +169,10 @@ $selector: ".site";
     a {
       color: $qc-white;
       text-decoration: none;
+    }
+
+    .menu-collapse__display {
+      color: $qc-white;
     }
   }
 

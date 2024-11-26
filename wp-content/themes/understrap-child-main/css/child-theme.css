@@ -11562,6 +11562,7 @@ textarea {
   height: 100%;
   background-position: left 24% top 42%;
   background-size: 200% 200%;
+  z-index: 0;
 }
 .home .site__header::before {
   background-position: left -100% top 33%;
@@ -11674,6 +11675,9 @@ textarea {
 .site__sub-nav a {
   color: #efece9;
   text-decoration: none;
+}
+.site__sub-nav .menu-collapse__display {
+  color: #efece9;
 }
 .site__content ul {
   margin-bottom: 1.875rem;
@@ -11970,10 +11974,9 @@ textarea {
   padding-bottom: 6.25rem;
 }
 .care-home__header {
+  position: relative;
   color: #efece9;
-}
-.care-home__header--premium {
-  background-color: #002147;
+  z-index: 1;
 }
 .care-home__header-img {
   position: relative;
@@ -12073,7 +12076,7 @@ textarea {
   flex: 1;
   padding-right: 5rem;
 }
-.menu-collapse--open .care-home__team-nav {
+.care-home__team-nav .menu-collapse--open .care-home__team-nav .menu-collapse {
   background-color: #efece9;
 }
 .care-home__team-nav li {
@@ -12990,11 +12993,20 @@ figure {
 .menu-collapse--open {
   overflow: visible;
 }
-.menu-collapse--open > ul {
-  position: absolute;
-  top: auto;
-  left: 0;
-  width: 100%;
+@media (max-width: 767.98px) {
+  .menu-collapse--open > ul {
+    position: absolute;
+    top: auto;
+    left: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 767.98px) {
+  .menu-collapse ul {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s;
+  }
 }
 
 @keyframes fade-in {

@@ -103,6 +103,4 @@ get_header();
 </main>
 <?php
 
-// require_once __DIR__ . '/inc/gm-js-load.php';
-
 get_footer();

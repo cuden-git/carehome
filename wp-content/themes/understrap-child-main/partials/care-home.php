@@ -33,7 +33,7 @@ if(!empty($menu_items)) {
   ?>
   <nav class="care-home__nav">
     <div class="container menu-collapse">
-      <div class="d-md-none h-100 menu-collapse__display"></div>
+      <div class="d-md-none h-100 menu-collapse__display"><span></span><i class="icon-arrow-down"></i></div>
       <ul class="list-inline d-flex flex-md-row flex-column justify-content-center">
   <?php
     foreach ($menu_items as $item) {
@@ -146,7 +146,7 @@ if($gallery) {
       ?>
       <div class="d-flex flex-md-row flex-column">
         <div class="menu-collapse">
-          <div class="d-md-none h-100 menu-collapse__display">Item</div>
+          <div class="d-md-none h-100 menu-collapse__display"><span></span></div>
           <ul class="nav nav-links flex-md-column care-home__team-nav" role="tablist" aria-orientation="vertical">
         <?php
             $loop_index = 0;
@@ -226,7 +226,7 @@ if($gallery) {
   <?php get_template_part('/partials/contact-form', null, ['is_section' => true]) ?>
 </div>
 <!-- -->
-<section id="<?php qc_set_achor_index() ?>" class="post-section care-home__news<?= ($is_premium)? ' care-home--premium' : null ?>">
+<section id="<?php qc_set_achor_index() ?>" class="post-section">
     <div class="container">
       <h2 class="post-section__title mb-5"></h2>
       <div class="row">

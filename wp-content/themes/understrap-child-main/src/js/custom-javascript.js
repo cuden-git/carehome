@@ -13,4 +13,4 @@ const typeSearch = new TypeSearch(careHomeResults.stage);
 const mapCareHomes = new MapCareHomes();
 const viewSwitch = new ViewSwitch();
 const emailCareer = new EmailCareer();
-const menuCollapse = new MenuCollapse();
+const menuCollapse = new MenuCollapse(767);//767 represents the breakpoint to trigger the functionality
