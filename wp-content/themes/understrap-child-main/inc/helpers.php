@@ -245,14 +245,18 @@ function qc_page_secondary_nav() {
 // see https://developer.wordpress.org/reference/functions/wp_get_post_parent_id/
 	global $post;
 
-	$post_parent_id = ($post->post_parent === 0)? $post->ID : $post->post_parent;
-	$child_posts = get_posts([
-		'post_type'      => 'page',
-		'posts_per_page' => -1,
-		'post_parent'    => $post_parent_id,
-		'order'          => 'ASC',
-		'orderby'        => 'menu_order'
-	]);
+	$child_posts = [];
+
+	if(is_page()) {
+		$post_parent_id = ($post->post_parent === 0)? $post->ID : $post->post_parent;
+		$child_posts = get_posts([
+			'post_type'      => 'page',
+			'posts_per_page' => -1,
+			'post_parent'    => $post_parent_id,
+			'order'          => 'ASC',
+			'orderby'        => 'menu_order'
+		]);
+	}
 
 	if(empty($child_posts)) {
 		return null;
