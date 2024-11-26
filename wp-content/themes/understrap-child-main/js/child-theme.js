@@ -40,7 +40,7 @@
 	}
 
 	var alertExports = {};
-	var alert$1 = {
+	var alert$2 = {
 	  get exports(){ return alertExports; },
 	  set exports(v){ alertExports = v; },
 	};
@@ -1168,9 +1168,9 @@
 		  index_js.defineJQueryPlugin(Alert);
 		  return Alert;
 		});
-	} (alert$1));
+	} (alert$2));
 
-	var alert = alertExports;
+	var alert$1 = alertExports;
 
 	var buttonExports = {};
 	var button$1 = {
@@ -7037,13 +7037,14 @@
 	    const {
 	      AdvancedMarkerElement
 	    } = await google.maps.importLibrary("marker");
+	    const bounds = new google.maps.LatLngBounds();
 	    this.map = new Map(this.mapStage, {
 	      zoom: 14,
 	      center: {
 	        lat: this.lngLats[0].lat,
 	        lng: this.lngLats[0].lng
 	      },
-	      mapId: "DEMO_MAP_ID"
+	      mapId: "CARE_HOME_MAP_ID"
 	    });
 	    posts.forEach((item, index) => {
 	      let pin = new google.maps.marker.PinElement({
@@ -7075,7 +7076,15 @@
 	          map: this.map
 	        });
 	      });
+	      bounds.extend(this.lngLats[index]);
 	    });
+	    if (this.lngLats.length === 1) {
+	      alert('bo');
+	      this.map.setCenter(this.lngLats[0]);
+	      this.map.setZoom(14);
+	    } else {
+	      this.map.fitBounds(bounds);
+	    }
 	    // const marker = new AdvancedMarkerElement({
 	    //   map: this.map,
 	    //   position: position,
@@ -9937,7 +9946,7 @@
 	new EmailCareer();
 	new MenuCollapse(767); //767 represents the breakpoint to trigger the functionality
 
-	exports.Alert = alert;
+	exports.Alert = alert$1;
 	exports.Button = button;
 	exports.Carousel = carousel;
 	exports.Collapse = collapse;

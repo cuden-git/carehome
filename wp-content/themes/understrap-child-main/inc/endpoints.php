@@ -91,8 +91,8 @@ function qc_email_job_url(WP_REST_Request $request) {
   $post_url = get_permalink($post_id);
   $email_body = get_field('job_email_msg', 'option');
   $email_body = str_replace("{URL-LINK}", $post_url, $email_body);
-
-  $sent = wp_mail($email, __('Quantum Care Job', THEME_NAMESPACE), $email_body);
+  $email_headers = ['Content-Type: text/html; charset=UTF-8'];
+  $sent = wp_mail($email, __('Quantum Care Job', THEME_NAMESPACE), $email_body, $email_headers);
 
   if ( ! $sent ) {
     return new WP_REST_Response(

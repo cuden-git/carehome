@@ -461,6 +461,18 @@ add_filter('excerpt_length', function($length) {
 	return 10;
 }, 999);
 
+function qc_remove_image_dimensions($attr) {
+	error_log(print_r($attr, true));
+	if (isset($attr['width'])) {
+			unset($attr['width']);
+	}
+	if (isset($attr['height'])) {
+			unset($attr['height']);
+	}
+	return $attr;
+}
+add_filter('wp_get_attachment_image_attributes', 'qc_remove_image_dimensions', 10, 1);
+
 /**
  * MailHog setup
  */

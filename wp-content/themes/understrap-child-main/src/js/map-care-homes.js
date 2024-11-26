@@ -53,6 +53,7 @@ class MapCareHomes {
     //@ts-ignore
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    const bounds = new google.maps.LatLngBounds();
 
     this.map = new Map(this.mapStage , {
       zoom: 14,
@@ -60,7 +61,7 @@ class MapCareHomes {
         lat: this.lngLats[0].lat,
         lng: this.lngLats[0].lng
       },
-      mapId: "DEMO_MAP_ID",
+      mapId: "CARE_HOME_MAP_ID",
     });
 
     posts.forEach((item, index) => {
@@ -94,7 +95,16 @@ class MapCareHomes {
           map: this.map,
         });
       });
+
+      bounds.extend(this.lngLats[index]);
     })
+
+    if (this.lngLats.length === 1) {alert('bo');
+      this.map.setCenter(this.lngLats[0]);
+      this.map.setZoom(14);
+    } else {
+      this.map.fitBounds(bounds);
+    }
     // const marker = new AdvancedMarkerElement({
     //   map: this.map,
     //   position: position,
