@@ -2,13 +2,17 @@
 add_filter( 'allowed_block_types_all', function( $allowed_blocks, $editor_context ) {
   global $post;
 
-  if($post->post_type === 'care-home') {
+  //if($post->post_type === 'care-home') {
     $allowed_blocks = [
-      'quantum-care/care-home'
+      'core/list',
+      'core/list-item',
+      'core/paragraph',
+      'core/heading',
+      'core/image'
     ];
 
     return $allowed_blocks;
-  }
+ // }
 }, 100, 2 );
 
 /**
