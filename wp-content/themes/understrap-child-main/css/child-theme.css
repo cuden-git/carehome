@@ -12881,6 +12881,12 @@ h5, .h5 {
 .btn-primary {
   color: #efece9;
 }
+.btn--inverse,
+.btn-primary--inverse {
+  background-color: unset;
+  border: 0.0625rem solid #7aa3cd;
+  color: #7aa3cd;
+}
 
 .btn-gold {
   background-color: #b99475;

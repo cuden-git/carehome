@@ -99,6 +99,12 @@ h5 {
 .btn,
 .btn-primary {
   color: $qc-white;
+
+  &--inverse {
+    background-color: unset;
+    border: rfs-value(1px) solid $qc-blue-light;
+    color: $qc-blue-light;
+  }
 }
 
 .btn-gold {

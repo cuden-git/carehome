@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Generic page
+* Template Name: Our care page
 */
 ?>
 <?php
@@ -15,6 +15,13 @@ get_header();
 ?>
 
 <main class="site__main" id="main">
+  <div class="container mb-4">
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <?php the_content() ?>
+      </div>
+    </div>
+  </div>
 <!-- -->
 <?php
 if($top_section) {
