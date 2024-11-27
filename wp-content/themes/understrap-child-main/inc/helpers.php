@@ -245,11 +245,13 @@ function qc_page_secondary_nav() {
 // see https://developer.wordpress.org/reference/functions/wp_get_post_parent_id/
 	global $post;
 
-	$child_posts = [];
+	$all_posts = [];
+	$all_posts['parent'] = ($post->post_parent === 0)? null : get_post($post->post_parent);
+	$all_posts['children'] = [];
 
 	if(is_page()) {
 		$post_parent_id = ($post->post_parent === 0)? $post->ID : $post->post_parent;
-		$child_posts = get_posts([
+		$all_posts['children'] = get_posts([
 			'post_type'      => 'page',
 			'posts_per_page' => -1,
 			'post_parent'    => $post_parent_id,
@@ -258,11 +260,11 @@ function qc_page_secondary_nav() {
 		]);
 	}
 
-	if(empty($child_posts)) {
+	if(empty($all_posts)) {
 		return null;
 	}
 
-	return $child_posts;
+	return $all_posts;
 }
 
 /**
