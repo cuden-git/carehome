@@ -24,6 +24,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-menu:before {
+  content: "\e919";
+}
 .icon-close:before {
   content: "\e918";
 }

@@ -89,9 +89,21 @@ $selector: ".site";
       border: none;
       z-index: 5;
 
-      &:not(&.collapsed) {
-        background-image: none;
+      &:focus {
+        box-shadow: none;
+      }
 
+      &::after {
+        font-family: 'quantum-care';
+      }
+  
+      &[aria-expanded=false] {
+        &::after {
+          content: "\e919";
+        }
+      }
+
+      &[aria-expanded=true]{
         &::after {
           content: "\e918";
           font-size: rfs-value(20px);

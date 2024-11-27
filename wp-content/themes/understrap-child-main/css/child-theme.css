@@ -11407,6 +11407,10 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-menu:before {
+  content: "\e919";
+}
+
 .icon-close:before {
   content: "\e918";
 }
@@ -11613,10 +11617,16 @@ textarea {
   border: none;
   z-index: 5;
 }
-.site__header .navbar-toggler:not(.site__header .navbar-toggler.collapsed) {
-  background-image: none;
+.site__header .navbar-toggler:focus {
+  box-shadow: none;
 }
-.site__header .navbar-toggler:not(.site__header .navbar-toggler.collapsed)::after {
+.site__header .navbar-toggler::after {
+  font-family: "quantum-care";
+}
+.site__header .navbar-toggler[aria-expanded=false]::after {
+  content: "\e919";
+}
+.site__header .navbar-toggler[aria-expanded=true]::after {
   content: "\e918";
   font-size: 1.25rem;
   color: #efece9;
