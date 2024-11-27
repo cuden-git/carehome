@@ -12244,8 +12244,9 @@ textarea {
   align-self: flex-start;
 }
 .care-home__brochures {
-  background-color: #002147;
+  position: relative;
   color: #efece9;
+  z-index: 1;
 }
 .care-home__brochures li {
   border-bottom: 0.0625rem solid #b99475;

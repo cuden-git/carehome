@@ -340,8 +340,9 @@ $selector: ".care-home";
   }
   
   &__brochures {
-    background-color: $qc-blue-dark;
+    position: relative;
     color: $qc-white;
+    z-index: 1;
 
     li {
       border-bottom: rfs-value(1px) solid $qc-gold;

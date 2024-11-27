@@ -1,7 +1,14 @@
 <?php
 global $post;
-
+$is_premium = qc_is_premium();
 $sm_links = get_field('social_media', 'option');
+$is_premium = qc_is_premium();
+
+if($is_premium) {
+  $logo_src = 'logo-select.svg';
+}else {
+  $logo_src = 'logo-light.svg';
+}
 ?>
     <!-- prettier-ignore -->
 
@@ -25,7 +32,7 @@ $sm_links = get_field('social_media', 'option');
     <!-- -->
       <div class="site__footer-logos col-12 col-md-6 col-lg-3 mb-lg-0 mb-5">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
-          <img class="qc-logo" src="<?= esc_url(  get_stylesheet_directory_uri() . '/images/logo-light.svg' ) ?>" alt="<?= __('Quantum Care', THEME_NAMESPACE) ?>">
+          <img class="qc-logo" src="<?= esc_url(  get_stylesheet_directory_uri() . '/images/' . $logo_src ) ?>" alt="<?= __('Quantum Care', THEME_NAMESPACE) ?>">
         </a>
         <a href="<?= esc_url( 'https://www.nationalcareforum.org.uk/' ); ?>" itemprop="url">
           <img class="ncf-logo" src="<?= esc_url(  get_stylesheet_directory_uri() . '/images/logo-ncf.svg' ) ?>" alt="<?= __('Quantum Care', THEME_NAMESPACE) ?>">
