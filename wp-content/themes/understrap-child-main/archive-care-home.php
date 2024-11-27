@@ -7,6 +7,43 @@ if (isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
 $archive_intro = get_field('ch_results_intro', 'option');
 $archive_list_title = get_field('ch_archive_page_title', 'option');
 
+$meta_query = [];
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$query_args = [
+  'posts_per_page' => 4,
+  'post_type' => 'care-home',
+  'post_status' => 'publish',
+  'paged' => $paged
+];
+
+if (isset($_GET['location'])) {
+  qc_set_distance_meta($_GET['location'], get_post_type());
+  array_push($meta_query, [
+      'key' => 'ch_distance',
+    ]
+  );
+  $query_args['orderby'] = 'meta_value_num';
+  $query_args['order'] = 'ASC';
+}
+
+if(isset($_GET['ch_distance']) && $_GET['ch_distance'] !== "") {
+    array_push($meta_query, [
+      'key' => 'ch_distance',
+      'value' => $_GET['ch_distance'],
+      'type' => 'numeric',
+      'compare' => '<='
+    ]
+  );
+}
+
+if(count($meta_query) > 0) {
+  $meta_query['relation'] = 'AND';
+}
+$query_args['meta_query'] = $meta_query;
+
+// Custom query. 
+$query = new WP_Query($query_args);
+
 get_header();
 ?>
 <main id="care-home-results" class="site__main ch__archive pb-0">
@@ -31,7 +68,7 @@ get_header();
           <h3 class=""><?= $archive_list_title ?></h3>
         </div>
         <div class="col-md-4 map-button-controls">
-          <button id="archive-switcher" class="btn btn-primary" type="button" data-swap-label="<?= __('List View', THEME_NAMESPACE) ?>"><?= __('Map View', THEME_NAMESPACE) ?></button>
+          <button id="archive-switcher" class="btn btn-primary" type="button" data-swap-label="<?= __('List View', THEME_NAMESPACE) ?>"<?= ($query->found_posts === 0)? ' disabled' : null ?>><?= __('Map View', THEME_NAMESPACE) ?></button>
         </div>
       </div>
   </div>
@@ -39,48 +76,13 @@ get_header();
   <div id="care-homes-list" class="container ch__list active" data-view-switch>
     <div class="row">
       <?php
-      $meta_query = [];
-      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-      $query_args = [
-        'posts_per_page' => 4,
-        'post_type' => 'care-home',
-        'post_status' => 'publish',
-        'paged' => $paged
-      ];
-
-      if (isset($_GET['location'])) {
-        qc_set_distance_meta($_GET['location'], get_post_type());
-        array_push($meta_query, [
-            'key' => 'ch_distance',
-          ]
-        );
-        $query_args['orderby'] = 'meta_value_num';
-        $query_args['order'] = 'ASC';
-      }
-
-      if(isset($_GET['ch_distance']) && $_GET['ch_distance'] !== "") {
-          array_push($meta_query, [
-            'key' => 'ch_distance',
-            'value' => $_GET['ch_distance'],
-            'type' => 'numeric',
-            'compare' => '<='
-          ]
-        );
-      }
-
-      if(count($meta_query) > 0) {
-        $meta_query['relation'] = 'AND';
-      }
-      $query_args['meta_query'] = $meta_query;
-
-      // Custom query. 
-      $query = new WP_Query($query_args);
-
       if ($query->have_posts()) {
         while ($query->have_posts()) {
           $query->the_post();
           get_template_part('partials/care-home-card');
         }
+      }else {
+        echo qc_archive_no_results_msg();
       }
 
       wp_reset_postdata();

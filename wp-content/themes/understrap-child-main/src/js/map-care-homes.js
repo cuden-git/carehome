@@ -18,8 +18,10 @@ class MapCareHomes {
 
     getPosts(this.postIds)
     .then((posts) => {
-      console.log('Posts = ', posts)
-      this.initMap(posts);
+      console.log('Posts = ', posts);
+      if(posts.length > 0) {
+        this.initMap(posts);
+      }
     });
 
     
@@ -99,7 +101,7 @@ class MapCareHomes {
       bounds.extend(this.lngLats[index]);
     })
 
-    if (this.lngLats.length === 1) {alert('bo');
+    if (this.lngLats.length === 1) {
       this.map.setCenter(this.lngLats[0]);
       this.map.setZoom(14);
     } else {

@@ -40,7 +40,7 @@
 	}
 
 	var alertExports = {};
-	var alert$2 = {
+	var alert$1 = {
 	  get exports(){ return alertExports; },
 	  set exports(v){ alertExports = v; },
 	};
@@ -1168,9 +1168,9 @@
 		  index_js.defineJQueryPlugin(Alert);
 		  return Alert;
 		});
-	} (alert$2));
+	} (alert$1));
 
-	var alert$1 = alertExports;
+	var alert = alertExports;
 
 	var buttonExports = {};
 	var button$1 = {
@@ -7005,7 +7005,9 @@
 	    console.log('longLats=', this.lngLats);
 	    getPosts(this.postIds).then(posts => {
 	      console.log('Posts = ', posts);
-	      this.initMap(posts);
+	      if (posts.length > 0) {
+	        this.initMap(posts);
+	      }
 	    });
 	    const queryString = window.location.search;
 	    console.log('queryString', queryString);
@@ -7079,7 +7081,6 @@
 	      bounds.extend(this.lngLats[index]);
 	    });
 	    if (this.lngLats.length === 1) {
-	      alert('bo');
 	      this.map.setCenter(this.lngLats[0]);
 	      this.map.setZoom(14);
 	    } else {
@@ -9946,7 +9947,7 @@
 	new EmailCareer();
 	new MenuCollapse(767); //767 represents the breakpoint to trigger the functionality
 
-	exports.Alert = alert$1;
+	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;
 	exports.Collapse = collapse;

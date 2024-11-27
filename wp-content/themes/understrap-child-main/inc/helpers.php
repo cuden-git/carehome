@@ -318,3 +318,12 @@ function qc_contact_data_form($post_id) {
 
 	return $contact_data;
 }
+
+/**
+ * Output message when no results found on an archive page
+ */
+function qc_archive_no_results_msg() {
+	$msg = get_field('no_results_message', 'option');
+
+	return __($msg, THEME_NAMESPACE);
+}

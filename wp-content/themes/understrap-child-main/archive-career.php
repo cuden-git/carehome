@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
 if(isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
   wp_redirect($_GET['care_homes']);
 }
-
+$no_results_msg = get_field('no_results_message', 'option');
 $query_args = [
   'post_type' => 'career',
   'posts_per_page' => 100,
@@ -122,7 +122,7 @@ get_header();
             get_template_part('/partials/career-card');
           }
         }else {
-          echo __('No results found based on your search criteria', THEME_NAMESPACE);
+          echo qc_archive_no_results_msg();
         }
         wp_reset_postdata()
       ?>
