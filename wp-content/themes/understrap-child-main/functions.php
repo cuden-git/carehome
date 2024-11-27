@@ -471,6 +471,11 @@ function qc_remove_image_dimensions($html) {
 add_filter('wp_get_attachment_image', 'qc_remove_image_dimensions', 10, 1);
 
 /**
+ * Add support for excerpt field for pages
+ */
+add_post_type_support( 'page', 'excerpt' );
+
+/**
  * MailHog setup
  */
 add_action( 'phpmailer_init', 'qc_mailhog_setup' );

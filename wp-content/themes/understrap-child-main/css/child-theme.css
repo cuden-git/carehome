@@ -12799,6 +12799,7 @@ textarea {
 }
 .news__card-img img {
   height: 100%;
+  width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -12844,6 +12845,22 @@ textarea {
   font-size: 0.125rem;
 }
 
+.role__img {
+  aspect-ratio: 950/629;
+  width: 100%;
+}
+.role__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.role__jobs {
+  background-color: #002147;
+  background-size: auto 168%;
+  background-position: left -40% center;
+}
+
 @font-face {
   font-family: "poppins-light";
   src: url("../fonts/Poppins-Light.woff2") format("woff2");
@@ -12876,7 +12893,7 @@ h5, .h5 {
 }
 
 /* Placeholders */
-.site__header::before, .site__form--section, .site__footer::before, .ch__search, .ch__card, .careers-list__search--short, .careers-list__filters, .career-single__info-form, .fc__testimonials, .fc__featured-card, .fc__jobs, .fc__ctas-card {
+.site__header::before, .site__form--section, .site__footer::before, .ch__search, .ch__card, .careers-list__search--short, .careers-list__filters, .career-single__info-form, .fc__testimonials, .fc__featured-card, .fc__jobs, .fc__ctas-card, .role__jobs {
   background-image: url(../images/bg-q.svg);
   background-repeat: no-repeat;
 }

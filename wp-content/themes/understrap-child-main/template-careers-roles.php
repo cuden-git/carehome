@@ -11,10 +11,16 @@ defined( 'ABSPATH' ) || exit;
 $job_role = get_field('jr_roles');
 $role_jobs = qc_job_role_posts($job_role);
 $cta_blocks = get_field('cta_blocks');
-$video = get_field('video_block');
+$video = get_field('cr_video_text');
+$testimonials = get_field('cr_testimonials');
+$roles_posts = get_posts([
+  'post_type' => 'role',
+  'status' => 'publish',
+  'numberposts' => -1,
+]);
 get_header();
 ?>
-<main class="site__main role" id="main">
+<main class="site__main c-roles" id="main">
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-6 page-intro">
@@ -27,52 +33,37 @@ get_header();
         </figure>
       </div>
     </div>
-  </div>
-<?php
-  if($job_role && !empty($role_jobs)) {
-?>
-
-  <div class="post-section role__jobs">
-    <div class="container">
-      <div class="col-md-8 mx-auto">
+    <div class="row">
       <?php
-        foreach($role_jobs as $job) {
-          get_template_part('/partials/career-card', null, ['post_id' => $job->ID]);
-        }
+      foreach($roles_posts as $post) {
+        get_template_part('/partials/news-card');
+      }
       ?>
-      </div>
     </div>
   </div>
-<?php
-  }
-?>
-<?php
-  if($cta_blocks) {
-    get_template_part('/partials/flexible-content/fc-cta-blocks', null, ['cta_blocks' => $cta_blocks]);
-  }
-?>
-<?php
+  <?php
   if($video) {
 ?>
 <section class="post-section fc__img-text fc__img-text--left">
   <div class="container">
     <div class="row">
     <div class="col-12 col-md-6 fc__img-text-img d-flex">
-        <?= $video['video'] ?>
+        <?= $video['video_block']['video'] ?>
       </div>
       <div class="col-12 col-md-6 fc__img-text-text d-flex">
-        <h2 class="post-section__title"><?= $video['title'] ?></h2>
-        <?= $video['text'] ?>
-        <button class="btn btn-primary"><?= $video['btn_label'] ?></button>
+        <h2 class="post-section__title"><?= $video['video_block']['title'] ?></h2>
+        <?= $video['video_block']['text'] ?>
+        <button class="btn btn-primary"><?= $video['video_block']['btn_label'] ?></button>
       </div>
     </div>
   </div>
 </section>
+<?php get_template_part('/partials/flexible-content/fc-testimonials', null, ['testimonials' => $testimonials['testimonial_fields']]); ?>
 <?php
-  //  get_template_part('/partials/flexible-content/fc-cta-blocks', null, ['cta_blocks' => $cta_blocks]);
+    get_template_part('/partials/flexible-content/fc-cta-blocks', null, ['cta_blocks' => $cta_blocks]);
   }
 ?>
+  <?php get_template_part('/partials/fc-testimonials') ?>
 </main>
-
 <?php
 get_footer();

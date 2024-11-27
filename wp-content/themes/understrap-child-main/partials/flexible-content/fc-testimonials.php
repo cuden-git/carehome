@@ -1,8 +1,8 @@
 <?php
-$testimonials = get_sub_field('testimonial_fields');
-$title = $testimonials['title'];//get_sub_field('title');
-$intro = $testimonials['intro'];//get_sub_field('intro');
-$carousel = $testimonials['carousel']; //get_sub_field('carousel');
+$testimonials = (isset($args['testimonials']))? $args['testimonials'] : get_sub_field('testimonial_fields');
+$title = $testimonials['title'];
+$intro = $testimonials['intro'];
+$carousel = $testimonials['carousel']; 
 
 ?>
 <section class="post-section fc__testimonials py-5">
