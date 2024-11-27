@@ -302,7 +302,7 @@ function qc_contact_data_form($post_id) {
 	$post_type = get_post_type($post_id);//echo $post_type; die();
 	$contact_data = [];
 
-	if($post_type === 'care-home') {
+	if($post_type === 'care-home' && is_single()) {
 
 		$ch_address = get_field('ch_address', $post_id);
 		$ch_contact_info = get_field('ch_contact_details', $post_id);

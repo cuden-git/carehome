@@ -288,6 +288,10 @@ $selector: ".site";
     }
   }
 
+  &__map {
+    height: rfs-value(500px);
+  }
+
   &__footer {
     position: relative;
     padding: rfs-value(80px) 0 2rem;

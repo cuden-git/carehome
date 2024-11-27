@@ -11755,6 +11755,9 @@ textarea {
 .site__form .btn {
   align-self: flex-end;
 }
+.site__map {
+  height: 31.25rem;
+}
 .site__footer {
   position: relative;
   padding: 5rem 0 2rem;

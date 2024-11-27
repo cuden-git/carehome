@@ -35,7 +35,7 @@ add_action('wp_enqueue_scripts', 'understrap_remove_scripts', 20);
  */
 function theme_enqueue_styles()
 {
-
+	global $post;
 	// Get the theme data.
 	$the_theme     = wp_get_theme();
 	$theme_version = $the_theme->get('Version');
@@ -44,8 +44,9 @@ function theme_enqueue_styles()
 	// Grab asset urls.
 	$theme_styles  = "/css/child-theme{$suffix}.css";
 	$theme_scripts = "/js/child-theme{$suffix}.js";
-	$dependency = (!is_singular('care-home'))? ['googlemaps-api'] : null ;
 	$css_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_styles);
+	$load_gm_api = (!is_singular( 'care-home' )  && $post->post_name != 'contact-us')? true : false;
+	$dependency = ($load_gm_api)? ['googlemaps-api'] : null ;
 
 	wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version);
 	wp_enqueue_script('jquery');
@@ -54,7 +55,7 @@ function theme_enqueue_styles()
 
 	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, $dependency, $js_version, true);
 
-	if(!is_singular( 'care-home' )) {
+	if($load_gm_api) {
 		wp_enqueue_script('googlemaps-api', 
 			GOOGLE_MAPS_API_URL . 'js?libraries=places,geometry&v=beta&loading=async&key=' . GOOGLE_API_KEY, 
 			[], 

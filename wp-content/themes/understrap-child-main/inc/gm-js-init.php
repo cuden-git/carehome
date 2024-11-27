@@ -10,6 +10,11 @@
       const position = { lat: <?= $map_location['lat'] ?>, lng: <?= $map_location['lng'] ?> };
       const { Map } = await google.maps.importLibrary("maps");
       const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+      const pin = new google.maps.marker.PinElement({
+        background: "#002147",
+        borderColor: "#B99475",
+        glyphColor: "#B99475",
+      });
       map = new Map(document.getElementById("map"), {
         zoom: <?= $map_location['zoom'] ?>,
         center: position,
@@ -20,6 +25,7 @@
         map: map,
         position: position,
         title: "<?= get_the_title() ?>",
+        content: pin.element,
       });
     }
 
