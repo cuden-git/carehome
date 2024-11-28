@@ -45,7 +45,7 @@ function theme_enqueue_styles()
 	$theme_styles  = "/css/child-theme{$suffix}.css";
 	$theme_scripts = "/js/child-theme{$suffix}.js";
 	$css_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_styles);
-	$load_gm_api = (!is_singular( 'care-home' )  && $post->post_name != 'contact-us')? true : false;
+	$load_gm_api = (!is_singular( 'care-home' )  && $post->post_name != 'contact')? true : false;
 	$dependency = ($load_gm_api)? ['googlemaps-api'] : null ;
 
 	wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version);
