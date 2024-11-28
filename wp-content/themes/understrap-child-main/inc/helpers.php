@@ -140,6 +140,8 @@ function qc_get_careers_cats() {
 function qc_page_title() {
 	if(is_archive()) {
 		$title = get_the_archive_title();
+	}elseif(get_post_type() == 'post' && !is_single()){
+		$title = 'News';
 	}else {
 		$title = get_the_title();
 	}
