@@ -247,6 +247,7 @@ function qc_page_secondary_nav() {
 // see https://developer.wordpress.org/reference/functions/wp_get_post_parent_id/
 	global $post;
 
+	$show_nav = get_field('show_sub-nav', $post->ID);
 	$all_posts = [];
 	$all_posts['parent'] = ($post->post_parent === 0)? null : get_post($post->post_parent);
 	$all_posts['children'] = [];
@@ -262,7 +263,7 @@ function qc_page_secondary_nav() {
 		]);
 	}
 
-	if(empty($all_posts)) {
+	if(empty($all_posts) || $show_nav === false) {
 		return null;
 	}
 
