@@ -23,7 +23,7 @@ if($is_premium) {
         get_template_part('/partials/contact-form');
       }
 
-      if($post->post_name === 'contact-us') {
+      if($post->post_name === 'contact') {
         get_template_part('/partials/contact-map');
       }
     ?>

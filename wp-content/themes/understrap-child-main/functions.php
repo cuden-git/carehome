@@ -476,6 +476,21 @@ add_filter('wp_get_attachment_image', 'qc_remove_image_dimensions', 10, 1);
 add_post_type_support( 'page', 'excerpt' );
 
 /**
+ * Rewrite rules for post_type = post to include /news/ in the URL
+ */
+function custom_post_permalink_structure($post_link, $post) {
+	if ($post->post_type == 'post') {
+			return home_url('/news/' . $post->post_name . '/');
+	}
+	return $post_link;
+}
+add_filter('post_link', 'custom_post_permalink_structure', 10, 2);
+function add_news_rewrite_rules() {
+	add_rewrite_rule('^news/([^/]+)/?$', 'index.php?name=$matches[1]', 'top');
+}
+add_action('init', 'add_news_rewrite_rules');
+
+/**
  * MailHog setup
  */
 add_action( 'phpmailer_init', 'qc_mailhog_setup' );
