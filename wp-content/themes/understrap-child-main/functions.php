@@ -45,7 +45,7 @@ function theme_enqueue_styles()
 	$theme_styles  = "/css/child-theme{$suffix}.css";
 	$theme_scripts = "/js/child-theme{$suffix}.js";
 	$css_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_styles);
-	$load_gm_api = (!is_singular( 'care-home' )  && $post->post_name != 'contact-us')? true : false;
+	$load_gm_api = (!is_singular( 'care-home' )  && (isset($post->post_name) && $post->post_name != 'contact'))? true : false;
 	$dependency = ($load_gm_api)? ['googlemaps-api'] : null ;
 
 	wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version);
@@ -508,6 +508,33 @@ function qc_ch_rewrite_rules() {
 }
 add_action('init', 'qc_ch_rewrite_rules');
 
+/**
+ * Rewrite rules for post_type = career to show /careers/career-search in the URL for archive
+ */
+function qc_c_permalink_structure($post_link, $post) {
+	if (isset($post->post_type) && $post->post_type == 'career') {
+			return home_url('/careers/' . $post->post_name . '/');
+	}
+	return $post_link;
+}
+add_filter('post_type_link', 'qc_c_permalink_structure', 10, 2);
+add_filter('page_link', 'qc_c_permalink_structure', 10, 2);
+
+function qc_c_rewrite_rules() {
+	add_rewrite_rule('^careers/([^/]+)/?$', 'index.php?career=$matches[1]', 'top');
+}
+add_action('init', 'qc_c_rewrite_rules');
+
+/**
+ * 
+ */
+// add_filter('post_type_archive_link', function($link, $post_type) {
+// 	if($post_type == 'career') {
+// 		$link = home_url('/careers/careers-search');
+// 	}
+
+// 	return $link;
+// }, 10, 2);
 /**
  * MailHog setup
  */

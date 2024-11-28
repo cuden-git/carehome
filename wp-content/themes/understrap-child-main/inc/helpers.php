@@ -248,7 +248,7 @@ function qc_page_secondary_nav() {
 	global $post;
 
 	$all_posts = [];
-	$all_posts['parent'] = ($post->post_parent === 0)? null : get_post($post->post_parent);
+	$all_posts['parent'] = (isset($post->post_parent) && $post->post_parent === 0)? null : get_post($post->post_parent);
 	$all_posts['children'] = [];
 
 	if(is_page()) {
