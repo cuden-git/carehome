@@ -478,17 +478,35 @@ add_post_type_support( 'page', 'excerpt' );
 /**
  * Rewrite rules for post_type = post to include /news/ in the URL
  */
-function custom_post_permalink_structure($post_link, $post) {
+function qc_news_permalink_structure($post_link, $post) {
 	if ($post->post_type == 'post') {
 			return home_url('/news/' . $post->post_name . '/');
 	}
 	return $post_link;
 }
-add_filter('post_link', 'custom_post_permalink_structure', 10, 2);
-function add_news_rewrite_rules() {
+add_filter('post_link', 'qc_news_permalink_structure', 10, 2);
+
+function qc_news_rewrite_rules() {
 	add_rewrite_rule('^news/([^/]+)/?$', 'index.php?name=$matches[1]', 'top');
 }
-add_action('init', 'add_news_rewrite_rules');
+add_action('init', 'qc_news_rewrite_rules');
+
+/**
+ * Rewrite rules for post_type = care-home to show /care-homes/ in the URL
+ */
+function qc_ch_permalink_structure($post_link, $post) {
+	if (isset($post->post_type) && $post->post_type == 'care-home') {
+			return home_url('/care-homes/' . $post->post_name . '/');
+	}
+	return $post_link;
+}
+add_filter('post_type_link', 'qc_ch_permalink_structure', 10, 2);
+add_filter('page_link', 'qc_ch_permalink_structure', 10, 2);
+
+function qc_ch_rewrite_rules() {
+	add_rewrite_rule('^care-homes/([^/]+)/?$', 'index.php?care-home=$matches[1]', 'top');
+}
+add_action('init', 'qc_ch_rewrite_rules');
 
 /**
  * MailHog setup
