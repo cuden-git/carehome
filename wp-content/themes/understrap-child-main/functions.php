@@ -526,32 +526,12 @@ function qc_c_rewrite_rules() {
 add_action('init', 'qc_c_rewrite_rules');
 
 /**
- * 
+ * Intercept query for career post type and ensure pages
+ *  and post type can share 'careers' parent slug
  */
-// add_filter('post_type_archive_link', function($link, $post_type) {
-// 	if($post_type == 'career') {
-// 		$link = home_url('/careers/careers-search');
-// 	}
+function qc_career_parse_request( $wp ) {
+    $post_type = 'career';
 
-// 	return $link;
-// }, 10, 2);
-
-function wpa_parse_query( $query ){
-	if( is_singular() && isset( $query->query_vars['career'] ) ){
-			wp_redirect( home_url() );
-	}
-}
-//add_action( 'parse_query', 'wpa_parse_query' );
-
-add_action( 'parse_request', 'my_parse_request' );
-function my_parse_request( $wp ) {
-    $post_type = 'career'; // set the post type slug
-    // and the "whatever" below is the Page slug
-
-    // This code checks if the path of the current request/page URL begins with
-    // "whatever/" as in https://example.com/whatever/child-page-name and also
-    // https://example.com/whatever/child-page-name/page/2 (paginated request).
-    // We also check if the post_type var is the post type set above.
     if ( preg_match( '#^careers/#', $wp->request ) &&
         isset( $wp->query_vars['post_type'], $wp->query_vars['name'] ) &&
         $post_type === $wp->query_vars['post_type']
@@ -561,24 +541,25 @@ function my_parse_request( $wp ) {
             'name'      => $wp->query_vars['name'],
         ) );
 
-        // If a (child) Page with the same name/slug exists, we load the Page,
-        // regardless the post type post exists or not.
         if ( ! empty( $posts ) ) {
-            $wp->query_vars['pagename'] = get_page_uri( $posts[0] );
+					$wp->query_vars['pagename'] = get_page_uri( $posts[0] );
 
-            unset( $wp->query_vars['post_type'], $wp->query_vars['name'],
-                $wp->query_vars[ $post_type ] );
+					unset( $wp->query_vars['post_type'], $wp->query_vars['name'],
+					$wp->query_vars[ $post_type ] );
         }
     }
 }
 
-add_filter( 'register_career_post_type_args', function ( $args, $post_type )
-{
+/**
+ * Add additional args to career post type registration
+ */
+add_filter( 'register_career_post_type_args', function ( $args, $post_type ) {
   $args['rewrite'] = true;
 	$args['has_archive'] = 'careers/careers-search';
 
   return $args;
 }, 10, 2 );
+
 /**
  * MailHog setup
  */
