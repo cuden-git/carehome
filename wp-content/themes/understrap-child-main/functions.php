@@ -518,7 +518,7 @@ function qc_c_permalink_structure($post_link, $post) {
 	return $post_link;
 }
 add_filter('post_type_link', 'qc_c_permalink_structure', 10, 2);
-add_filter('page_link', 'qc_c_permalink_structure', 10, 2);
+// add_filter('page_link', 'qc_c_permalink_structure', 10, 2);
 
 function qc_c_rewrite_rules() {
 	add_rewrite_rule('^careers/([^/]+)/?$', 'index.php?career=$matches[1]', 'top');
@@ -535,6 +535,50 @@ add_action('init', 'qc_c_rewrite_rules');
 
 // 	return $link;
 // }, 10, 2);
+
+function wpa_parse_query( $query ){
+	if( is_singular() && isset( $query->query_vars['career'] ) ){
+			wp_redirect( home_url() );
+	}
+}
+//add_action( 'parse_query', 'wpa_parse_query' );
+
+add_action( 'parse_request', 'my_parse_request' );
+function my_parse_request( $wp ) {
+    $post_type = 'career'; // set the post type slug
+    // and the "whatever" below is the Page slug
+
+    // This code checks if the path of the current request/page URL begins with
+    // "whatever/" as in https://example.com/whatever/child-page-name and also
+    // https://example.com/whatever/child-page-name/page/2 (paginated request).
+    // We also check if the post_type var is the post type set above.
+    if ( preg_match( '#^careers/#', $wp->request ) &&
+        isset( $wp->query_vars['post_type'], $wp->query_vars['name'] ) &&
+        $post_type === $wp->query_vars['post_type']
+    ) {
+        $posts = get_posts( array(
+            'post_type' => 'page',
+            'name'      => $wp->query_vars['name'],
+        ) );
+
+        // If a (child) Page with the same name/slug exists, we load the Page,
+        // regardless the post type post exists or not.
+        if ( ! empty( $posts ) ) {
+            $wp->query_vars['pagename'] = get_page_uri( $posts[0] );
+
+            unset( $wp->query_vars['post_type'], $wp->query_vars['name'],
+                $wp->query_vars[ $post_type ] );
+        }
+    }
+}
+
+add_filter( 'register_career_post_type_args', function ( $args, $post_type )
+{
+  $args['rewrite'] = true;
+	$args['has_archive'] = 'careers/careers-search';
+
+  return $args;
+}, 10, 2 );
 /**
  * MailHog setup
  */
