@@ -549,6 +549,7 @@ function qc_career_parse_request( $wp ) {
         }
     }
 }
+add_action('parse_request', 'qc_career_parse_request');
 
 /**
  * Add additional args to career post type registration
@@ -559,6 +560,36 @@ add_filter( 'register_career_post_type_args', function ( $args, $post_type ) {
 
   return $args;
 }, 10, 2 );
+
+/**
+ * Add additional args to role post type registration
+ */
+// add_filter( 'register_role_post_type_args', function ( $args, $post_type ) {
+//   $args['rewrite'] = true;
+// 	$args['has_archive'] = 'careers/role';
+
+//   return $args;
+// }, 10, 2 );
+
+/**
+ * Rewrite rules for post_type = role to show /careers/career-roles in the URL for archive
+ */
+function qc_r_permalink_structure($post_link, $post) {
+	if (isset($post->post_type) && $post->post_type == 'role') {
+			return home_url('/careers/career-roles/' . $post->post_name . '/');
+	}
+	return $post_link;
+}
+add_filter('post_type_link', 'qc_r_permalink_structure', 10, 2);
+// add_filter('page_link', 'qc_c_permalink_structure', 10, 2);
+
+function qc_r_rewrite_rules() {
+	add_rewrite_rule('^careers/career-roles/([^/]+)/?$', 'index.php?role=$matches[1]', 'top');
+}
+add_action('init', 'qc_r_rewrite_rules');
+
+
+
 
 /**
  * MailHog setup
