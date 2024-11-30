@@ -549,7 +549,7 @@ function qc_career_parse_request( $wp ) {
         }
     }
 }
-
+add_action('parse_request', 'qc_career_parse_request');
 /**
  * Add additional args to career post type registration
  */
