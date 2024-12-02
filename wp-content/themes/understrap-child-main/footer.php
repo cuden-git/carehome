@@ -20,10 +20,10 @@ if($is_premium) {
       }else if(is_singular('care-home')) {
         get_template_part('/partials/care-home-brochures');
       }else {
-        get_template_part('/partials/contact-form');
+        get_template_part('/partials/contact-form', null, ['contact' => true]);
       }
 
-      if($post->post_name === 'contact') {
+      if($post && $post->post_name === 'contact') {
         get_template_part('/partials/contact-map');
       }
     ?>

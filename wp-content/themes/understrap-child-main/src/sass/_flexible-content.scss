@@ -2,13 +2,16 @@ $selector: ".fc";
 
 #{$selector} {
   &__img-text {
+    img,
+    figure {
+      width: 100%;
+    }
     &--overlap {
-      #{$selector}__img-text {
-        &-img {
-          figure {
-            margin-top: rfs-value(-200px);
-          }
-        }
+      margin-bottom: -125px;
+      padding-bottom: 6rem !important;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 0;
+        padding-bottom: 3rem !important;
       }
     }
 
@@ -21,6 +24,9 @@ $selector: ".fc";
         &-text {
           order: 1;
           padding-left: rfs-value(50px);
+          @include media-breakpoint-down(lg) {
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+          }
         }
       }
     }
@@ -29,6 +35,9 @@ $selector: ".fc";
       #{$selector}__img-text {
         &-text {
           padding-right: rfs-value(50px);
+          @include media-breakpoint-down(lg) {
+            padding-right: calc(var(--bs-gutter-x) * 0.5);
+          }
         }
       }
     }
@@ -39,14 +48,6 @@ $selector: ".fc";
       background-size: auto 137%;
       background-position: left 19% top 41%;
       background-color: $qc-blue-lighter;
-      padding-top: 180px;
-      padding-bottom: 180px;
-      margin-top: -140px;
-      margin-bottom: -140px;
-    }
-    &--none {
-      padding-top: 160px;
-      padding-bottom: 160px;
     }
 
     &-text {
@@ -60,11 +61,14 @@ $selector: ".fc";
 
       background-size: 150%;
       background-position: left top;
-      background-color:  $qc-blue-lighter;
+      background-color: $qc-blue-lighter;
     }
   }
 
   &__testimonials {
+    .splide__pagination {
+      padding-left: 0;
+    }
     @extend %q-bg-img;
 
     background-size: auto 139%;
@@ -80,7 +84,20 @@ $selector: ".fc";
       }
     }
   }
-
+  &__video {
+    figure {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
+      aspect-ratio: 16/9;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
   &__featured {
     &-card {
       @extend %q-bg-img;
@@ -105,12 +122,13 @@ $selector: ".fc";
 
       &-img {
         margin-bottom: rfs-value(40px);
-        height: 40%;
 
         img {
           height: 100%;
           object-fit: cover;
           object-position: center;
+          aspect-ratio: 16/7;
+          width: 100%;
         }
       }
 
@@ -135,17 +153,17 @@ $selector: ".fc";
       flex-direction: column;
 
       &-title {
-        font-size: rfs-value(25px);
-        margin-bottom: rfs-value(40px);
+        font-size: 22px;
+        margin-bottom: 20px;
       }
 
       &-tr {
-        border-bottom: rfs-value(1px) solid $qc-blue-light;
+        border-bottom: 2px solid $qc-blue-light;
         justify-content: space-between;
-        padding-bottom: rfs-value(20px);
+        padding-bottom: 1rem;
 
         & + div {
-          padding-top: rfs-value(20px);
+          padding-top: 1rem;
         }
 
         &:last-of-type {
@@ -191,6 +209,13 @@ $selector: ".fc";
 
       &--dark {
         background-color: $qc-blue-dark;
+        .btn-white {
+          color: $qc-blue-dark;
+          &:hover {
+            background-color: $qc-blue-light;
+            color: $qc-white;
+          }
+        }
       }
 
       &-title {
@@ -204,4 +229,33 @@ $selector: ".fc";
       }
     }
   }
+}
+
+.home {
+  .fc__news {
+    .col-md-6 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.fc__img-text-mid {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  margin-top: -65px;
+  margin-bottom: -65px;
+  @include media-breakpoint-down(lg) {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+}
+.top_img_section,
+.bott-img-section {
+  z-index: 2;
+  position: relative;
+}
+.rise-up {
+  z-index: 2;
+  position: relative;
 }

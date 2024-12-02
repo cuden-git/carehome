@@ -15,12 +15,14 @@ get_header();
 <main class="site__main" id="main">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-6 page-intro">
-        <h2 class="page-intro__title"><?php the_title() ?></h2>
-        <?php the_content() ?>
-        <a href="#" class="btn btn-primary" title="<?= __('Contact Us',THEME_NAMESPACE) ?>"><?= __('Contact Us',THEME_NAMESPACE) ?></a>
+      <div class="col-12 col-lg-6 mb-lg-0 mb-5 page-intro d-flex align-items-center mb-lg-0 mb-5">
+        <div>
+          <h2 class="page-intro__title mb-4"><?php the_title() ?></h2>
+          <?php the_content() ?>
+          <a href="#" class="btn btn-primary mt-4" title="<?= __('Contact Us',THEME_NAMESPACE) ?>"><?= __('Contact Us',THEME_NAMESPACE) ?></a>
+        </div>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-lg-6">
         <?php get_template_part('/partials/careers-search-short') ?>
       </div>
     </div>

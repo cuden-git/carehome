@@ -7,6 +7,7 @@ import './carousels';
 import ViewSwitch from './view-switch';
 import EmailCareer from './email-career';
 import MenuCollapse from './menu-collapse';
+import {chSearch} from './misc';
 
 const careHomeResults = new CareHomeResults();
 const typeSearch = new TypeSearch(careHomeResults.stage);
@@ -14,3 +15,5 @@ const mapCareHomes = new MapCareHomes();
 const viewSwitch = new ViewSwitch();
 const emailCareer = new EmailCareer();
 const menuCollapse = new MenuCollapse(767);//767 represents the breakpoint to trigger the functionality
+
+chSearch();

@@ -232,7 +232,7 @@ add_action('acf/init', 'qc_acf_init');
  */
 function qc_get_acf_block_attrs($post_content, $block_name) {
 	$blocks = parse_blocks($post_content);
- // print_r(get_field('ch_address_address'), get_the_ID());die();
+
 	foreach ($blocks as $block) {
 		if ($block['blockName'] === $block_name) {
 			$fields = $block['attrs']['data'];
@@ -282,8 +282,18 @@ function qc_location_ordered_posts() {
  * Change number of posts displayed on for Care Home post type archive page
  */
 function qc_ch_queries( $query ) {
-  if (!is_admin() && $query->is_main_query() && isset($query->query['post_type']) && $query->query['post_type'] === 'care-home'){ 
-		$query->set('posts_per_page', 4);
+  if (!is_admin() && $query->is_main_query() && isset($query->query['post_type'])){
+		if($query->query['post_type'] === 'care-home') {
+			$query->set('posts_per_page', 2);
+		}
+
+		if($query->query['post_type'] === 'post') {
+			$query->set('posts_per_page', 10);
+		}
+
+		if($query->query['post_type'] === 'career') {
+			$query->set('posts_per_page', 5);
+		}
 	}
 }
 add_action( 'pre_get_posts', 'qc_ch_queries', 12);
@@ -587,9 +597,6 @@ function qc_r_rewrite_rules() {
 	add_rewrite_rule('^careers/career-roles/([^/]+)/?$', 'index.php?role=$matches[1]', 'top');
 }
 add_action('init', 'qc_r_rewrite_rules');
-
-
-
 
 /**
  * MailHog setup

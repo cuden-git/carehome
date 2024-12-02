@@ -6,9 +6,9 @@
   $settings = get_sub_field('settings');
 ?>
 
-<section class="post-section fc__img-text<?= ($settings['img_aligned_left'])? ' fc__img-text--left' : ' fc__img-text--right' ?><?= ($settings['img_overlap'])? ' fc__img-text--overlap' : null ?><?= ($settings['bg_colour'])? ' fc__img-text--bg' : ' fc__img-text--none' ?>">
+<section class="post-section py-5 fc__img-text<?= ($settings['img_aligned_left'])? ' fc__img-text--left' : ' fc__img-text--right' ?><?= ($settings['img_overlap'])? ' fc__img-text--overlap' : null ?><?= ($settings['bg_colour'])? ' fc__img-text--bg' : ' fc__img-text--none' ?>">
   <div class="container">
-    <div class="row">
+    <div class="row py-md-5 py-0">
       <div class="col-12 col-lg-5 fc__img-text-text d-flex <?= ($settings['img_aligned_left'])? 'order-lg-5 order-1' : ' order-1' ?>">
         <div class="mb-lg-0 mb-5 <?= ($settings['img_aligned_left'])? ' ps-lg-5 ps-0 ' : ' pe-lg-5 pe-0 ' ?>">
           <h2 class="post-section__title mb-3"><?= $title ?></h2>

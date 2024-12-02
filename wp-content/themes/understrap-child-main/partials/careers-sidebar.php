@@ -7,7 +7,10 @@ $ch_args = [
 ];
 $care_homes = get_posts($ch_args);
 ?>
-<form class="careers-list__filters bg-primary">
+<button class="btn btn-secondary w-100 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#career-filter" aria-expanded="false" aria-controls="collapseFilter">
+  Filter <i class="icon-arrow-down"></i>
+</button>
+<form id="career-filter" class="collapse careers-list__filters bg-primary">
   <fieldset class="d-flex flex-column">
     <label>
       <select name="careers_distance"<?php if(!isset($_GET['careers_location']) || $_GET['careers_location'] === "") echo ' disabled'?>>
@@ -27,7 +30,7 @@ $care_homes = get_posts($ch_args);
         <?php
         foreach($care_homes as $care_home) {
         ?>
-          <option value="<?= get_permalink($care_home->ID) ?>"><?= $care_home->post_title ?></option>
+          <option value="<?= $care_home->ID ?>"><?= $care_home->post_title ?></option>
         <?php
         }
         ?>

@@ -5,7 +5,7 @@ $ch_args = [
 ];
 $care_homes = get_posts($ch_args);
 ?>
-<label class="flex-grow-1 me-3">
+<label class="flex-grow-1 d-lg-flex d-block me-md-3 me-0">
   <select class="border-none" name="care_homes">
     <option value=""><?= __('Care Homes', THEME_NAMESPACE) ?></option>
     <?php

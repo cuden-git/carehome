@@ -9895,18 +9895,21 @@
 	  }
 	  addEvents() {
 	    this.menus.forEach(menu => {
-	      let list = menu.querySelector('ul');
+	      menu.querySelector('ul');
 	      let items = [...menu.querySelectorAll('li')];
 	      let displayArea = menu.querySelector('.menu-collapse__display');
 	      let displayAreaText = displayArea.querySelector('span');
 	      let currentPageLink = menu.querySelector('li.current');
 	      menu.addEventListener('click', () => {
 	        menu.classList.toggle('menu-collapse--open');
-	        if (menu.classList.contains('menu-collapse--open')) {
-	          list.style.height = list.scrollHeight + "px";
-	        } else {
-	          list.style.height = "";
-	        }
+
+	        // if(menu.classList.contains('menu-collapse--open')) {
+	        //   let scrollH = list.scrollHeight + "px";
+	        //   list.style.height = "0px";
+	        //   list.style.height = scrollH;
+	        // }else {
+	        //   list.style.height = "";
+	        // }
 	      });
 	      items.forEach((item, index) => {
 	        let displayText = currentPageLink ? currentPageLink.innerText : items[0].innerText;
@@ -9938,6 +9941,20 @@
 	  }
 	}
 
+	const chSearch = () => {
+	  const srchForm = document.getElementById('care-home-select');
+	  if (!srchForm) return;
+	  const submitBtn = srchForm.querySelector('[type="submit"]');
+	  const selectField = srchForm.querySelector('select');
+	  selectField.addEventListener('change', e => {
+	    if (selectField.value === "") {
+	      submitBtn.disabled = true;
+	    } else {
+	      submitBtn.disabled = false;
+	    }
+	  });
+	};
+
 	// Add your custom JS here.
 	//import './gm';
 	const careHomeResults = new CareHomeResults();
@@ -9946,6 +9963,8 @@
 	new ViewSwitch();
 	new EmailCareer();
 	new MenuCollapse(767); //767 represents the breakpoint to trigger the functionality
+
+	chSearch();
 
 	exports.Alert = alert;
 	exports.Button = button;

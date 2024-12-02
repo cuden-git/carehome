@@ -30,6 +30,10 @@
   font-display: block;
 }
 
+strong {
+  font-family: "poppins-semi-bold";
+}
+
 body {
   font-family: poppins-light, san-serif;
   background-color: $white;
@@ -42,7 +46,11 @@ h1 {
 }
 h2 {
   font-size: 2.2rem;
-  line-height: rfs-value(55px);
+  line-height: 2.5rem;
+  @include media-breakpoint-down(md) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
 }
 h3 {
 }
@@ -100,31 +108,77 @@ h5 {
 .btn,
 .btn-primary {
   color: $qc-white;
-
+  transition: 0.3s;
   &--inverse {
     background-color: unset;
     border: rfs-value(1px) solid $qc-blue-light;
     color: $qc-blue-light;
+    &.on-blue {
+      &:hover {
+        background-color: $qc-white;
+        color: $qc-blue-dark;
+      }
+    }
   }
 }
-
+.btn-primary {
+  &.on-blue {
+    &:hover {
+      background-color: $qc-white;
+      color: $qc-blue-dark;
+    }
+  }
+  &:hover {
+    background-color: $qc-blue-dark;
+    color: $qc-white;
+  }
+}
 .btn-gold {
   background-color: $qc-gold;
-  npm &--inverse {
+  transition: 0.3s;
+  &:hover {
+    &.on-blue {
+      background-color: $qc-white;
+      border-color: $qc-white;
+      color: $qc-gold;
+    }
+    background-color: $qc-blue-dark;
+    border-color: $qc-blue-dark;
+    color: $qc-white;
+  }
+  &--inverse {
     background-color: unset;
     border-color: $qc-gold;
     color: $qc-gold;
+    &:hover {
+      background-color: $qc-white;
+    }
   }
 }
 
 .btn-white {
   background-color: $white;
   color: $qc-blue-light;
+  transition: 0.3s;
+  &:hover {
+    background-color: $qc-blue-dark;
+    color: $qc-white;
+  }
+  &.on-blue {
+    &:hover {
+      background-color: $qc-blue-dark;
+      color: $qc-white;
+    }
+  }
 
   &--inverse {
     background-color: unset;
     border-color: $qc-white;
     color: $qc-white;
+    &:hover {
+      background-color: $qc-blue-dark;
+      color: $qc-white;
+    }
   }
 }
 
@@ -137,7 +191,8 @@ h5 {
   &__pagination {
     &__page {
       border-radius: 50%;
-      border: none;
+      border: 1px solid $qc-blue-light;
+      background-color: transparent;
       width: rfs-value(16px);
       height: rfs-value(16px);
       margin: 0 rfs-value(4px);
@@ -147,7 +202,7 @@ h5 {
       }
 
       .splide__pagination--inverse & {
-        border: rfs-value(1px) solid $qc-white;
+        border: 1px solid $qc-white;
         background-color: unset;
 
         &.is-active {
@@ -158,9 +213,14 @@ h5 {
   }
 
   &__arrow {
-    color: $qc-white;
-    font-size: rfs-value(60px);
+    color: $qc-blue-light;
+    font-size: 2.5rem;
     cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: $qc-blue-dark;
+      transform: scale(0.9);
+    }
   }
 
   &__bullets {
@@ -172,11 +232,17 @@ h5 {
 
 .page-intro {
   padding-right: rfs-value(60px);
+  @include media-breakpoint-down(md) {
+    padding-right: 0;
+  }
 }
 
 .row {
   &:has(.page-intro) {
     margin-bottom: rfs-value(100px);
+    @include media-breakpoint-down(md) {
+      margin-bottom: 3rem;
+    }
   }
 }
 
@@ -219,7 +285,6 @@ figure {
   --bs-nav-link-padding-x: 0;
 }
 
-
 // Collapsible menu
 .menu-collapse {
   position: relative;
@@ -234,7 +299,7 @@ figure {
   &--open {
     overflow: visible;
 
-    >ul {
+    > ul {
       @include media-breakpoint-down(md) {
         position: absolute;
         top: auto;
@@ -247,8 +312,7 @@ figure {
   ul {
     @include media-breakpoint-down(md) {
       overflow: hidden;
-      height: 0;
-      transition: height .3s;
+      transition: height 0.3s;
     }
   }
 }
@@ -282,4 +346,151 @@ figure {
 
 .border-none {
   border-color: transparent;
+}
+
+.genric-page {
+  img {
+    margin-top: 2.2rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2.2rem;
+  }
+}
+
+.wpcf7 {
+  input.btn {
+    border: none;
+    transition: 0.3s;
+    &:hover {
+      background-color: $qc-white;
+      color: $qc-blue-dark;
+      border: none;
+    }
+  }
+}
+
+.single-post {
+  .news-single-news-area {
+    .col-md-6 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.bg-colour-double {
+  background-color: $qc-blue-lighter;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  @extend %q-bg-img-dark;
+  background-size: 200% 200%;
+  background-position: -15% 20%;
+  margin-top: -150px;
+  margin-bottom: -150px;
+  z-index: 1;
+  position: relative;
+  img {
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    z-index: 2;
+    @include media-breakpoint-down(lg) {
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+  }
+  .white-overlay {
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    height: 300px;
+    z-index: -1;
+  }
+}
+.fc__img-our-care {
+  position: relative;
+  z-index: 2;
+  img {
+    height: 600px;
+    @include media-breakpoint-down(lg) {
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+.minus-margin {
+  margin-bottom: -3rem;
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 0;
+  }
+}
+
+.video-holder {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
+  aspect-ratio: 16/9;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.fc__img-text-mid {
+  .white-overlay {
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    height: 300px;
+    z-index: 1;
+  }
+}
+
+.bg-light-blue {
+  padding-top: rfs-value(100px);
+  @extend %q-bg-img-dark;
+  background-color: $qc-blue-lighter;
+  background-size: 200% 200%;
+  background-position: -15% 20%;
+}
+
+.margin-4rem {
+  margin-bottom: 4rem;
+}
+
+div[role="dialog"] {
+  .gm-style-iw-d {
+    h6 {
+      font-size: 20px;
+    }
+    a:first-of-type {
+      background-color: $qc-blue-dark;
+      color: white;
+      width: 100%;
+      height: 40px;
+      font-size: 18px;
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+      transition: 0.3s;
+      text-align: center;
+      &:hover {
+        background-color: $qc-blue-light;
+        color: $white;
+      }
+    }
+  }
 }

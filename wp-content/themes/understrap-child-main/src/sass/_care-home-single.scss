@@ -4,8 +4,40 @@ $selector: ".care-home";
   $premium-hook: #{$selector + "--premium"};
 
   .post-section {
-    padding-top: rfs-value(100px);
-    padding-bottom: rfs-value(100px);
+    padding-top: rfs-value(80px);
+    padding-bottom: rfs-value(80px);
+    @include media-breakpoint-down(md) {
+      padding-top: rfs-value(45px);
+      padding-bottom: rfs-value(45px);
+    }
+  }
+  &__forms {
+    .site__form-text {
+      address a {
+        #{$premium-hook} & {
+          color: $qc-gold;
+        }
+      }
+    }
+    .wpcf7 {
+      input.btn {
+        border: none;
+        transition: 0.3s;
+        &:hover {
+          background-color: $qc-white;
+          color: $qc-blue-dark;
+          border: none;
+        }
+        #{$premium-hook} & {
+          background-color: $qc-gold;
+          border: none;
+          &:hover {
+            background-color: $qc-white;
+            color: $qc-blue-dark;
+          }
+        }
+      }
+    }
   }
 
   // &--premium {
@@ -26,7 +58,10 @@ $selector: ".care-home";
       position: relative;
       aspect-ratio: 746 / 589;
       width: 500px;
-
+      @include media-breakpoint-down(md) {
+        width: 70%;
+        margin: 0 auto;
+      }
       &::after {
         content: "";
         position: absolute;
@@ -45,7 +80,7 @@ $selector: ".care-home";
         // object-fit: cover;
         // border-radius: 50%;
         width: 55%;
-       // height: 300px;
+        // height: 300px;
         -o-object-fit: cover;
         object-fit: cover;
         border-radius: 50%;
@@ -56,8 +91,9 @@ $selector: ".care-home";
     }
 
     div {
-      &:has(>address) {
-        margin-bottom: rfs-value(50px);
+      &:has(> address) {
+        font-size: 14px;
+        line-height: 20px;
       }
     }
 
@@ -65,7 +101,7 @@ $selector: ".care-home";
       flex-basis: 100%;
 
       @include media-breakpoint-up(md) {
-        padding-right: rfs-value(90px);
+        padding-right: 1.5rem;
       }
 
       & + address {
@@ -76,6 +112,15 @@ $selector: ".care-home";
     address {
       a {
         color: $white;
+        transition: 0.3s;
+        &:hover {
+          color: $qc-blue-dark;
+        }
+        #{$premium-hook} & {
+          &:hover {
+            color: $qc-gold;
+          }
+        }
       }
     }
 
@@ -84,23 +129,80 @@ $selector: ".care-home";
     }
 
     .btn {
-      &+ .btn {
-        margin-left: rfs-value(30px);
+      margin-right: rfs-value(30px);
+      & + .btn {
       }
     }
   }
 
   &__nav {
-    background-color: $qc-blue-lighter;
+    background-color: $qc-dark-grey;
     font-size: rfs-value(25px);
-    padding-top: rfs-value(20px);
-    padding-bottom: rfs-value(35px);
+
+    .menu-collapse {
+      .menu-collapse__display {
+        transition: 0.3s;
+        color: $qc-blue-dark;
+        &:hover {
+          color: $qc-white;
+          #{$premium-hook} & {
+            background-color: $qc-gold;
+          }
+          background-color: $qc-blue-dark;
+          a {
+            color: $qc-white;
+          }
+          .icon-arrow-down {
+            color: $qc-white;
+          }
+        }
+      }
+      &--open {
+        .icon-arrow-down {
+          transform: rotate(180deg);
+        }
+      }
+      ul {
+        @include media-breakpoint-down(md) {
+          background-color: $qc-blue-lighter;
+        }
+        li {
+          transform: 0.3s;
+          &:hover {
+            #{$premium-hook} & {
+              background-color: $qc-gold;
+            }
+            background-color: $qc-blue-dark;
+            a {
+              color: $qc-white;
+            }
+          }
+        }
+      }
+      .icon-arrow-down {
+        transition: 0.3s;
+        color: #fff;
+        font-size: 2rem;
+        position: absolute;
+        right: 50px;
+        #{$premium-hook} & {
+          color: $qc-gold;
+        }
+      }
+    }
 
     a {
       text-decoration: none;
       color: $qc-black;
       padding-left: rfs-value(20px);
       padding-right: rfs-value(20px);
+      transition: 0.3s;
+      &:hover {
+        color: $qc-blue-light;
+        #{$premium-hook} & {
+          color: $qc-gold;
+        }
+      }
     }
   }
 
@@ -111,22 +213,60 @@ $selector: ".care-home";
       background-color: $qc-white;
     }
 
-    background-color: #efece9;
     background-size: auto 131%;
     background-position: left 39% top -70%;
 
     :not(.btn) {
       color: $qc-black;
-    }    
+    }
 
     &-text {
       column-count: 2;
-      column-rule: rfs-value(1px) solid $qc-gold;
+      column-rule: rfs-value(2px) solid $qc-blue-light;
+      #{$premium-hook} & {
+        column-rule: rfs-value(2px) solid $qc-gold;
+      }
       column-gap: rfs-value(100px);
+      @include media-breakpoint-down(md) {
+        column-count: 1;
+      }
     }
   }
 
   &__carousel {
+    .splide__arrows {
+      width: 80%;
+      margin: 0 auto;
+      li {
+        button {
+          border: 1px solid $qc-blue-light;
+          &.is-active {
+            background-color: $qc-blue-light;
+          }
+        }
+      }
+      .splide__arrow {
+        // color: $qc-blue-light;
+      }
+    }
+    &.premium {
+      background-color: $qc-pale-gold;
+      li {
+        button {
+          border: 1px solid $qc-gold;
+
+          &.is-active {
+            background-color: $qc-gold;
+          }
+        }
+      }
+      .splide__arrow {
+        color: $qc-gold;
+        &:hover {
+          color: $qc-blue-dark;
+        }
+      }
+    }
     &-track {
       margin-bottom: rfs-value(30px);
     }
@@ -136,6 +276,7 @@ $selector: ".care-home";
         width: 100%;
         height: 100%;
         object-fit: cover;
+        aspect-ratio: 16 / 9 auto;
       }
     }
   }
@@ -147,40 +288,140 @@ $selector: ".care-home";
   }
 
   &__team {
-    #{$premium-hook} {
-      background-color: $qc-white;
+    #{$premium-hook} & {
+      background-color: $qc-pale-gold;
+      padding-bottom: 6.25rem;
+    }
+    .icon-arrow-down {
+      transition: 0.3s;
+      color: white;
+      font-size: 2rem;
+      position: absolute;
+      right: 10px;
+      #{$premium-hook} & {
+        color: $qc-gold;
+      }
+    }
+    padding-bottom: 0;
+    .menu-collapse {
+      @include media-breakpoint-down(md) {
+        .nav-item,
+        li,
+        li:not(.care-home__team .menu-collapse.active):hover {
+          transition: 0.3s;
+          &:hover {
+            background-color: $qc-blue-dark;
+            a,
+            a.active {
+              color: white;
+            }
+          }
+        }
+        .menu-collapse__display {
+          transition: 0.3s;
+          &:hover {
+            background-color: $qc-blue-dark;
+            span {
+              color: white;
+            }
+            #{$premium-hook} & {
+              background-color: $qc-blue-dark;
+              span {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      &.menu-collapse--open {
+        @include media-breakpoint-down(md) {
+          .icon-arrow-down {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      @include media-breakpoint-down(md) {
+        margin-bottom: 20px;
+        #{$premium-hook} & {
+          background-color: $qc-dark-grey;
+        }
+        background-color: $qc-blue-light;
+        .menu-collapse__display {
+          align-items: center;
+          transition: 0.3s;
+          justify-content: center;
+          span {
+            font-size: 20px;
+            color: white;
+            text-align: center;
+
+            display: block;
+            #{$premium-hook} & {
+              color: $qc-blue-dark;
+            }
+          }
+        }
+      }
     }
 
     &-nav {
       flex: 1;
       padding-right: rfs-value(80px);
-
-      .menu-collapse {
-        &--open & {
-          background-color: $qc-white;
-        }
+      @include media-breakpoint-down(md) {
+        padding-right: 0;
+        width: 100%;
       }
 
       li {
-        font-size: rfs-value(25px);
-        margin-bottom: rfs-value(30px);
+        font-size: 16px;
+        margin-bottom: 0;
+        @include media-breakpoint-down(md) {
+          padding-right: 0;
+          width: 100%;
+          background-color: $qc-blue-lighter;
+          color: $white;
+          #{$premium-hook} & {
+            background-color: $qc-dark-grey;
+            color: $white;
+          }
+        }
 
         &:has(.active) {
-          background-color: $qc-blue-light;
-
+          background-color: $qc-blue-dark;
+          color: white;
           #{$premium-hook} & {
-            background-color: $qc-blue-lighter;
+            background-color: $qc-dark-grey;
+            @include media-breakpoint-down(md) {
+              background-color: $qc-gold;
+            }
           }
         }
 
         a {
-          padding: rfs-value(15px) rfs-value(35px) rfs-value(25px);
-
+          padding: 20px 30px;
+          text-align: right;
+          @include media-breakpoint-down(md) {
+            text-align: center;
+          }
           &:not(&.active) {
             text-decoration: underline;
+            &:hover {
+              color: $qc-blue-dark;
+            }
+            @include media-breakpoint-down(md) {
+              text-decoration: none;
+            }
 
             #{$premium-hook} & {
               color: $qc-gold;
+              @include media-breakpoint-up(md) {
+                &:hover {
+                  color: $qc-blue-dark;
+                }
+              }
+              @include media-breakpoint-down(md) {
+                color: $qc-blue-dark;
+              }
             }
           }
 
@@ -200,16 +441,22 @@ $selector: ".care-home";
     }
 
     &-pane {
-      padding: rfs-value(55px);
+      // padding: rfs-value(55px);
+      color: $white;
       background-color: $qc-blue-light;
 
       #{$premium-hook} & {
-        background-color: $qc-blue-lighter;
+        background-color: $qc-dark-grey;
+        color: $qc-blue-dark;
       }
     }
 
     &-member {
       padding-right: rfs-value(75px);
+      @include media-breakpoint-down(xl) {
+        padding-right: 0;
+      }
+      text-align: center;
     }
 
     figure {
@@ -219,6 +466,10 @@ $selector: ".care-home";
       padding: rfs-value(10px);
       border-radius: 50%;
       margin-bottom: rfs-value(15px);
+      @include media-breakpoint-down(xl) {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     img {
@@ -231,15 +482,33 @@ $selector: ".care-home";
 
   &__facilities {
     @extend %q-bg-img-dark;
-
+    &.care-home--premium {
+      background-color: $qc-pale-gold;
+    }
     background-size: 100% auto;
-    background-position: left -50% bottom -60%;
-
+    background-position: left -300px bottom -672px;
+    .splide__arrows {
+      margin-top: 20px;
+      i {
+        color: $qc-blue-light;
+        font-size: 2.5rem;
+        #{$premium-hook} & {
+          color: $qc-gold;
+        }
+      }
+    }
     &-types {
-      border-left: rfs-value(1px) solid $qc-blue-light;
+      border-left: 2px solid $qc-blue-light;
       padding-left: rfs-value(140px);
-      margin-top: rfs-value( 55px);
-
+      @include media-breakpoint-down(lg) {
+        padding-left: rfs-value(70px);
+      }
+      @include media-breakpoint-down(md) {
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-top: 3rem;
+        border-left: none;
+        border-top: 2px solid $qc-blue-light;
+      }
       #{$premium-hook} & {
         border-color: $qc-gold;
       }
@@ -247,6 +516,13 @@ $selector: ".care-home";
 
     &-intro {
       padding-right: rfs-value(140px);
+      @include media-breakpoint-down(lg) {
+        padding-right: rfs-value(70px);
+      }
+      @include media-breakpoint-down(md) {
+        padding-right: 0;
+        padding-bottom: 3rem;
+      }
     }
 
     &-icons {
@@ -255,26 +531,30 @@ $selector: ".care-home";
       }
 
       @include media-breakpoint-up(md) {
-        padding-top: rfs-value(90px);
         flex-wrap: wrap;
         justify-content: center;
         gap: rfs-value(10px);
+        padding-top: rfs-value(90px);
       }
 
       li {
         flex-direction: column;
         align-items: center;
 
-        @include media-breakpoint-up(md) {          
+        @include media-breakpoint-up(md) {
           justify-content: space-between;
-          font-size: rfs-value(24px);
+          font-size: 18px;
           flex: 0 1 calc(20% - rfs-value(10px));
-          margin-bottom: rfs-value(100px);
+          margin-bottom: rfs-value(80px);
         }
-        
-        >span {
+
+        > span {
           text-align: center;
-          margin-bottom: rfs-value(20px);
+          margin-bottom: 20px;
+          display: block;
+          .width-90 {
+            width: 90%;
+          }
         }
       }
 
@@ -292,6 +572,9 @@ $selector: ".care-home";
   &__news {
     &-wrap {
       margin-bottom: rfs-value(75px);
+      @include media-breakpoint-down(md) {
+        margin-bottom: 3rem;
+      }
 
       & + .btn {
         position: relative;
@@ -302,13 +585,16 @@ $selector: ".care-home";
 
     &-card {
       background-color: $qc-blue-lighter;
+      #{$premium-hook} & {
+        background-color: $qc-dark-grey;
+      }
       height: 100%;
       flex-direction: column;
 
       &-img {
-        height: rfs-value(310px);
         margin-bottom: rfs-value(30px);
-
+        aspect-ratio: 16 / 9;
+        width: 100%;
         img {
           width: 100%;
           height: 100%;
@@ -327,7 +613,7 @@ $selector: ".care-home";
       }
 
       &-title {
-        font-size: rfs-value(25px);
+        font-size: 1.25rem;
         height: calc(var(--bs-body-line-height) * 3);
         overflow: hidden;
       }
@@ -338,29 +624,58 @@ $selector: ".care-home";
       }
     }
   }
-  
+  &__creds {
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      contain-intrinsic-size: 1003px 600px !important;
+      @include media-breakpoint-down(md) {
+        aspect-ratio: 16/9;
+      }
+    }
+  }
   &__brochures {
     position: relative;
     color: $qc-white;
     z-index: 1;
-
+    &.care-home--premium {
+      li {
+        border-bottom: 2px solid $qc-gold;
+      }
+    }
     li {
-      border-bottom: rfs-value(1px) solid $qc-gold;
-      padding-top: rfs-value(25px);
-      padding-bottom: rfs-value(40px);
+      .btn {
+        position: relative;
+        padding-left: 50px;
+        padding-right: 50px;
+
+        &:hover {
+          i {
+            transform: rotate(180deg);
+          }
+        }
+        i {
+          transition: 0.3s;
+          position: absolute;
+          right: 10px;
+          padding-top: 4px;
+        }
+      }
+      border-bottom: 2px solid $qc-blue-light;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
 
       &:last-child {
         margin-bottom: rfs-value(40px);
       }
-
-      #{$selector}--premium & {
-        border-color: $qc-gold;
-      }
     }
 
     &-label {
-      font-size: rfs-value(45px);
-      color: $qc-blue-light;
+      color: white;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      font-size: 1.4rem;
     }
   }
 }

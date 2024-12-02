@@ -5,11 +5,14 @@ $page_btns = get_field('page_btns');
 get_header();
 ?>
 <main class="site__main">
-  <div class="container">
+  <div class="container mb-5 genric-page">
     <div class="row">
-    <?php the_content() ?>
+      <div class="col-md-10 mx-auto">
+        <?php the_content() ?>
+      </div>
     </div>
-
+    <div class="row">
+      <div class="col-md-10 mx-auto">
     <?php    
       if($page_btns) {
         $loop_index = 0;
@@ -18,7 +21,7 @@ get_header();
         <?php
         foreach($page_btns as $btn) {
         ?>
-        <a href="<?= $btn['btn']['url'] ?>" class="btn btn-primary<?= ($loop_index > 0)? ' btn-primary--inverse' : null ?>" title="<?= $btn['btn']['title'] ?>"><?= $btn['btn']['title'] ?></a>
+        <a href="<?= $btn['btn']['url'] ?>" class="me-4 mb-4 btn btn-primary<?= ($loop_index > 0)? ' btn-primary--inverse' : null ?>" title="<?= $btn['btn']['title'] ?>"><?= $btn['btn']['title'] ?></a>
         <?php
           ++$loop_index;
         }
@@ -27,6 +30,8 @@ get_header();
     <?php
       }
     ?>
+    </div>
+    </div>
   </div>
 </main>
 <?php

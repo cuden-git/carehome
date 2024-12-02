@@ -16,11 +16,13 @@ class MenuCollapse {
       menu.addEventListener('click', () => {
         menu.classList.toggle('menu-collapse--open');
 
-        if(menu.classList.contains('menu-collapse--open')) {
-          list.style.height = list.scrollHeight + "px"
-        }else {
-          list.style.height = "";
-        }
+        // if(menu.classList.contains('menu-collapse--open')) {
+        //   let scrollH = list.scrollHeight + "px";
+        //   list.style.height = "0px";
+        //   list.style.height = scrollH;
+        // }else {
+        //   list.style.height = "";
+        // }
       })
 
       items.forEach((item, index) => {

@@ -15,13 +15,17 @@ get_header();
 <main class="site__main" id="main">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-md-10 mx-auto">
         <?php the_content() ?>
       </div>
     </div>
   </div>
-  <div class="container">
-    <?php get_template_part('/partials/accordion') ?>
+  <div class="container mb-5 pb-md-5 pb-0">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <?php get_template_part('/partials/accordion') ?>
+      </div>
+    </div>
   </div>
 </main>
 <?php

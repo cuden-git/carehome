@@ -3,7 +3,7 @@ $roles_rows = get_field('careers_job_roles', 'option');
 ?>
 <div  class="careers-list__search careers-list__search--flat">
   <form>
-    <fieldset class="type-search d-flex careers-list__search-fields">
+    <fieldset class="type-search d-lg-flex d-block careers-list__search-fields">
       <label class="flex-grow-1 careers-list__search-label">
         <select name="careers_role">
           <option value=""><?= __('Role', THEME_NAMESPACE) ?></option>

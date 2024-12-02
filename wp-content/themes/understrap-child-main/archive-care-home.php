@@ -10,7 +10,7 @@ $archive_list_title = get_field('ch_archive_page_title', 'option');
 $meta_query = [];
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $query_args = [
-  'posts_per_page' => 4,
+  'posts_per_page' => 2,
   'post_type' => 'care-home',
   'post_status' => 'publish',
   'paged' => $paged
@@ -67,7 +67,7 @@ get_header();
         <div class="col-md-8">
           <h3 class=""><?= $archive_list_title ?></h3>
         </div>
-        <div class="col-md-4 map-button-controls">
+        <div class="col-md-4 map-button-controls d-flex justify-content-end">
           <button id="archive-switcher" class="btn btn-primary" type="button" data-swap-label="<?= __('List View', THEME_NAMESPACE) ?>"<?= ($query->found_posts === 0)? ' disabled' : null ?>><?= __('Map View', THEME_NAMESPACE) ?></button>
         </div>
       </div>
@@ -85,16 +85,21 @@ get_header();
         echo qc_archive_no_results_msg();
       }
 
-      wp_reset_postdata();
-      wp_reset_query();
+      
+    //  wp_reset_query();
       ?>
       <div class="col-12 d-flex ch__pagination">
         <?php
-        the_posts_pagination(array(
-          'mid_size'  => 2,
-          'prev_text' =>  '<i class="icon-arrow-left"></i>' . __('Previous', THEME_NAMESPACE),
-          'next_text' => __('Next', THEME_NAMESPACE) . '<i class="icon-arrow-right"></i>'
-        ));
+          the_posts_pagination(array(
+            'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+            'current'   => max( 1, get_query_var( 'paged' ) ),
+            'mid_size'  => 2,
+            'total'     => $query->max_num_pages,
+            'prev_text' =>  '<i class="icon-arrow-left"></i>' . __('Previous', THEME_NAMESPACE),
+            'next_text' => __('Next', THEME_NAMESPACE) . '<i class="icon-arrow-right"></i>'
+          ));
+
+          wp_reset_postdata();
         ?>
       </div>
     </div>

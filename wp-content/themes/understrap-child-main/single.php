@@ -24,7 +24,7 @@ get_header();
     ?>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-5 mb-4 news-single-news-area">
       <?php
       foreach($related_news as $news) {
         get_template_part('/partials/news-card');
@@ -32,7 +32,7 @@ get_header();
       ?>
     </div>
     <div class="text-center">
-    <div class="col-12">
+    <div class="col-12 mb-5">
       <a href="<?= get_post_type_archive_link('post') ?>" class="btn btn-primary" title="<?= __( 'See All News', THEME_NAMESPACE) ?>"><?= __( 'See All News', THEME_NAMESPACE) ?></a>
     </div>
     </div>

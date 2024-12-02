@@ -55,7 +55,6 @@ $selector: ".site";
       font-size: rfs-value(20px);
 
       @include media-breakpoint-up(md) {
-
       }
 
       li {
@@ -75,11 +74,11 @@ $selector: ".site";
     }
 
     &-title {
-      font-size: rfs-value(30px);
+      // font-size: rfs-value(30px);
       padding-bottom: rfs-value(130px);
 
       @include media-breakpoint-up(md) {
-        font-size: rfs-value(60px);
+        // font-size: rfs-value(60px);
         background-size: rfs-value(800px);
       }
     }
@@ -94,16 +93,16 @@ $selector: ".site";
       }
 
       &::after {
-        font-family: 'quantum-care';
+        font-family: "quantum-care";
       }
-  
-      &[aria-expanded=false] {
+
+      &[aria-expanded="false"] {
         &::after {
           content: "\e919";
         }
       }
 
-      &[aria-expanded=true]{
+      &[aria-expanded="true"] {
         &::after {
           content: "\e918";
           font-size: rfs-value(20px);
@@ -156,6 +155,9 @@ $selector: ".site";
 
   &__main {
     padding-top: rfs-value(66px);
+    @include media-breakpoint-down(md) {
+      padding-top: 3rem;
+    }
 
     .home & {
       padding-top: rfs-value(110px);
@@ -166,7 +168,7 @@ $selector: ".site";
     background-color: $qc-blue-dark;
     justify-content: center;
     padding-top: rfs-value(25px);
-    padding-bottom: rfs-value(35px);
+    padding-bottom: rfs-value(25px);
 
     li {
       padding: 0 rfs-value(15px);
@@ -210,7 +212,7 @@ $selector: ".site";
     color: $qc-white;
     z-index: 1;
 
-    &:not(&--section) {
+    &:not(&--section):not(&--page) {
       .container {
         padding-bottom: 50px;
         border-bottom: 2px solid $qc-blue-light;
@@ -224,6 +226,10 @@ $selector: ".site";
       background-color: $qc-blue-dark;
       background-size: 200% 200%;
       background-position: -15% 20%;
+    }
+
+    &--page {
+
     }
 
     &-text {

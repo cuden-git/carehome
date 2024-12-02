@@ -15,9 +15,9 @@ get_header();
 ?>
 
 <main class="site__main" id="main">
-  <div class="container mb-4">
+  <div class="container minus-margin">
     <div class="row">
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-lg-9">
         <?php the_content() ?>
       </div>
     </div>

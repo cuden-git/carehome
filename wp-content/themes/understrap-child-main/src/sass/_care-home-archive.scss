@@ -28,20 +28,20 @@ $selector: ".ch";
 
     &-switcher {
       justify-content: space-between;
-      padding-bottom: rfs-value(80px);
+      // padding-bottom: rfs-value(80px);
     }
   }
 
   &__list {
     > .row > [class*="col-md"] {
-      padding-bottom: $archive-gutter;
+      //padding-bottom: $archive-gutter;
 
       &:nth-child(odd) {
-        padding-right: calc($archive-gutter/2);
+        //padding-right: calc($archive-gutter/2);
       }
 
       &:nth-child(even) {
-        padding-left: calc($archive-gutter/2);
+        // padding-left: calc($archive-gutter/2);
       }
     }
   }
@@ -85,7 +85,7 @@ $selector: ".ch";
 
       address {
         &:first-of-type {
-          margin-bottom: rfs-value(30px);
+          margin-bottom: 0.6rem;
         }
       }
       a {
@@ -96,8 +96,14 @@ $selector: ".ch";
 
     &-types {
       flex: 1;
-      border-left: 1px solid $qc-white;
-      padding-left: rfs-value(65px);
+      border-left: 2px solid $qc-white;
+      @include media-breakpoint-down(lg) {
+        border-left: none;
+        border-top: 2px solid $qc-white;
+        border-bottom: 2px solid $qc-white;
+        padding-bottom: 1.5rem;
+        padding-top: 1.5rem;
+      }
 
       #{$premium-hook} & {
         border-color: $qc-gold;
@@ -105,13 +111,16 @@ $selector: ".ch";
     }
 
     &-icons {
-      border-top: rfs-value(1px) solid $qc-white;
-      padding-top: rfs-value(80px);
-      margin-bottom: rfs-value(40px);
+      border-top: 2px solid $qc-white;
+      @include media-breakpoint-down(lg) {
+        border-top: none;
+      }
+      padding-top: 2rem;
+      margin-bottom: 2rem;
 
       @include media-breakpoint-up(lg) {
         column-count: 2;
-        column-gap: rfs-value(60px);
+        column-gap: 1.25rem;
       }
 
       #{$premium-hook} & {
@@ -119,16 +128,22 @@ $selector: ".ch";
       }
 
       li {
-        margin-bottom: rfs-value(35px);
-
-        >span {
+        margin-bottom: 1.5rem;
+        align-items: center;
+        > span {
           flex: 2;
+          @include media-breakpoint-down(md) {
+            flex: 4;
+          }
+          font-size: 14px;
+          line-height: 20px;
         }
       }
 
       i {
         font-size: rfs-value(35px);
         text-align: center;
+
         width: rfs-value(70px);
         margin-right: rfs-value(10px);
         flex: 1;

@@ -4,16 +4,16 @@ $selector: ".faqs";
   &__header {
     cursor: pointer;
     position: relative;
-    border-bottom: rfs-value(1px) solid $qc-blue-light;
-    padding: rfs-value(30px) rfs-value(50px);
+
+    padding: rfs-value(30px) rfs-value(55px) rfs-value(30px) 0;
 
     &::after {
       content: "\e915";
       position: absolute;
-      font-family: 'quantum-care';
-      top: rfs-value(15px);
-      right: rfs-value(45px);      
-      font-size: 0.5em;
+      font-family: "quantum-care";
+      top: 2rem;
+      right: rfs-value(45px);
+      font-size: 0.6em;
       color: $qc-blue-light;
     }
 
@@ -23,5 +23,13 @@ $selector: ".faqs";
         font-size: rfs-value(2px);
       }
     }
+  }
+  .accordion-item {
+    border: none;
+    border-bottom: 2px solid $qc-blue-light;
+  }
+  .accordion-body {
+    padding-left: 0;
+    padding-top: 0;
   }
 }

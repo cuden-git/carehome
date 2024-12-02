@@ -50,7 +50,7 @@ $ch_lng_lat = get_post_meta(get_the_ID(), 'ch_long_lat', true);
             </div>
           </div>
           <div class="ch__card-types<?= ($is_premium)? ' gold-bullets' : null ?> col-xl-6 col-lg-5">
-            <div class="ms-xl-5 ms-0">
+            <div class="ms-lg-4 ms-0">
               <h5>Types of care</h5>
               <ul >
                 <?php
@@ -65,14 +65,14 @@ $ch_lng_lat = get_post_meta(get_the_ID(), 'ch_long_lat', true);
           </div>
         </div>
         <div class="row mt-4 d-lg-block d-none">
-          <div class="col-12">
+          <div class="col-12 mb-4">
             <address>
                 <a class="text-white" href="mail:<?= $contact_info['email'] ?>" title="<?= __($contact_info['email'], THEME_NAMESPACE) ?>"><?= __( $contact_info['email'], THEME_NAMESPACE) ?></a><br>
                 <a class="text-white" href="tel:<?= $contact_info['telephone_number'] ?>" title="<?= __($contact_info['telephone_number'], THEME_NAMESPACE) ?>"><?= __($contact_info['telephone_number'], THEME_NAMESPACE) ?></a>
               </address>
           </div>
         </div>
-        <ul class="ch__card-icons list-inline"]>
+        <ul class="ch__card-icons list-inline">
           <?php
           foreach($ch_services['facilities'] as $facility) {
           ?>  

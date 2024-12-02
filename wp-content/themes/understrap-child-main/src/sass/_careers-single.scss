@@ -3,9 +3,18 @@ $selector: ".career-single";
 #{$selector} {
   &__sidebar {
     &-widget {
-      border-bottom: rfs-value(1px) solid $qc-blue-light;
+      border-bottom: 2px solid $qc-blue-light;
       margin-bottom: rfs-value(50px);
-      padding-bottom: rfs-value(30px);
+      padding-bottom: rfs-value(50px);
+      @include media-breakpoint-down(lg) {
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rfs-value(25px);
+        padding-bottom: rfs-value(25px);
+      }
 
       &:last-of-type {
         border: none;
@@ -13,8 +22,8 @@ $selector: ".career-single";
     }
 
     &-title {
-      font-size: rfs-value(25px);
-      margin-bottom: rfs-value(30px);
+      font-size: 20px;
+      margin-bottom: 20px;
     }
   }
 
@@ -25,8 +34,19 @@ $selector: ".career-single";
     background-size: auto 133%;
     background-position: left 250% center;
     flex-direction: column;
-    padding: rfs-value(50px) rfs-value(45px);
+    padding: 3rem;
     margin-bottom: rfs-value(70px);
+
+    @include media-breakpoint-down(xl) {
+      padding: 1.5rem;
+    }
+    @include media-breakpoint-down(md) {
+      padding: 2.5rem;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
 
     label {
       margin-bottom: rfs-value(20px);
@@ -43,34 +63,55 @@ $selector: ".career-single";
     padding: rfs-value(30px) rfs-value(35px);
   }
 
+  &__content {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 1.5rem;
+      margin-top: 2rem;
+    }
+  }
+
   &__disclaimer {
-    font-size: rfs-value(18px);
-    margin-bottom: rfs-value(110px);
+    // font-size: 1.5rem;
+    // line-height: 2rem;
+    margin-bottom: 2rem;
   }
 
   &__footnote {
     &-title {
-      font-size: rfs-value(30px);
-      margin-bottom: rfs-value(40px);
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-bottom: 1.5rem;
+      margin-top: 2rem;
     }
 
     &-text {
-      font-size: rfs-value(18px);
+      // font-size: rfs-value(18px);
     }
   }
 
   &__apply {
     background-color: $qc-blue-light;
     padding-top: rfs-value(70px);
-    padding-bottom: rfs-value(90px);
+    padding-bottom: rfs-value(70px);
+    @include media-breakpoint-down(md) {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
 
     form {
-      width: rfs-value(815px);
+      width: 100%;
       margin: 0 auto;
     }
 
     fieldset {
       flex-wrap: wrap;
+      @include media-breakpoint-down(md) {
+        display: block !important;
+      }
     }
 
     .label,
@@ -80,6 +121,34 @@ $selector: ".career-single";
 
       &:has(textarea) {
         flex: 0 1 100%;
+      }
+    }
+
+    label {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+      @include media-breakpoint-up(md) {
+        &:nth-child(even) {
+          input {
+            margin-left: 10px;
+          }
+        }
+        &:nth-child(odd) {
+          input {
+            margin-right: 10px;
+          }
+        }
+        input {
+          width: calc(100% - 20px);
+        }
+      }
+      .wpcf7-form-control-wrap {
+        input {
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
       }
     }
 
@@ -93,20 +162,31 @@ $selector: ".career-single";
       }
 
       .wpcf7-radio {
-        >span {
+        > span {
           & + span {
             margin-left: rfs-value(50px);
           }
 
-          [type=radio] {
+          [type="radio"] {
             margin-right: rfs-value(10px);
           }
         }
       }
     }
-
+    .wpcf7-list-item {
+      input {
+        margin-top: 2px;
+      }
+    }
     textarea {
       width: 100%;
+      border: none;
     }
+  }
+}
+
+.single-career {
+  .site__footer-wrap {
+    padding-top: 3rem;
   }
 }

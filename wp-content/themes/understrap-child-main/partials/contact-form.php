@@ -13,7 +13,7 @@ $contact_info = qc_contact_data_form(get_the_ID());
 <?php   
   }
 ?>
-<section class="site__form<?= (isset($args['is_section']))? ' site__form--section' : null ?>">
+<section class="site__form<?= (isset($args['is_section']))? ' site__form--section' : (isset($args) && $args['contact']? ' site__form--page' : null) ?>">
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-6">
@@ -27,9 +27,9 @@ $contact_info = qc_contact_data_form(get_the_ID());
             <a href="mailto:<?= __($contact_info['email'], THEME_NAMESPACE) ?>"><?= __($contact_info['email'], THEME_NAMESPACE) ?></a>
           </address>
           <?php
-            if($post->post_name == 'contact') {
+            if($post && $post->post_name == 'contact') {
           ?>
-          <h5><?= $contact_text['write_to_us']['title'] ?></h5>
+          <h4 class="my-4"><?= $contact_text['write_to_us']['title'] ?></h4>
           <?= $contact_text['write_to_us']['text'] ?>
           <?php
             }

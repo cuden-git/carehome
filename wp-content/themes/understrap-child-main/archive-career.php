@@ -1,17 +1,21 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-//redirect to selected care home option
-if(isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
-  wp_redirect($_GET['care_homes']);
-}
-$no_results_msg = get_field('no_results_message', 'option');
+$meta_query = [];
+
 $query_args = [
   'post_type' => 'career',
-  'posts_per_page' => 100,
+  'posts_per_page' => 5,
 ];
 
-$meta_query = [];
+if(isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
+  array_push($meta_query, 
+    [
+      'key' => 'career_care_home',
+      'value' => $_GET['care_homes']
+    ]
+  );
+}
 
 // Handle forms data
 $primary_form_data = [];
@@ -102,30 +106,52 @@ $query = new WP_Query($query_args);
 get_header();
 ?>
 
-<main id="career-results site__main"" class="careers-list">
+<main id="career-results" class="site__main careers-list">
   <div class="bg-secondary">
     <div class="container">
     <?php //require_once __DIR__ . '/partials/careers-search.php' ?>
     <?php get_template_part('/partials/careers-search', null, ['show_all' => true]) ?>
     </div>
   </div>
-  <div class="container">
+  <div class="container mb-5">
     <div class="row">
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-lg-4">
         <?php require_once __DIR__ . '/partials/careers-sidebar.php' ?>
       </div>
-      <div class="col-12 col-md-8">
-      <?php
-        if ( $query->have_posts() ) {
-          while ( $query->have_posts() ) {
-            $query->the_post();
-            get_template_part('/partials/career-card');
-          }
-        }else {
-          echo qc_archive_no_results_msg();
-        }
-        wp_reset_postdata()
-      ?>
+      <div class="col-12 col-lg-8">
+       <div class="ps-lg-5 ps-0">
+          <div class="container mt-lg-0 mt-5">
+            <div class="row">
+              <?php
+                if ( $query->have_posts() ) {
+                  while ( $query->have_posts() ) {
+                    $query->the_post();
+                    get_template_part('/partials/career-card');
+                  }
+                }else {
+                  echo qc_archive_no_results_msg();
+                }
+                wp_reset_postdata()
+              ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex ch__pagination">
+        <?php
+          the_posts_pagination(array(
+            'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+            'current'   => max( 1, get_query_var( 'paged' ) ),
+            'mid_size'  => 2,
+            'total'     => $query->max_num_pages,
+            'prev_text' =>  '<i class="icon-arrow-left"></i>' . __('Previous', THEME_NAMESPACE),
+            'next_text' => __('Next', THEME_NAMESPACE) . '<i class="icon-arrow-right"></i>'
+          ));
+
+          wp_reset_postdata();
+        ?>
       </div>
     </div>
   </div>

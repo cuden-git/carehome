@@ -116,10 +116,10 @@ get_header();
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-lg-4">
         <?php require_once __DIR__ . '/partials/careers-sidebar.php' ?>
       </div>
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-lg-8">
       <?php
         if ( $query->have_posts() ) {
           while ( $query->have_posts() ) {

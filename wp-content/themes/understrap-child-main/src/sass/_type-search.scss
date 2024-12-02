@@ -16,4 +16,59 @@ $selector: ".type-search";
       height: auto;
     }
   }
+
+  @include media-breakpoint-down(md) {
+    #address-search {
+      width: 100%;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+    }
+    .ch__search-form {
+      select {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.ch__search-form {
+  select {
+    border: none;
+  }
+  @include media-breakpoint-down(md) {
+    input[type="submit"] {
+      width: 100%;
+    }
+  }
+}
+
+.home {
+  .hide-on-home-page {
+    display: none !important;
+  }
+}
+
+.post-type-archive-care-home {
+  @include media-breakpoint-up(lg) {
+    .type-search {
+      display: block !important;
+      .type-search__wrap,
+      .hide-on-home-page {
+        input {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      input[type="submit"] {
+        width: 100%;
+      }
+      .flex-grow-1 {
+        display: block !important;
+      }
+    }
+  }
 }
