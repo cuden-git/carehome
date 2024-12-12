@@ -33,11 +33,13 @@ input {
 }
 
 select {
-  appearance: none;
-  background-image: url(../images/chevron-down.svg);
-  background-repeat: no-repeat;
-  background-position: right rfs-value(20px) center;
-  background-size: rfs-value(25px) rfs-value(12px);
+  &:not([multiple="multiple"]) {
+    appearance: none;
+    background-image: url(../images/chevron-down.svg);
+    background-repeat: no-repeat;
+    background-position: right rfs-value(20px) center;
+    background-size: rfs-value(25px) rfs-value(12px);
+  }
   padding: rfs-value(15px);
   width: 100%;
 }

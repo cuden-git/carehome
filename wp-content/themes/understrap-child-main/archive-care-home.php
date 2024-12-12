@@ -10,7 +10,7 @@ $archive_list_title = get_field('ch_archive_page_title', 'option');
 $meta_query = [];
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $query_args = [
-  'posts_per_page' => 2,
+  'posts_per_page' => 12,
   'post_type' => 'care-home',
   'post_status' => 'publish',
   'paged' => $paged
@@ -51,7 +51,7 @@ get_header();
     <div class="row">
       <div class="col-12 col-md-7 col-xl-7 col-lg-6 col-md-12 page-intro d-flex align-items-center mb-lg-0 mb-4">
         <div>
-          <div class="page-intro__title"><?= $archive_intro['title'] ?></div>
+          <div class="page-intro__title mb-3"><h2><?= $archive_intro['title'] ?></h2></div>
           <?= $archive_intro['text'] ?>
         </div>
       </div>

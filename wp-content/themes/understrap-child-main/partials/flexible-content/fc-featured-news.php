@@ -3,7 +3,7 @@
   $posts = get_sub_field('news_posts');
   $btn_label = get_sub_field('btn_label');
 ?>
-<section class="post-section fc__featured my-5">
+<section class="post-section fc__featured my-5"  data-aos="fade-up">
   <div class="container">
     <h2 class="post-section__title mb-4"><?= $title ?></h2>
     <div class="row">
@@ -14,7 +14,7 @@
       $is_premium = (has_term('quantum-select', 'care-home-category', $care_home_id))? true : false;
     ?>
       <div class="col-12 col-lg-6 mb-5 h-auto">
-          <div class="<?php if($loopCountFeat % 2 == 0){ echo "ms-lg-5 ms-0";  }else{ echo "me-lg-5 me-0"; } ?> pt-4 px-4 pb-5 h-100 fc__featured-card<?= ($is_premium)? ' fc__featured-card--premium' : null ?>">
+          <div class="<?php if($loopCountFeat % 2 == 0){ echo "ms-lg-4 ms-0";  }else{ echo "me-lg-4 me-0"; } ?> pt-4 px-4 pb-5 h-100 fc__featured-card<?= ($is_premium)? ' fc__featured-card--premium' : null ?>">
             <figure class="fc__featured-card-img mb-4">
               <?= get_the_post_thumbnail( $post->ID, 'large') ?>
             </figure>

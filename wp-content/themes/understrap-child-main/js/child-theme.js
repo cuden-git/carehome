@@ -9965,6 +9965,24 @@
 	new MenuCollapse(767); //767 represents the breakpoint to trigger the functionality
 
 	chSearch();
+	document.addEventListener("DOMContentLoaded", function () {
+	  AOS.init();
+	  const navIcons = document.getElementById("nav-icon1");
+	  const navMenu = document.querySelector(".burger-menu");
+	  const burgerMenu = () => {
+	    const mobMenu = document.querySelector(".mobile-menu");
+	    document.querySelectorAll(".burger").forEach(function (icon) {
+	      icon.classList.toggle("open");
+	    });
+	    mobMenu.classList.toggle("open");
+	  };
+	  navIcons.addEventListener("click", function () {
+	    burgerMenu();
+	  });
+	  navMenu.addEventListener("click", function () {
+	    burgerMenu();
+	  });
+	});
 
 	exports.Alert = alert;
 	exports.Button = button;

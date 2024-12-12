@@ -3,6 +3,22 @@ $selector: ".ch";
 #{$selector} {
   $archive-gutter: rfs-value(110px);
   $premium-hook: #{$selector}__card--premium;
+  &__list {
+    .card-col {
+      @include media-breakpoint-up(lg) {
+        &:nth-of-type(even) {
+          .ch__card {
+            margin-left: 1.5rem;
+          }
+        }
+        &:nth-child(odd) {
+          .ch__card {
+            margin-right: 1.5rem;
+          }
+        }
+      }
+    }
+  }
 
   &__search {
     @extend %q-bg-img;
@@ -65,6 +81,12 @@ $selector: ".ch";
 
     &-img {
       margin-bottom: rfs-value(30px);
+      img {
+        height: 250px;
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
+      }
     }
 
     &-title {
@@ -157,6 +179,11 @@ $selector: ".ch";
     .btn {
       margin-top: auto;
       align-self: flex-start;
+      &.btn-absolute {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+      }
     }
 
     /* Remove. debug only */
@@ -173,21 +200,44 @@ $selector: ".ch";
 
   &__pagination {
     justify-content: center;
+    font-size: 1.2rem;
 
     .nav-links {
       .page-numbers {
-        color: $qc-black;
+        padding-left: 5px;
+        padding-right: 5px;
+        color: $qc-blue-dark;
+        transition: 0.3s;
+        &:hover {
+          color: $qc-blue-light;
+        }
+        &.current {
+          color: $qc-blue-light !important;
+        }
 
         &.next,
         &.prev {
+          position: relative;
           text-decoration: none;
+          transition: 0.3s;
+          i {
+            position: absolute;
+            transition: 0.3s;
+          }
+          &:hover {
+            color: $qc-blue-light;
+            i {
+              transform: rotate(180deg);
+            }
+          }
         }
 
         &.next {
           margin-left: rfs-value(95px);
 
           i {
-            margin-left: rfs-value(20px);
+            margin-left: 30px;
+            padding-top: 3px;
           }
         }
 
@@ -195,7 +245,8 @@ $selector: ".ch";
           margin-right: rfs-value(95px);
 
           i {
-            margin-right: rfs-value(20px);
+            margin-left: -40px;
+            padding-top: 3px;
           }
         }
       }
@@ -205,5 +256,35 @@ $selector: ".ch";
   &__map {
     background-color: $qc-blue-lighter;
     height: rfs-value(990px);
+  }
+}
+
+.filter-btn {
+  text-decoration: none;
+  transition: 0.3s;
+  position: relative;
+  font-size: 1.25rem;
+  border: none;
+  &[aria-expanded="true"] {
+    background-color: $qc-blue-light;
+    &:hover {
+      background-color: $qc-blue-dark;
+    }
+  }
+  &:hover {
+    background-color: $qc-blue-light;
+    .icon-arrow-down {
+      transform: rotate(180deg);
+    }
+  }
+  .icon-arrow-down {
+    transition: 0.3s;
+    position: absolute;
+    right: 10px;
+    padding: 5px;
+    text-align: center;
+    color: $qc-white;
+    transition: 0.3s;
+    position: absolute;
   }
 }

@@ -231,7 +231,18 @@ $selector: ".fc";
   }
 }
 
+.single-care-home {
+  .site__header--premium {
+    .site__nav-wrap ul li a:hover {
+      color: $qc-gold;
+    }
+  }
+}
+
 .home {
+  .site__nav-wrap ul li a:hover {
+    color: $qc-blue-light;
+  }
   .fc__news {
     .col-md-6 {
       margin-left: auto;

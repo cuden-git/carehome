@@ -7,7 +7,7 @@ $ch_args = [
 ];
 $care_homes = get_posts($ch_args);
 ?>
-<button class="btn btn-secondary w-100 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#career-filter" aria-expanded="false" aria-controls="collapseFilter">
+<button class="filter-btn btn btn-secondary w-100 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#career-filter" aria-expanded="false" aria-controls="collapseFilter">
   Filter <i class="icon-arrow-down"></i>
 </button>
 <form id="career-filter" class="collapse careers-list__filters bg-primary">

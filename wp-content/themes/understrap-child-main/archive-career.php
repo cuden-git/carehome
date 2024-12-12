@@ -5,7 +5,6 @@ $meta_query = [];
 
 $query_args = [
   'post_type' => 'career',
-  'posts_per_page' => 5,
 ];
 
 if(isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {

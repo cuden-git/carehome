@@ -156,7 +156,13 @@ function qc_get_job_type($post_id) {
 	$parent_term_shift = get_term_by('slug', 'shift-type', 'careers-category');
 	$parent_term_job = get_term_by('slug', 'job-type', 'careers-category');
 	$post_terms = get_the_terms($post_id, 'careers-category');
+
+	if(!$post_terms) {
+		return null;
+	}
+
 	$arr = [];
+	
 	foreach($post_terms as $term) {
 		if($term->parent === $parent_term_shift->term_id) {
 			$arr['shift'] = $term->name;
@@ -164,10 +170,6 @@ function qc_get_job_type($post_id) {
 		if($term->parent === $parent_term_job->term_id) {
 			$arr['job'] = $term->name;
 		}
-	}
-
-	if(empty($arr)) {
-		return null;
 	}
 	
 	return $arr;

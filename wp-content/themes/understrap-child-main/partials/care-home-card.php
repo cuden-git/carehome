@@ -9,7 +9,7 @@ $ch_lng_lat = get_post_meta(get_the_ID(), 'ch_long_lat', true);
 
 
 
-<div class="col-12 col-md-6 margin-4rem" data-map-coords="<?= $ch_lng_lat ?>" data-post-id="<?= get_the_ID() ?>">
+<div  data-aos="fade-up" class="card-col col-12 col-md-6 margin-4rem" data-map-coords="<?= $ch_lng_lat ?>" data-post-id="<?= get_the_ID() ?>">
   <div class="p-4 ch__card<?= ($is_premium)? ' ch__card--premium' : null?>">
       <div class="care-home-image w-100">
         <figure class="ch__card-img w-100">
@@ -18,10 +18,10 @@ $ch_lng_lat = get_post_meta(get_the_ID(), 'ch_long_lat', true);
         </a>
         </figure>
       </div>
-      <div class="container descriptions">
+      <div class="container descriptions mb-5">
         <div class="row">
           <div class="<?php if($is_premium){ echo "col-lg-8"; } else{ echo "col-12"; } ?>" >
-            <h4 class="ch__card-title"><?php the_title() ?> <?= get_the_id() ?></h4>  
+            <h4 class="ch__card-title"><?php the_title() ?> <?php // echo get_the_id(); ?></h4>  
           </div>
           <?php 
             if($is_premium){ ?>
@@ -38,7 +38,7 @@ $ch_lng_lat = get_post_meta(get_the_ID(), 'ch_long_lat', true);
               <div class="ch__card-contact">
                 <address>
                   <?= $address['address'] ?><br>
-                  <?= $address['town_city'] ?><br>
+                  <?= $address['town_city'] ?><?php if($address['town_city'] !=""){ echo "<br>"; } ?>
                   <?= $address['county'] ?><br>
                   <?= $address['post_code'] ?>
                 </address>
@@ -83,14 +83,14 @@ $ch_lng_lat = get_post_meta(get_the_ID(), 'ch_long_lat', true);
         </ul>
         <div class="row mt-4 mb-3">
           <div class="col-12">
-          <!-- -->
-          <div class="distance">
-                Distance=<?= get_post_meta(get_the_ID(), 'ch_distance', true) ?>
+          <!--  
+             <div class="distance">
+                Distance=<?php //echo get_post_meta(get_the_ID(), 'ch_distance', true) ?>
               </div>
-              <!-- -->
+            -->
           </div>
         </div>
-        <a href="<?= get_permalink(get_the_ID()) ?>" class="btn-absolute btn <?= ($is_premium)? 'btn-gold' : 'btn-white' ?>"><?= __('View Home', THEME_NAMESPACE) ?></a>
+        <a href="<?= get_permalink(get_the_ID()) ?>" class="btn-absolute btn <?= ($is_premium)? ' btn-gold on-blue ' : 'btn-white' ?>"><?= __('View Home', THEME_NAMESPACE) ?></a>
       </div>
   </div>
 </div>

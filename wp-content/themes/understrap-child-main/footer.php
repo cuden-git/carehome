@@ -27,7 +27,7 @@ if($is_premium) {
         get_template_part('/partials/contact-map');
       }
     ?>
-    <div class="container site__footer-wrap">
+    <div class="container site__footer-wrap <?php if($is_premium) {echo "premium"; }?>">
       <div class="row">
     <!-- -->
       <div class="site__footer-logos col-12 col-md-6 col-lg-3 mb-lg-0 mb-5">

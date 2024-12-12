@@ -8,7 +8,8 @@ add_filter( 'allowed_block_types_all', function( $allowed_blocks, $editor_contex
       'core/list-item',
       'core/paragraph',
       'core/heading',
-      'core/image'
+      'core/image',
+      'core/shortcode',
     ];
 
     return $allowed_blocks;

@@ -19,7 +19,7 @@ get_header();
         <div>
           <h2 class="page-intro__title mb-4"><?php the_title() ?></h2>
           <?php the_content() ?>
-          <a href="#" class="btn btn-primary mt-4" title="<?= __('Contact Us',THEME_NAMESPACE) ?>"><?= __('Contact Us',THEME_NAMESPACE) ?></a>
+          <a href="#contact" class="btn btn-primary mt-4" title="<?= __('Contact Us',THEME_NAMESPACE) ?>"><?= __('Contact Us',THEME_NAMESPACE) ?></a>
         </div>
       </div>
       <div class="col-12 col-lg-6">

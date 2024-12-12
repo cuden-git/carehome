@@ -4,7 +4,7 @@ $selector: ".faqs";
   &__header {
     cursor: pointer;
     position: relative;
-
+    font-size: 1.5rem;
     padding: rfs-value(30px) rfs-value(55px) rfs-value(30px) 0;
 
     &::after {

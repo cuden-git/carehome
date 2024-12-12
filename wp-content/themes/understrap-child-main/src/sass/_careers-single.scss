@@ -2,6 +2,8 @@ $selector: ".career-single";
 
 #{$selector} {
   &__sidebar {
+    position: sticky;
+    top: 20px;
     &-widget {
       border-bottom: 2px solid $qc-blue-light;
       margin-bottom: rfs-value(50px);

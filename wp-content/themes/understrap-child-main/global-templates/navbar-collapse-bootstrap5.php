@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-md navbar-dark aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -24,16 +24,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<!-- Your site branding in the menu -->
 		<?php get_template_part( 'global-templates/navbar-branding' ); ?>
 
-		<button
-			class="navbar-toggler"
-			type="button"
+		
+		<div id="nav-icon1" class="burger d-lg-none d-block"  
 			data-bs-toggle="collapse"
 			data-bs-target="#navbarNavDropdown"
 			aria-controls="navbarNavDropdown"
 			aria-expanded="false"
-			aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>"
-		>
-		</button>
+			aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 
 		<!-- The WordPress Menu goes here -->
 		<?php
@@ -42,7 +43,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				'theme_location'  => 'primary',
 				'container_class' => 'site__nav-wrap',
 				'container_id'    => 'navbarNavDropdown',
-				'menu_class'      => 'navbar-nav ms-md-auto site__nav',
+				'menu_class'      => 'navbar-nav  site__nav burger-menu',
 				'fallback_cb'     => '',
 				'menu_id'         => 'main-menu',
 				'depth'           => 2,

@@ -49,8 +49,9 @@ function theme_enqueue_styles()
 	$dependency = ($load_gm_api)? ['googlemaps-api'] : null ;
 
 	wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $css_version);
+	wp_enqueue_style('aos-styles', get_stylesheet_directory_uri() . "/css/aos.css", array(), '1.0.0', 'all');
 	wp_enqueue_script('jquery');
-
+	wp_enqueue_script('aos-script', get_stylesheet_directory_uri() . "/js/aos.js", array(), '1.0.0', true);
 	$js_version = $theme_version . '.' . filemtime(get_stylesheet_directory() . $theme_scripts);
 
 	wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, $dependency, $js_version, true);
@@ -93,7 +94,7 @@ function my_block_editor_styles() {
   wp_register_style( 'qc-editor-theme-styles', get_stylesheet_directory_uri() . $editor_theme_styles, [], $css_version );
   wp_enqueue_style( 'qc-editor-theme-styles' );
 }
-add_action( 'enqueue_block_editor_assets', 'my_block_editor_styles' );
+//add_action( 'enqueue_block_editor_assets', 'my_block_editor_styles' );
 
 /**
  * Load the child theme's text domain
@@ -283,13 +284,13 @@ function qc_location_ordered_posts() {
  */
 function qc_ch_queries( $query ) {
   if (!is_admin() && $query->is_main_query() && isset($query->query['post_type'])){
-		if($query->query['post_type'] === 'care-home') {
-			$query->set('posts_per_page', 2);
-		}
+		// if($query->query['post_type'] === 'care-home') {
+		// 	$query->set('posts_per_page', 2);
+		// }
 
-		if($query->query['post_type'] === 'post') {
-			$query->set('posts_per_page', 10);
-		}
+		// if($query->query['post_type'] === 'post') {
+		// 	$query->set('posts_per_page', 10);
+		// }
 
 		if($query->query['post_type'] === 'career') {
 			$query->set('posts_per_page', 5);
@@ -329,6 +330,7 @@ function qc_populate_acf_select_field( $field ) {
 }
 add_filter('acf/load_field/name=careers_post_job_role', 'qc_populate_acf_select_field');
 add_filter('acf/load_field/name=career_job_roles', 'qc_populate_acf_select_field');
+
 /**
  * Load Care Homes into select menu for news item
  */
@@ -415,28 +417,38 @@ function qc_set_cf7_email_recipient( $contact_form, &$abort, $submission ) {
 	
 	$job_form_id = get_field('job_form_id', 'option');
 	$site_contact_form_id = get_field('contact_form_id', 'option');
+	$register_form_id = get_field('register_form_id', 'option');
 	$contact_form_recipient = get_field('contact_form_email', 'option');
 	$form_data = $submission->get_posted_data();
-  $job_recipient_email = get_field('career_recipient_email', $form_data['post_id']);
+
+	if(isset($form_data['post_id'])) {
+		$job_recipient_email = get_field('career_recipient_email', $form_data['post_id']);
+	}
+  
   $properties = $contact_form->get_properties();
 
 	//Career apply form
-	if($job_recipient_email && $contact_form->id() === intval($job_form_id)) {
+	if(isset($job_recipient_email) && $contact_form->id() === intval($job_form_id)) {
 		$properties['mail']['recipient'] = $job_recipient_email;
 		$properties['mail']['body'] .= __("Job application for " . get_permalink($form_data['post_id']), THEME_NAMESPACE);
 		$contact_form->set_properties($properties);
 	}
 
-	//Generic contact form
-	if($contact_form_recipient && $contact_form->id() === intval($site_contact_form_id)) {
+	//Generic contact form OR Register interest form
+	if($contact_form_recipient && 
+			$contact_form->id() === intval($site_contact_form_id) ||
+			$contact_form->id() === intval($register_form_id)
+		) {
 		// If on care home single page change recipient care home email address
 		if($form_data['type_post'] === 'care-home') {
 			$contact_form_recipient = get_field('ch_form_recipient', $form_data['post_id']);
 		}
+
+		// else send to generic recipient set in options page
 		$properties['mail']['recipient'] = $contact_form_recipient;
 		$contact_form->set_properties($properties);
 	}
-	//
+
   return $contact_form;
 }
 add_filter( 'wpcf7_before_send_mail', 'qc_set_cf7_email_recipient', 10, 3 );
@@ -597,6 +609,21 @@ function qc_r_rewrite_rules() {
 	add_rewrite_rule('^careers/career-roles/([^/]+)/?$', 'index.php?role=$matches[1]', 'top');
 }
 add_action('init', 'qc_r_rewrite_rules');
+
+/**
+ * Populate multi-select field with roles options
+ */
+function qc_multi_select_roles_form($n, $options, $args) {
+  if (in_array('roles', $options)){
+		$roles_options = get_field('careers_job_roles', 'option');
+		$roles = array_column($roles_options, 'job_role');
+
+    return $roles;
+  }
+
+  return $n;
+}
+add_filter('wpcf7_form_tag_data_option', 'qc_multi_select_roles_form', 10, 3);
 
 /**
  * MailHog setup

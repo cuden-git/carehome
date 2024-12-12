@@ -7,12 +7,12 @@ get_header();
 <main class="site__main">
   <div class="container mb-5 genric-page">
     <div class="row">
-      <div class="col-md-10 mx-auto">
+      <div class="col-md-10 col-lg-9 mx-auto" data-aos="fade-up">
         <?php the_content() ?>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-10 mx-auto">
+    <div class="row mt-md-5 mt-4">
+      <div class="col-lg-9 col-md-10 mx-auto">
     <?php    
       if($page_btns) {
         $loop_index = 0;

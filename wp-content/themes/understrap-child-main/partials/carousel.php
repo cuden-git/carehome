@@ -7,7 +7,7 @@
   <?php
   foreach($args as $slide) {
   ?>
-      <li class="splide__slide care-home__carousel-slide"><?= wp_get_attachment_image($slide['ID'], 'large') ?></li>
+      <li class="splide__slide care-home__carousel-slide"><?= wp_get_attachment_image($slide['ID'], 'full') ?></li>
   <?php
     ++$loop_index;
   }

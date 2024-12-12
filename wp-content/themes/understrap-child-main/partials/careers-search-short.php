@@ -12,8 +12,8 @@ $form_text = get_field('form_text', 'option');
     </div>
   </div>
   <form action="<?= get_post_type_archive_link('career') ?>">
-    <fieldset class="type-search d-flex careers-list__search-fields">
-      <label class="type-search__wrap flex-grow-1 careers-list__search-label">
+    <fieldset class="type-search d-lg-flex d-block careers-list__search-fields">
+      <label class="type-search__wrap flex-grow-1 careers-list__search-label mb-lg-0 mb-4">
         <input type="text"  class="type-search__input" name="careers_location" autocomplete="off" placeholder="<?= __('Town or Postcode', THEME_NAMESPACE) ?>" value="<?php if (isset($_GET['careers_location'])) echo $_GET['careers_location'] ?>">
         <div class="type-search__results"></div>
       </label>
@@ -22,8 +22,8 @@ $form_text = get_field('form_text', 'option');
   </form>
   <p class="careers-list__search-or d-flex pb-0 mb-0">Or</p>
   <form action="<?= get_post_type_archive_link('career') ?>">
-    <fieldset class="type-search d-flex careers-list__search-fields">
-      <label class="flex-grow-1 careers-list__search-label">
+    <fieldset class="type-search d-lg-flex d-block careers-list__search-fields">
+      <label class="flex-grow-1 careers-list__search-label mb-lg-0 mb-4">
         <select name="careers_role">
           <option value=""><?= __('Role', THEME_NAMESPACE) ?></option>
           <?php

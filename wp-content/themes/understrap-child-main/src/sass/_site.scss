@@ -2,7 +2,18 @@ $selector: ".site";
 
 #{$selector} {
   &__header {
-    padding-top: rfs-value(50px);
+    .navbar-nav {
+      @include media-breakpoint-up(lg) {
+        justify-content: end;
+        flex-wrap: wrap;
+      }
+      li {
+        a {
+          color: $white;
+        }
+      }
+    }
+    padding-top: rfs-value(30px);
     position: relative;
 
     &::before {
@@ -35,7 +46,7 @@ $selector: ".site";
     .home & {
       position: absolute;
       width: 100%;
-      z-index: 2;
+      z-index: 10;
 
       &::before {
         background-image: none;
@@ -54,16 +65,13 @@ $selector: ".site";
     .navbar {
       font-size: rfs-value(20px);
 
-      @include media-breakpoint-up(md) {
-      }
-
       li {
         @include media-breakpoint-up(md) {
-          padding-bottom: rfs-value(100px);
-          margin-left: rfs-value(35px);
+          //padding-bottom: rfs-value(100px);
+          //margin-left: rfs-value(35px);
 
           &:first-child {
-            margin-left: 0;
+            //margin-left: 0;
           }
         }
       }
@@ -75,7 +83,8 @@ $selector: ".site";
 
     &-title {
       // font-size: rfs-value(30px);
-      padding-bottom: rfs-value(130px);
+      padding-bottom: rfs-value(80px);
+      padding-top: rfs-value(50px);
 
       @include media-breakpoint-up(md) {
         // font-size: rfs-value(60px);
@@ -120,7 +129,20 @@ $selector: ".site";
     }
 
     &-wrap {
-      @include media-breakpoint-down(md) {
+      ul {
+        li {
+          margin-left: 2vw;
+          a {
+            @include media-breakpoint-up(lg) {
+              font-size: 16px;
+            }
+            &:hover {
+              color: $qc-blue-dark;
+            }
+          }
+        }
+      }
+      @include media-breakpoint-down(lg) {
         position: fixed;
         top: 0;
         left: 100%;
@@ -131,12 +153,19 @@ $selector: ".site";
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: rfs-value(40px);
-        z-index: 3;
+        //padding-left: rfs-value(40px);
+        z-index: 10;
+        ul {
+          li {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+          }
+        }
       }
 
       &.show {
-        left: 20%;
+        left: 0%;
       }
     }
   }
@@ -161,18 +190,60 @@ $selector: ".site";
 
     .home & {
       padding-top: rfs-value(110px);
+      @include media-breakpoint-down(md) {
+        padding-top: 3rem;
+      }
     }
   }
 
   &__sub-nav {
+    transition: 0.3s;
     background-color: $qc-blue-dark;
-    justify-content: center;
-    padding-top: rfs-value(25px);
-    padding-bottom: rfs-value(25px);
+    // justify-content: center;
+    // align-content: center;
+    @include media-breakpoint-up(md) {
+      // padding-top: rfs-value(25px);
+      // padding-bottom: rfs-value(25px);
+    }
 
+    ul {
+      justify-content: center;
+
+      @include media-breakpoint-down(md) {
+        background-color: $qc-blue-light;
+      }
+  
+      li {
+        text-align: center;
+        transition: 0.3s;
+
+        a {
+          display: block;
+          transition: 0.3s;
+        }
+
+        &:hover {
+          background-color: $qc-blue-light;
+        }
+        @include media-breakpoint-down(md) {
+          &:hover {
+            background-color: $qc-dark-grey;
+            a {
+              color: $qc-blue-dark;
+            }
+            color: $qc-blue-dark;
+          }
+        }
+      }
+    }
     li {
       padding: 0 rfs-value(15px);
+      transition: 0.3s;
+      font-size: 1.2rem;
 
+      &:hover {
+        background-color: $qc-blue-dark;
+      }
       &.current {
         a {
           text-decoration: underline;
@@ -184,9 +255,36 @@ $selector: ".site";
       color: $qc-white;
       text-decoration: none;
     }
-
+    &.menu-collapse--open {
+      .menu-collapse__display {
+        .icon-arrow-down {
+          transform: rotate(180deg);
+        }
+      }
+    }
     .menu-collapse__display {
+      &:hover {
+        background-color: $qc-dark-grey;
+        color: $qc-blue-dark;
+      }
+      font-size: 1.5625rem;
+      @include media-breakpoint-down(md) {
+        font-size: 1rem;
+      }
+
+      .icon-arrow-down {
+        transition: 0.3s;
+        color: $qc-white;
+        font-size: 2rem;
+        position: absolute;
+        right: 50px;
+        @include media-breakpoint-down(md) {
+          right: 15px;
+        }
+      }
       color: $qc-white;
+      text-align: center;
+      transition: 0.3s;
     }
   }
 
@@ -229,7 +327,6 @@ $selector: ".site";
     }
 
     &--page {
-
     }
 
     &-text {
@@ -276,16 +373,22 @@ $selector: ".site";
           display: block;
 
           * {
-            width: 100%;
-            background-color: transparent;
-            border: rfs-value(1px) solid $white;
-            color: $white;
-
-            &::placeholder {
+            &:not(span):not([type=checkbox]):not(option)  {
+              width: 100%;
+              background-color: transparent;
+              border: rfs-value(1px) solid $white;
               color: $white;
+  
+              &::placeholder {
+                color: $white;
+              }
             }
           }
         }
+      }
+
+      [type=checkbox] {
+        margin-right: rfs-value(15px);
       }
     }
 
@@ -330,8 +433,18 @@ $selector: ".site";
     a {
       text-decoration: none;
       color: $qc-white;
+      transition: 0.3s;
+      &:hover {
+        color: $qc-blue-light;
+      }
     }
-
+    .premium {
+      a {
+        &:hover {
+          color: $qc-gold;
+        }
+      }
+    }
     &-wrap {
       padding-top: rfs-value(20px);
     }
@@ -387,6 +500,31 @@ $selector: ".site";
           margin-right: 0;
         }
       }
+    }
+  }
+}
+
+.navbar-brand {
+  @include media-breakpoint-up(lg) {
+  }
+}
+
+.flexi-working-section {
+  &.care-home__overview :not(.btn) {
+    p {
+      color: white;
+    }
+  }
+}
+
+.border-bottom-white {
+  border-bottom: 2px solid $white;
+}
+
+.flexi-working-section {
+  .btn {
+    &:hover {
+      background-color: $qc-blue-light;
     }
   }
 }

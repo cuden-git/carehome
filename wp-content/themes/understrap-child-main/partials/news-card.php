@@ -1,4 +1,4 @@
-<div class="col-12 col-lg-4 col-md-6 mb-lg-4 mb-4">
+<div class="col-12 col-lg-4 col-md-6 mb-lg-4 mb-4" data-aos="fade-up">
   <div class="news__card<?= (isset($args['no-archive']))? ' news__card--no-archive' : null ?>">
     <figure class="news__card-img">
       <?= get_the_post_thumbnail( $post->ID, "large" ) ?>

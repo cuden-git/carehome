@@ -6,18 +6,15 @@
 	if(!empty($pages['children'])) {
 ?>
 		<nav class="site__sub-nav menu-collapse">
-			<div class="d-md-none h-100 menu-collapse__display"><span></span></div>
-			<ul class="container list-inline d-flex flex-column flex-md-row">
+			<div class="d-md-none d-flex h-100 menu-collapse__display align-items-center justify-content-center"><span class="d-block"></span><i class="icon-arrow-down"></i></div>
+			<ul class="list-inline d-flex flex-column flex-md-row">
 		<?php
-			if($pages['parent'] && $pages['parent']->ID != $post->ID ) {
-		?>
-				<li><a href="<?= get_permalink($pages['parent']->ID) ?>" title="<?= $pages['parent']->post_title ?>"><?= $pages['parent']->post_title ?></a></li>
+		foreach($pages['children'] as $child) {
+			if($child && $child->ID != $post->ID ) {
+		?>			
+				<li class="<?= ($child->ID === get_the_ID())? 'current' : null ; ?>"><a href="<?= get_permalink($child->ID) ?>" class="py-4" title="<?= $child->post_title ?>"><?= $child->post_title ?></a></li>
 		<?php
 			}
-		foreach($pages['children'] as $child) {
-		?>
-				<li class="<?= ($child->ID === get_the_ID())? 'current' : null ; ?>"><a href="<?= get_permalink($child->ID) ?>" title="<?= $child->post_title ?>"><?= $child->post_title ?></a></li>
-		<?php
 		}
 		?>
 			</ul>

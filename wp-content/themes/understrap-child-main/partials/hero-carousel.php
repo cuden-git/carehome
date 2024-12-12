@@ -8,13 +8,15 @@
     <?php
     foreach($args as $slide) {
     ?>
+   
         <li class="splide__slide hero-carousel__slide h-100">
-          
-            <figure class="hero-carousel__slide-img h-100">
-              <?= wp_get_attachment_image($slide['img']['ID'], 'large') ?>
-            </figure>
+        <figure class="hero-carousel__slide-img h-100">
+          <?= wp_get_attachment_image($slide['img']['ID'], 'full') ?>
+        </figure>
+         
             <div class="container h-100 position-relative">
-              <div class="hero-carousel__slide-text mb-5">
+             
+                  <div class="hero-carousel__slide-text mb-5">
                 <h1><?= $slide['text'] ?></h1>
               <?php
               if($slide['cta_btns']) {
@@ -23,18 +25,20 @@
                   <?php
                     foreach($slide['cta_btns'] as $button) {
                   ?>
-                    <a href="<?= $button['btn']['url'] ?>" class="btn mb-4 <?= ($loop_index > 0)? 'btn-white btn-white--inverse' : 'btn-primary' ?>" title="<?= $button['btn']['title'] ?>"><?= $button['btn']['title'] ?></a>
+                    <a href="<?= $button['btn']['url'] ?>" class="btn me-3 mb-4 <?= ($loop_index > 0)? 'btn-white btn-white--inverse' : 'btn-primary' ?>" title="<?= $button['btn']['title'] ?>"><?= $button['btn']['title'] ?></a>
                   <?php
                       ++$loop_index;
                     }
                     $loop_index = 0;
                   ?>
                 </div>
-              </div>
-            </div>
+            
+          </div>
+          </div>
             <?php
             }
             ?>
+             
         </li>
     <?php
     }

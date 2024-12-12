@@ -10,7 +10,6 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $query_args = [
   'post_type' => 'post',
-  //'posts_per_page' => 3,
   'post_status' => 'publish',
   'paged' => $paged
 
@@ -47,7 +46,7 @@ get_header();
   ?>
     </div>
     <div class="row">
-      <div class="col-12 d-flex ch__pagination">
+      <div class="col-12 d-flex ch__pagination mt-5">
         <?php
          the_posts_pagination(array(
           'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),

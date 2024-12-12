@@ -3,7 +3,7 @@
   $posts = get_sub_field('jobs');
   $btn_label = get_sub_field('btn_label');
 ?>
-<section class="post-section fc__jobs py-5">
+<section class="post-section fc__jobs py-5"  data-aos="fade-up">
   <div class="container py-md-5 py-0">
     <h2 class="post-section__title post-section__title--white mb-5"><?= $title ?></h2>
     <div class="row ">

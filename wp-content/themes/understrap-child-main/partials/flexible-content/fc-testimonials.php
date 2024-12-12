@@ -5,7 +5,7 @@ $intro = $testimonials['intro'];
 $carousel = $testimonials['carousel']; 
 
 ?>
-<section class="post-section fc__testimonials py-5">
+<section class="post-section fc__testimonials py-5"  data-aos="fade-up">
   <div class="container">
   <div class="row">
     <div class="col-md-8 mx-auto">

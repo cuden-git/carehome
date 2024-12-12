@@ -11,6 +11,20 @@ $selector: ".care-home";
       padding-bottom: rfs-value(45px);
     }
   }
+
+  #day-care {
+    background-color: $qc-blue-light;
+    color: $white;
+    #{$premium-hook} & {
+      background-color: $qc-blue-dark;
+    }
+    .care-home__overview-text {
+      column-rule: 0.125rem solid $white;
+      #{$premium-hook} & {
+        column-rule: 0.125rem solid $qc-gold;
+      }
+    }
+  }
   &__forms {
     .site__form-text {
       address a {
@@ -53,6 +67,36 @@ $selector: ".care-home";
     position: relative;
     color: $qc-white;
     z-index: 1;
+    margin-top: 50px;
+    @include media-breakpoint-down(md) {
+      margin-top: 10px;
+    }
+    &.care-home__header--premium {
+      .arrow-area {
+        a {
+          .icon-arrow-down {
+            color: $qc-gold;
+            &:hover {
+              color: $qc-white;
+            }
+          }
+        }
+      }
+    }
+    .arrow-area {
+      a {
+        text-decoration: none;
+        .icon-arrow-down {
+          transition: 0.3s;
+          font-size: 2rem;
+          text-align: center;
+          color: $qc-white;
+          &:hover {
+            color: $qc-blue-dark;
+          }
+        }
+      }
+    }
 
     &-img {
       position: relative;
@@ -81,11 +125,12 @@ $selector: ".care-home";
         // border-radius: 50%;
         width: 55%;
         // height: 300px;
+        height: 70%;
         -o-object-fit: cover;
         object-fit: cover;
         border-radius: 50%;
         top: 15%;
-        position: relative;
+        position: absolute;
         left: 12%;
       }
     }
@@ -138,6 +183,8 @@ $selector: ".care-home";
   &__nav {
     background-color: $qc-dark-grey;
     font-size: rfs-value(25px);
+    z-index: 2;
+    position: relative;
 
     .menu-collapse {
       .menu-collapse__display {
@@ -197,6 +244,8 @@ $selector: ".care-home";
       padding-left: rfs-value(20px);
       padding-right: rfs-value(20px);
       transition: 0.3s;
+      display: block;
+
       &:hover {
         color: $qc-blue-light;
         #{$premium-hook} & {
@@ -234,6 +283,11 @@ $selector: ".care-home";
   }
 
   &__carousel {
+    .splide__pagination {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
     .splide__arrows {
       width: 80%;
       margin: 0 auto;
@@ -560,7 +614,7 @@ $selector: ".care-home";
 
       i {
         color: $qc-blue-light;
-        font-size: rfs-value(70px);
+        font-size: 3.5rem;
 
         #{$premium-hook} & {
           color: $qc-gold;

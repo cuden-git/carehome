@@ -12,7 +12,7 @@ if($show) {
     ]
   );
 ?>
-<section class="post-section fc__news my-5">
+<section  data-aos="fade-up" class="post-section fc__news my-5">
   <div class="container pt-md-5 pt-0">
     <h2 class="post-section__title mb-4 "><?= $title ?></h2>
     <div class="row">
