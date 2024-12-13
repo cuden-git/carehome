@@ -4,6 +4,7 @@ class MapCareHomes {
   constructor() {
     this.mapStage = document.getElementById('care-homes-maps');
     this.map;
+
     if(!this.mapStage) {
       return;
     }
@@ -13,6 +14,7 @@ class MapCareHomes {
    // this.coordsEles = [...document.querySelectorAll('[data-map-coords]')];
     this.chEles = [...document.querySelectorAll('[data-post-id]')];
     this.postIds = this.getPostIds();
+    this.imgArr = [];
     console.log('postIds=', this.postIds);
     console.log('longLats=', this.lngLats);
 
@@ -42,17 +44,15 @@ class MapCareHomes {
     let ids = [];
 
     this.chEles.forEach((item) => {
-     ids.push(parseInt(item.getAttribute('data-post-id')));
-     let lngLats = this.extractLngLat(item.getAttribute('data-map-coords'));
-     this.lngLats.push({lng:parseFloat(lngLats[0]), lat: parseFloat(lngLats[1])});
+      ids.push(parseInt(item.getAttribute('data-post-id')));
+      let lngLats = this.extractLngLat(item.getAttribute('data-map-coords'));
+      this.lngLats.push({lng:parseFloat(lngLats[0]), lat: parseFloat(lngLats[1])});
     })
 
     return ids;
   }
 
   async initMap(posts) {
-    // Request needed libraries.
-    //@ts-ignore
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
     const bounds = new google.maps.LatLngBounds();
@@ -82,8 +82,11 @@ class MapCareHomes {
         title: item.title,
         content: pin.element,
       });
+
+      let img = (item.src)? `<figure><img src="${item.src}" alt="${item.title}"></figure>` : null;
       let infowindow = new google.maps.InfoWindow({
         content: `<h6>${item.title}</h6>
+        ${img}
         <a href="${item.link}">View<a/>`,
         ariaLabel: item.title,
       });

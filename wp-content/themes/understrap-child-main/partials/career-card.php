@@ -30,7 +30,7 @@ $job_address = get_field('ch_address', $job_location->ID);
         <?php
         }
         ?>
-        <p class="temp-distance">ID = <?php  echo $career_id ?>; Distance from location: <?php echo get_post_meta($career_id, 'ch_distance', true) ?></p>
+        <!-- <p class="temp-distance">ID = <?php  //echo $career_id ?>; Distance from location: <?php //echo get_post_meta($career_id, 'ch_distance', true) ?></p> -->
       </div>
       <div class="col-lg-4 col-xl-3 d-flex align-items-center mt-4 mt-lg-0">
         <a href="<?php the_permalink() ?>" class="btn btn-primary text-white" title="<?php the_field('careers_archive_btn_label', 'option'); ?>"><?php the_field('careers_archive_btn_label', 'option'); ?></a>

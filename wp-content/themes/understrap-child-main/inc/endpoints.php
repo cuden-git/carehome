@@ -46,14 +46,16 @@ function qc_get_location_posts(WP_REST_Request $request) {
     'post_type' => 'care-home',
     'post_status' => 'publish',
     'post__in' => $post_ids,
-    'orderby' => 'post__in'
+    'orderby' => 'post__in',
+    'numberposts' => count($post_ids)
   ]);
 
   foreach($ch_posts as $post) {
     array_push($response_posts,
       [
         'title' => $post->post_title,
-        'link' => get_permalink($post->ID)
+        'link' => get_permalink($post->ID),
+        'src' => get_the_post_thumbnail_url($post->ID)
       ]
     );
   }

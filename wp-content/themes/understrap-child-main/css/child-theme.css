@@ -11555,6 +11555,10 @@ textarea {
   padding: 1.5rem;
 }
 
+.wpcf7 .screen-reader-response {
+  display: none;
+}
+
 .site__header {
   padding-top: 1.875rem;
   position: relative;
@@ -11708,14 +11712,6 @@ textarea {
     background-color: #7aa3cd;
   }
 }
-.site__sub-nav ul li {
-  text-align: center;
-  transition: 0.3s;
-}
-.site__sub-nav ul li a {
-  display: block;
-  transition: 0.3s;
-}
 .site__sub-nav ul li:hover {
   background-color: #7aa3cd;
 }
@@ -11729,9 +11725,10 @@ textarea {
   }
 }
 .site__sub-nav li {
-  padding: 0 0.9375rem;
+  padding: 0 1.25rem;
   transition: 0.3s;
   font-size: 1.2rem;
+  text-align: center;
 }
 .site__sub-nav li:hover {
   background-color: #002147;
@@ -11742,6 +11739,8 @@ textarea {
 .site__sub-nav a {
   color: #efece9;
   text-decoration: none;
+  display: block;
+  transition: 0.3s;
 }
 .site__sub-nav.menu-collapse--open .menu-collapse__display .icon-arrow-down {
   transform: rotate(180deg);

@@ -1,7 +1,8 @@
 <?php
 $care_homes = get_posts([
   'post_type' => 'care-home',
-  'status' => 'publish'
+  'status' => 'publish',
+  'numberposts' => -1
 ]);
 
 $news_cats = get_categories( 
@@ -17,6 +18,7 @@ $news_cats = get_categories(
     <label>
       <select class="mb-md-0 mb-4" name="news_care_home">
         <option value=""><?= __('Care Home', THEME_NAMESPACE) ?></option>
+        <option value="all"><?= __('Show all news', THEME_NAMESPACE) ?></option>
       <?php
           foreach($care_homes as $option) {
       ?>

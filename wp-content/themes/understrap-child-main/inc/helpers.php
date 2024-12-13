@@ -89,7 +89,7 @@ function qc_tabbed_content_arrays($rows) {
 		foreach( $rows as $row ) {
 			array_push($arr['tabs'], $row['job_title']);
 			array_push($arr['content'], [
-				'img' => '<img src="' . $row['image']['url'] . '" alt="' . $row['image']['alt'] . '">',//wp_get_attachment_image($row['image']['ID'], 'large'),
+				'img' => ($row['image'])? '<img src="' . $row['image']['url'] . '" alt="' . $row['image']['alt'] . '">' : null,//wp_get_attachment_image($row['image']['ID'], 'large'),
 				'name' => $row['name'],
 				'role' => $row['role'],
 				'description' => $row['description']
@@ -189,23 +189,24 @@ function qc_social_media() {
  */
 function qc_related_news($post_id, $num_posts) {
 	$args = [
-    'post_type'      => 'post', // Change to your desired post type
+    'post_type'      => 'post',
     'posts_per_page' => $num_posts,
+		'post_status' => 'publish',
     'orderby'        => [
-        'meta_value_num' => 'DESC',
-        'date'           => 'DESC'
+			'meta_value_num' => 'ASC',
+			'date'           => 'DESC'
     ],
     'meta_query'     => [
-        'relation' => 'OR',
+       'relation' => 'OR',
         [
-            'key'     => 'news_care_homes',
-            'value'   => $post_id,
-            'compare' => '='
+					'key'     => 'news_care_homes',
+					'value'   => $post_id,
+					'compare' => '='
         ],
         [
-            'key'     => 'news_care_homes',
-						'value'   => $post_id,
-            'compare' => 'NOT EXISTS'
+					'key'     => 'news_care_homes',
+					'value'   => $post_id,
+					'compare' => '!='
         ]
     ]
 	];

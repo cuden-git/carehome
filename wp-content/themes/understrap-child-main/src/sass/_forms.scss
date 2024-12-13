@@ -47,3 +47,9 @@ select {
 textarea {
   padding: rfs-value(24px);
 }
+
+.wpcf7 {
+  .screen-reader-response {
+    display: none;
+  }
+}

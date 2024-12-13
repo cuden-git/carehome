@@ -7001,6 +7001,7 @@
 	    // this.coordsEles = [...document.querySelectorAll('[data-map-coords]')];
 	    this.chEles = [...document.querySelectorAll('[data-post-id]')];
 	    this.postIds = this.getPostIds();
+	    this.imgArr = [];
 	    console.log('postIds=', this.postIds);
 	    console.log('longLats=', this.lngLats);
 	    getPosts(this.postIds).then(posts => {
@@ -7031,8 +7032,6 @@
 	    return ids;
 	  }
 	  async initMap(posts) {
-	    // Request needed libraries.
-	    //@ts-ignore
 	    const {
 	      Map
 	    } = await google.maps.importLibrary("maps");
@@ -7063,8 +7062,10 @@
 	        title: item.title,
 	        content: pin.element
 	      });
+	      let img = item.src ? `<figure><img src="${item.src}" alt="${item.title}"></figure>` : null;
 	      let infowindow = new google.maps.InfoWindow({
 	        content: `<h6>${item.title}</h6>
+        ${img}
         <a href="${item.link}">View<a/>`,
 	        ariaLabel: item.title
 	      });

@@ -214,12 +214,10 @@ $selector: ".site";
       }
   
       li {
-        text-align: center;
-        transition: 0.3s;
+
 
         a {
-          display: block;
-          transition: 0.3s;
+          
         }
 
         &:hover {
@@ -237,9 +235,10 @@ $selector: ".site";
       }
     }
     li {
-      padding: 0 rfs-value(15px);
+      padding: 0 rfs-value(20px);
       transition: 0.3s;
       font-size: 1.2rem;
+      text-align: center;
 
       &:hover {
         background-color: $qc-blue-dark;
@@ -254,6 +253,8 @@ $selector: ".site";
     a {
       color: $qc-white;
       text-decoration: none;
+      display: block;
+      transition: 0.3s;
     }
     &.menu-collapse--open {
       .menu-collapse__display {

@@ -346,7 +346,7 @@ function qc_load_ch_selection($field) {
 		$field['choices'] = [];
 		foreach($posts as $post) {
 			$care_home_name = get_field('ch_name', $post->ID);
-			$name = ($care_home_name)? $care_home_name : $post->post_title;
+			$name = $post->post_title;
 			$field['choices'][$post->ID] = $name;
 		}
 	}
@@ -422,7 +422,10 @@ function qc_set_cf7_email_recipient( $contact_form, &$abort, $submission ) {
 	$form_data = $submission->get_posted_data();
 
 	if(isset($form_data['post_id'])) {
-		$job_recipient_email = get_field('career_recipient_email', $form_data['post_id']);
+		//get the email address set in career post field.
+		$career_recipient_field = get_field('career_recipient_email', $form_data['post_id']);
+		//if email not set then set it to global email address
+		$job_recipient_email = ($career_recipient_field)? $career_recipient_field : $contact_form_recipient;
 	}
   
   $properties = $contact_form->get_properties();
@@ -441,7 +444,10 @@ function qc_set_cf7_email_recipient( $contact_form, &$abort, $submission ) {
 		) {
 		// If on care home single page change recipient care home email address
 		if($form_data['type_post'] === 'care-home') {
-			$contact_form_recipient = get_field('ch_form_recipient', $form_data['post_id']);
+			//get care home recipient email from single page field
+			$ch_recipient_field = get_field('ch_form_recipient', $form_data['post_id']);
+			//set to global email if  care home recipient field not set
+			$contact_form_recipient = ($ch_recipient_field)? $ch_recipient_field : $contact_form_recipient;
 		}
 
 		// else send to generic recipient set in options page

@@ -13,7 +13,9 @@ $query_args = [
   'posts_per_page' => 12,
   'post_type' => 'care-home',
   'post_status' => 'publish',
-  'paged' => $paged
+  'paged' => $paged,
+  'orderby' => 'title',
+  'order'   => 'ASC'
 ];
 
 if (isset($_GET['location'])) {
