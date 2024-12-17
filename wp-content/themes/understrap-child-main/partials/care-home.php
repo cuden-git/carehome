@@ -62,7 +62,7 @@ if(!empty($menu_items)) {
       <div class="care-home__overview-text"  data-aos="fade-up">
         <?= $overview['text'] ?>
         <?php
-        if($overview['button']) {
+        if(!empty($overview['button'])) {
         ?>
         <div>
           <a data-aos="fade-up"  href="<?=__($overview['button']['url'], THEME_NAMESPACE) ?>" class="mt-4 btn <?= ($is_premium)? 'btn-gold' : 'btn-primary' ?>" title="<?=__($overview['button']['title'], THEME_NAMESPACE) ?>"><?=__($overview['button']['title'], THEME_NAMESPACE) ?></a>
@@ -151,8 +151,7 @@ if($day_care) { ?>
   <div class="container">
     <h2  data-aos="fade-up" class="post-section__title mb-3 text-white"><?= $day_care['title'] ?></h2>
     <div class="care-home__overview-text text-white"  data-aos="fade-up">
-      <?= $day_care['text'] ?>
-     
+      <?= $day_care['text'] ?>     
     </div>
   </div>
 </section>

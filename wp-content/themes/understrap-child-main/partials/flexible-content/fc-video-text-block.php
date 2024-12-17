@@ -11,7 +11,13 @@
       <div  data-aos="fade-up" class="col-12 col-xl-5 col-lg-6 fc__img-text-text d-flex order-1 order-lg-5 mb-lg-0 mb-5">
         <h2 class="post-section__title"><?= $title ?></h2>
         <?= $text ?>
+        <?php
+          if($btn_label) {
+        ?>
         <button class="btn btn-primary"><?= $btn_label ?></button>
+        <?php
+          }
+        ?>
       </div>
       <div  data-aos="fade-up" class="col-12 col-xl-7 col-lg-6 fc__img-text-img d-flex order-lg-1 order-5">
         <figure>

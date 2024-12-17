@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+$register_msg = get_field('careers_interest', 'option');
+
 $meta_query = [];
 
 $query_args = [
@@ -116,6 +118,23 @@ get_header();
     <div class="row">
       <div class="col-12 col-lg-4">
         <?php require_once __DIR__ . '/partials/careers-sidebar.php' ?>
+        <?php
+          if($register_msg) {
+        ?>
+        <div class="careers-list__cta">
+          <?= $register_msg['text'] ?>
+        <?php
+          if(!empty($register_msg['cta'])) {
+        ?>
+          <a href="<?= $register_msg['cta']['url'] ?>" class="btn btn-primary" title="<?= $register_msg['cta']['title'] ?>"><?= $register_msg['cta']['title'] ?></a>
+        <?php
+          }
+        ?>
+        </div>
+        
+        <?php
+          }
+        ?>
       </div>
       <div class="col-12 col-lg-8">
        <div class="ps-lg-5 ps-0">

@@ -13,7 +13,13 @@ $ctas = (isset($args['cta_blocks']))? $args['cta_blocks'] : get_sub_field('cta_b
         <div class="<?php if($loopCount % 2 == 0){ echo "ms-lg-4 ms-0";  }else{ echo "me-lg-4 me-0"; } ?> fc__ctas-card<?= ($cta['bg_colour'] === 'dark_blue')? ' fc__ctas-card--dark' : null ?> d-flex">
           <h3 class="mb-4"><?= $cta['title'] ?></h3>
           <div class="mb-4"><?= $cta['text'] ?></div>
+          <?php
+          if(!empty($cta['cta_btn'])) {
+          ?>
           <a href="<?= $cta['cta_btn']['url'] ?>" class="btn btn-white" title="<?= $cta['cta_btn']['title'] ?>"><?= $cta['cta_btn']['title'] ?></a>
+          <?php
+          }
+          ?>
         </div>
       </div>
   <?php

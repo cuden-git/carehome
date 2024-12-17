@@ -8,7 +8,7 @@ $care_home = get_field('career_care_home', get_the_ID());
     <label>
       <input type="email" class="w-100" name="career_emaol_info" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="<?= __('Email me about this job', THEME_NAMESPACE) ?>" value="">
     </label>
-    <input type="submit" class="btn btn-secondary" value="<?= __('Email address', THEME_NAMESPACE) ?>" disabled>
+    <input type="submit" class="btn btn-secondary" value="<?= __('Email me now', THEME_NAMESPACE) ?>" disabled>
   </form>
   <!-- -->
   <?php

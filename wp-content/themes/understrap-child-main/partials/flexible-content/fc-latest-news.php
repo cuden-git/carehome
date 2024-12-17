@@ -1,6 +1,6 @@
 <?php
 $show = get_sub_field('show');
-$cta_btn = get_sub_field('call_to_action')
+$cta_btn = get_sub_field('call_to_action');
 ?>
 
 <?php
@@ -22,7 +22,13 @@ if($show) {
     }
     ?>
       <div class="col-12 d-flex justify-content-center fc__news-cta mt-5">
+        <?php
+        if($cta_btn) {
+        ?>
         <a href="<?= $cta_btn['url'] ?>" title="<?= __($cta_btn['title'], THEME_NAMESPACE) ?>" class="btn btn-primary"><?= __($cta_btn['title'], THEME_NAMESPACE) ?></a>
+        <?php
+        }
+        ?>
       </div>
     </div>
   </div>

@@ -191,15 +191,17 @@ add_action('save_post_care-home', 'ch_save_post_meta', 20, 3);
  */
 add_filter( 'register_care-home_post_type_args', function ( $args, $post_type )
 {
-    $args['template'] = [
-			['quantum-care/care-home', 
-				[
-					'lock' => ['remove' => false]
-				]
-			]
-		];
-		$arg['template_lock'] = "all";
-
+    // $args['template'] = [
+		// 	['quantum-care/care-home', 
+		// 		[
+		// 			'lock' => ['remove' => false]
+		// 		]
+		// 	]
+		// ];
+		// $args['template_lock'] = "all";
+		$args['publicly_queryable'] = true;         // Required for the admin interface
+		$args['with_front']  = false;
+    // Required to show in the admin menu
     return $args;
 }, 10, 2 );
 
@@ -284,9 +286,11 @@ function qc_location_ordered_posts() {
  */
 function qc_ch_queries( $query ) {
   if (!is_admin() && $query->is_main_query() && isset($query->query['post_type'])){
-		// if($query->query['post_type'] === 'care-home') {
-		// 	$query->set('posts_per_page', 2);
-		// }
+		if($query->query['post_type'] === 'care-home') {
+			$per_page = get_field('ch_per_page', 'option');
+
+			$query->set('posts_per_page', $per_page);
+		}
 
 		// if($query->query['post_type'] === 'post') {
 		// 	$query->set('posts_per_page', 10);
@@ -632,9 +636,34 @@ function qc_multi_select_roles_form($n, $options, $args) {
 add_filter('wpcf7_form_tag_data_option', 'qc_multi_select_roles_form', 10, 3);
 
 /**
+ * Yoast breadcrumbs - use list markup and remove span tags
+ */
+function qc_breadcrumbs_list_tags( $output, $link ) {
+
+	$url = (!empty($link['url']))? $link['url'] : null;
+	$link_output = '<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
+	$link_output .= '<a href="' . $url . '" itemprop="url">' . $link['text'] . '</a>';
+	$link_output .= '</li>';
+
+	return $link_output;
+}
+add_filter( 'wpseo_breadcrumb_single_link', 'qc_breadcrumbs_list_tags', 10, 2 );
+
+function qc_breadcrumbs_remove_span( $output ){
+
+	$from = '<span>';
+	$to = '</span>';
+	$output = str_replace( $from, $to, $output );
+
+	return $output;
+}
+add_filter( 'wpseo_breadcrumb_output', 'qc_breadcrumbs_remove_span' );
+
+
+/**
  * MailHog setup
  */
-add_action( 'phpmailer_init', 'qc_mailhog_setup' );
+//add_action( 'phpmailer_init', 'qc_mailhog_setup' );
 function qc_mailhog_setup( $phpmailer ) {
     $phpmailer->Host = 'mailhog';
     $phpmailer->Port = 1025;

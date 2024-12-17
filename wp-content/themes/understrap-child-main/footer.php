@@ -75,7 +75,7 @@ if($is_premium) {
           <?php
           foreach($sm_links as $key=>$sm_link) {
           ?>
-            <a href="<?= esc_url( $sm_link ) ?>' title="<?= $key ?>">
+            <a href="<?= esc_url( $sm_link ) ?>" target="_blank" title="<?= $key ?>">
               <i class="icon-<?= $key ?>"></i>
             </a>
           <?php

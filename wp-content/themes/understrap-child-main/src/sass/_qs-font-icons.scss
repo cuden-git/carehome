@@ -24,6 +24,24 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-wifi:before {
+  content: "\e90b";
+}
+.icon-toilet:before {
+  content: "\e91a";
+}
+.icon-steam-iron:before {
+  content: "\e91b";
+}
+.icon-sensory:before {
+  content: "\e91c";
+}
+.icon-lotus:before {
+  content: "\e91d";
+}
+.icon-bag:before {
+  content: "\e91e";
+}
 .icon-menu:before {
   content: "\e919";
 }
@@ -84,7 +102,7 @@ i {
 .icon-washing-machine:before {
   content: "\e906";
 }
-.icon-heart:before {
+.icon-24-hour:before {
   content: "\e907";
 }
 .icon-tv:before {
@@ -96,9 +114,6 @@ i {
 .icon-wheelchair:before {
   content: "\e90a";
 }
-.icon-wifi:before {
-  content: "\e90b";
-}
-.icon-parking:before {
+.icon-car:before {
   content: "\e90c";
 }

@@ -9942,19 +9942,19 @@
 	  }
 	}
 
-	const chSearch = () => {
-	  const srchForm = document.getElementById('care-home-select');
-	  if (!srchForm) return;
-	  const submitBtn = srchForm.querySelector('[type="submit"]');
-	  const selectField = srchForm.querySelector('select');
-	  selectField.addEventListener('change', e => {
-	    if (selectField.value === "") {
-	      submitBtn.disabled = true;
-	    } else {
-	      submitBtn.disabled = false;
-	    }
-	  });
-	};
+	class JumpMenu {
+	  constructor() {
+	    this.menus = document.querySelectorAll('[data-jump-menu]');
+	    this.setEvent();
+	  }
+	  setEvent() {
+	    this.menus.forEach(menu => {
+	      menu.addEventListener('change', () => {
+	        window.location = menu.value;
+	      });
+	    });
+	  }
+	}
 
 	// Add your custom JS here.
 	//import './gm';
@@ -9964,8 +9964,7 @@
 	new ViewSwitch();
 	new EmailCareer();
 	new MenuCollapse(767); //767 represents the breakpoint to trigger the functionality
-
-	chSearch();
+	new JumpMenu();
 	document.addEventListener("DOMContentLoaded", function () {
 	  AOS.init();
 	  const navIcons = document.getElementById("nav-icon1");

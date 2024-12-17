@@ -4,7 +4,7 @@
       <?= get_the_post_thumbnail( $post->ID, "large" ) ?>
     </figure>
     <div class="news__card-text">
-      <h4 class="news__card-title mb-3 pb-0"><?= $post->post_title ?></h4>
+      <h2 class="news__card-title mb-3 pb-0"><?= $post->post_title ?></h2>
       <p class="pb-3"><?= $post->post_excerpt ?></p>
       <a href="<?= get_permalink($post->ID) ?>" class="btn btn-primary" title="<?=__('Read More', THEME_NAMESPACE) ?>"><?=__('Read More', THEME_NAMESPACE) ?></a>
     </div>

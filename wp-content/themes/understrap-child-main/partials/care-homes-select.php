@@ -5,8 +5,8 @@ $ch_args = [
 ];
 $care_homes = get_posts($ch_args);
 ?>
-<label class="flex-grow-1 d-lg-flex d-block me-md-3 me-0">
-  <select class="border-none" name="care_homes">
+<label class="flex-grow-1 d-lg-flex d-block">
+  <select class="border-none" name="care_homes" data-jump-menu>
     <option value=""><?= __('Care Homes', THEME_NAMESPACE) ?></option>
     <?php
     foreach($care_homes as $care_home) {

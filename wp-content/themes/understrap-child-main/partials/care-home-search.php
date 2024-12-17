@@ -38,6 +38,5 @@ $form_text = get_field('ch_archive_form_text', 'option');
   <!-- -->
   <form id="care-home-select" class="ch__search-form d-md-flex d-block">
     <?php get_template_part('partials/care-homes-select') ?>
-    <input type="submit" class="btn btn-secondary mt-md-0 mt-4" value="Search" disabled>
   </form>
 </div>

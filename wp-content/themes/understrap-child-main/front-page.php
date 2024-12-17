@@ -14,8 +14,10 @@ get_template_part('/partials/hero-carousel', null, $carousel);
       <div class="col-12 col-xl-7 col-lg-6 page-intro d-flex align-items-center">
         <div>
           <h2 class="page-intro__title mb-4"><?php the_title() ?></h2>
-          <?php the_content() ?>
-          <a href="#contact" class="btn btn-primary mt-4 mb-lg-0 mb-5" title="<?= __('Contact Us',THEME_NAMESPACE) ?>"><?= __('Contact Us',THEME_NAMESPACE) ?></a>
+          <?php 
+            the_content();
+            get_template_part('/partials/page-intro-cta');
+          ?>
         </div>
       </div>
       <div class="col-12 col-xl-5 col-lg-6 ">

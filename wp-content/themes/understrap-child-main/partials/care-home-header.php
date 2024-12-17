@@ -12,6 +12,7 @@ $is_premium = qc_is_premium();
       <div class="row">      
         <div class="col-md-7 order-md-1 order-5">
           <h2 class="post-section__title mb-md-5 mb-4"><?php the_title() ?></h2>
+          <?php yoast_breadcrumb( '<ul id="breadcrumbs" class="site__breadcrumbs list-inline d-flex">','</ul>') ?>
           <div class="row mb-md-5 mb-4">
             <?php
               if($is_premium) {

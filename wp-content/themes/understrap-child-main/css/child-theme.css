@@ -11407,6 +11407,30 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-wifi:before {
+  content: "\e90b";
+}
+
+.icon-toilet:before {
+  content: "\e91a";
+}
+
+.icon-steam-iron:before {
+  content: "\e91b";
+}
+
+.icon-sensory:before {
+  content: "\e91c";
+}
+
+.icon-lotus:before {
+  content: "\e91d";
+}
+
+.icon-bag:before {
+  content: "\e91e";
+}
+
 .icon-menu:before {
   content: "\e919";
 }
@@ -11487,7 +11511,7 @@ i {
   content: "\e906";
 }
 
-.icon-heart:before {
+.icon-24-hour:before {
   content: "\e907";
 }
 
@@ -11503,11 +11527,7 @@ i {
   content: "\e90a";
 }
 
-.icon-wifi:before {
-  content: "\e90b";
-}
-
-.icon-parking:before {
+.icon-car:before {
   content: "\e90c";
 }
 
@@ -11568,9 +11588,6 @@ textarea {
     justify-content: end;
     flex-wrap: wrap;
   }
-}
-.site__header .navbar-nav li a {
-  color: #fff;
 }
 .site__header::before {
   content: "";
@@ -11636,19 +11653,22 @@ textarea {
   font-size: 1.25rem;
   color: #efece9;
 }
-.site__nav .current-menu-item a {
-  color: #002147;
-}
-.site__nav-wrap ul li {
+.site__nav li {
   margin-left: 2vw;
 }
-@media (min-width: 992px) {
-  .site__nav-wrap ul li a {
-    font-size: 16px;
-  }
-}
-.site__nav-wrap ul li a:hover {
+.site__nav li.current-menu-item a {
   color: #002147;
+}
+.site__nav li a {
+  color: #fff;
+}
+.site__nav li a:hover {
+  color: #002147;
+}
+@media (min-width: 992px) {
+  .site__nav li a {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 991.98px) {
   .site__nav-wrap {
@@ -11665,8 +11685,8 @@ textarea {
     z-index: 10;
   }
   .site__nav-wrap ul li {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
     text-align: center;
   }
 }
@@ -11683,6 +11703,28 @@ textarea {
 }
 .site__logo img {
   width: 100%;
+}
+.site__breadcrumbs {
+  position: relative;
+  padding-bottom: 2.5rem;
+  z-index: 1;
+}
+.site__breadcrumbs li {
+  padding-right: 0.625rem;
+  color: #fff;
+}
+.site__breadcrumbs li:last-of-type {
+  padding-right: none;
+}
+.site__breadcrumbs li:not(:last-of-type)::after {
+  content: "/";
+}
+.site__breadcrumbs li:last-of-type a {
+  text-decoration: none;
+}
+.site__breadcrumbs a {
+  color: #fff;
+  padding-right: 0.625rem;
 }
 .site__main {
   padding-top: 4.125rem;
@@ -12202,9 +12244,6 @@ textarea {
 }
 .ch__pagination .nav-links .page-numbers.next:hover, .ch__pagination .nav-links .page-numbers.prev:hover {
   color: #7aa3cd;
-}
-.ch__pagination .nav-links .page-numbers.next:hover i, .ch__pagination .nav-links .page-numbers.prev:hover i {
-  transform: rotate(180deg);
 }
 .ch__pagination .nav-links .page-numbers.next {
   margin-left: 5.9375rem;
@@ -12866,6 +12905,12 @@ textarea {
   margin-top: auto;
   align-self: flex-start;
 }
+.care-home__follow {
+  padding-top: 2.5rem;
+}
+.care-home__follow-title i {
+  padding-right: 0.625rem;
+}
 .care-home__creds img {
   height: 100%;
   -o-object-fit: cover;
@@ -13012,6 +13057,7 @@ textarea {
   background-size: 195%;
   padding: 3.125rem 2.8125rem;
   color: #efece9;
+  margin-bottom: 3.125rem;
 }
 @media (min-width: 992px) {
   .careers-list__filters.collapse {
@@ -13043,6 +13089,12 @@ textarea {
 }
 .careers-list__filters input[type=submit] {
   width: 100%;
+}
+.careers-list__cta p {
+  font-size: 1.25rem;
+}
+.careers-list__cta p:last-of-type {
+  margin-bottom: 1.5625rem;
 }
 .careers-list__card {
   background-size: 87%;

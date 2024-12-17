@@ -678,6 +678,17 @@ $selector: ".care-home";
       }
     }
   }
+
+  &__follow {
+    padding-top: rfs-value(40px);
+
+    &-title {
+      i {
+        padding-right: rfs-value(10px);
+      }
+    }
+  }
+
   &__creds {
     img {
       height: 100%;
@@ -689,6 +700,7 @@ $selector: ".care-home";
       }
     }
   }
+
   &__brochures {
     position: relative;
     color: $qc-white;

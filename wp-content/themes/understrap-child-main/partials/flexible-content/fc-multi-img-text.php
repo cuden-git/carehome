@@ -14,7 +14,13 @@ $bottom_block = get_sub_field('bottom_block');
           <div class="mb-3">
             <?= $top_block['text'] ?>
           </div>
+          <?php
+          if(!empty($top_block['btn'])) {
+          ?>
           <a href="<?= $top_block['btn']['url'] ?>" class="btn btn-primary mb-4" title="<?= $top_block['btn']['title'] ?>"><?= $top_block['btn']['title'] ?></a>
+          <?php
+          }
+          ?>
         </div>
       </div>
       <div  data-aos="fade-up" class="col-12 col-lg-7 fc__img-text-img d-flex">
@@ -42,7 +48,13 @@ $bottom_block = get_sub_field('bottom_block');
           <div class="mb-3">
             <?= $middle_block['text'] ?>
           </div>
+          <?php
+          if(!empty($middle_block['btn'])) {
+          ?>
           <a href="<?= $middle_block['btn']['url'] ?>" class="btn btn-primary mb-4" title="<?= $middle_block['btn']['title'] ?>"><?= $middle_block['btn']['title'] ?></a>
+          <?php
+          }
+          ?>
         </div>
       </div>
     </div>
@@ -59,7 +71,13 @@ $bottom_block = get_sub_field('bottom_block');
           <div class="mb-3">
             <?= $bottom_block['text'] ?>
           </div>
+          <?php
+          if(!empty($bottom_block['btn'])) {
+          ?>
           <a href="<?= $bottom_block ['btn']['url'] ?>" class="btn btn-primary mb-4" title="<?= $bottom_block['btn']['title'] ?>"><?= $bottom_block['btn']['title'] ?></a>
+          <?php
+          }
+          ?>
         </div>
       </div>
       <div   data-aos="fade-up"class="col-12 col-lg-7 fc__img-text-img d-flex">

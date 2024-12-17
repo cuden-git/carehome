@@ -21,6 +21,15 @@ $is_premium = qc_is_premium();
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XQXMS0REH8"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XQXMS0REH8');
+</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -35,6 +44,7 @@ $is_premium = qc_is_premium();
 			?>
 			<div class="container">
 				<h1 class="site__header-title text-light mb-0"><?= qc_page_title() ?></h1>
+				<?php yoast_breadcrumb( '<ul id="breadcrumbs" class="site__breadcrumbs list-inline d-flex">','</ul>') ?>
 			</div>
 			<?php
 			}

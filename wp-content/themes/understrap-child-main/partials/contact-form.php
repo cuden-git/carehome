@@ -44,6 +44,11 @@ $form_shortcode = ($register_page_id == $post->ID)? $register_form_shortcode : $
           <address class="d-flex">            
             <?= $contact_info['address'] ?>
           </address>
+          <?php
+            if(is_singular('care-home')) {
+              get_template_part('partials/care-home-follow');
+            }
+          ?>
         </div>
       </div>
     <?php

@@ -6,11 +6,12 @@ if (isset($_GET['care_homes']) && $_GET['care_homes'] !== "") {
 }
 $archive_intro = get_field('ch_results_intro', 'option');
 $archive_list_title = get_field('ch_archive_page_title', 'option');
+$per_page = get_field('ch_per_page', 'option');
 
 $meta_query = [];
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $query_args = [
-  'posts_per_page' => 12,
+  'posts_per_page' => $per_page,
   'post_type' => 'care-home',
   'post_status' => 'publish',
   'paged' => $paged,
@@ -55,10 +56,17 @@ get_header();
         <div>
           <div class="page-intro__title mb-3"><h2><?= $archive_intro['title'] ?></h2></div>
           <?= $archive_intro['text'] ?>
+          <?php
+            if(!empty($archive_intro['cta'])) {
+          ?>
+            <a href="<?= $archive_intro['cta']['url'] ?>" class="btn btn-primary mt-4" title="<?= $archive_intro['cta']['title'] ?>"><?= $archive_intro['cta']['title'] ?></a>
+          <?php
+            }
+          ?>
         </div>
       </div>
       <div class="col-12 col-xl-5 col-lg-6">
-        <?php get_template_part('partials/care-home-search'); ?>
+        <?php get_template_part('/partials/care-home-search'); ?>
       </div>
     </div>
   </div>

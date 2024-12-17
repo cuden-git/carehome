@@ -2,6 +2,7 @@
 !.gitignore
 !/wp-content/
 !.github/
+wp-content/uploads/cfdb7_uploads/
 node_modules
 /.idea
 /.vscode
