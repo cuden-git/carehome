@@ -162,13 +162,14 @@ function qc_get_job_type($post_id) {
 	}
 
 	$arr = [];
-	
+	$arr['job'] = [];
+
 	foreach($post_terms as $term) {
 		if($term->parent === $parent_term_shift->term_id) {
 			$arr['shift'] = $term->name;
 		}
 		if($term->parent === $parent_term_job->term_id) {
-			$arr['job'] = $term->name;
+			array_push($arr['job'], $term->name);
 		}
 	}
 	

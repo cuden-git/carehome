@@ -26,7 +26,7 @@ $job_address = get_field('ch_address', $job_location->ID);
         if(isset($shift_job_type['shift'])) {
         ?>
         <p><strong><?= __('Shift Time', THEME_NAMESPACE) ?>:</strong> <?= $shift_job_type['shift'] ?></p>
-        <p><strong><?= __('Type', THEME_NAMESPACE) ?>:</strong> <?= $shift_job_type['job'] ?></p>
+        <p><strong><?= __('Type', THEME_NAMESPACE) ?>:</strong> <?= implode(', ', $shift_job_type['job']) ?></p>
         <?php
         }
         ?>
