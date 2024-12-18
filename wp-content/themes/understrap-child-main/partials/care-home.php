@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Care Home Block template.
- * Used fore care-home post type. *
+ * Care Home Block template. - No longer a WP Block
+ * Used for care-home post type.
  */
 
 $overview = get_field('ch_overview');
@@ -15,12 +15,12 @@ $ch_services = get_field('ch_services_facilities');
 $yt_embed_code = get_field('ch_yt_embed_code');
 $gallery = get_field('ch_gallery_carousel');
 $is_premium = qc_is_premium();
-$related_news = qc_related_news(get_the_ID(), 3);
+$related_news = qc_related_news(get_the_ID(), 3);//print_r($related_news);
 $related_settings = get_field('ch_latest_news');
 $day_care = get_field('day_care');
 
 //set class hook for Quantum select 
-$menu_items = qc_get_section_labels();
+$menu_items = qc_get_section_labels();//print_r($menu_items);
 $reviews = get_field('ch_reviews');
 ?>
 
@@ -56,7 +56,7 @@ if(!empty($menu_items)) {
   if($overview) {
 ?>
   <!-- Overview content -->
-  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__overview" >
+  <section id="<?php qc_set_anchor_index($overview) ?>" class="post-section care-home__overview" >
     <div class="container">
       <h2  data-aos="fade-up" class="post-section__title mb-3"><?= $overview['title'] ?></h2>
       <div class="care-home__overview-text"  data-aos="fade-up">
@@ -94,7 +94,7 @@ if($ch_services) {
 ?>
   
   <!-- Facilities -->
-  <section id="<?php qc_set_achor_index() ?>" class=" post-section care-home__facilities<?= ($is_premium)? ' care-home--premium' : null ?>"  >
+  <section id="<?php qc_set_anchor_index($ch_services) ?>" class=" post-section care-home__facilities<?= ($is_premium)? ' care-home--premium' : null ?>"  >
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6 care-home__facilities-intro" data-aos="fade-up">
@@ -173,7 +173,7 @@ if($yt_embed_code) {
 if($the_team) {
 ?>
 <!-- Tabbed content -->
-<section id="<?php qc_set_achor_index() ?>" class=" post-section care-home__team<?= ($is_premium)? ' care-home--premium' : null ?>"  data-aos="fade-up">
+<section id="<?php qc_set_anchor_index($the_team) ?>" class=" post-section care-home__team<?= ($is_premium)? ' care-home--premium' : null ?>"  data-aos="fade-up">
     <div class="container">
       <h2 class="post-section__title mb-5"><?= $the_team['title'] ?></h2>
       <?php
@@ -233,7 +233,7 @@ if($the_team) {
 }
 ?>
   <!-- Related news -->
-  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__news<?= ($is_premium)? ' care-home--premium' : null ?>"  data-aos="fade-up">
+  <section id="<?php qc_set_anchor_index($related_settings) ?>" class="post-section care-home__news<?= ($is_premium)? ' care-home--premium' : null ?>"  data-aos="fade-up">
     <div class="container">
       <h2 class="post-section__title mb-5"><?= __( $related_settings['title'], THEME_NAMESPACE) ?></h2>
       <div class="row care-home__news-wrap">
@@ -266,7 +266,7 @@ if($the_team) {
   </div>
 </div>
 <!-- -->
-<section id="<?php qc_set_achor_index() ?>" class="post-section care-home__creds mb-5"  data-aos="fade-up">
+<section id="<?php qc_set_anchor_index($reviews) ?>" class="post-section care-home__creds mb-5"  data-aos="fade-up">
     <div class="container">
       <h2 class="post-section__title mb-5"></h2>
       <div class="row">

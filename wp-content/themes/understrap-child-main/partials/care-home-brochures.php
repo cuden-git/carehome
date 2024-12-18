@@ -4,7 +4,7 @@ $brochures = get_field('ch_brochures_guides');
 
 if($brochures) {
   ?>
-  <section id="<?php qc_set_achor_index() ?>" class="post-section care-home__brochures <?= ($is_premium)? ' care-home--premium' : null ?>">
+  <section id="<?php qc_set_anchor_index($brochures) ?>" class="post-section care-home__brochures <?= ($is_premium)? ' care-home--premium' : null ?>">
     <div class="container"  data-aos="fade-up">
       <h2 class="post-section__title"><?= __($brochures['title'], THEME_NAMESPACE) ?></h2>
       <div class="row">

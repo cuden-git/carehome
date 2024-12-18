@@ -219,12 +219,14 @@ function qc_related_news($post_id, $num_posts) {
 /**
  * Sets the ID CSS hook for the anchor links
  */
-function qc_set_achor_index() {
+function qc_set_anchor_index($data) {
 	static $count = 0;
 
-	echo 'section-' . $count;
+	if(isset($data['section_menu_label']) && !empty($data['section_menu_label'])) {
+		echo 'section-' . $count;
 	
-	++$count;
+		++$count;
+	}
 }
 
 /**
@@ -309,7 +311,7 @@ function qc_job_role_posts($job_role) {
  */
 function qc_contact_data_form($post_id) {
 	
-	$post_type = get_post_type($post_id);//echo $post_type; die();
+	$post_type = get_post_type($post_id);
 	$contact_data = [];
 
 	if($post_type === 'care-home' && is_single()) {
