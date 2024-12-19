@@ -14340,6 +14340,10 @@ figure {
 div[role=dialog] .gm-style-iw-d h6, div[role=dialog] .gm-style-iw-d .h6 {
   font-size: 20px;
 }
+div[role=dialog] .gm-style-iw-d img {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
 div[role=dialog] .gm-style-iw-d a:first-of-type {
   background-color: #002147;
   color: white;

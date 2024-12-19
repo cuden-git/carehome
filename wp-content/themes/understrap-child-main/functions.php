@@ -661,6 +661,20 @@ add_filter( 'wpseo_breadcrumb_output', 'qc_breadcrumbs_remove_span' );
 
 
 /**
+ * Adjust the breadcrumb for care homes to output 
+ */
+function qc_ch_adjust_breadcrumb( $links ) {
+    global $post;
+
+		if($post->post_type === 'care-home') {
+			$links[1]['text'] = __('Quality Care Homes In Hertfordshire, Bedfordshire and Essex', THEME_NAMESPACE);
+		}
+
+    return $links;
+}
+add_filter( 'wpseo_breadcrumb_links', 'qc_ch_adjust_breadcrumb' );
+
+/**
  * MailHog setup
  */
 //add_action( 'phpmailer_init', 'qc_mailhog_setup' );

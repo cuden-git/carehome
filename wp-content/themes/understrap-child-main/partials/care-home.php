@@ -15,9 +15,10 @@ $ch_services = get_field('ch_services_facilities');
 $yt_embed_code = get_field('ch_yt_embed_code');
 $gallery = get_field('ch_gallery_carousel');
 $is_premium = qc_is_premium();
-$related_news = qc_related_news(get_the_ID(), 3);//print_r($related_news);
+$related_news = qc_related_news(get_the_ID(), 3);
 $related_settings = get_field('ch_latest_news');
-$day_care = get_field('day_care');
+//$day_care = get_field('day_care');print_r($day_care);
+$tour = get_field('ch_tour');
 
 //set class hook for Quantum select 
 $menu_items = qc_get_section_labels();//print_r($menu_items);
@@ -145,19 +146,6 @@ if($ch_services) {
   </section>
 <?php
 }
-
-if($day_care) { ?>
-  <section id="day-care" class="post-section mb-5 care-home__overview care-home<?= ($is_premium)? ' care-home--premium' : null ?>" >
-  <div class="container">
-    <h2  data-aos="fade-up" class="post-section__title mb-3 text-white"><?= $day_care['title'] ?></h2>
-    <div class="care-home__overview-text text-white"  data-aos="fade-up">
-      <?= $day_care['text'] ?>     
-    </div>
-  </div>
-</section>
-<?php }
-
-
 if($yt_embed_code) {
 ?>
   <!-- YouTube embed code -->

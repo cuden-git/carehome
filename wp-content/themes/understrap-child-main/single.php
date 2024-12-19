@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $care_home_id = get_field('news_care_homes', get_the_ID());
-$related_news = qc_related_news($care_home_id, 3);
+$related_news = qc_related_news($care_home_id, 3, get_the_ID());
 
 get_header();
 ?>
@@ -27,7 +27,7 @@ get_header();
     <div class="row mt-5 mb-4 news-single-news-area">
       <?php
       foreach($related_news as $news) {
-        get_template_part('/partials/news-card');
+        get_template_part('/partials/news-card', null, ['news' => $news]);
       }
       ?>
     </div>

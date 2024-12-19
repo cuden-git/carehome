@@ -188,33 +188,45 @@ function qc_social_media() {
 /**
  * Get news posts linked to care home
  */
-function qc_related_news($post_id, $num_posts) {
+function qc_related_news($post_id, $num_posts, $exclude_current = null) {
 	$args = [
-    'post_type'      => 'post',
-    'posts_per_page' => $num_posts,
+		'post_type' => 'post',
 		'post_status' => 'publish',
-    'orderby'        => [
-			'meta_value_num' => 'ASC',
-			'date'           => 'DESC'
-    ],
-    'meta_query'     => [
-       'relation' => 'OR',
-        [
-					'key'     => 'news_care_homes',
-					'value'   => $post_id,
-					'compare' => '='
-        ],
-        [
-					'key'     => 'news_care_homes',
-					'value'   => $post_id,
-					'compare' => '!='
-        ]
-    ]
+		'numberposts' => $num_posts,
+		'meta_key' => 'news_care_homes',
+		'meta_value' => $post_id,
 	];
 
-	$related_news = get_posts($args);
+	if($exclude_current) {
+		$args['post__not_in'] = [$exclude_current];
+	}
 
-	return $related_news;
+	$matched_posts = get_posts($args);
+	$ids = array_map(function($post) {
+    return $post->ID;
+	}, $matched_posts);
+
+	$matched_count = count($matched_posts);
+
+	if ($matched_count < $num_posts) {
+		$remaining = $num_posts - $matched_count;
+
+		if($exclude_current) {
+			array_push($ids, $exclude_current);
+		}
+
+		$args_latest = [
+				'post_type'      => 'post',
+				'posts_per_page' => $remaining,
+				'post_status' => 'publish',
+				'post__not_in'   => $ids,
+		];
+
+		$latest_posts = get_posts($args_latest);
+		$matched_posts = array_merge($matched_posts, $latest_posts);
+}
+
+	return $matched_posts;
 }
 
 /**
