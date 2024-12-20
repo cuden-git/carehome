@@ -12,19 +12,19 @@ $selector: ".care-home";
     }
   }
 
-  #day-care {
-    background-color: $qc-blue-light;
-    color: $white;
-    #{$premium-hook} & {
-      background-color: $qc-blue-dark;
-    }
-    .care-home__overview-text {
-      column-rule: 0.125rem solid $white;
-      #{$premium-hook} & {
-        column-rule: 0.125rem solid $qc-gold;
-      }
-    }
-  }
+  // #day-care {
+  //   background-color: $qc-blue-light;
+  //   color: $white;
+  //   #{$premium-hook} & {
+  //     background-color: $qc-blue-dark;
+  //   }
+  //   .care-home__overview-text {
+  //     column-rule: 0.125rem solid $white;
+  //     #{$premium-hook} & {
+  //       column-rule: 0.125rem solid $qc-gold;
+  //     }
+  //   }
+  // }
   &__forms {
     .site__form-text {
       address a {
@@ -621,6 +621,13 @@ $selector: ".care-home";
         }
       }
     }
+  }
+
+  &__tour {
+    @extend %q-bg-img-dark;
+
+    background-color: $qc-blue-lighter;
+    background-size: 100%;
   }
 
   &__news {

@@ -9,18 +9,34 @@ $overview = get_field('ch_overview');
 $terms = get_the_terms(get_the_ID(), 'care-home-category');
 $premium_class = '';
 $map_location = get_field('ch_map_location');
+$tour = get_field('ch_tour');//print_r($tour);die();
 $the_team = get_field('ch_the_team');
 $tabbed_content = qc_tabbed_content_arrays($the_team['members']);
 $ch_services = get_field('ch_services_facilities');
 $yt_embed_code = get_field('ch_yt_embed_code');
 $gallery = get_field('ch_gallery_carousel');
+//set class hook for Quantum select 
 $is_premium = qc_is_premium();
 $related_news = qc_related_news(get_the_ID(), 3);
 $related_settings = get_field('ch_latest_news');
 //$day_care = get_field('day_care');print_r($day_care);
-$tour = get_field('ch_tour');
 
-//set class hook for Quantum select 
+$tour_items = 0;
+if(isset($tour['video']['video']) && !empty($tour['video']['video'])) {
+  ++$tour_items;
+}
+
+if(isset($tour['tour_360']['360']) && !empty($tour['tour_360']['360'])) {
+  ++$tour_items;
+}
+
+if($tour_items > 0) {
+  $tour_classes = ($tour_items > 1)? 'col-md-6' : 'col-md-8 m-auto';
+}
+
+//echo 'tour = ' . print_r($tour,true);
+//echo 'tour_items = ' . $tour_items;
+//die();
 $menu_items = qc_get_section_labels();//print_r($menu_items);
 $reviews = get_field('ch_reviews');
 ?>
@@ -95,7 +111,7 @@ if($ch_services) {
 ?>
   
   <!-- Facilities -->
-  <section id="<?php qc_set_anchor_index($ch_services) ?>" class=" post-section care-home__facilities<?= ($is_premium)? ' care-home--premium' : null ?>"  >
+  <section id="<?php qc_set_anchor_index($ch_services) ?>" class="post-section care-home__facilities<?= ($is_premium)? ' care-home--premium' : null ?>"  >
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6 care-home__facilities-intro" data-aos="fade-up">
@@ -141,6 +157,40 @@ if($ch_services) {
            
           </div>
       </div>
+      </div>
+    </div>
+  </section>
+<?php
+}
+
+if($tour_items > 0) {
+?>
+<!-- Tour -->
+<section id="<?php qc_set_anchor_index($tour) ?>" class="care-home__tour pt-6 pb-6 post-section<?= ($is_premium)? ' care-home--premium' : null ?>"  data-aos="fade-up">
+    <div class="container">
+      <div class="row">
+        <?php
+          if(!empty($tour['video']['video'])) {
+        ?>
+        <div class="col-12 mb-4 mb-md-0 <?= $tour_classes ?>">
+          <h2 class="mb-4"><?= $tour['video']['title'] ?></h2>
+          <div class="ratio ratio-16x9">
+            <?= $tour['video']['video'] ?>
+          </div>
+        </div>
+        <?php
+          }
+          if(!empty($tour['tour_360']['360'])) {
+        ?>
+        <div class="col-12 <?= $tour_classes ?>">
+          <h2 class="mb-4"><?= $tour['tour_360']['title'] ?></h2>
+          <div class="ratio ratio-16x9">
+            <?= $tour['tour_360']['360'] ?>
+          </div>
+        </div>
+        <?php
+          }
+        ?>
       </div>
     </div>
   </section>

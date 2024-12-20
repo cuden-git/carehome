@@ -12304,21 +12304,6 @@ textarea {
     padding-bottom: 2.8125rem;
   }
 }
-.care-home #day-care {
-  background-color: #7aa3cd;
-  color: #fff;
-}
-.care-home--premium .care-home #day-care {
-  background-color: #002147;
-}
-.care-home #day-care .care-home__overview-text {
-  -moz-column-rule: 0.125rem solid #fff;
-  column-rule: 0.125rem solid #fff;
-}
-.care-home--premium .care-home #day-care .care-home__overview-text {
-  -moz-column-rule: 0.125rem solid #b99475;
-  column-rule: 0.125rem solid #b99475;
-}
 .care-home--premium .care-home__forms .site__form-text address a {
   color: #b99475;
 }
@@ -12855,6 +12840,10 @@ textarea {
 }
 .care-home--premium .care-home__facilities-icons i {
   color: #b99475;
+}
+.care-home__tour {
+  background-color: #e4edf5;
+  background-size: 100%;
 }
 .care-home__news-wrap {
   margin-bottom: 4.6875rem;
@@ -13965,7 +13954,7 @@ h5, .h5 {
   background-repeat: no-repeat;
 }
 
-.bg-light-blue, .bg-colour-double, .care-home__overview, .care-home__facilities, .careers-list__card, .career-single__spec, .fc__img-text--bg, .fc__img-text-mid {
+.bg-light-blue, .bg-colour-double, .care-home__overview, .care-home__facilities, .care-home__tour, .careers-list__card, .career-single__spec, .fc__img-text--bg, .fc__img-text-mid {
   background-image: url(../images/bg-q-dark.svg);
   background-repeat: no-repeat;
 }
