@@ -20,7 +20,7 @@ $is_premium = qc_is_premium();
 $related_news = qc_related_news(get_the_ID(), 3);
 $related_settings = get_field('ch_latest_news');
 //$day_care = get_field('day_care');print_r($day_care);
-
+//print_r(get_fields());
 $tour_items = 0;
 if(isset($tour['video']['video']) && !empty($tour['video']['video'])) {
   ++$tour_items;
@@ -34,10 +34,7 @@ if($tour_items > 0) {
   $tour_classes = ($tour_items > 1)? 'col-md-6' : 'col-md-8 m-auto';
 }
 
-//echo 'tour = ' . print_r($tour,true);
-//echo 'tour_items = ' . $tour_items;
-//die();
-$menu_items = qc_get_section_labels();//print_r($menu_items);
+$menu_items = qc_get_section_labels(get_the_ID());//print_r($menu_items);
 $reviews = get_field('ch_reviews');
 ?>
 

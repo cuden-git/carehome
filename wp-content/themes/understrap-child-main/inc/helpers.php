@@ -245,17 +245,31 @@ function qc_set_anchor_index($data) {
 /**
  * Gets the section menu labels
  */
-function qc_get_section_labels() {
-	$page_field_objs = get_field_objects();
-	$menu_items = [];
+// function qc_get_section_labels() {
+// 	$page_field_objs = get_field_objects();
+// 	$menu_items = [];
 
-	foreach($page_field_objs as $page_obj) {
-		if(is_array($page_obj['value']) && array_key_exists('section_menu_label', $page_obj['value'])) {
-			array_push($menu_items, $page_obj['value']['section_menu_label']);
+// 	foreach($page_field_objs as $page_obj) {
+// 		if(is_array($page_obj['value']) && array_key_exists('section_menu_label', $page_obj['value'])) {
+// 			array_push($menu_items, $page_obj['value']['section_menu_label']);
+// 		}
+// 	}
+	
+// 	return $menu_items;
+// }
+function qc_get_section_labels($page_id) {
+	$fields = acf_get_fields('group_671f451c705a5');
+  $values = [];
+  
+  foreach ($fields as $field) {//print_r($fields);
+    $field_name = $field['name'] . '_section_menu_label';
+
+		if (get_post_meta($page_id, $field_name, true)) {
+				$values[] = get_post_meta($page_id, $field_name, true);
 		}
 	}
-	
-	return $menu_items;
+
+  return $values;
 }
 
 /**
