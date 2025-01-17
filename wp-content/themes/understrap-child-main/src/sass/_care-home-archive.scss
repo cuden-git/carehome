@@ -253,6 +253,19 @@ $selector: ".ch";
   &__map {
     background-color: $qc-blue-lighter;
     height: rfs-value(990px);
+
+    &-thumb {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        max-width: rfs-value(250px);
+        height: 100%;
+        margin-bottom: rfs-value(20px);
+      }
+    }
   }
 }
 

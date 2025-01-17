@@ -12263,6 +12263,18 @@ textarea {
   background-color: #e4edf5;
   height: 61.875rem;
 }
+.ch__map-thumb {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+.ch__map-thumb img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  max-width: 15.625rem;
+  height: 100%;
+  margin-bottom: 1.25rem;
+}
 
 .filter-btn {
   text-decoration: none;
@@ -13046,7 +13058,6 @@ textarea {
   background-size: 195%;
   padding: 3.125rem 2.8125rem;
   color: #efece9;
-  margin-bottom: 3.125rem;
 }
 @media (min-width: 992px) {
   .careers-list__filters.collapse {
@@ -13078,6 +13089,9 @@ textarea {
 }
 .careers-list__filters input[type=submit] {
   width: 100%;
+}
+.careers-list__cta {
+  margin-bottom: 3.125rem;
 }
 .careers-list__cta p {
   font-size: 1.25rem;
@@ -14328,10 +14342,6 @@ figure {
 
 div[role=dialog] .gm-style-iw-d h6, div[role=dialog] .gm-style-iw-d .h6 {
   font-size: 20px;
-}
-div[role=dialog] .gm-style-iw-d img {
-  width: 100%;
-  margin-bottom: 1.25rem;
 }
 div[role=dialog] .gm-style-iw-d a:first-of-type {
   background-color: #002147;

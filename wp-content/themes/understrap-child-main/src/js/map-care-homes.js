@@ -83,7 +83,7 @@ class MapCareHomes {
         content: pin.element,
       });
 
-      let img = (item.src)? `<figure><img src="${item.src}" alt="${item.title}"></figure>` : null;
+      let img = (item.src)? `<figure class="ch__map-thumb"><img src="${item.src}" alt="${item.title}"></figure>` : null;
       let infowindow = new google.maps.InfoWindow({
         content: `<h6>${item.title}</h6>
         ${img}

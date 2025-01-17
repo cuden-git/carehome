@@ -117,7 +117,6 @@ get_header();
   <div class="container mb-5">
     <div class="row">
       <div class="col-12 col-lg-4">
-        <?php require_once __DIR__ . '/partials/careers-sidebar.php' ?>
         <?php
           if($register_msg) {
         ?>
@@ -135,6 +134,7 @@ get_header();
         <?php
           }
         ?>
+        <?php require_once __DIR__ . '/partials/careers-sidebar.php' ?>
       </div>
       <div class="col-12 col-lg-8">
        <div class="ps-lg-5 ps-0">

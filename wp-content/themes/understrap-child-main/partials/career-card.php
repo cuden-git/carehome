@@ -12,7 +12,6 @@ $job_address = get_field('ch_address', $job_location->ID);
     <div class="row">
       <div class="col-lg-8  ">
         <h3 class="careers-list__card-title"><?= $job_role ?></h3>
-        <p><strong><?= __('Posted:', THEME_NAMESPACE) ?></strong> <?= get_the_date('j M Y', $career_id); ?></p>
       </div>
       <div class="col-lg-4 pt-lg-0 pt-3">
         <p class="closing-date text-lg-end text-start"><strong><?= __('Closing date', THEME_NAMESPACE) ?></strong>: <?= $close_date; ?></p>

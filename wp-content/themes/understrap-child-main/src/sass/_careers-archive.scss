@@ -112,7 +112,6 @@ $selector: ".careers-list";
     background-size: 195%;
     padding: rfs-value(50px) rfs-value(45px);
     color: $qc-white;
-    margin-bottom: rfs-value(50px);
 
     &.collapse {
       @include media-breakpoint-up(lg) {
@@ -156,6 +155,8 @@ $selector: ".careers-list";
   }
 
   &__cta {
+    margin-bottom: rfs-value(50px);
+
     p {
       font-size: rfs-value(20px);
 

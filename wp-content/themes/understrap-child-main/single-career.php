@@ -39,7 +39,7 @@ $recipient_email = get_field('career_recipient_email');
                 <p><strong><?= __('Pay', THEME_NAMESPACE) ?>: </strong><?= $pay_rate ?></p>
                 <p><strong><?= __('Location', THEME_NAMESPACE) ?>: </strong><?= $job_location->post_title ?></p>
                 <p><strong><?= __('Shift Time', THEME_NAMESPACE) ?>: </strong><?= $shift_job_type['shift'] ?></p>
-                <p class="mb-0 pb-0"><strong><?= __('Type', THEME_NAMESPACE) ?>: </strong><?= $shift_job_type['job'] ?></p>
+                <p class="mb-0 pb-0"><strong><?= __('Type', THEME_NAMESPACE) ?>: </strong><?= implode(', ', $shift_job_type['job']) ?></p>
               </div>
             <!-- -->
               <div class="career-single__disclaimer">

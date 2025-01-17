@@ -28,8 +28,6 @@ function understrap_remove_scripts()
 }
 add_action('wp_enqueue_scripts', 'understrap_remove_scripts', 20);
 
-
-
 /**
  * Enqueue our stylesheet and javascript file
  */
@@ -249,7 +247,7 @@ function qc_get_acf_block_attrs($post_content, $block_name) {
 /**
  * Re-order care home posts based on submitted location search
  */
-function qc_location_ordered_posts() {
+function qc_location_ordered_posts($start_location) {
 	$gm_url = GOOGLE_MAPS_API_URL . "geocode/json?address=" . urlencode($start_location) . "&key=" . GOOGLE_API_KEY;
 	
 	$response = wp_remote_get($gm_url);
@@ -677,7 +675,7 @@ add_filter( 'wpseo_breadcrumb_links', 'qc_ch_adjust_breadcrumb' );
 /**
  * MailHog setup
  */
-//add_action( 'phpmailer_init', 'qc_mailhog_setup' );
+add_action( 'phpmailer_init', 'qc_mailhog_setup' );
 function qc_mailhog_setup( $phpmailer ) {
     $phpmailer->Host = 'mailhog';
     $phpmailer->Port = 1025;
