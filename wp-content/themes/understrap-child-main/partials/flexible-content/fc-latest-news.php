@@ -9,6 +9,7 @@ if($show) {
   $posts = get_posts(
     [
       'numberposts' => 3,
+      'category_name' => __('global', THEME_NAMESPACE)
     ]
   );
 ?>

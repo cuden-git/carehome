@@ -11,17 +11,21 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $query_args = [
   'post_type' => 'post',
   'post_status' => 'publish',
-  'paged' => $paged
-
+  'paged' => $paged,
+  'numberposts' => -1
 ];
 
-if(isset($_GET['news_care_home']) && $_GET['news_care_home'] !==  'all') {
+if(!isset($_GET['news_care_home']) && !isset($_GET['category_name'])) {
+  $query_args['category_name'] = __('global', THEME_NAMESPACE);
+}else {
+  if(isset($_GET['news_care_home']) && $_GET['news_care_home'] !==  'all') {
     $query_args['meta_key'] = 'news_care_homes';
     $query_args['meta_value'] = $_GET['news_care_home'];
-}
-
-if(isset($_GET['category_name']) && $_GET['category_name'] != '') {
-  $query_args['category_name'] = $_GET['category_name'];
+  }
+  
+  if(isset($_GET['category_name']) && $_GET['category_name'] != '') {
+    $query_args['category_name'] = $_GET['category_name'];
+  }
 }
 
 $query = new WP_Query($query_args);

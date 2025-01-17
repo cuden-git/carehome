@@ -1,4 +1,6 @@
 <?php
+$uncat_id = get_cat_ID( 'Uncategorised' );
+
 $care_homes = get_posts([
   'post_type' => 'care-home',
   'status' => 'publish',
@@ -9,7 +11,8 @@ $news_cats = get_categories(
   [
     'orderby' => 'name',
     'order' => 'ASC',
-    'hide_empty' => false
+    'hide_empty' => false,
+    'exclude' => [$uncat_id]
   ]
 );
 ?>
