@@ -13604,6 +13604,30 @@ textarea {
   margin-top: auto;
   align-self: flex-start;
 }
+.fc__form {
+  background-color: #e4edf5;
+}
+.fc__form form {
+  display: flex;
+  flex-direction: column;
+}
+.fc__form label {
+  display: block;
+  margin-bottom: 1.875rem;
+}
+.fc__form label * {
+  width: 100%;
+}
+.fc__form label > span {
+  display: block;
+  padding-top: 0.3125rem;
+}
+.fc__form input[type=submit] {
+  align-self: end;
+  background-color: #002147;
+  border-color: #002147;
+  color: #fff;
+}
 
 .single-care-home .site__header--premium .site__nav-wrap ul li a:hover {
   color: #b99475;

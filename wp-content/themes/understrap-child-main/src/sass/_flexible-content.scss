@@ -229,6 +229,38 @@ $selector: ".fc";
       }
     }
   }
+
+  &__form {
+    background-color: $qc-blue-lighter;
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      display: block;
+      margin-bottom: rfs-value(30px);
+
+      * {
+        width: 100%;
+      }
+
+      >span {
+        display: block;
+        padding-top: rfs-value(5px);
+      }
+    }
+
+    input {
+      &[type=submit] {
+        align-self: end;
+        background-color: $qc-blue-dark;
+        border-color: $qc-blue-dark;
+        color: $white;
+      }
+    }
+  }
 }
 
 .single-care-home {

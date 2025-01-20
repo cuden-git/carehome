@@ -120,10 +120,12 @@ h5 {
 .btn-primary {
   color: $qc-white;
   transition: 0.3s;
+
   &--inverse {
     background-color: unset;
     border: rfs-value(1px) solid $qc-blue-light;
     color: $qc-blue-light;
+
     &.on-blue {
       &:hover {
         background-color: $qc-white;
