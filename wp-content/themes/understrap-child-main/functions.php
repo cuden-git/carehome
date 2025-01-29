@@ -664,7 +664,7 @@ add_filter( 'wpseo_breadcrumb_output', 'qc_breadcrumbs_remove_span' );
 function qc_ch_adjust_breadcrumb( $links ) {
     global $post;
 
-		if($post->post_type === 'care-home') {
+		if(isset($post->post_type) && $post->post_type === 'care-home') {
 			$links[1]['text'] = __('Quality Care Homes In Hertfordshire, Bedfordshire and Essex', THEME_NAMESPACE);
 		}
 
@@ -673,9 +673,26 @@ function qc_ch_adjust_breadcrumb( $links ) {
 add_filter( 'wpseo_breadcrumb_links', 'qc_ch_adjust_breadcrumb' );
 
 /**
+ * Add care home name to admin posts list
+ */
+add_filter('manage_post_posts_columns', function($columns) {
+	return array_merge($columns, ['carehome' => __('Care Home', THEME_NAMESPACE)]);
+});
+add_action('manage_post_posts_custom_column', function($column_key, $post_id) {
+	if ($column_key == 'carehome') {
+		$ch_id = get_field('news_care_homes', $post_id);
+
+		if ($ch_id) {
+			$ch_post = get_post($ch_id);
+			echo '<span>' .  __($ch_post->post_title, THEME_NAMESPACE) . '</span>';
+		}
+	}
+}, 10, 2);
+
+/**
  * MailHog setup
  */
-add_action( 'phpmailer_init', 'qc_mailhog_setup' );
+//add_action( 'phpmailer_init', 'qc_mailhog_setup' );
 function qc_mailhog_setup( $phpmailer ) {
     $phpmailer->Host = 'mailhog';
     $phpmailer->Port = 1025;
