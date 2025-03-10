@@ -8,7 +8,7 @@ $contact_info = qc_contact_data_form(get_the_ID());
 $register_page_id = get_field('register_page_id', 'option');
 $register_form_shortcode = get_field('register_form_shortcode', 'option');
 
-$form_shortcode = ($register_page_id == $post->ID)? $register_form_shortcode : $contact_form_shortcode;
+$form_shortcode = (isset($post->ID) && $register_page_id == $post->ID)? $register_form_shortcode : $contact_form_shortcode;
 ?>
 <?php
   if(isset($args['is_section'])) {
